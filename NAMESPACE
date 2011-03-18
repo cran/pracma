@@ -1,0 +1,8 @@
+###
+### NAMESPACE
+###
+
+## Public routines
+exportPattern("^[[:alpha:]]+")
+
+## S4 Methods
