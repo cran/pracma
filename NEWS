@@ -2,6 +2,92 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
+PLANNED IN NEXT VERSION
+
+  NEW FUNCTIONS
+
+    o Barycentric interpolation through barylag() and barylag2d().
+
+CHANGES IN VERSION 0.3-0
+
+  OTHER CHANGES
+
+    o New version of news.Rd, news.pdf.
+
+    o More test functions for root finding and quadrature.
+
+CHANGES IN VERSION 0.2-9
+
+  NEW FUNCTIONS
+
+    o fnorm() and the Runge function runge().
+
+    o contfrac(), rat(), and rats() for continuous fractions.
+
+    o meshgrid() and magic().
+
+CHANGES IN VERSION 0.2-8
+
+  NEW FUNCTIONS
+
+    o quad() adaptive Simpson quadrature.
+
+    o Minimum finding with fibsearch() and golden_ratio().
+
+    o Root finding with newton(), secant(), and brentDekker().
+
+CHANGES IN VERSION 0.2-7
+
+  NEW FUNCTIONS
+
+    o Regular expression functions regexp(), regexpi(), regexprep() and
+      refindall().
+
+CHANGES IN VERSION 0.2-6
+
+  NEW FUNCTIONS
+
+    o String functions blanks(), strtrim(), deblank(), strjust(),
+      and strrep().
+
+    o interp1() one-dimensional interpolation (incl. spline)
+
+CHANGES IN VERSION 0.2-5
+
+  NEW FUNCTIONS
+
+    o Matlab functions mode(), clear() and beep().
+
+CHANGES IN VERSION 0.2-4
+
+  NEW FUNCTIONS
+
+    o primroot() finds the smallest primitive root modulo a given n;
+      needed functions are modpower() and modorder().
+
+    o humps() and sinc(): Matlab test functions.
+
+    o Root finding through bisection: bisect(), regulaFalsi().
+
+    o outlierMAD(), findpeaks(), and piecewise().
+
+    o polycnv() for polynomial multiplication.
+
+  OTHER CHANGES
+
+    o Functions extgcd(), gcd(), and lcm() have been renamed to extGCD(),
+      GCD(), and LCM() respectively.
+
+CHANGES IN VERSION 0.2-3
+
+  NEW FUNCTIONS
+
+    o strfind(), strfindi(), and findstr().
+
+    o circlefit() fitting a circle to plane points.
+
+    o mldivide() and mrdivide(), emulating the Matlab backslash operator.
+
 CHANGES IN VERSION 0.2-2
 
   NEW FUNCTIONS
@@ -53,7 +139,7 @@ CHANGES IN VERSION 0.1-8
 
   NEW FUNCTIONS
 
-    o std() as refinement of standard deviation function.
+    o std() as refinement of the standard deviation function.
 
     o ceil() and fix() as aliases for ceiling() and trunc().
       [floor() and round() already exist in R.]
@@ -103,6 +189,11 @@ CHANGES IN VERSION 0.1-5
 CHANGES IN VERSION 0.1-4
 
   NEW FUNCTIONS:
+
+    o Added functions for generating sequences of (log-)linearly spaced
+      numeric values: linspace() and logspace(). Note that the functions
+      in the `matlab' package are not exactly mimicking the corresponding
+      Matlab/Octave functions.
 
     o Added basic complex functions real(), imag(), conj(), and angle()
       which are essentially only aliases of the R functions Re(), Im(), 

@@ -28,7 +28,7 @@ rem <- function(n, m) {
     return(k)
 }
 
-extgcd <- function(a, b) {
+extGCD <- function(a, b) {
 	# The Blankinship method, MAA Mathematical Monthly, Jul-Aug 1963
 	stopifnot(is.numeric(a), length(a) == 1, floor(a) == ceiling(a), 
 	          is.numeric(b), length(b) == 1, floor(b) == ceiling(b))
@@ -53,16 +53,16 @@ extgcd <- function(a, b) {
 	return(g)
 }
 
-gcd <- function(n, m) return(extgcd(n, m)[1])
+GCD <- function(n, m) return(extGCD(n, m)[1])
 
-lcm <- function(n, m) return(n / gcd(n, m) * m)
+LCM <- function(n, m) return(n / GCD(n, m) * m)
 
 coprime <- function(n, m) {
-	if (gcd(n, m) > 1) FALSE else TRUE
+	if (GCD(n, m) > 1) FALSE else TRUE
 }
 
 modinv <- function(n, m) {
-	v <- extgcd(n, m)
+	v <- extGCD(n, m)
 	if (v[1] == 0 || v[1] > 1) return(NA)
 	if (v[2] >= 0) v[2] else v[2] + m
 }

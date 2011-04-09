@@ -19,7 +19,7 @@ modinv(n, m)
   else \code{NA}.
 }
 \seealso{
-\code{\link{extgcd}}
+\code{\link{extGCD}}
 }
 \examples{
 modinv(5, 1001)  #=> 801, as 5*801 = 4005 = 1 mod 1001

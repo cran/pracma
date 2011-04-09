@@ -1,12 +1,12 @@
-\name{extgcd}
-\alias{extgcd}
+\name{extGCD}
+\alias{extGCD}
 \title{Extended Euclidean Algorithm}
 \description{
   The extended Euclidean algorithm computes the greatest common divisor and
   solves Bezout's identity.
 }
 \usage{
-extgcd(a, b)
+extGCD(a, b)
 }
 \arguments{
   \item{a, b}{integer scalars}
@@ -32,13 +32,11 @@ extgcd(a, b)
 \code{\link{modinv}}
 }
 \references{
-  Blankinship, W. A. "A New Version of the Euclidean Algorithm."
+  Blankinship, W. A. ``A New Version of the Euclidean Algorithm."
   Amer. Math. Monthly 70, 742-745, 1963.
 }
 \examples{
-gcd(12, 10)
-gcd(46368, 75025)  # Fibonacci numbers are relatively prime to each other
-lcm(12, 10)
-lcm(46368, 75025)  # = 46368 * 75025
+extGCD(12, 10)
+extGCD(46368, 75025)  # Fibonacci numbers are relatively prime to each other
 }
 \keyword{ arith }

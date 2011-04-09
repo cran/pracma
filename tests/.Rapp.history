@@ -1,0 +1,101 @@
+setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
+####
+### m a g i c . R -- Create a Magic Square#
+####
+#
+#
+magic <- function(n) {#
+    if (!is.numeric(n)) {#
+        stop("Argument 'n' must be numeric.")#
+    } else if (!(length(n) == 1)) {#
+        stop("Argument 'n' must be of length 1.")#
+    }#
+#
+    oddOrder <- function(n) {#
+        J <- matrix(rep(1:n, each = n),  n, n)#
+        I <- matrix(rep(1:n, times = n), n, n)#
+        A <- (I + J - (n + 3) / 2) %% n#
+        B <- (I + 2 * J - 2) %% n#
+        M <- n * A + B + 1;#
+#
+        return(M)#
+    }#
+#
+    doublyEvenOrder <- function(n) {#
+        J <- matrix(rep(1:n, each = n),  n, n)#
+        I <- matrix(rep(1:n, times = n), n, n)#
+        K <- trunc((I %% 4) / 2) == trunc((J %% 4) / 2)#
+        M <- t(matrix(1:(n*n), n, n))#
+        # M <- t(pracma::reshape(as.matrix(1:(n * n)), n, n))#
+        M[K] = n * n + 1 - M[K]#
+#
+        return(M)#
+    }#
+#
+    singlyEvenOrder <- function(n) {#
+        p <- n / 2#
+        M <- magic(p)#
+        M <- rbind(cbind(M, M + 2 * p ^ 2),#
+                   cbind(M + 3 * p ^ 2, M + p ^ 2))#
+        if (!(n == 2)) {#
+            i <- t(1:p)#
+            k <- (n - 2) / 4#
+            j <- c(1:k, if ((n - k + 2) <= n) (n - k + 2):n)#
+            M[cbind(i, i + p), j] <- M[cbind(i + p, i), j]#
+            i <- k + 1#
+            j <- c(1, i)#
+            M[cbind(i, i + p), j] <- M[cbind(i + p, i), j]#
+        }#
+#
+        return(M)#
+    }#
+#
+    n <- floor(n)#
+    M <- if (n <= 0) {#
+             matrix(numeric(0), 0, 0)       # degenerate#
+         } else if (n == 1) {#
+             matrix(as.numeric(1), 1, 1)    # degenerate#
+         } else {#
+             if (pracma::mod(n, 2) == 1) {#
+                 oddOrder(n)#
+             } else if (pracma::mod(n, 4) == 0) {#
+                 doublyEvenOrder(n)#
+             } else {#
+                 singlyEvenOrder(n)#
+             }#
+         }#
+#
+    if (n == 2)                             # impossible#
+        warning("There is no magic square of order 2.")#
+    return(M)#
+}
+setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/tests')
+identical(magic(3), matrix(c(8, 1, 6,#
+                             3, 5, 7,#
+                             4, 9, 2), nrow = 3, ncol = 3, byrow = TRUE))#
+#
+identical(magic(4), matrix(c(16,  2,  3, 13,#
+                              5, 11, 10,  8,#
+                              9,  7,  6, 12,#
+                              4, 14, 15,  1),#
+                            nrow = 4, ncol = 4, byrow = TRUE))#
+#
+identical(magic(6), matrix(c(35,  1,  6, 26, 19, 24,#
+                              3, 32,  7, 21, 23, 25,#
+                             31,  9,  2, 22, 27, 20,#
+                              8, 28, 33, 17, 10, 15,#
+                             30,  5, 34, 12, 14, 16,#
+                              4, 36, 29, 13, 18, 11),#
+                           nrow = 6, ncol = 6, byrow = TRUE))#
+#
+identical(magic(10), matrix(c(92, 99,  1,  8, 15, 67, 74, 51, 58, 40,#
+                              98, 80,  7, 14, 16, 73, 55, 57, 64, 41,#
+                               4, 81, 88, 20, 22, 54, 56, 63, 70, 47,#
+                              85, 87, 19, 21,  3, 60, 62, 69, 71, 28,#
+                              86, 93, 25,  2,  9, 61, 68, 75, 52, 34,#
+                              17, 24, 76, 83, 90, 42, 49, 26, 33, 65,#
+                              23,  5, 82, 89, 91, 48, 30, 32, 39, 66,#
+                              79,  6, 13, 95, 97, 29, 31, 38, 45, 72,#
+                              10, 12, 94, 96, 78, 35, 37, 44, 46, 53,#
+                              11, 18,100, 77, 84, 36, 43, 50, 27, 59),#
+                            nrow = 10, ncol = 10, byrow = TRUE))

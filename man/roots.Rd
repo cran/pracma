@@ -19,7 +19,7 @@
   a vector holding the roots of the polynomial
 }
 \seealso{
-  \code{\link{poly}}, \code{\link{compan}}
+  \code{\link{polydef}}, \code{\link{compan}}
 }
 \examples{
   roots(c(1, 0, 1, 0, 0))       # 0 0 1i -1i

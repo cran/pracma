@@ -15,7 +15,7 @@
   each one as often as its multiplicity requires, such that 
   \code{n == prod(ifactor(n))}.
 
-  The corresponding Matlab function is called 'factor', but because
+  The corresponding Matlab function is called `factor', but because
   factors have a special meaning in R and the factor() funtion in R
   could not (or should not) be shadowed, the number theoretic function
   has been renamed here.

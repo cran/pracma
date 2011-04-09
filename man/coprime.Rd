@@ -18,7 +18,7 @@ coprime(n,m)
   Logical, being TRUE if the numbers are coprime.
 }
 \seealso{
-\code{\link{gcd}}
+\code{\link{GCD}}
 }
 \examples{
 coprime(46368, 75025)  # Fibonacci numbers are relatively prime to each other
