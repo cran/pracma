@@ -29,7 +29,7 @@ interp1(x, y, xi = x,
   \code{linear} \tab linear interpolation (default) \cr
   \code{nearest} \tab nearest neighbor interpolation \cr
   \code{spline} \tab cubic spline interpolation \cr
-  \code{cubic} \tab (not yet implemented) \cr
+  \code{cubic} \tab cubic Hermite interpolation \cr
   }
 }
 \value{

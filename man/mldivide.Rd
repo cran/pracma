@@ -26,7 +26,7 @@ mrdivide(A, B)
 
   If \code{A} is not square, \code{x <- mldivide(A, b)} returnes a
   least-squares solution that minimizes the length of the vector
-  \code{A \%*\% x - b} (which is equivalent to \code{vnorm(A \%*\% x - b)}.
+  \code{A \%*\% x - b} (which is equivalent to \code{norm(A \%*\% x - b, "F")}.
 }
 \value{
   If \code{A} is an n-by-p matrix and \code{B} n-by-q, then the result of

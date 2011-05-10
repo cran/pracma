@@ -1,9 +1,9 @@
 ##
-##  v n o r m . R  Vector Norm
+##  v e c t o r n o r m . R  Vector Norm
 ##
 
 
-vnorm <- function(x, p=2) {
+vectornorm <- function(x, p=2) {
     stopifnot(is.numeric(x) || is.complex(x),
               is.numeric(p), length(p) == 1)
 

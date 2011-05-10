@@ -2,13 +2,142 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
-PLANNED IN NEXT VERSION
+PLANNED IN NEW VERSION
 
   NEW FUNCTIONS
 
-    o Barycentric interpolation through barylag() and barylag2d().
+    o conv(), deconv(), and detrend().
 
-CHANGES IN VERSION 0.3-0
+    o Riemann's Zeta Function zeta().
+
+    o Numerical differentiation with deriv() and hessian(), and
+      Richardson's extrapolation in gradient().
+
+CHANGES IN VERSION 0.4-0 (2011-05-10)
+
+  OTHER CHANGES
+
+    o Added tests for functions since version 0.3-7.
+
+CHANGES IN VERSION 0.3-9 (2011-05-09)
+
+  NEW FUNCTIONS
+
+    o and() and or() aliases for all(), any().
+
+  OHER CHANGES
+ 
+    o Removed lgammaz() because of a serious bug.
+
+CHANGES IN VERSION 0.3-8 (2011-05-06)
+
+  NEW FUNCTIONS
+
+    o pchip() and option `cubic' for interp1() interpolation.
+
+    o The complex gamma functions gammaz(), lgammaz().
+
+    o hadamard() and toeplitz() matrices.
+
+  OTHER CHANGES
+
+    o Renamed kernel() to nullspace() because of name clash.
+
+CHANGES IN VERSION 0.3-7 (2011-05-04)
+
+  NEW FUNCTIONS
+
+    o Rank of a matrix, mrank(), and kernel() for the nullspace.
+
+    o orth(), orthogonal basis of the image space, and subspace()
+      determines the angle between two subspaces.
+
+    o normest() for estimating the (Frobenius) norm of a matrix, and
+      cond() determines the condition number of a matrix.
+
+  OTHER CHANGES
+
+    o Renamed vnorm() to vectornorm() to differentiate it from other
+      matrix norms.
+
+CHANGES IN VERSION 0.3-6 (2011-04-30)
+
+  NEW FUNCTIONS
+
+    o fact(), more accurate than the R internal function `factorial'.
+
+    o ezplot() as an alias for curve(), but with option ``fill = TRUE''.
+
+    o aitken() for accelerating iterations.
+
+  OTHER CHANGES
+
+    o Renamed polycnv() to polymul().
+
+    o Renamed outlierMAD() to hampel().
+
+    o Renamed barylag() to barycentricInterp().
+
+CHANGES IN VERSION 0.3-5 (2011-04-23)
+
+  NEW FUNCTIONS
+
+    o agm() for the arithmetic-geometric mean.
+
+    o Lambert W function lambertWp() for the real principal branch.
+
+    o ``Complex Step'' derivation with complexstep() and jacobiancsd().
+
+CHANGES IN VERSION 0.3-4 (2011-04-21)
+
+  NEW FUNCTIONS
+
+    o Barycentric Lagrange interpolation through barylag().
+
+    o polyfit2() fits a polynomial that exactly meets one additional point.
+
+  OTHER CHANGES
+
+    o Added more references to the help entry `pracma-package.Rd'.
+
+CHANGES IN VERSION 0.3-3 (2011-04-19)
+
+  NEW FUNCTIONS
+
+    o hornerdefl() for also returning the deflated polynomial.
+
+    o newtonHorner() combining Newton's method and the Horner scheme for
+      for root finding for polynomials.
+
+    o jacobian() computes the Jacobian of a function R^n --> R^m as simple
+      numerical derivative.
+
+    o newtonsys() applies Newton's method to functions R^n --> R^n with
+      special application to root finding of complex functions.
+
+  OTHER CHANGES
+
+    o newton() renamed to newtonRaphson().
+
+CHANGES IN VERSION 0.3-2 (2011-04-17)
+
+  NEW FUNCTIONS
+
+    o Sorting functions: bubbleSort(), insertionSort(), selectionSort(),
+      shellSort(), heapSort(), mergeSort(), mergeOrdered(), quickSort(),
+      quickSortx(), is.sorted(), and testSort().
+
+    o Functions from number theory: eulersPhi(), moebiusFun() and the 
+      mertensFun(), sigma(), tau(), omega(), and Omega().
+
+CHANGES IN VERSION 0.3-1 (2011-04-16)
+
+  NEW FUNCTIONS
+
+    o Chebyshev polynomials of the first kind: chebPoly(), chebCoeff(),
+      and chebApprox().
+
+CHANGES IN VERSION 0.3-0 (2011-04-09)
 
   OTHER CHANGES
 

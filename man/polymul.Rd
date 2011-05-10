@@ -1,14 +1,14 @@
-\name{polycnv}
-\alias{polycnv}
+\name{polymul}
+\alias{polymul}
 \title{Multiplying Polynomials}
 \description{
   Multiply two polynomials given as vectors.
 }
 \usage{
-  polycnv(p, q)
+  polymul(p, q)
 }
 \arguments{
-  \item{p, q}{vectors representing two polynomials}
+  \item{p, q}{Vectors representing two polynomials.}
 }
 \details{
   Polynomial multiplication realized simply by multiplying and summing up
@@ -26,6 +26,6 @@
 }
 \examples{
 # Multiply x^2 + x + 1 with itself
-polycnv(c(1, 1, 1), c(0, 1, 1, 1))  #=> 1 2 3 2 1
+polymul(c(1, 1, 1), c(0, 1, 1, 1))  #=> 1 2 3 2 1
 }
 \keyword{ math }

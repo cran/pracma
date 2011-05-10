@@ -1,9 +1,9 @@
 ##
-##  o u t l i e r M A D . R  MAD Outlier in Time Series
+##  h a m p e l . R  MAD Outlier in Time Series
 ##
 
 
-outlierMAD <- function (x, k)
+hampel <- function (x, k)
 {
     #   x:  vector or time series
     #   k:  window [x_(i-k),...,x_i,...,x_(i+k)]

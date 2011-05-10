@@ -1,9 +1,9 @@
 ##
-##  p ol y c n v .R  Polynomial Multiplication
+##  p ol y m u l .R  Polynomial Multiplication
 ##
 
 
-polycnv <- function(p, q){
+polymul <- function(p, q){
     if ( (!is.vector(p, mode="numeric") && !is.vector(p, mode="complex")) ||
          (!is.vector(q, mode="numeric") && !is.vector(q, mode="complex")) )
         stop("Arguments 'p' and 'q' must be real or complex vectors.")

@@ -1,21 +1,21 @@
-\name{newton}
-\alias{newton}
+\name{newtonRaphson}
+\alias{newtonRaphson}
 \alias{secant}
 \title{
-Rootfinding through Newton or Secant
+  Rootfinding through Newton-Raphson or Secant.
 }
 \description{
-Finding roots of univariate functions.
+  Finding roots of univariate functions.
 }
 \usage{
-newton(fun, x0, dfun = NULL, ...,
+newtonRaphson(fun, x0, dfun = NULL, ...,
        maxiter = 100, tol = .Machine$double.eps^0.5)
 
 secant(fun, a, b, ..., maxiter = 100, tol = .Machine$double.eps^0.5)
 }
 \arguments{
   \item{fun}{Function or its name as a string.}
-  \item{x0}{starting value for newton().}
+  \item{x0}{starting value for newtonRaphson().}
   \item{dfun}{A function to compute the derivative of \code{f}.
               If \code{NULL}, a numeric derivative will be computed.}
   \item{a}{For \code{secant} one of the two starting values.}
@@ -36,9 +36,6 @@ secant(fun, a, b, ..., maxiter = 100, tol = .Machine$double.eps^0.5)
   For both methods the estimated precision is given as the difference to
   the last last solution before stop; this may be misleading.
 }
-\note{
-  Both methods
-}
 \references{
   Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.
   Second Edition, Springer-Verlag, Berlin Heidelberg.
@@ -47,13 +44,13 @@ secant(fun, a, b, ..., maxiter = 100, tol = .Machine$double.eps^0.5)
   Hans W Borchers  <hwborchers@googlemail.com>
 }
 \seealso{
-\code{\link{uniroot}}
+\code{\link{newtonHorner}}
 }
 \examples{
 # Legendre polynomial of degree 5
 lp5 <- c(63, 0, -70, 0, 15, 0)/8
 f <- function(x) polyval(lp5, x)
-newton(f, 1.0)     # 0.9061798459 correct to 10 decimals in 5 iterations
-secant(f, 0.9, 1)  # 0.9061798459 correct to 10 decimals in 5 iterations
+newtonRaphson(f, 1.0)  # 0.9061798459 correct to 10 decimals in 5 iterations
+secant(f, 0.9, 1)      # 0.9061798459 correct to 10 decimals in 5 iterations
 }
 \keyword{ math }

@@ -1,5 +1,5 @@
-\name{outlierMAD}
-\alias{outlierMAD}
+\name{hampel}
+\alias{hampel}
 \title{
 Hampel Filter
 }
@@ -7,7 +7,7 @@ Hampel Filter
 Median absolute deviation (MAD) outlier in Time Series
 }
 \usage{
-outlierMAD(x, k)
+hampel(x, k)
 }
 \arguments{
   \item{x}{numeric vector representing a time series}
@@ -46,7 +46,7 @@ x[1] <- z[1]
 for (i in 2:1024) {
 	x[i] <- 0.4*x[i-1] + 0.8*x[i-1]*z[i-1] + z[i]
 }
-omad <- outlierMAD(x, k=20)
+omad <- hampel(x, k=20)
 
 \dontrun{
 plot(1:1024, x, type="l")

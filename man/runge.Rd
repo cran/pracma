@@ -25,6 +25,7 @@ Numerical value of the function.
   \code{\link{fnorm}}
 }
 \examples{
+\dontrun{
 x <- seq(-1, 1, length.out = 101)
 y <- runge(x)
 plot(x, y, type = "l", lwd = 2, col = "navy", ylim = c(-0.2, 1.2))
@@ -36,7 +37,7 @@ for (i in seq(along=n)) {
     yp <- runge(xp)
     p  <- polyfit(xp, yp, n[i]-1)
     y  <- polyval(p, x)
-    lines(x, y, lty=i)
+    lines(x, y, lty=i) }
 }
 }
 \keyword{ math }

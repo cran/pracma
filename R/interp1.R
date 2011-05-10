@@ -37,6 +37,8 @@ interp1 <- function (x, y, xi = x,
     } else if (method == "spline") {
         spfun <- splinefun(x, y, method = "fmm")
         yi <- spfun(xi)
+    } else if (method == "cubic") {
+        yi<- pchip(x, y, xi)
     } else
         stop(paste("Method", method, "not yet implemented."))
 

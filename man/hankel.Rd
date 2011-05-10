@@ -23,11 +23,8 @@ from the last element of \code{a} it is overwritten by this one.
 \value{
   matrix of size \code{(length(a), length(b))}
 }
-\note{
-toeplitz() is in base \R.
-}
 \seealso{
-  \code{\link{toeplitz}}
+  \code{\link{toeplitz}}, \code{\link{hadamard}}
 }
 \examples{
 hankel(1:5, 5:1)

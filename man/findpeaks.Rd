@@ -51,7 +51,7 @@ HwB <hwborchers@googlemail.com>
   but the implementation utilizing regular expressions is unique and fast.
 }
 \seealso{
-  \code{\link{outlierMAD}}
+  \code{\link{hampel}}
 }
 \examples{
 x <- seq(0, 1, len = 1024)
