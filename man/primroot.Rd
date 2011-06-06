@@ -14,7 +14,7 @@ primroot(m)
 }
 \details{
   For every prime number \eqn{m} there exists a natural number \eqn{n} that
-  generates the field \eqn{F_m}, i.e. \eqn{n, n^2, ..., n^{m-1} mod m} are
+  generates the field \eqn{F_m}, i.e. \eqn{n, n^2, ..., n^{m-1} mod (m)} are
   all different.
 
   The computation here is all brute force. As most primitive roots are

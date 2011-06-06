@@ -3,7 +3,7 @@
 \alias{mertensFun}
 \title{Moebius Function}
 \description{
-  The classical Moebius function in number theory.
+  The classical Moebius and Mertens functions in number theory.
 }
 \usage{
 moebiusFun(n)

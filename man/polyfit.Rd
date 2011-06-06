@@ -31,7 +31,7 @@ polyfit2(x, y, n = 1, p0 = NULL)
   vector representing a polynomial
 }
 \seealso{
-  \code{\link{polydef}}, \code{\link{polyval}}
+  \code{\link{poly}}, \code{\link{polyval}}
 }
 \examples{
   # Fitting the sine function by a polynomial

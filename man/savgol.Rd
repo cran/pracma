@@ -48,4 +48,4 @@ plot(1:1000, t1)
 lines(1:1000, ts, col="blue")
 lines(1:1000, t2, col="red")}
 }
-\keyword{ math }
+\keyword{ timeseries }

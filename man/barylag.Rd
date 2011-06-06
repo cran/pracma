@@ -1,18 +1,18 @@
-\name{barycentricInterp}
-\alias{barycentricInterp}
+\name{barylag}
+\alias{barylag}
 \title{Barycentric Lagrange Interpolation}
 \description{
   Barycentric Lagrange interpolation in one dimension.
 }
 \usage{
-barycentricInterp(xi, yi, x)
+barylag(xi, yi, x)
 }
 \arguments{
   \item{xi, yi}{x- and y-coordinates of supporting nodes.}
   \item{x}{x-coordinates of interpolation points.}
 }
 \details{
-  \code{barycentricInterp} interpolates the given data using the barycentric
+  \code{barylag} interpolates the given data using the barycentric
   Lagrange interpolation formula (vectorized to remove all loops).
 }
 \value{
@@ -48,7 +48,7 @@ barycentricExample <- function(fun, a, b, n, m)
 	yi <- fun(xi)
 	x  <- seq(a, b, len=m)
 
-	y <- barycentricInterp(xi, yi, x)
+	y <- barylag(xi, yi, x)
 	plot(xi, yi, col="red", xlab="x", ylab="y",
 		main="Example of barycentric interpolation")
 

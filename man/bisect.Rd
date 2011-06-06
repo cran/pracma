@@ -9,12 +9,12 @@ Finding roots of univariate functions in bounded intervals.
 }
 \usage{
 bisect(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
+
 regulaFalsi(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
 }
 \arguments{
   \item{f}{Function or its name as a string.}
-  \item{a}{left end point of an interval}
-  \item{b}{right end point of an interval}
+  \item{a, b}{interval end points.}
   \item{maxiter}{maximum number of iterations; default 100.}
   \item{tol}{absolute tolerance; default \code{eps^(1/2)}}
 }

@@ -12,7 +12,7 @@ chebPoly(n, x = NULL)
   \item{x}{a numeric vector, possibly empty; default \code{NULL}.}
 }
 \details{
-  Determines an (n+1)x(n+1)-Matrix of Chebyshev polynomials up to degree n.
+  Determines an (n+1)-ny-(n+1)-Matrix of Chebyshev polynomials up to degree n.
 
   The coefficients of the first \code{n} Chebyshev polynomials are computed
   using the recursion formula. For computing any values at points the well

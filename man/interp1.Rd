@@ -40,6 +40,7 @@ interp1(x, y, xi = x,
   with the Matlab option of the same name.
 
   The Matlab option ``cubic'' seems to have no direct correspondence in R.
+  Therefore, we simply use \code{pchip} here.
 }
 \seealso{
 \code{link{approx}}, \code{link{splinefun}}

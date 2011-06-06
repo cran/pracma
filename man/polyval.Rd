@@ -20,7 +20,7 @@
   vector of values
 }
 \seealso{
-  \code{\link{polydef}}, \code{\link{roots}}
+  \code{\link{poly}}, \code{\link{roots}}
 }
 \examples{
   # Evaluate 3 x^2 + 2 x + 1 at x = 5, 7, and 9

@@ -1,4 +1,4 @@
-\name{lambertW}
+\name{lambertWp}
 \alias{lambertWp}
 \title{
   Lambert's W Function

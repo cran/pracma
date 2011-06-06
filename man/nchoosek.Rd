@@ -16,7 +16,7 @@ nchoosek(n, k)
   Alias for the corresponding R function \code{choose}.
 }
 \value{
-  integer, the Binomial coefficient \eqn{(n \over k)}.
+  integer, the Binomial coefficient \eqn{({n \over k})}.
 }
 \note{
   In Matlab/Octave, if \code{n} is a vector all combinations of \code{k}

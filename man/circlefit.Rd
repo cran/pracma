@@ -40,7 +40,7 @@ xp <- cos(w) + 1 + 0.25 * (runif(n) - 0.5)
 yp <- sin(w) + 1 + 0.25 * (runif(n) - 0.5)
 
 rslt <- circlefit(xp, yp)  #=> 0.9965782 1.0009066 1.0240452
-x0 <- rslt[1]; y0 <- rslt[2]; r0 <- rslt[1]
+x0 <- rslt[1]; y0 <- rslt[2]; r0 <- rslt[3]
 
 \dontrun{
 plot(c(-0.2, 2.2), c(-0.2, 2.2), type="n", asp=1)

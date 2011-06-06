@@ -17,7 +17,7 @@
   The eigenvalues of this matrix are the roots of the polynomial.
 }
 \value{
-  a square matrix of \code{length(p)-1} rows and columns
+  A square matrix of \code{length(p)-1} rows and columns
 }
 \seealso{
   \code{\link{roots}}

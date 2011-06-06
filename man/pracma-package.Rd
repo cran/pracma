@@ -15,14 +15,6 @@ Practical Numerical Math Routines
   demonstrate how to implement certain algorithms in R/S.
 }
 \details{
-\tabular{ll}{
-Package: \tab pracma\cr
-Type: \tab Package\cr
-Version: \tab 0.4-0\cr
-Date: \tab 2011-05-10\cr
-License: \tab GPLv3\cr
-LazyLoad: \tab yes\cr
-}
   Several implementations of root finding routines and numerical sorting
   are provided as examples.
 }

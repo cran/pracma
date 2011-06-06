@@ -35,7 +35,7 @@ chebApprox(x, fun, a, b, n)
   (Not yet vectorized, that's why we still use the Horner scheme.)
 }
 \seealso{
-\code{\link{chebPoly}}, \code{\link{chebCoeff}}
+\code{\link{polyApprox}}
 }
 \examples{
 # Approximate sin(x) on [-pi, pi] with a polynomial of degree 9 !

@@ -52,6 +52,6 @@ while (length(p) > 1) {
         break
     }
 }
-##  Try: p <- polydef(c(1:20))
+##  Try: p <- poly(c(1:20))
 }
 \keyword{ math }

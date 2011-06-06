@@ -19,11 +19,11 @@
   a vector holding the roots of the polynomial
 }
 \seealso{
-  \code{\link{polydef}}, \code{\link{compan}}
+  \code{\link{polyroot}}
 }
 \examples{
   roots(c(1, 0, 1, 0, 0))       # 0 0 1i -1i
-  p <- polydef(c(-2, -1, 0, 1, 2))
+  p <- poly(c(-2, -1, 0, 1, 2))
   roots(p)
 }
 \keyword{ math }

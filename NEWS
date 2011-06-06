@@ -2,16 +2,124 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
-PLANNED IN NEW VERSION
+CHANGES IN VERSION 0.5-3 (2011-06-06)
 
   NEW FUNCTIONS
 
-    o conv(), deconv(), and detrend().
+    o ode23() solving first order (systems of) differential equations.
 
-    o Riemann's Zeta Function zeta().
+    o barylag2d() 2-dimensional barycentric Lagrange interpolation.
 
-    o Numerical differentiation with deriv() and hessian(), and
-      Richardson's extrapolation in gradient().
+CHANGES IN VERSION 0.5-2 (2011-06-04)
+
+  o NEW FUNCTIONS
+
+    o interp2() for two-dimensional interpolation.
+
+  OTHER CHANGES
+
+    o gradient() now works in two dimensions too.
+
+CHANGES IN VERSION 0.5-1 (2011-06-01)
+
+  o NEW FUNCTIONS
+
+    o fzero(), fminbnd(), fminsearch(), fsolve() as aliases for
+      uniroot(), optimize(), optim() with Nelder-Mead, newtonsys().
+
+CHANGES IN VERSION 0.5-0 (2011-05-31)
+
+  OTHER CHANGES
+
+    o Corrections to help pages.
+
+CHANGES IN VERSION 0.4-9 (2011-05-30)
+
+  NEW FUNCTIONS
+
+    o Numerical integration: romberg() and quadQK15().
+
+    o Richardson's extrapolation in numderiv(), numdiff().
+
+    o Discrete numerical derivatives (one dimension): gradient().
+
+CHANGES IN VERSION 0.4-8 (2011-05-28)
+
+  NEW FUNCTIONS
+
+    o Numerical function derivatives: fderiv(), grad().
+
+    o Specialized operators: hessian(), laplacian().
+
+    o Applications: taylor(), pade().
+
+CHANGES IN VERSION 0.4-7 (2011-05-27)
+
+  NEW FUNCTIONS
+
+    o plot vector fields: quiver() and vectorfield().
+    
+    o findintervals()
+
+  OTHER CHANGES
+
+    o Corrections in deval(), deeve(), using findintervals().
+
+CHANGES IN VERSION 0.4-6 (2011-05-26)
+
+  NEW FUNCTION
+
+    o Laguerre's method laguerre().
+
+    o rk4() and rk4sys() classical fourth order Runge-Kutta.
+
+    o deval(), deeve() evaluate ODE solutions.
+
+CHANGES IN VERSION 0.4-5 (2011-05-24)
+
+  NEW FUNCTIONS
+
+    o Lebesgue coefficient: lebesgue().
+
+    o poly2str() for string representation of a polynomial.
+
+CHANGES IN VERSION 0.4-4 (2001-05-23)
+
+  NEW FUNCTIONS
+
+    o Dirichlet's eta() and Riemann's zeta() function.
+
+    o rmserr() different accuracy measures; std_err() standard error.
+
+CHANGES IN VERSION 0.4-3 (2001-05-22)
+
+  NEW FUNCTIONS
+
+    o polypow() and polytrans() for polynomials.
+
+    o polyApprox() polynomial approximation using Chebyshev.
+
+    o trigPoly(), trigApprox() for trigonometric regression.
+
+CHANGES IN VERSION 0.4-2 (2001-05-17)
+
+  NEW FUNCTIONS
+
+    o segm_intersect() and segm_distance() segment distances.
+
+    o inpolygon().
+
+CHANGES IN VERSION 0.4-1 (2011-05-13)
+
+  NEW FUNCTIONS
+
+    o polyadd() polynomial addition.
+
+    o conv() and deconv() time series (de)convolution.
+
+    o detrend() removes (piecewise) linear trends.
+
+    o ifft() for normalized inverse Fast Fourier Transform.
 
 CHANGES IN VERSION 0.4-0 (2011-05-10)
 
@@ -23,11 +131,7 @@ CHANGES IN VERSION 0.3-9 (2011-05-09)
 
   NEW FUNCTIONS
 
-    o and() and or() aliases for all(), any().
-
-  OHER CHANGES
- 
-    o Removed lgammaz() because of a serious bug.
+    o and() and or().
 
 CHANGES IN VERSION 0.3-8 (2011-05-06)
 
@@ -35,30 +139,21 @@ CHANGES IN VERSION 0.3-8 (2011-05-06)
 
     o pchip() and option `cubic' for interp1() interpolation.
 
-    o The complex gamma functions gammaz(), lgammaz().
+    o The complex gamma functions gammaz().
 
     o hadamard() and toeplitz() matrices.
-
-  OTHER CHANGES
-
-    o Renamed kernel() to nullspace() because of name clash.
 
 CHANGES IN VERSION 0.3-7 (2011-05-04)
 
   NEW FUNCTIONS
 
-    o Rank of a matrix, mrank(), and kernel() for the nullspace.
+    o Rank of a matrix, mrank(), and nullspace() for the kernel.
 
     o orth(), orthogonal basis of the image space, and subspace()
       determines the angle between two subspaces.
 
     o normest() for estimating the (Frobenius) norm of a matrix, and
       cond() determines the condition number of a matrix.
-
-  OTHER CHANGES
-
-    o Renamed vnorm() to vectornorm() to differentiate it from other
-      matrix norms.
 
 CHANGES IN VERSION 0.3-6 (2011-04-30)
 
@@ -75,8 +170,6 @@ CHANGES IN VERSION 0.3-6 (2011-04-30)
     o Renamed polycnv() to polymul().
 
     o Renamed outlierMAD() to hampel().
-
-    o Renamed barylag() to barycentricInterp().
 
 CHANGES IN VERSION 0.3-5 (2011-04-23)
 

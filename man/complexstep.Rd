@@ -55,7 +55,7 @@ jacobiancsd(f, x0, h = 1e-20, ...)
 f <- function(x) exp(x)/sqrt(sin(x)^3 + cos(x)^3)  # derivative at x0 = 1.5
 # central diff formula    # 4.05342789402801, error 1e-10
 # numDeriv::grad(f, 1.5)  # 4.05342789388197, error 1e-12  Richardson
-# pracma::.richardson     # 4.05342789389744
+# pracma::numderiv        # 4.05342789389868, error 5e-14  Richardson
 complexstep(f, 1.5)       # 4.05342789389862, error 1e-15
 # Symbolic calculation:   # 4.05342789389862
 
