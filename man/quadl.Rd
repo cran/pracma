@@ -1,13 +1,13 @@
-\name{quad}
-\alias{quad}
+\name{quadl}
+\alias{quadl}
 \title{
-Adaptive Simpson Quadrature
+Adaptive Lobatto Quadrature
 }
 \description{
   Adaptive quadrature of functions of one variable over a finite interval.
 }
 \usage{
-quad(f, xa, xb, tol = .Machine$double.eps^0.5, trace = FALSE, ...)
+quadl(f, xa, xb, tol = .Machine$double.eps^0.5, trace = FALSE, ...)
 }
 \arguments{
   \item{f}{a one-dimensional function; needs to be vectorized.}
@@ -18,11 +18,10 @@ quad(f, xa, xb, tol = .Machine$double.eps^0.5, trace = FALSE, ...)
   \item{\dots}{additional arguments to be passed to \code{f}.}
 }
 \details{
-  Realizes adaptive Simpson quadrature in R through recursive calls.
+  Realizes adaptive Lobatto quadrature in R through recursive calls.
 
   The function \code{f} needs to be vectorized though this could be changed
-  easily. \code{quad} is not suitable for functions with singularities in the
-  interval or at end points.
+  easily.
 }
 \value{
   A single numeric value, the computed integral.
@@ -36,17 +35,17 @@ quad(f, xa, xb, tol = .Machine$double.eps^0.5, trace = FALSE, ...)
   part of the referenced article. R implementation by Hans W Borchers 2011.
 }
 \note{
-  More modern adaptive methods based on Gauss-Kronrod or Clenshaw-Curtis
-  quadrature are now generally preferred.
+Compared to Gaussian quadrature, Lobatto integration include the end points
+of the integration interval. It is accurate for polynomials up to degree
+2n-3, where n is the number of integration points.
 }
 \seealso{
-\code{\link{integrate}}, \code{\link{quadl}}
+\code{\link{quad}}
 }
 \examples{
 # options(digits=15)
 f <- function(x) x * cos(0.1*exp(x)) * sin(0.1*pi*exp(x))
-quad(f, 0, 4)              # 1.2821290747821
-quad(f, 0, 4, tol=10^-15)  # 1.2821290743501
+quadl(f, 0, 4)              # 1.2821290743501
 integrate(f, 0, 4)
 # 1.28212907435010 with absolute error < 4.1e-06
 

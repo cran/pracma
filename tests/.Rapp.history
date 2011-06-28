@@ -1,182 +1,263 @@
-hadamard(2)
-LIBRARY(PRACMA)
 library(pracma)
-hadamard(2)
-hadamard(4)
-H12 <- hadamard(12)
-t(H12) %*% H12
-diag(20, 20, 20)
-base::diag(20, 20, 20)
-H12 <- hadamard(12)#
-all.equal(t(H12) %*% H12,#
-          diag(12, 12, 12))#
-H20 <- hadamard(20)#
-all.equal(t(H20) %*% H20,#
-          diag(20, 20, 20))
-toeplitz(c(1, 2, 3, 4, 5))#
-toeplitz(c(1, 2, 3, 4, 5), c(1.5, 2.5, 3.5, 4.5, 5.5))
-toeplitz(c(1, 2, 4, 6, 8), c(1, 3, 5, 7, 9))
+quadgk <- function(f, a, b, tol = .Machine$double.eps^0.5, ...) {#
+    stopifnot(is.numeric(a), length(a) == 1,#
+              is.numeric(b), length(b) == 1)#
+    eps <- .Machine$double.eps#
+#
+    fun <- match.fun(f)#
+    f <- function(x) fun(x, ...)#
+    #
+    if (a == b)     return(0)#
+    else if (a > b) return(-1 * quadgk(f, b, a, tol = tol))#
+#
+    # Nodes and weights for Gauss-Kronrod (7, 15)#
+    n15 <- c(-0.9914553711208126, -0.9491079123427585, -0.8648644233597691,#
+             -0.7415311855993944, -0.5860872354676911, -0.4058451513773972,#
+             -0.2077849550078985,  0.0,                 0.2077849550078985,#
+              0.4058451513773972,  0.5860872354676911,  0.7415311855993944,#
+              0.8648644233597691,  0.9491079123427585,  0.9914553711208126)#
+    n7  <- c(-0.9491079123427585, -0.7415311855993944, -0.4058451513773972,#
+               0.0,#
+               0.4058451513773972, 0.7415311855993944,  0.9491079123427585)#
+    #
+    w15 <- c(0.02293532201052922, 0.06309209262997855,  0.1047900103222502,#
+             0.1406532597155259,  0.1690047266392679,   0.1903505780647854,#
+             0.2044329400752989,  0.2094821410847278,   0.2044329400752989,#
+             0.1903505780647854,  0.1690047266392679,   0.1406532597155259,#
+             0.1047900103222502,  0.06309209262997855,  0.02293532201052922)#
+    w7  <- c(0.1294849661688697,  0.2797053914892767,   0.3818300505051189,#
+             0.4179591836734694,#
+             0.3818300505051189,  0.2797053914892767,   0.1294849661688697)#
+#
+    .gkadpt <- function(f, a, b, tol = tol) {#
+        # use nodes and weights from the environment#
+        x15 <- 0.5 * ((b - a) * n15 + b + a)#
+        x7  <- 0.5 * ((b - a) * n7  + b + a)#
+        Q7  <- sum(w7  * f(x7))  * (b-a)/2#
+        Q15 <- sum(w15 * f(x15)) * (b-a)/2#
+        cat(a, b, G7, K15, "\n")#
+#
+        if (!is.finite(Q7) || !is.finite(Q15)) {#
+            warning("Infinite or NA function value encountered.")#
+            return(Q15)#
+        } else if (abs(Q15 - Q7) < tol) {#
+            return(Q15)#
+        } else if (abs(b-a) < 16*eps) {#
+            warning("Minimum step size reached; singularity possible.")#
+            return(Q2)#
+        } # else#
+#
+        Q2 <- gaussgk(f, (a+b)/2, b, tol = tol)#
+        Q1 <- gaussgk(f, a, (a+b)/2, tol = tol)#
+#
+        return(Q1 + Q2)#
+    }#
+#
+    # start the recursive procedure#
+    .gkadpt(f, a, b, tol = tol)#
+}
+quadgk(sin, 0, 1)
+quadgk <- function(f, a, b, tol = .Machine$double.eps^0.5, ...) {#
+    stopifnot(is.numeric(a), length(a) == 1,#
+              is.numeric(b), length(b) == 1)#
+    eps <- .Machine$double.eps#
+#
+    fun <- match.fun(f)#
+    f <- function(x) fun(x, ...)#
+    #
+    if (a == b)     return(0)#
+    else if (a > b) return(-1 * quadgk(f, b, a, tol = tol))#
+#
+    # Nodes and weights for Gauss-Kronrod (7, 15)#
+    n15 <- c(-0.9914553711208126, -0.9491079123427585, -0.8648644233597691,#
+             -0.7415311855993944, -0.5860872354676911, -0.4058451513773972,#
+             -0.2077849550078985,  0.0,                 0.2077849550078985,#
+              0.4058451513773972,  0.5860872354676911,  0.7415311855993944,#
+              0.8648644233597691,  0.9491079123427585,  0.9914553711208126)#
+    n7  <- c(-0.9491079123427585, -0.7415311855993944, -0.4058451513773972,#
+               0.0,#
+               0.4058451513773972, 0.7415311855993944,  0.9491079123427585)#
+    #
+    w15 <- c(0.02293532201052922, 0.06309209262997855,  0.1047900103222502,#
+             0.1406532597155259,  0.1690047266392679,   0.1903505780647854,#
+             0.2044329400752989,  0.2094821410847278,   0.2044329400752989,#
+             0.1903505780647854,  0.1690047266392679,   0.1406532597155259,#
+             0.1047900103222502,  0.06309209262997855,  0.02293532201052922)#
+    w7  <- c(0.1294849661688697,  0.2797053914892767,   0.3818300505051189,#
+             0.4179591836734694,#
+             0.3818300505051189,  0.2797053914892767,   0.1294849661688697)#
+#
+    .gkadpt <- function(f, a, b, tol = tol) {#
+        # use nodes and weights from the environment#
+        x15 <- 0.5 * ((b - a) * n15 + b + a)#
+        x7  <- 0.5 * ((b - a) * n7  + b + a)#
+        Q7  <- sum(w7  * f(x7))  * (b-a)/2#
+        Q15 <- sum(w15 * f(x15)) * (b-a)/2#
+        cat(a, b, Q7, Q15, "\n")#
+#
+        if (!is.finite(Q7) || !is.finite(Q15)) {#
+            warning("Infinite or NA function value encountered.")#
+            return(Q15)#
+        } else if (abs(Q15 - Q7) < tol) {#
+            return(Q15)#
+        } else if (abs(b-a) < 16*eps) {#
+            warning("Minimum step size reached; singularity possible.")#
+            return(Q2)#
+        } # else#
+#
+        Q2 <- gaussgk(f, (a+b)/2, b, tol = tol)#
+        Q1 <- gaussgk(f, a, (a+b)/2, tol = tol)#
+#
+        return(Q1 + Q2)#
+    }#
+#
+    # start the recursive procedure#
+    .gkadpt(f, a, b, tol = tol)#
+}
+quadgk(sin, 0, 1)
+quadgk(sin, 0, pi)
+quadgk(sin, 0, pi, tol=1e-15)
+quadgk <- function(f, a, b, tol = .Machine$double.eps^0.5, ...) {#
+    stopifnot(is.numeric(a), length(a) == 1,#
+              is.numeric(b), length(b) == 1)#
+    eps <- .Machine$double.eps#
+#
+    fun <- match.fun(f)#
+    f <- function(x) fun(x, ...)#
+    #
+    if (a == b)     return(0)#
+    else if (a > b) return(-1 * quadgk(f, b, a, tol = tol))#
+#
+    # Nodes and weights for Gauss-Kronrod (7, 15)#
+    n15 <- c(-0.9914553711208126, -0.9491079123427585, -0.8648644233597691,#
+             -0.7415311855993944, -0.5860872354676911, -0.4058451513773972,#
+             -0.2077849550078985,  0.0,                 0.2077849550078985,#
+              0.4058451513773972,  0.5860872354676911,  0.7415311855993944,#
+              0.8648644233597691,  0.9491079123427585,  0.9914553711208126)#
+    n7  <- c(-0.9491079123427585, -0.7415311855993944, -0.4058451513773972,#
+               0.0,#
+               0.4058451513773972, 0.7415311855993944,  0.9491079123427585)#
+    #
+    w15 <- c(0.02293532201052922, 0.06309209262997855,  0.1047900103222502,#
+             0.1406532597155259,  0.1690047266392679,   0.1903505780647854,#
+             0.2044329400752989,  0.2094821410847278,   0.2044329400752989,#
+             0.1903505780647854,  0.1690047266392679,   0.1406532597155259,#
+             0.1047900103222502,  0.06309209262997855,  0.02293532201052922)#
+    w7  <- c(0.1294849661688697,  0.2797053914892767,   0.3818300505051189,#
+             0.4179591836734694,#
+             0.3818300505051189,  0.2797053914892767,   0.1294849661688697)#
+#
+    .gkadpt <- function(f, a, b, tol = tol) {#
+        # use nodes and weights from the environment#
+        x15 <- 0.5 * ((b - a) * n15 + b + a)#
+        x7  <- 0.5 * ((b - a) * n7  + b + a)#
+        Q7  <- sum(w7  * f(x7))  * (b-a)/2#
+        Q15 <- sum(w15 * f(x15)) * (b-a)/2#
+        cat(a, b, Q7, Q15, "\n")#
+#
+        if (!is.finite(Q7) || !is.finite(Q15)) {#
+            warning("Infinite or NA function value encountered.")#
+            return(Q15)#
+        } else if (abs(Q15 - Q7) < tol) {#
+            return(Q15)#
+        } else if (abs(b-a) < 16*eps) {#
+            warning("Minimum step size reached; singularity possible.")#
+            return(Q2)#
+        } # else#
+#
+        Q2 <- .gkadpt(f, (a+b)/2, b, tol = tol)#
+        Q1 <- .gkadpt(f, a, (a+b)/2, tol = tol)#
+#
+        return(Q1 + Q2)#
+    }#
+#
+    # start the recursive procedure#
+    .gkadpt(f, a, b, tol = tol)#
+}
+quadgk(sin, 0, pi, tol=1e-15)
+quadgk(sin, 0, pi, tol=1e-15) - 2
+quadgk(sin, pi, 0, tol=1e-15) - 2
+quadgk(sin, pi, 0, tol=1e-15) +2
+f1 <- function(x) exp(x)*sin(x)      # [0, pi]  12.0703463163896 = 1/2*(1+e^pi)#
+f2 <- pracma::runge                  # [-1, 1]   0.549360306778006#
+f3 <- function(x) 1/(x^3 - 2*x - 5)  # [0, 2]   -0.460501533846733#
+f4 <- function(x) abs(sin(10*x))     # [0, pi]   2.0
+quadgk(f1, 0, pi) - 12.0703463163896
+quadgk(f2, -1, 1)- 0.549360306778006
+quadgk(f3, 0, 2) -  -0.460501533846733
+quadgk(f4, 0, pi)-  2.0
+quadgk(f4, 0, pi, tol=1e-10)-  2.0
+quadgk(f4, 0, pi, tol=1e-12)-  2.0
+quadgk <- function(f, a, b, tol = .Machine$double.eps^0.5, ...) {#
+    stopifnot(is.numeric(a), length(a) == 1,#
+              is.numeric(b), length(b) == 1)#
+    eps <- .Machine$double.eps#
+#
+    fun <- match.fun(f)#
+    f <- function(x) fun(x, ...)#
+    #
+    if (a == b)     return(0)#
+    else if (a > b) return(-1 * quadgk(f, b, a, tol = tol))#
+#
+    # Nodes and weights for Gauss-Kronrod (7, 15)#
+    n15 <- c(-0.9914553711208126, -0.9491079123427585, -0.8648644233597691,#
+             -0.7415311855993944, -0.5860872354676911, -0.4058451513773972,#
+             -0.2077849550078985,  0.0,                 0.2077849550078985,#
+              0.4058451513773972,  0.5860872354676911,  0.7415311855993944,#
+              0.8648644233597691,  0.9491079123427585,  0.9914553711208126)#
+    n7  <- c(-0.9491079123427585, -0.7415311855993944, -0.4058451513773972,#
+               0.0,#
+               0.4058451513773972, 0.7415311855993944,  0.9491079123427585)#
+    #
+    w15 <- c(0.02293532201052922, 0.06309209262997855,  0.1047900103222502,#
+             0.1406532597155259,  0.1690047266392679,   0.1903505780647854,#
+             0.2044329400752989,  0.2094821410847278,   0.2044329400752989,#
+             0.1903505780647854,  0.1690047266392679,   0.1406532597155259,#
+             0.1047900103222502,  0.06309209262997855,  0.02293532201052922)#
+    w7  <- c(0.1294849661688697,  0.2797053914892767,   0.3818300505051189,#
+             0.4179591836734694,#
+             0.3818300505051189,  0.2797053914892767,   0.1294849661688697)#
+#
+    .gkadpt <- function(f, a, b, tol = tol) {#
+        # use nodes and weights from the environment#
+        x15 <- 0.5 * ((b - a) * n15 + b + a)#
+        x7  <- 0.5 * ((b - a) * n7  + b + a)#
+        Q7  <- sum(w7  * f(x7))  * (b-a)/2#
+        Q15 <- sum(w15 * f(x15)) * (b-a)/2#
+#
+        if (!is.finite(Q7) || !is.finite(Q15)) {#
+            warning("Infinite or NA function value encountered.")#
+            return(Q15)#
+        } else if (abs(Q15 - Q7) < tol) {#
+            return(Q15)#
+        } else if (abs(b-a) < 16*eps) {#
+            warning("Minimum step size reached; singularity possible.")#
+            return(Q2)#
+        } # else#
+#
+        Q2 <- .gkadpt(f, (a+b)/2, b, tol = tol)#
+        Q1 <- .gkadpt(f, a, (a+b)/2, tol = tol)#
+#
+        return(Q1 + Q2)#
+    }#
+#
+    # start the recursive procedure#
+    .gkadpt(f, a, b, tol = tol)#
+}
+all.equal(quadgk(f1, 0, pi), 12.0703463163896,#
+          tolerance = 1e-13)#
+all.equal(quadgk(f2, -1, 1),  0.549360306778006,#
+          tolerance = 1e-15)#
+all.equal(quadgk(f3, 0, 2),  -0.460501533846733,#
+          tolerance = 1e-14)#
+all.equal(quadgk(f4, 0, pi, tol = 1e-12),  2.0,#
+          tolerance = 1e-12)
 setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/tests')
-all.equal(hadamard(2),#
-          matrix(c(1, 1, 1, -1), 2, 2))#
-all.equal(hadamard(4),#
-          matrix(c(1, 1, 1, -1,#
-                   1, -1, 1, -1,#
-                   1, 1, -1, -1,#
-                   1, -1, -1, 1), 2, 2))#
-H12 <- hadamard(12)#
-all.equal(t(H12) %*% H12,#
-          diag(12, 12, 12))#
-H20 <- hadamard(20)#
-all.equal(t(H20) %*% H20,#
-          diag(20, 20, 20))#
-#
-all.equal(toeplitz(c(1, 2, 4, 6, 8), c(1, 3, 5, 7, 9)),#
-          matrix(c(1, 3, 5, 7, 9,#
-                   2, 1, 3, 5, 7,#
-                   4, 2, 1, 3, 5,#
-                   6, 4, 2, 1, 3,#
-                   8, 6, 4, 2, 1), 5, 5, byrow = TRUE))
-setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/tests')
-all.equal(hadamard(2),#
-          matrix(c(1, 1, 1, -1), 2, 2))#
-all.equal(hadamard(4),#
-          matrix(c(1, 1, 1, -1,#
-                   1, -1, 1, -1,#
-                   1, 1, -1, -1,#
-                   1, -1, -1, 1), 4, 4))#
-H12 <- hadamard(12)#
-all.equal(t(H12) %*% H12,#
-          diag(12, 12, 12))#
-H20 <- hadamard(20)#
-all.equal(t(H20) %*% H20,#
-          diag(20, 20, 20))#
-#
-all.equal(toeplitz(c(1, 2, 4, 6, 8), c(1, 3, 5, 7, 9)),#
-          matrix(c(1, 3, 5, 7, 9,#
-                   2, 1, 3, 5, 7,#
-                   4, 2, 1, 3, 5,#
-                   6, 4, 2, 1, 3,#
-                   8, 6, 4, 2, 1), 5, 5, byrow = TRUE))
-hadamard(4)
-setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/tests')
-all.equal(hadamard(2),#
-          matrix(c(1, 1, 1, -1), 2, 2))#
-all.equal(hadamard(4),#
-          matrix(c(1,  1,  1,  1,#
-                   1, -1,  1, -1,#
-                   1,  1, -1, -1,#
-                   1, -1, -1,  1), 4, 4))#
-H12 <- hadamard(12)#
-all.equal(t(H12) %*% H12,#
-          diag(12, 12, 12))#
-H20 <- hadamard(20)#
-all.equal(t(H20) %*% H20,#
-          diag(20, 20, 20))#
-#
-all.equal(toeplitz(c(1, 2, 4, 6, 8), c(1, 3, 5, 7, 9)),#
-          matrix(c(1, 3, 5, 7, 9,#
-                   2, 1, 3, 5, 7,#
-                   4, 2, 1, 3, 5,#
-                   6, 4, 2, 1, 3,#
-                   8, 6, 4, 2, 1), 5, 5, byrow = TRUE))
-library(gsl)
-?fact
-?lngamma_complex
-lngamma_complex(1+seq(from=0,to=5,by=0.1)*1i)
-lngamma_complex(1+seq(from=0,to=5,by=0.5)*1i)
-y <- seq(from=0,to=5,by=0.1)#
-exp(lngamma_complex(1+y*1i))#
-#
-gammaz(1+y*1i)
-y <- seq(from=0,to=5,by=0.5)#
-# z0 <- exp(lngamma_complex(1+y*1i))#
-z0 <- c(0.0000000+0.0000000i, -0.1909455-0.2440583i, -0.6509232-0.3016403i,#
-       -1.2344831-0.1629398i, -1.8760788+0.1296463i, -2.5499068+0.5426044i,#
-       -3.2441443+1.0533508i, -3.9524671+1.6461926i, -4.6710996+2.3096981i,#
-       -5.3976062+3.0351970i, -6.1303241-2.4672867i)#
-#
-all.equal(gammaz(1+y*1i), z0)
-abs(gammaz(1+y*1i) - z0)
-gammaz(1+y*1i)
-y <- seq(from=0,to=5,by=0.1)
-z1 <- gammaz(1+y*1i)
-y <- seq(from=0,to=5,by=0.5)#
-# z0 <- exp(lngamma_complex(1+y*1i))#
-z0 <- c(0.0000000+0.0000000i, -0.1909455-0.2440583i, -0.6509232-0.3016403i,#
-       -1.2344831-0.1629398i, -1.8760788+0.1296463i, -2.5499068+0.5426044i,#
-       -3.2441443+1.0533508i, -3.9524671+1.6461926i, -4.6710996+2.3096981i,#
-       -5.3976062+3.0351970i, -6.1303241-2.4672867i)#
-#
-all.equal(gammaz(1+y*1i), exp(z0))
-y <- seq(from=0,to=5,by=0.5)#
-# z0 <- exp(lngamma_complex(1+y*1i))#
-z0 <- c(0.0000000+0.0000000i, -0.1909455-0.2440583i, -0.6509232-0.3016403i,#
-       -1.2344831-0.1629398i, -1.8760788+0.1296463i, -2.5499068+0.5426044i,#
-       -3.2441443+1.0533508i, -3.9524671+1.6461926i, -4.6710996+2.3096981i,#
-       -5.3976062+3.0351970i, -6.1303241-2.4672867i)#
-#
-all.equal(gammaz(1+y*1i), exp(z0), tolerance = 1e-7)
-?lambertWp
-?lambertW_p
-??lambertW
-x <- seq(0, 10, len=21)
-x
-lambert_W0(x)
-lambertW(x)
-lambertWp(x)
-x <- seq(0, 10, len=21)#
-# y <- lambert_W0(x)#
-y0 <- c(0.0000000, 0.3517337, 0.5671433, 0.7258614, 0.8526055, 0.9585864,#
-        1.0499089, 1.1302893, 1.2021679, 1.2672378, 1.3267247, 1.3815454,#
-        1.4324048, 1.4798568, 1.5243452, 1.5662310, 1.6058120, 1.6433371,#
-        1.6790164, 1.7130288, 1.7455280)#
-#
-all.equal(lambertWp(x), y0)
-x <- seq(0, 10, len=21)#
-# y <- lambert_W0(x)#
-y0 <- c(0.0000000, 0.3517337, 0.5671433, 0.7258614, 0.8526055, 0.9585864,#
-        1.0499089, 1.1302893, 1.2021679, 1.2672378, 1.3267247, 1.3815454,#
-        1.4324048, 1.4798568, 1.5243452, 1.5662310, 1.6058120, 1.6433371,#
-        1.6790164, 1.7130288, 1.7455280)#
-#
-all.equal(lambertWp(x), y0, tolerance = 1e-7)
-x <- c(1, 2, 3, 4, 5, 6)#
-y <- c(16, 18, 21, 17, 15, 12)#
-plot(x, y, col="red", xlim=c(0,7), ylim=c(10,22),#
-     main = "Spline and 'pchip' Interpolation Polynomials")#
-grid()
-xs <- seq(1, 6, len=51)#
-ys <- interp1(x, y, xs, "spline")#
-lines(xs, ys, col="cyan")#
-yp <- pchip(x, y, xs)#
-lines(xs, yp, col = "magenta")}
-xs <- seq(1, 6, len=51)#
-ys <- interp1(x, y, xs, "spline")#
-lines(xs, ys, col="cyan")#
-yp <- pchip(x, y, xs)#
-lines(xs, yp, col = "magenta")}
-xs <- seq(1, 6, len=51)#
-ys <- interp1(x, y, xs, "spline")#
-lines(xs, ys, col="cyan")#
-yp <- pchip(x, y, xs)#
-lines(xs, yp, col = "magenta")
-pchip(x, y, 1.15)
-xs <- c(1.5, 2.5, 3.5, 4.5, 5.5)#
-ys <- pchip(x, y, xs)
-ys
-?interp1
-y2 <- interp1(x, y, xs, method="cubic")
-y2
-x <- c(1, 2, 3, 4, 5, 6)#
-y <- c(16, 18, 21, 17, 15, 12)#
-#
-xs <- c(1.5, 2.5, 3.5, 4.5, 5.5)#
-ys <- pchip(x, y, xs)#
-# ys <- interp1(x, y, xs, method="cubic")       # the same#
-# 16.88750 19.80000 19.33333 15.96667 13.63750#
-#
-yml <- c(16.887499999999999, 19.800000000000001, 19.333333333333332,#
-         15.966666666666667, 13.637499999999999)#
-#
-all.equal(ys, yml, tolerance = 1e-7)
+all.equal(quadgk(f1, 0, pi), 12.0703463163896,#
+          tolerance = 1e-13)#
+all.equal(quadgk(f2, -1, 1),  0.549360306778006,#
+          tolerance = 1e-15)#
+all.equal(quadgk(f3, 0, 2),  -0.460501533846733,#
+          tolerance = 1e-13)#
+all.equal(quadgk(f4, 0, pi, tol = 1e-12),  2.0,#
+          tolerance = 1e-12)

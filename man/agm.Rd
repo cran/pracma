@@ -22,7 +22,9 @@ agm(a, b, maxiter = 25, tol = .Machine$double.eps^(1/2))
   Returnes one value, the mean of the last two values \code{a}, \code{b}.
 }
 \references{
-  \url{http://mathworld.wolfram.com/Arithmetic-GeometricMean.html}
+  Borwein, J. M., and P. B. Borwein (1998). Pi and the AGM: A Study in
+  Analytic Number Theory and Computational Complexity. Second, reprinted
+  Edition, A Wiley-interscience publication.
 }
 \note{
   The AGM is also defined for negative values a and/or b, but then the
@@ -34,5 +36,23 @@ agm(a, b, maxiter = 25, tol = .Machine$double.eps^(1/2))
 \examples{
 ##  Gauss constant
 1 / agm(1, sqrt(2), tol = 1e-15)$agm  # 0.834626841674073
+
+##  Calculate the (elliptic) integral 2/pi \int_0^1 dt / sqrt(1 - t^4)
+f <- function(t) 1 / sqrt(1-t^4)
+2 / pi * integrate(f, 0, 1)$value
+1 / agm(1, sqrt(2))$agm
+
+##  Calculate Pi with quadratic convergence (modified AGM)
+#   See algorithm 2.1 in Borwein and Borwein
+y <- sqrt(sqrt(2))
+x <- (y+1/y)/2
+p <- 2+sqrt(2)
+for (i in 1:6){
+  cat(format(p, digits=16), "\n")
+  p <- p * (1+x) / (1+y)
+  s <- sqrt(x)
+  y <- (y*s + 1/s) / (1+y)
+  x <- (s+1/s)/2
+  }
 }
 \keyword{ math }

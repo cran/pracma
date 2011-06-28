@@ -1,4 +1,4 @@
-\name{compexstep}
+\name{complexstep}
 \alias{complexstep}
 \alias{jacobiancsd}
 \title{Complex Step Derivation}

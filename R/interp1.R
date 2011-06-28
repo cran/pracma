@@ -7,7 +7,7 @@ interp1 <- function (x, y, xi = x,
     if (length(y) != nx)
         stop("Arguments 'x' and 'y' must be vectors of the same length.")
     if (nx <= 1)
-        stop("Arguments 'x', 'y' must have at least a length >=2 .")
+        stop("Arguments 'x', 'y' must have at least a length >= 2.")
 
     if (min(xi) < min(x) || max(xi) > max(x))
         stop("Points 'xi' outside of range of argument 'x'.")

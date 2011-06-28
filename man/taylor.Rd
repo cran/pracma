@@ -1,6 +1,5 @@
 \name{taylor}
 \alias{taylor}
-\alias{pade}
 \title{
   Taylor Series Approximation
 }

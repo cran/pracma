@@ -39,7 +39,7 @@ diffmat <- function(x){
 
     M <- matrix(nrow=n+1, ncol=n)
     for(i in 1:n){
-        M[i, seq.int(along=x)] <- x
+        M[i, seq.int(along.with = x)] <- x
         x <- diff(x)
     }
     A <- matrix(M, nrow=n, ncol=n)

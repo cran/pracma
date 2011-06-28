@@ -35,6 +35,9 @@ Maintainer: HwB  <hwborchers@googlemail.com>
   Cormen, Th. H., Ch. E. Leiserson, and R. L. Rivest (2009). Introduction
   to Algorithms. Third Edition, The MIT Press, Cambridge, MA.
 
+  Gautschi, W. (1997). Numerical Analysis: An Introduction.
+  Birkhaeuser, Boston.
+
   Gentle, J. E. (2009). Computational Statistics.
   Springer Science+Business Media LCC, New York.
 
