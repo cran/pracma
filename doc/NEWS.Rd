@@ -2,10 +2,82 @@
 \title{pracma News}
 \encoding{UTF-8}
 
+\section{Changes in Version 0.7-0 (2011-07-07)}{
+    \itemize{
+      \item Sigmoid and Einstein functions.
+
+      \item Updated NEWS.RD, NEWS.pdf
+    }
+}
+
+\section{Changes in Version 0.6-9 (2011-07-06)}{
+    \itemize{
+      \item Runge-Kutta-Fehlberg method of order (5,4).
+    }
+}
+
+\section{Changes in Version 0.6-8 (2011-07-05)}{
+    \itemize{
+      \item triquad() Gaussian quadrature over triangles.
+
+      \item cotes() Newton-Cotes integration formulae for 2 to 8 nodes.
+    }
+}
+
+\section{Changes in Version 0.6-7 (2011-07-04)}{
+    \itemize{
+      \item lagrangeInterp(), newtonInterp() Lagrange and Newton polynomial
+        interpolation, neville() Neville's methods.
+
+      \item tril(), triu() extracting triangular matrices (Matlab style).
+    }
+}
+
+\section{Changes in Version 0.6-6 (2011-07-02)}{
+    \itemize{
+      \item charpoly() computes the characteristic polynomial, the determinant,
+        and the inverse for matrices that are relativly small, applying the
+        Faddejew-Leverrier method.
+
+      \item froots() to find *all* roots (also of second or higher order) of
+          a univariate function in a given interval. The same with fmins()
+          to find all minima.
+    }
+}
+
+\section{Changes in Version 0.6-5 (2011-07-01)}{
+    \itemize{
+      \item Adams-Bashford and Adams-Moulton (i.e., multi-step) methods
+        for ordinary differential equations in function abm3pc().
+    }
+}
+
+\section{Changes in Version 0.6-4 (2011-06-30)}{
+    \itemize{
+      \item Changed the description to be more precise about the package.
+
+      \item droplet_e() generation of digits for the Euler number.
+        (Should be followed by a function droplet_pi().)
+    }
+}
+
+\section{Changes in Version 0.6-3 (2011-06-28)}{
+    \itemize{
+      \item rationalfit() rational function approximation
+
+      \item ratinterp() rational interpolation a la Burlisch-Stoer.
+    }
+}
+
+\section{Changes in Version 0.6-2 (2011-06-26)}{
+    \itemize{
+      \item pade() Pade approximation.
+    }
+}
+
 \section{Changes in Version 0.6-1 (2011-06-25)}{
     \itemize{
-      \item Changed gauss_kronrod() and clenshaw_curtis() to become adaptive
-        integration routines.
+      \item quadgk() adaptive Gauss-Kronrod quadrature.
     }
 }
 
@@ -242,7 +314,7 @@
 
       \item Lambert W function lambertWp() for the real principal branch.
 
-      \item ``Complex Step'' derivation with complexstep() and jacobiancsd().
+      \item ``Complex Step'' derivation with complexstep() and complexstepJ().
     }
 }
 
@@ -529,6 +601,6 @@
   \subsection{Remark}{
     Typeset this document as:
 
-    \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 0.6-0"}.
+    \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 0.7-0"}.
   }
 }

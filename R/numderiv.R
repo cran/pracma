@@ -42,7 +42,7 @@ numderiv <- function(f, x0, maxiter = 16, h = 1, ...,
 numdiff <- function(f, x, maxiter = 16, h = 1, ...,
                     accuracy = .Machine$double.eps) {
     if (!is.vector(x, mode = "numeric"))
-        stop("")
+        stop("Argument 'x' must be a numeric vector.")
 
     ndf <- function(xx) numderiv(f, xx, maxiter = maxiter, h = h, ...,
                                  accuracy = .Machine$double.eps)$df

@@ -29,26 +29,3 @@ mdiag <- function(x, k=0) {
     }
     return(y)
 }
-
-
-diffmat <- function(x){
-    if (!is.vector(x, mode="numeric"))
-        stop("Argument 'x' must be a numeric vector.")
-    n <- length(x)
-    if (n == 1) return(x)
-
-    M <- matrix(nrow=n+1, ncol=n)
-    for(i in 1:n){
-        M[i, seq.int(along.with = x)] <- x
-        x <- diff(x)
-    }
-    A <- matrix(M, nrow=n, ncol=n)
-    A[upper.tri(A)] <- t(A)[upper.tri(A)]
-    return(A)
-}
-
-# Reorganizing an (n+1) x n matrix into an n x n matrix
-# shifts i-th column by (i-1) downwards. In particular,
-# the first row becomes the main diagonal. The initial
-# part of each of the remaining rows becomes a diagonal
-# starting at the first component of the original row.

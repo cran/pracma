@@ -23,7 +23,8 @@ distmat(X, Y)
   \code{y} is of size \code{n x k}.
 }
 \references{
-  Matlab Central
+  Copyright (c) 1999 Roland Bunschoten for a Matlab version on MatlabCentral
+  under the name \code{distance.m}. Translated to R by Hans W Borchers.
 }
 \note{
   If \code{a} is \code{m x r} and \code{b} is \code{n x r} then 

@@ -37,7 +37,7 @@ newtonsys(Ffun, x0, Jfun = NULL, ...,
   TODO: better error checking, e.g. when the Jacobian is not invertible.
 }
 \seealso{
-\code{\link{newtonRaphson}}
+  \code{\link{newtonRaphson}}, \code{\link{broyden}}
 }
 \examples{
 ##  Example from Quarteroni & Saleri

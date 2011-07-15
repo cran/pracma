@@ -21,7 +21,7 @@ complexstep <- function(f, x0, h = 1e-20, test = FALSE, ...) {
 }
 
 
-jacobiancsd <- function(f, x0, h = 1e-20, ...) {
+complexstepJ <- function(f, x0, h = 1e-20, ...) {
     fun <- match.fun(f)
     f <- function(x) fun(x, ...)
 

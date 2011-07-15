@@ -1,6 +1,6 @@
 \name{complexstep}
 \alias{complexstep}
-\alias{jacobiancsd}
+\alias{complexstepJ}
 \title{Complex Step Derivation}
 \description{
   Complex step derivatives of real-valued functions.
@@ -8,7 +8,7 @@
 \usage{
 complexstep(f, x0, h = 1e-20, test = FALSE, ...)
 
-jacobiancsd(f, x0, h = 1e-20, ...)
+complexstepJ(f, x0, h = 1e-20, ...)
 }
 \arguments{
   \item{f}{Function that is to be differentiated.}
@@ -27,7 +27,7 @@ jacobiancsd(f, x0, h = 1e-20, ...)
   \itemize{
     \item \code{f} must have an analytical (i.e., complex differentiable)
     continuation into an open neighborhood of \code{x0}.
-    \item \code{f(x0)} must be real.
+    \item \code{x0} \bold{and} \code{f(x0)} must be real.
     \item \code{h} is real and \emph{very} small: \code{0 < h << 1}.
   }
 }
@@ -59,6 +59,6 @@ f <- function(x) exp(x)/sqrt(sin(x)^3 + cos(x)^3)  # derivative at x0 = 1.5
 complexstep(f, 1.5)       # 4.05342789389862, error 1e-15
 # Symbolic calculation:   # 4.05342789389862
 
-jacobiancsd(f, 1.5)
+complexstepJ(f, 1.5)
 }
 \keyword{ math }

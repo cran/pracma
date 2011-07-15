@@ -1,20 +1,20 @@
 Package: pracma
 Type: Package
 Title: Practical Numerical Math Functions
-Version: 0.6-3
-Depends: R (>= 2.10.1)
-Date: 2011-06-28
+Version: 0.7-3
+Depends: R (>= 2.10.2)
+Date: 2011-07-15
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
-Description: This package provides R implementations of more advanced
-        math functions from Matlab and Octave (and the Euler Math
-        Toolbox) with a special view on optimization and time series
-        routines.
+Description: This package provides R implementations of functions in
+        numerical analysis, with a special view on on optimization and
+        time series routines. Uses Matlab/Octave function names where
+        appropriate to simplify porting.
 License: GPL (>= 3)
 LazyLoad: yes
 LazyData: yes
 Repository: CRAN
 Repository/R-Forge/Project: optimist
-Repository/R-Forge/Revision: 65
-Date/Publication: 2011-06-29 09:41:56
-Packaged: 2011-06-28 21:32:32 UTC; rforge
+Repository/R-Forge/Revision: 85
+Date/Publication: 2011-07-23 14:41:09
+Packaged: 2011-07-15 21:10:30 UTC; rforge

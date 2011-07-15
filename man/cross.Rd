@@ -17,7 +17,7 @@
   computes the cross product between corresponding columns or rows.
 
   The more general cross product of \code{n-1} vectors in n-dimensional
-  space is not yet realized in Matlab, Octave, or R.
+  space is realized as \code{crossn}.
 }
 \value{
   3-dim. vector if \code{x} and \code{<} are vectors, a matrix of
@@ -27,7 +27,7 @@
   hwb \email{hwborchers@googlemail.com}
 }
 \seealso{
-  \code{\link{dot}}
+  \code{\link{dot}}, \code{\link{cross}}
 }
 \examples{
   cross(c(1, 2, 3), c(4, 5, 6))  # -3  6 -3
