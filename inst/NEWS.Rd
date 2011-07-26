@@ -2,21 +2,58 @@
 \title{pracma News}
 \encoding{UTF-8}
 
-\section{Changes in Version 0.7-0 (2011-07-07)}{
+\section{Changes in Version 0.7.5 (2011-07-26)}{
     \itemize{
-      \item Sigmoid and Einstein functions.
-
-      \item Updated NEWS.RD, NEWS.pdf
+      \item Put NEWS.Rd in the /inst subdirectory (and NEWS.pdf in /doc),
+            thanks to Kurt Hornik; slightly changed the version numbering.
     }
 }
 
-\section{Changes in Version 0.6-9 (2011-07-06)}{
+\section{Changes in Version 0.7.4 (2011-07-22)}{
+    \itemize{
+      \item rortho() generate random orthogonal matrix of size n.
+
+      \item Titanium data set for testing fitting procedures.
+    }
+}
+
+\section{Changes in Version 0.7.3 (2011-07-15)}{
+    \itemize{
+      \item erf() and erfc() error and complementary error functions
+            (Matlab style) as (almost) aliases for pnorm().
+
+      \item erfz() complex error function.
+    }
+}
+
+\section{Changes in Version 0.7.2 (2011-07-11)}{
+    \itemize{
+      \item broyden() quasi-Newton root finding method for systems of
+            nonlinear equations.
+    }
+}
+
+\section{Changes in Version 0.7.1 (2011-07-09)}{
+    \itemize{
+      \item cross() has been vectorized (remark on R-help).
+    }
+}
+
+\section{Changes in Version 0.7.0 (2011-07-07)}{
+    \itemize{
+      \item Sigmoid and Einstein functions.
+
+      \item Updated NEWS.Rd, NEWS.pdf
+    }
+}
+
+\section{Changes in Version 0.6.9 (2011-07-06)}{
     \itemize{
       \item Runge-Kutta-Fehlberg method of order (5,4).
     }
 }
 
-\section{Changes in Version 0.6-8 (2011-07-05)}{
+\section{Changes in Version 0.6.8 (2011-07-05)}{
     \itemize{
       \item triquad() Gaussian quadrature over triangles.
 
@@ -24,7 +61,7 @@
     }
 }
 
-\section{Changes in Version 0.6-7 (2011-07-04)}{
+\section{Changes in Version 0.6.7 (2011-07-04)}{
     \itemize{
       \item lagrangeInterp(), newtonInterp() Lagrange and Newton polynomial
         interpolation, neville() Neville's methods.
@@ -33,7 +70,7 @@
     }
 }
 
-\section{Changes in Version 0.6-6 (2011-07-02)}{
+\section{Changes in Version 0.6.6 (2011-07-02)}{
     \itemize{
       \item charpoly() computes the characteristic polynomial, the determinant,
         and the inverse for matrices that are relativly small, applying the
@@ -45,14 +82,14 @@
     }
 }
 
-\section{Changes in Version 0.6-5 (2011-07-01)}{
+\section{Changes in Version 0.6.5 (2011-07-01)}{
     \itemize{
       \item Adams-Bashford and Adams-Moulton (i.e., multi-step) methods
         for ordinary differential equations in function abm3pc().
     }
 }
 
-\section{Changes in Version 0.6-4 (2011-06-30)}{
+\section{Changes in Version 0.6.4 (2011-06-30)}{
     \itemize{
       \item Changed the description to be more precise about the package.
 
@@ -61,7 +98,7 @@
     }
 }
 
-\section{Changes in Version 0.6-3 (2011-06-28)}{
+\section{Changes in Version 0.6.3 (2011-06-28)}{
     \itemize{
       \item rationalfit() rational function approximation
 
@@ -69,19 +106,19 @@
     }
 }
 
-\section{Changes in Version 0.6-2 (2011-06-26)}{
+\section{Changes in Version 0.6.2 (2011-06-26)}{
     \itemize{
       \item pade() Pade approximation.
     }
 }
 
-\section{Changes in Version 0.6-1 (2011-06-25)}{
+\section{Changes in Version 0.6.1 (2011-06-25)}{
     \itemize{
       \item quadgk() adaptive Gauss-Kronrod quadrature.
     }
 }
 
-\section{Changes in Version 0.6-0 (2011-06-24)}{
+\section{Changes in Version 0.6.0 (2011-06-24)}{
     \itemize{
       \item muller() Muller's root finding method.
 
@@ -92,7 +129,7 @@
     }
 }
 
-\section{Changes in Version 0.5-9 (2011-06-23)}{
+\section{Changes in Version 0.5.9 (2011-06-23)}{
     \itemize{
       \item quadl() recursive adaptive Gauss-Lobatto quadrature.
 
@@ -103,14 +140,14 @@
     }
 }
 
-\section{Changes in Version 0.5-8 (2011-06-20)}{
+\section{Changes in Version 0.5.8 (2011-06-20)}{
     \itemize{
       \item quadgr() Gaussian Quadrature with Richardson extrapolation, can
         handle singularities at endpoints and (half-)infinite intervals.
     }
 }
 
-\section{Changes in Version 0.5-7 (2011-06-18)}{
+\section{Changes in Version 0.5.7 (2011-06-18)}{
     \itemize{
       \item expm() for matrix exponentials.
 
@@ -118,7 +155,7 @@
     }
 }
 
-\section{Changes in Version 0.5-6 (2011-06-17)}{
+\section{Changes in Version 0.5.6 (2011-06-17)}{
     \itemize{
       \item simpson2d() as non-adaptive 2-dimensional Simpson integration.
 
@@ -126,7 +163,7 @@
     }
 }
 
-\section{Changes in Version 0.5-5 (2011-06-15)}{
+\section{Changes in Version 0.5.5 (2011-06-15)}{
     \itemize{
       \item gaussHermite() and gaussLaguerre() for infinite intervals.
 
@@ -134,7 +171,7 @@
     }
 }
 
-\section{Changes in Version 0.5-4 (2011-06-12)}{
+\section{Changes in Version 0.5.4 (2011-06-12)}{
     \itemize{
       \item gaussLegendre() computes coefficients for Gauss Quadrature,
         and quad2d() uses these weights for 2-dimensional integration.
@@ -145,7 +182,7 @@
     }
 }
 
-\section{Changes in Version 0.5-3 (2011-06-06)}{
+\section{Changes in Version 0.5.3 (2011-06-06)}{
     \itemize{
       \item ode23() solving first order (systems of) differential equations.
 
@@ -153,7 +190,7 @@
     }
 }
 
-\section{Changes in Version 0.5-2 (2011-06-04)}{
+\section{Changes in Version 0.5.2 (2011-06-04)}{
     \itemize{
       \item interp2() for two-dimensional interpolation.
 
@@ -161,20 +198,20 @@
     }
 }
 
-\section{Changes in Version 0.5-1 (2011-06-01)}{
+\section{Changes in Version 0.5.1 (2011-06-01)}{
     \itemize{
       \item fzero(), fminbnd(), fminsearch(), fsolve() as aliases for
         uniroot(), optimize(), optim() with Nelder-Mead, newtonsys().
     }
 }
 
-\section{Changes in Version 0.5-0 (2011-05-31)}{
+\section{Changes in Version 0.5.0 (2011-05-31)}{
     \itemize{
       \item Corrections to help pages.
     }
 }
 
-\section{Changes in Version 0.4-9 (2011-05-30)}{
+\section{Changes in Version 0.4.9 (2011-05-30)}{
     \itemize{
       \item romberg() and gauss_kronrod() for numerical integration.
 
@@ -184,7 +221,7 @@
     }
 }
 
-\section{Changes in Version 0.4-8 (2011-05-28)}{
+\section{Changes in Version 0.4.8 (2011-05-28)}{
     \itemize{
       \item Numerical function derivatives: fderiv(), grad().
 
@@ -194,7 +231,7 @@
     }
 }
 
-\section{Changes in Version 0.4-7 (2011-05-27)}{
+\section{Changes in Version 0.4.7 (2011-05-27)}{
     \itemize{
       \item plot vector fields: quiver() and vectorfield().
 
@@ -204,7 +241,7 @@
     }
 }
 
-\section{Changes in Version 0.4-6 (2011-05-26)}{
+\section{Changes in Version 0.4.6 (2011-05-26)}{
     \itemize{
       \item Laguerre's method laguerre().
 
@@ -214,7 +251,7 @@
     }
 }
 
-\section{Changes in Version 0.4-5 (2011-05-24)}{
+\section{Changes in Version 0.4.5 (2011-05-24)}{
     \itemize{
       \item Lebesgue coefficient: lebesgue().
 
@@ -222,7 +259,7 @@
     }
 }
 
-\section{Changes in Version 0.4-4 (2001-05-23)}{
+\section{Changes in Version 0.4.4 (2001-05-23)}{
     \itemize{
       \item Dirichlet's eta() and Riemann's zeta() function.
 
@@ -230,7 +267,7 @@
     }
 }
 
-\section{Changes in Version 0.4-3 (2001-05-22)}{
+\section{Changes in Version 0.4.3 (2001-05-22)}{
     \itemize{
       \item polypow() and polytrans() for polynomials.
 
@@ -240,7 +277,7 @@
     }
 }
 
-\section{Changes in Version 0.4-2 (2001-05-17)}{
+\section{Changes in Version 0.4.2 (2001-05-17)}{
     \itemize{
       \item segm_intersect() and segm_distance() segment distances.
 
@@ -248,7 +285,7 @@
     }
 }
 
-\section{Changes in Version 0.4-1 (2011-05-13)}{
+\section{Changes in Version 0.4.1 (2011-05-13)}{
     \itemize{
       \item polyadd() polynomial addition.
 
@@ -260,19 +297,19 @@
     }
 }
 
-\section{Changes in Version 0.4-0 (2011-05-10)}{
+\section{Changes in Version 0.4.0 (2011-05-10)}{
     \itemize{
       \item Added tests for functions since version 0.3-7.
     }
 }
 
-\section{Changes in Version 0.3-9 (2011-05-09)}{
+\section{Changes in Version 0.3.9 (2011-05-09)}{
     \itemize{
       \item and() and or().
     }
 }
 
-\section{Changes in Version 0.3-8 (2011-05-06)}{
+\section{Changes in Version 0.3.8 (2011-05-06)}{
     \itemize{
       \item pchip() and option `cubic' for interp1() interpolation.
 
@@ -282,7 +319,7 @@
     }
 }
 
-\section{Changes in Version 0.3-7 (2011-05-04)}{
+\section{Changes in Version 0.3.7 (2011-05-04)}{
     \itemize{
       \item Rank of a matrix, mrank(), and nullspace() for the kernel.
 
@@ -294,7 +331,7 @@
     }
 }
 
-\section{Changes in Version 0.3-6 (2011-04-30)}{
+\section{Changes in Version 0.3.6 (2011-04-30)}{
     \itemize{
       \item fact(), more accurate than the R internal function `factorial'.
 
@@ -308,7 +345,7 @@
     }
 }
 
-\section{Changes in Version 0.3-5 (2011-04-23)}{
+\section{Changes in Version 0.3.5 (2011-04-23)}{
     \itemize{
       \item agm() for the arithmetic-geometric mean.
 
@@ -318,7 +355,7 @@
     }
 }
 
-\section{Changes in Version 0.3-4 (2011-04-21)}{
+\section{Changes in Version 0.3.4 (2011-04-21)}{
     \itemize{
       \item Barycentric Lagrange interpolation through barylag().
 
@@ -329,7 +366,7 @@
     }
 }
 
-\section{Changes in Version 0.3-3  (2011-04-19)}{
+\section{Changes in Version 0.3.3  (2011-04-19)}{
     \itemize{
       \item hornerdefl() for also returning the deflated polynomial.
 
@@ -346,7 +383,7 @@
     }
 }
 
-\section{Changes in Version 0.3-2 (2011-04-17)}{
+\section{Changes in Version 0.3.2 (2011-04-17)}{
     \itemize{
       \item Sorting functions: bubbleSort(), insertionSort(), selectionSort(),
         shellSort(), heapSort(), mergeSort(), mergeOrdered(), quickSort(),
@@ -357,14 +394,14 @@
     }
 }
 
-\section{Changes in Version 0.3-1 (2011-04-16)}{
+\section{Changes in Version 0.3.1 (2011-04-16)}{
     \itemize{
       \item Chebyshev polynomials of the first kind: chebPoly(),
         chebCoeff(),and chebApprox().
     }
 }
 
-\section{Changes in Version 0.3-0 (2011-04-09)}{
+\section{Changes in Version 0.3.0 (2011-04-09)}{
     \itemize{
       \item New version of news.Rd, news.pdf.
 
@@ -372,7 +409,7 @@
     }
 }
 
-\section{Changes in Version 0.2-9}{
+\section{Changes in Version 0.2.9}{
     \itemize{
       \item fnorm() and the Runge function runge().
 
@@ -382,7 +419,7 @@
     }
 }
 
-\section{Changes in Version 0.2-8}{
+\section{Changes in Version 0.2.8}{
     \itemize{
       \item quad() adaptive Simpson quadrature.
 
@@ -392,14 +429,14 @@
     }
 }
 
-\section{Changes in Version 0.2-7}{
+\section{Changes in Version 0.2.7}{
     \itemize{
       \item Regular expression functions regexp(), regexpi(), regexprep()
       and refindall().
     }
 }
 
-\section{Changes in Version 0.2-6}{
+\section{Changes in Version 0.2.6}{
     \itemize{
       \item String functions blanks(), strtrim(), deblank(), strjust(),
       and strrep().
@@ -408,13 +445,13 @@
     }
 }
 
-\section{Changes in Version 0.2-5}{
+\section{Changes in Version 0.2.5}{
     \itemize{
       \item Matlab functions mode(), clear() and beep().
     }
 }
 
-\section{Changes in Version 0.2-4}{
+\section{Changes in Version 0.2.4}{
     \itemize{
       \item primroot() finds the smallest primitive root modulo a given n;
       needed functions are modpower() and modorder().
@@ -432,7 +469,7 @@
     }
 }
 
-\section{Changes in Version 0.2-3}{
+\section{Changes in Version 0.2.3}{
     \itemize{
       \item strfind(), strfindi(), and findstr().
 
@@ -442,7 +479,7 @@
     }
 }
 
-\section{Changes in Version 0.2-2}{
+\section{Changes in Version 0.2.2}{
     \itemize{
       \item vnorm() vector norm
 
@@ -451,7 +488,7 @@
     }
 }
 
-\section{Changes in Version 0.2-1}{
+\section{Changes in Version 0.2.1}{
     \itemize{
       \item horner() implementing the horner scheme for evaluating
       a polynomial and its derivative.
@@ -460,7 +497,7 @@
     }
 }
 
-\section{Restarted as Version 0.2-0}{
+\section{Changes in Version 0.2.0}{
     \itemize{
       \item Package renamed to `pracma' to avoid name clashes with packages
       such as `matlab' that are sticking closer to the original.
@@ -469,7 +506,7 @@
     }
 }
 
-\section{Changes in Version 0.1-9}{
+\section{Changes in Version 0.1.9}{
     \itemize{
       \item reshape(), repmat(), and blkdiag() matrix functions.
 
@@ -486,7 +523,7 @@
     }
 }
 
-\section{Changes in Version 0.1-8}{
+\section{Changes in Version 0.1.8}{
     \itemize{
       \item std() as refinement of the standard deviation function.
 
@@ -502,7 +539,7 @@
     }
 }
 
-\section{Changes in Version 0.1-7}{
+\section{Changes in Version 0.1.7}{
     \itemize{
       \item size(), numel(), ndims(), isempty(), and find().
 
@@ -518,7 +555,7 @@
     }
 }
 
-\section{Changes in Version 0.1-6}{
+\section{Changes in Version 0.1.6}{
     \itemize{
       \item Matrix functions mdiag() and mtrace() added. inv() is introduced
       as an alias for solve() in R.
@@ -531,14 +568,14 @@
     }
 }
 
-\section{Changes in Version 0.1-5}{
+\section{Changes in Version 0.1.5}{
     \itemize{
       \item Added functions for flipping or rotating numeric and complex
         matrices: flipdim(), flipud(), fliplr(), and rot90().
     }
 }
 
-\section{Changes in Version 0.1-4}{
+\section{Changes in Version 0.1.4}{
     \itemize{
       \item Added basic complex functions real(), imag(), conj(), and angle()
       which are essentially only aliases of the R functions Re(), Im(), 
@@ -549,7 +586,7 @@
     }
 }
 
-\section{Changes in Version 0.1-3}{
+\section{Changes in Version 0.1.3}{
     \itemize{
       \item Added compan() function for the `companion' matrix; the eig() 
       function is an alias for the R eigen()values function.
@@ -563,7 +600,7 @@
     }
 }
 
-\section{Changes in Version 0.1-2}{
+\section{Changes in Version 0.1.2}{
     \itemize{
       \item Added functions from number theory: primes(), isprime() and 
       factors().
@@ -575,7 +612,7 @@
     }
 }
 
-\section{Changes in Version 0.1-1}{
+\section{Changes in Version 0.1.1}{
     \itemize{
       \item Added some simple functions such as nthroot(), pow2(), and 
       nextpow2().
@@ -586,7 +623,7 @@
     }
 }
 
-\section{INITIAL VERSION 0.1-0}{
+\section{Changes in Version 0.1.0}{
   \subsection{INSTALLATION}{
     `matlab4r' will be a pure R package without using any source code.
     Therefore, installation will be immediate on all platforms.
@@ -601,6 +638,6 @@
   \subsection{Remark}{
     Typeset this document as:
 
-    \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 0.7-0"}.
+    \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 0.7.5"}.
   }
 }

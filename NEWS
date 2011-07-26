@@ -8,10 +8,23 @@ PLANNED FOR NEXT VERSION
     o ode45() implementing the approach by Dormand and Prince.
       [Matlab's ode23() is based on Bogacki and Shampine.]
 
+    o Hash functions (Python style), see "?hash".
+
+CHANGES IN VERSION 0.7.5 (2011-07-26)
+
+    o Put NEWS.RD in the /inst subdirectory (and NEWS.pdf in /doc),
+      thanks to Kurt Hornik; slightly changed the version numbering.
+
+CHANGES IN VERSION 0.7-4 (2011-07-22)
+
+    o rortho() generate random orthogonal matrix of size n.
+
+    o Titanium data set for testing fitting procedures.
+
 CHANGES IN VERSION 0.7-3 (2011-07-15)
 
     o erf() and erfc() error and complementary error functions
-      Matlab style) as (almost) aliases for pnorm().
+      (Matlab style) as (almost) aliases for pnorm().
 
     o erfz() complex error function.
 
