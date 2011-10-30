@@ -27,7 +27,7 @@
   hwb \email{hwborchers@googlemail.com}
 }
 \seealso{
-  \code{\link{dot}}, \code{\link{cross}}
+  \code{\link{dot}}, \code{\link{crossn}}
 }
 \examples{
   cross(c(1, 2, 3), c(4, 5, 6))  # -3  6 -3

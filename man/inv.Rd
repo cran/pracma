@@ -15,7 +15,7 @@ Computes the matrix inverse by calling \code{solve(a)} and catching the error
 if the matrix is nearly singular.
 }
 \value{
-square matrix that is the inverse of \code{a}
+square matrix that is the inverse of \code{a}.
 }
 \note{
 \code{inv()} is the function name used in Matlab/Octave.

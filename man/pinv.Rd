@@ -1,29 +1,31 @@
 \name{pinv}
 \alias{pinv}
 \title{
-Pseudoinverse or Generalized Inverse
+  Pseudoinverse or Generalized Inverse
 }
 \description{
-Compute the pseudoinverse of a matrix.
+  Computes the Moore-Penrose generalized inverse of a matrix.
 }
 \usage{
-pinv(A)
+pinv(A, tol=.Machine$double.eps^(2/3))
 }
 \arguments{
   \item{A}{matrix}
+  \item{tol}{tolerance used for assuming an eigenvalue is zero.}
 }
 \details{
-  Compute the pseudoinverse \code{B} of a matrix \code{A} using the
-  singular value decomposition \code{svd()}.
+  Compute the generalized inverse \code{B} of a matrix \code{A} using the
+  singular value decomposition \code{svd()}. This generalized invers is
+  characterized by this equation: \code{A \%*\% B \%*\% A == A}
 
   The pseudoinverse \eqn{B} solves the problem to minimize
   \eqn{|A x - b|} by setting \eqn{x = B b}
 
-  \code{s <- svd(A)
-  D <- diag(s$d); Dinv <- diag(1/s$d)
-  U <- s$u; V <- s$v
-  U <- s$u; V <- s$v
-  X = V Dinv U\'}
+  \code{s <- svd(A)}\cr
+  \code{D <- diag(s\$d)}\cr
+  \code{Dinv <- diag(1/s\$d)}\cr
+  \code{U <- s\$u; V <- s\$v}\cr
+  \code{X = V Dinv t(U)}
 
   Thus \code{B} is computed as \code{s$v \%*\% diag(1/s$d) \%*\% t(s$u)}.
 }
@@ -35,9 +37,9 @@ pinv(A)
   Theory and Applications. Springer-Verlag, New York.
 }
 \note{
-  The pseudoinverse or `generalized inverse' (aka Moore-Penrose inverse)
-  is also provided by the function \code{ginv()} in package `MASS'. It is
-  included here in a somewhat simplified way to be independent of that package.
+  The pseudoinverse or `generalized inverse' is also provided by the function
+  \code{ginv()} in package `MASS'. It is included in a somewhat simplified
+  way to be independent of that package.
 }
 \seealso{
 \code{MASS::ginv}

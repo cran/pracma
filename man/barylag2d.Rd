@@ -32,7 +32,7 @@ barylag2d(F, xn, yn, xf, yf)
 }
 \note{
   Copyright (c) 2004 Greg von Winckel of a Matlab function under BSD license;
-  translation to R by Hans W Borchers.
+  translation to R by Hans W Borchers with permission.
 }
 \seealso{
   \code{\link{interp2}}, \code{\link{barylag}}

@@ -16,7 +16,7 @@ hadamard(n)
   \code{n/12}, or \code{n/20} is a power of 2.
 }
 \value{
-  Matrix of size \code{n}-by-\code{n} of orthogonal colums consisting of
+  Matrix of size \code{n}-by-\code{n} of orthogonal columns consisting of
   1 and -1 only.
 }
 \note{

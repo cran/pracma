@@ -23,7 +23,7 @@ findintervals(x, xs)
   If none is found, returns \code{integer(0)}.
 }
 \note{
-  If \code{x} is equal to the last element in\code{xs}, the index
+  If \code{x} is equal to the last element in \code{xs}, the index
   \code{length(xs)} will also be returned.
 }
 \examples{

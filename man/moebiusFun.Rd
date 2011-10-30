@@ -7,7 +7,6 @@
 }
 \usage{
 moebiusFun(n)
-
 mertensFun(n)
 }
 \arguments{
@@ -35,7 +34,7 @@ mertensFun(n)
   function.
 }
 \seealso{
-\code{\link{ifactor}}, \code{\link{eulersPhi}}
+\code{\link{factorize}}, \code{\link{eulersPhi}}
 }
 \examples{
 sapply(1:16, moebiusFun)

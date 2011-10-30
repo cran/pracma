@@ -624,20 +624,20 @@
 }
 
 \section{Changes in Version 0.1.0}{
-  \subsection{INSTALLATION}{
-    `matlab4r' will be a pure R package without using any source code.
-    Therefore, installation will be immediate on all platforms.
-  }
+    \itemize{
+      \item Installation
 
-  \subsection{INTENTION}{
-    This package provides R implementations of more advanced math
-    functions from Matlab and Octave (and the Euler Math Toolbox)
-    with a special view on optimization and time series routines.
-  }
+      `pracma' will be a pure R package without using source code in C or
+      Fortran. Therefore, installation will be immediate on all platforms.
 
-  \subsection{Remark}{
-    Typeset this document as:
+      \item Intention
 
-    \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 0.7.5"}.
-  }
+      This package provides R implementations of more advanced math
+      functions from Matlab and Octave (and the Euler Math Toolbox)
+      with a special view on optimization and time series routines.
+
+      \item Remark: Typeset this document as:
+
+      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 0.7.5"}.
+    }
 }

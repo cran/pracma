@@ -1,11 +1,10 @@
 ##
 ##  Savitzky-Golay Smoothing
-##  Pseudoinverse
+##  Pseudoinverse (Moore-Penrose Generalized Inverse)
 ##
 
 
-savgol <- function(T, fl, forder=4, dorder=0)
-{
+savgol <- function(T, fl, forder=4, dorder=0) {
     # -- calculate filter coefficients --
     fc <- (fl-1)/2                          # index: window left and right
     X <- outer(-fc:fc, 0:forder, FUN="^")   # polynomial terms and coeffs
@@ -18,12 +17,23 @@ savgol <- function(T, fl, forder=4, dorder=0)
     return( (-1)^dorder * T2 )
 }
 
-pinv <- function (A)
-{
+pinv <- function (A, tol=.Machine$double.eps^(2/3)) {
+    stopifnot(is.numeric(A), length(dim(A)) == 2, is.matrix(A))
+
     s <- svd(A)
     # D <- diag(s$d); Dinv <- diag(1/s$d)
     # U <- s$u; V <- s$v
     # A = U D V'
     # X = V Dinv U'
-    s$v %*% diag(1/s$d) %*% t(s$u)
+
+    p <- ( s$d > max(tol * s$d[1], 0) )
+    if (all(p)) {
+        mp <- s$v %*% diag(1/s$d) %*% t(s$u)
+    } else if (any(p)) {
+        mp <- s$v[, p, drop=FALSE] %*% diag(1/s$d[p]) %*% t(s$u[, p, drop=FALSE])
+    } else {
+        mp <- matrix(0, nrow=ncol(A), ncol=nrow(A))
+    }
+
+    return(mp)
 }

@@ -18,11 +18,11 @@ fminbnd(f, x1, x2, ..., minimize = TRUE, tol = .Machine$double.eps^(2/3))
 }
 \details{
   fminbnd finds the minimum of a function of one variable within a fixed
-  interval. The Matlab versionis based on golden section search and
+  interval. The Matlab version is based on golden section search and
   parabolic interpolation.
 
   \code{fminbnd} may only give local solutions.
-  \code{fminbnd} never evaluates fun at the endpoints.
+  \code{fminbnd} never evaluates \code{f} at the endpoints.
 }
 \value{
   List with

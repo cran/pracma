@@ -9,7 +9,7 @@ newtonsys(Ffun, x0, Jfun = NULL, ...,
     	  maxiter = 100, tol = .Machine$double.eps^(1/2))
 }
 \arguments{
-\item{Ffun}{\code{} functions of \code{n} variables.}
+\item{Ffun}{\code{m} functions of \code{n} variables.}
 \item{Jfun}{Function returning a square \code{n}-by-\code{n} matrix
             (of partial derivatives) or \code{NULL}, the default.}
 \item{x0}{Numeric vector of length \code{n}.}

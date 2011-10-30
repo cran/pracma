@@ -36,7 +36,7 @@ trigApprox(t, x, m)
 ##  Example: Gauss' Pallas data (1801)
 asc <- seq(0, 330, by = 30)
 dec <- c(408, 89, -66, 10, 338, 807, 1238, 1511, 1583, 1462, 1183, 804)
-plot(2*pi*asc/360, dec, pch = "+", col = "red",
+plot(2*pi*asc/360, dec, pch = "+", col = "red", xlim = c(0, 2*pi), ylim = c(-500, 2000),
      xlab = "Ascension [radians]", ylab = "Declination [minutes]",
      main = "Gauss' Pallas Data")
 grid()
@@ -46,7 +46,7 @@ xs <- trigApprox(ts ,dec, 1)
 lines(ts, xs, col = "black")
 xs <- trigApprox(ts ,dec, 2)
 lines(ts, xs, col = "blue")
-legend(0, 1500, c("Trig. Regression 1st order", "Trig. Regression 2nd order",
+legend(3, 0, c("Trig. Regression of degree 1", "Trig. Regression of degree 2",
                   "Astronomical position"), col = c("black", "blue", "red"),
                 lty = c(1,1,0), pch = c("", "", "+"))}
 }

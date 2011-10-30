@@ -10,8 +10,7 @@ Piecewise Linear Function
 piecewise(x, y, abs = FALSE)
 }
 \arguments{
-  \item{x}{x-coordinates of points defining the piecewise linear function}
-  \item{y}{x-coordinates of points defining the piecewise linear function}
+  \item{x, y}{x- and y-coordinates of points defining the piecewise linear function}
   \item{abs}{logical; shall the integral or the total area between the
              x-axis and the function be calculated}
 }

@@ -28,7 +28,7 @@ Omega(n)
   Works well up to \code{10^9}.
 }
 \seealso{
-\code{\link{ifactor}}, \code{\link{sigma}}
+\code{\link{factorize}}, \code{\link{sigma}}
 }
 \examples{
 omega(2*3*5*7*11*13*17*19)  #=> 8

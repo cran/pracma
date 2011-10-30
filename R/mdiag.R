@@ -9,7 +9,7 @@ mdiag <- function(x, k=0) {
     if (!is.numeric(k) || k != round(k))
         stop("Argument 'k' must be an integer.")
 
-    if (length(x) == 1) return(x)
+    # if (length(x) == 1) return(x)
     if (is.matrix(x)) {
         n <- nrow(x); m <- ncol(x)
         if (k >= m || -k >= n) {

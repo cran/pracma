@@ -23,7 +23,7 @@
   hwb \email{hwborchers@googlemail.com}
 }
 \seealso{
-  \code{\link{ifactor}, \link{primes}}
+  \code{\link{factorize}, \link{primes}}
 }
 \examples{
   x <- matrix(1:10, nrow=10, ncol=10, byrow=TRUE)

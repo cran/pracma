@@ -2,7 +2,7 @@
 \alias{size}
 \title{Size of Matrix}
 \description{
-  Provides the dimensions of \code{X}.
+  Provides the dimensions of \code{x}.
 }
 \usage{
 size(x, k)

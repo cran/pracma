@@ -49,7 +49,7 @@ xs <- ab[1] + ab[2]*cos(ts) +
 \dontrun{
 # plot to make sure
 plot(t, x, col = "red", xlim=c(0, 2*pi), ylim=c(-2,2),
-           main = "Trigomometric Regression")
+           main = "Trigonometric Regression")
 lines(ts, xs, col="blue")
 grid()}
 }

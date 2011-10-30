@@ -19,11 +19,11 @@ rem(n, m)
   \code{idiv(n, m)} is integer division, with the same effect as
   \code{n \%/\% m}.
 
-  \code{mod(n, m)} is the modulo operator and returns \eqn{n mod m}.
+  \code{mod(n, m)} is the modulo operator and returns \eqn{n\,mod\,m}.
   \code{mod(n, 0)} is \code{n}, and the result always has the same sign
   as \code{m}.
 
-  \code{rem(n, m)} is the same modulo operator and returns \eqn{n mod m}.
+  \code{rem(n, m)} is the same modulo operator and returns \eqn{n\,mod\,m}.
   \code{mod(n, 0)} is \code{NaN}, and the result always has the same sign
   as \code{n}.
 }

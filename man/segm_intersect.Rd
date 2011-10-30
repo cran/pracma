@@ -18,7 +18,7 @@ segm_intersect(s1, s2)
   whether the other end points lie on different sides of each segment.
 }
 \value{
-  Logical, \code{TRUE if these segments intersect}
+  Logical, \code{TRUE} if these segments intersect.
 }
 \references{
   Cormen, Th. H., Ch. E. Leiserson, and R. L. Rivest (2009). Introduction

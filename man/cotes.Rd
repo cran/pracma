@@ -19,8 +19,8 @@ cotes(f, a, b, n, nodes, ...)
 \details{
   2 to 8 point closed and summed Newton-Cotes numerical integration formulas.
 
-  These formulas are called `closed' as the include the endpoints.
-  They are called `composite' insofar as thay are combined with a
+  These formulas are called `closed' as they include the endpoints.
+  They are called `composite' insofar as they are combined with a
   Lagrange interpolation over subintervals.
 }
 \value{
@@ -34,7 +34,7 @@ cotes(f, a, b, n, nodes, ...)
   Standard Newton-Cotes formulas can be found in every textbook.
   Copyright (c) 2005 Greg von Winckel of nicely vectorized Matlab code,
   available from MatlabCentral, for 2 to 11 grid points.
-  R version by Hans W Borchers.
+  R version by Hans W Borchers, with permission.
 }
 \references{
   Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.

@@ -43,7 +43,7 @@ primroot <- function(m) {
     return(r)
 
     ##  Factorize (m-1):
-    # P <- unique(ifactor(m-1))
+    # P <- unique(factorize(m-1))
     # for (r in 2:(m-1)) {
     #     x <- TRUE
     #     for (p in P) {

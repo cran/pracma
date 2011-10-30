@@ -14,7 +14,7 @@
 \details{
   Computes the smalest integer \code{n} such that \eqn{abs(x) \le 2^n}.
   IF \code{x} is a vector or matrix, returns the result component-wise.
-  For negative or vomplex values, the absolute value will be taken.
+  For negative or complex values, the absolute value will be taken.
 }
 \value{
   an integer \code{n} such that \eqn{x \le 2^n}.

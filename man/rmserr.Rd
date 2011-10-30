@@ -18,12 +18,12 @@ rmserr(x, y, summary = FALSE)
   sequences of real numbers:
 
   \tabular{ll}{
-  MAE \tab Mean Absolute Error\cr
-  MSE \tab Mean Squared Error\cr
+  MAE  \tab Mean Absolute Error\cr
+  MSE  \tab Mean Squared Error\cr
   RMSE \tab Root Mean Squared Error\cr
   MAPE \tab Mean Absolute Percentage Error\cr
   LMSE \tab Normalized Mean Squared Error\cr
-  rSTD \tab relative Standard Deviation\cr
+  rSTD \tab relative Standard Deviation
   }
 }
 \value{

@@ -11,8 +11,8 @@ ode23(f, t0, tfinal, y0, ..., rtol = 1e-3, atol = 1e-6)
 }
 \arguments{
   \item{f}{function in the differential equation \eqn{y' = f(x, y)};\cr
-           defined as a function \eqn{R \times R^m \ R^m}, where \eqn{m}
-           is the number of equations.}
+           defined as a function \eqn{R \times R^m \rightarrow R^m}, where
+           \eqn{m} is the number of equations.}
   \item{t0, tfinal}{start and end points of the interval.}
   \item{y0}{starting values as column vector;
     for \eqn{m} equations \code{u0} needs to be a vector of length \code{m}.}

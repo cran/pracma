@@ -26,8 +26,8 @@ newtonHorner(p, x0, maxiter = 50, tol = .Machine$double.eps^0.5)
   the function value at the found root, \code{iter}, the number of iterations
   done, and \code{root}, and the estimated precision \code{estim.prec}
 
-  The estimated precision is given as the difference to the last last
-  solution before stop.
+  The estimated precision is given as the difference to the last solution
+  before stop.
 }
 \references{
   Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.

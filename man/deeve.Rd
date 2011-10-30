@@ -18,7 +18,7 @@ deeve(x, y, yv = 0, idx = NULL)
   \item{idx}{index of functions whose vales shall be returned.}
 }
 \details{
-  Determines when (in\code{x} coordinates) the \code{idx}-th solution
+  Determines when (in \code{x} coordinates) the \code{idx}-th solution
   function will take on the value \code{yv}.
 
   The interpolation is linear for the moment. For points outside the

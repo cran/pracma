@@ -25,7 +25,7 @@ eulersPhi(n)
   Works well up to \code{10^9}.
 }
 \seealso{
-\code{\link{ifactor}}, \code{\link{sigma}}
+\code{\link{factorize}}, \code{\link{sigma}}
 }
 \examples{
 eulersPhi(9973)  == 9973 - 1                       # for prime numbers

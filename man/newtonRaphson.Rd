@@ -34,7 +34,7 @@ secant(fun, a, b, ..., maxiter = 100, tol = .Machine$double.eps^0.5)
   done, and \code{root}, and the estimated precision \code{estim.prec}
 
   For both methods the estimated precision is given as the difference to
-  the last last solution before stop; this may be misleading.
+  the last solution before stop; this may be misleading.
 }
 \references{
   Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.

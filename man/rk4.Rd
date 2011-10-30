@@ -14,10 +14,10 @@ rk4sys(f, a, b, y0, n)
 }
 \arguments{
   \item{f}{function in the differential equation \eqn{y' = f(x, y)};\cr
-           defined as a function \eqn{R \times R^m \ R^m}, where \eqn{m}
+           defined as a function \eqn{R \times R^m \rightarrow R^m}, where \eqn{m}
            is the number of equations.}
   \item{a, b}{endpoints of the interval.}
-  \item{y0}{starting values; for \eqn{m} equations \code{u0} needs to be
+  \item{y0}{starting values; for \eqn{m} equations \code{y0} needs to be
                 a vector of length \code{m}.}
   \item{n}{the number of steps from \code{a} to \code{b}.}
 }

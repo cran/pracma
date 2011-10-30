@@ -26,12 +26,16 @@ refindall(s, pat, over = 1, ignorecase = FALSE)
   A numeric vector with the indices of starting positions of all matches.
 }
 \note{
-  This effect can also () be reached with
+  This effect can also be reached with the R function gregexpr(), see the
+  example below.
 }
 \seealso{
 \code{\link{regexp}}
 }
 \examples{
+refindall("ababababa", 'aba')
+gregexpr('a(?=ba)', "ababababa", perl=TRUE)
+
 refindall("AbababaBa", 'aba')
 refindall("AbababaBa", 'aba', ignorecase = TRUE)
 }

@@ -9,7 +9,7 @@ rot90(a, k = 1)
 }
 \arguments{
   \item{a}{numeric or complex matrix}
-  \item{k}{scalar integernumber of times the matrix will be rotated for
+  \item{k}{scalar integer number of times the matrix will be rotated for
   90 degrees; may be negative.}
 }
 \details{

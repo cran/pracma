@@ -68,8 +68,3 @@ fminsearch <- function(f, x0, ..., minimize = TRUE,
 
     return(list(x = fopt$par, fval = fopt$value))
 }
-
-
-fsolve <- function(f, x0, ...) {
-    stop("Function 'fsolve' is not yet implemented in package 'pracma'.")
-}

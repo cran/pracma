@@ -43,7 +43,7 @@ interp1(x, y, xi = x,
   Therefore, we simply use \code{pchip} here.
 }
 \seealso{
-\code{link{approx}}, \code{link{splinefun}}
+\code{\link{approx}}, \code{\link{splinefun}}
 }
 \examples{
 x <- c(0.8, 0.3, 0.1, 0.6, 0.9, 0.5, 0.2, 0.0, 0.7, 1.0, 0.4)

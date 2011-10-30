@@ -1,3 +1,4 @@
+\encoding{utf8}
 \name{circlefit}
 \alias{circlefit}
 \title{Fitting a Circle}
@@ -26,8 +27,8 @@ circlefit(xp, yp)
 }
 \references{
   Gander, W., G. H. Golub, and R. Strebel (1994). Fitting of Circles and
-  Ellipses --- Least Squares Solutions. ETH Z\"urich, Technical Report 217,
-  Institut f\"ur Wissenschaftliches Rechnen.
+  Ellipses --- Least Squares Solutions. ETH Zürich, Technical Report 217,
+  Institut für Wissenschaftliches Rechnen.
 }
 \note{
   May be worth to apply \code{nls} instead of \code{optim}.

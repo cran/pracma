@@ -1,10 +1,13 @@
 \name{normest}
 \alias{normest}
+\alias{normest2}
 \title{
   Estimated Matrix Norm
 }
 \description{
-  Estimate the 2-norm of the matrix M.
+  Estimate the 2-norm of a real (or complex-valued) matrix.
+  2-norm is also the maximum absolute eigenvalue of M, computed here
+  using the power method.
 }
 \usage{
 normest(M, maxiter = 100, tol = .Machine$double.eps^(1/2))
@@ -36,7 +39,7 @@ normest(M, maxiter = 100, tol = .Machine$double.eps^(1/2))
   If feasible, an accurate value of the 2-norm would simply be calculated
   as the maximum of the singular values (which are all positive):
 
-  \code{max(svd(M)$d)}
+  \code{max(svd(M)\$d)}
 }
 \seealso{
   \code{\link{cond}}, \code{\link{svd}}

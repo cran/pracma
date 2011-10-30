@@ -20,7 +20,7 @@ subspace(A, B)
   An angle in radians.
 }
 \references{
-  ??
+  Strang, G. (1998). Introduction to Linear Algebra. Wellesley-Cambridge Press.
 }
 \note{
   It is not necessary that two subspaces be the same size in order to find

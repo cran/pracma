@@ -21,8 +21,11 @@ numdiff(f, x, maxiter = 16, h = 1, ..., accuracy = .Machine$double.eps)
   \item{...}{variables to be passed to function \code{f}.}
 }
 \details{
-  Returns the derivative of \code{f} at \code{x0} resp. at all points of
-  the vector \code{x}.
+  \code{numderiv} returns the derivative of \code{f} at \code{x0}, where
+  \code{x0} must be a single scalar in the domain of the function.
+
+  \code{numdiff} is a vectorized form of \code{numderiv} such that the
+  derivatives will be returned at all points of the vector \code{x}.
 }
 \value{
   Numeric scalar or vector of approximated derivatives.

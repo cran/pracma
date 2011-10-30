@@ -8,11 +8,52 @@ PLANNED FOR NEXT VERSION
     o ode45() implementing the approach by Dormand and Prince.
       [Matlab's ode23() is based on Bogacki and Shampine.]
 
-    o Hash functions (Python style), see "?hash".
+    o newmark() Newmark's method for solving second order differential
+      equations of the form  y''(t) = f(t, y(t), y'(t)) on [t1, t2].
+
+    o cranknic() Crank-Nicolson 'ivp' solver, combining the forward and
+      backward Euler methods for ordinary differential equations.
+
+CHANGES IN VERSION 0.8.1 (2011-10-31)
+
+    o Corrected pinv() for (nearly) singular matrices.
+
+    o Renamed ifactor() to factorize().
+
+CHANGES IN VERSION 0.8.0 (2011-10-27)
+
+    o Minor corrections and improvements to the 'pracma.pdf' manual,
+    incl. numdiff(), refindall(), trigApprox(), and subspace().
+
+CHANGES IN VERSION 0.7.9 (2011-10-22)
+
+    o spinterp() monotonic (and later on shape-preserving) interpolation
+      following the approach of Delbourgo and Gregory.
+
+CHANGES IN VERSION 0.7.8 (2011-10-17)
+
+    o bvp() solves boundary value problems of the following kind:
+      -u''(x) + c1 u'(x) + c2 u(x) = f(x) for x in [a, b]. 
+
+CHANGES IN VERSION 0.7.7 (2011-10-14)
+
+    o primes2(n1, n2) will return all prime numbers betweeen n1 and n2
+      (without storing the numbers from sqrt(n2) up to n1).
+
+    o Another change to the NEWS.Rd file.
+
+CHANGES IN VERSION 0.7.6 (2011-08-05)
+
+    o gaussNewton() for function minimization and solving systems of
+      nonlinear equations. fsolve() as a wrapper for it.
+
+    o fzsolve() for root finding of complex functions.
+
+    o softline() Fletcher's inexact linesearch algorithm.
 
 CHANGES IN VERSION 0.7.5 (2011-07-26)
 
-    o Put NEWS.RD in the /inst subdirectory (and NEWS.pdf in /doc),
+    o Put NEWS.Rd in the /inst subdirectory (and NEWS.pdf in /doc),
       thanks to Kurt Hornik; slightly changed the version numbering.
 
 CHANGES IN VERSION 0.7-4 (2011-07-22)
@@ -41,7 +82,7 @@ CHANGES IN VERSION 0.7-0 (2011-07-07)
 
     o Sigmoid and Einstein functions.
 
-    o Updated NEWS.RD, NEWS.pdf
+    o Updated NEWS.Rd, NEWS.pdf
 
 CHANGES IN VERSION 0.6-9 (2011-07-06)
 
@@ -320,7 +361,7 @@ CHANGES IN VERSION 0.3-1 (2011-04-16)
 
 CHANGES IN VERSION 0.3-0 (2011-04-09)
 
-    o New version of news.Rd, news.pdf.
+    o New version of NEWS.Rd, NEWS.pdf.
 
     o More test functions for root finding and quadrature.
 

@@ -1,6 +1,6 @@
 \name{mdiag}
 \alias{mdiag}
-\title{Matrix diagonal}
+\title{Matrix Diagonal}
 \description{
 Generate diagonal matrices or return diagonal of a matrix
 }

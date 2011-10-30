@@ -2,7 +2,7 @@
 \alias{bisect}
 \alias{regulaFalsi}
 \title{
-Rootfinding through Bisection
+Rootfinding Through Bisection
 }
 \description{
 Finding roots of univariate functions in bounded intervals.
@@ -20,7 +20,7 @@ regulaFalsi(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
 }
 \details{
   Well known root finding algorithms for real, univariate, continuous
-  functions. Bisection works in any case iff the function has opposite
+  functions. Bisection works in any case if the function has opposite
   signs at the endpoints of the interval.
 
   ``Regula falsi'' combines bisection and secant methods. The so-called

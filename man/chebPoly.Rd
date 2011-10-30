@@ -16,7 +16,7 @@ chebPoly(n, x = NULL)
 
   The coefficients of the first \code{n} Chebyshev polynomials are computed
   using the recursion formula. For computing any values at points the well
-  known Horener schema is applied.
+  known Horner schema is applied.
 }
 \value{
   If \code{x} is \code{NULL}, returns an \code{(n+1)}-by-\code{(n+1)} matrix
