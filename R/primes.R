@@ -51,3 +51,26 @@ primes2 <- function(n1 = 1, n2 = 1000) {
     }
     return(N[A == 0])
 }
+
+
+twinPrimes <- function(n1, n2) {
+	P <- primes2(n1, n2)
+	twins <- which(diff(P) == 2)
+	cbind(P[twins], P[twins+1])
+}
+
+
+nextPrime <-function(n) {
+	if (n <= 1)  n <- 1  else  n <- floor(n)
+	n <- n + 1
+
+	# m <- 2*n  # Bertrands law
+	d1 <- max(3, round(log(n)))
+	P  <- primes2(n, n + d1)
+
+	while(length(P) == 0) {
+		n <- n + d1 + 1
+		P  <- primes2(n, n + d1)
+	}
+	return( min(P) )
+}

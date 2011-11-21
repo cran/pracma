@@ -25,3 +25,19 @@ expm <- function(A, np = 128) {
     B <- real(B)/np
     return(zapsmall(B))
 }
+
+
+logm <- function(A) {
+    if (!is.numeric(A) || !is.matrix(A) || nrow(A) != ncol(A))
+        stop("Argument 'A' must be a square numeric matrix.")
+
+    E <- eigen(A)
+    e <- E$values
+    if (any(imag(e) == 0 && real(e) <= 0))
+        stop("A must not have any nonpositive real eigenvalues.")
+
+
+    D <- diag(log(E$values))
+    X <- E$vectors %*% D %*% solve(E$vectors)
+    return(real(X))
+}

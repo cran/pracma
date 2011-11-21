@@ -1,5 +1,6 @@
 \name{expm}
 \alias{expm}
+\alias{logm}
 \title{
   Matrix Exponential
 }
@@ -8,6 +9,8 @@
 }
 \usage{
 expm(A, np = 128)
+
+logm(A)
 }
 \arguments{
   \item{A}{numeric square matrix.}
@@ -22,6 +25,10 @@ expm(A, np = 128)
   Here this is achieved by taking G to be a circle and approximating the
   integral by the trapezoid rule.
 
+  \code{logm} is a fake at the moment as it computes the matrix logarithm
+  through taking the logarithm of its eigenvalues; will be replaced by an
+  approach using Pade interpolation.
+
   Another more accurate and more reliable approach for computing these
   functions can be found in the R package `expm'.
 }
@@ -34,8 +41,8 @@ expm(A, np = 128)
   SIAM Review, Vol. 1, No. 1, pp. 1--46.
   [Available at CiteSeer, \url{citeseer.ist.psu.edu}]
 
-  R. B. Burckel (1979). An Introduction to Classical Complex Analysis,
-  Vol. 1. Birkh\"auser, Basel Stuttgart.
+  N. J. Higham (2008). Matrix Functions: Theory and Computation. SIAM
+  Society for Industrial and Applied Mathematics.
 }
 \author{
   Idea and Matlab code for a cubic root by Nick Trefethen in his 
@@ -44,7 +51,7 @@ expm(A, np = 128)
 }
 \note{
   This approach could be used for other analytic functions, but a point to
-  consider is which branch to take (e.g., for the \code{log} function).
+  consider is which branch to take (e.g., for the \code{logm} function).
 }
 \seealso{
   \code{expm::expm}
@@ -56,6 +63,13 @@ A <- matrix(c(-49, -64, 24, 31), 2, 2)
 expm(A)
 # -0.7357588 0.5518191
 # -1.4715176 1.1036382
+
+A1 <- matrix(c(10,  7,  8,  7,
+                7,  5,  6,  5,
+                8,  6, 10,  9,
+                7,  5,  9, 10), nrow = 4, ncol = 4, byrow = TRUE)
+expm(logm(A1))
+logm(expm(A1))
 
 ##  System of linear differential equations: y' = M y  (y = c(y1, y2, y3))
 M <- matrix(c(2,-1,1, 0,3,-1, 2,1,3), 3, 3, byrow=TRUE)

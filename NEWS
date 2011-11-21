@@ -5,8 +5,45 @@
 
 PLANNED FOR NEXT VERSION
 
-    o ode45() implementing the approach by Dormand and Prince.
-      [Matlab's ode23() is based on Bogacki and Shampine.]
+    o direct1d() one-dimensional version of the DIRECT algorithm for
+      global function minimization
+
+    o logm() the matrix logarithm function, using a Pade approximation.
+
+CHANGES IN VERSION 0.8.6 (2011-11-21)
+
+    o ridder() Ridder's method for zero finding of univariate functions.
+
+    o Complete the NEWS.Rd file up to this version.
+
+CHANGES IN VERSION 0.8.5 (2011-11-19)
+
+    o sqrtm() matrix square root, based on Denman-Beavers iteration,
+      rootm() matrix p-th root, computing a complex contour integral,
+      signm() matrix sign function.
+
+	o fzero() now uses the new zeroin() function,
+	  i.e., a Brent-Dekker approach instead of refering to uniroot().
+
+    o twinPrimes() twin primes in a given interval, and \code{nextPrime}
+      will find the next higher prime.
+
+CHANGES IN VERSION 0.8.4 (2011-11-14)
+
+    o Transformations between cartesian, spherical, polar and cylindrical
+      coordinate systems: cart2sph(), sph2cart(), cart2pol(), pol2cart().
+
+    o polar() uniformly random points in the unit circle (till Matlab 5).
+
+CHANGES IN VERSION 0.8.3 (2011-11-11)
+
+    o accumarray() grouping elements and applying a function to each group.
+
+    o uniq() Matlab-style 'unique' function, allsums() in the examples.
+
+    o small correction to fsolve(), mentioned on the 'check summary' page.
+
+CHANGES IN VERSION 0.8.2 (2011-11-04)
 
     o newmark() Newmark's method for solving second order differential
       equations of the form  y''(t) = f(t, y(t), y'(t)) on [t1, t2].
@@ -14,7 +51,7 @@ PLANNED FOR NEXT VERSION
     o cranknic() Crank-Nicolson 'ivp' solver, combining the forward and
       backward Euler methods for ordinary differential equations.
 
-CHANGES IN VERSION 0.8.1 (2011-10-31)
+CHANGES IN VERSION 0.8.1 (2011-10-30)
 
     o Corrected pinv() for (nearly) singular matrices.
 
@@ -23,7 +60,7 @@ CHANGES IN VERSION 0.8.1 (2011-10-31)
 CHANGES IN VERSION 0.8.0 (2011-10-27)
 
     o Minor corrections and improvements to the 'pracma.pdf' manual,
-    incl. numdiff(), refindall(), trigApprox(), and subspace().
+      incl. numdiff(), refindall(), trigApprox(), and subspace().
 
 CHANGES IN VERSION 0.7.9 (2011-10-22)
 

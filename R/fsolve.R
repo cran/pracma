@@ -21,7 +21,7 @@ fsolve <- function(f, x0, J = NULL,
         J <- function(x) jacobian(f, x, ...)
     }
 
-    sol <- gaussNewton(x0, f, J = J, maxiter = maxiter, tol = tol)
+    sol <- gaussNewton(x0, f, Jfun = J, maxiter = maxiter, tol = tol)
     xs <- sol$xs; fs <- sol$fs
     if (fs > tol)
         warning("Minimum appears not to be a zero -- change starting point.")
