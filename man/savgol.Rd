@@ -36,7 +36,7 @@ savgol(T, fl, forder = 4, dorder = 0)
   (and to be multiplied by k! --- the sign appears to be wrong).
 }
 \seealso{
-\code{sav_gol} in package `RTisean' or \code{sgolayfilt} in package `signal'.
+\code{RTisean::sav_gol}, \code{signal::sgolayfilt}, \code{\link{whittaker}}.
 }
 \examples{
 \dontrun{
@@ -44,8 +44,30 @@ savgol(T, fl, forder = 4, dorder = 0)
 ts <- sin(2*pi*(1:1000)/200)
 t1 <- ts + rnorm(1000)/10
 t2 <- savgol(t1, 51)
-plot(1:1000, t1)
-lines(1:1000, ts, col="blue")
-lines(1:1000, t2, col="red")}
+plot( 1:1000, t1, col = "grey")
+lines(1:1000, ts, col = "blue")
+lines(1:1000, t2, col = "red")
+# t3 <- whittaker(t1, lambda = 1600)
+# lines(1:1000, t3, col = "darkgreen", lwd = 2)
+
+#-----------------------------------------------------------------------
+#   Whittacker Smoothing
+#   Paul Eilers, 2002 (Matlab) and Nicholas Lewin-Koh, 2004 (R/S)
+#-----------------------------------------------------------------------
+whittaker <- function(y, lambda, d = 2){
+#   Smoothing with a finite difference penalty
+#   y:      signal to be smoothed
+#   lambda: smoothing parameter (rough 50..1e4 smooth)
+#   d:      order of differences in penalty (generally 2)
+    require(SparseM, warn.conflicts = FALSE)
+    m <- length(y)
+    E <- as(m, "matrix.diag.csr")
+    class(E) <- "matrix.csr"
+    Dmat <- diff(E, differences = d)
+    B <- E + (lambda * t(Dmat) \%*\% Dmat)
+    z <- solve(B, y)
+    return(z)
+}
+}
 }
 \keyword{ timeseries }

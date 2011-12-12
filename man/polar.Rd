@@ -1,42 +1,44 @@
 \name{polar}
 \alias{polar}
 \title{
-  Random Points in Unit Circle (Matlab Style)
+  Polar Coordinate Plot (Matlab Style)
 }
 \description{
-  Generate uniformly random points in the unit circle (or in a circle
-  of radius r).
+  The polar function accepts polar coordinates, plots them in a Cartesian
+  plane, and draws the polar grid on the plane.
 }
 \usage{
-polar(n = 1, r = 1)
+polar(t, r, type="l", 
+      col = "blue", grcol = "darkgrey", bxcol = "black",
+      main = "Polar Plot", add = FALSE, ...)
 }
 \arguments{
-  \item{n}{number of points, default 1.}
-  \item{r}{radius of circle, default 1.}
+    \item{t, r}{vectors specifying angle and radius.}
+    \item{type}{type of the plot, lines, points, or no plotting.}
+    \item{col}{color of the graph.}
+    \item{grcol, bxcol}{color of grid anf box around the plot.}
+    \item{main}{plot title.}
+    \item{add}{logical; if true, the graph will be plotted into the
+               coordinate system of an existing plot.}
+    \item{...}{plotting parameters to be passed to the \code{points} function.}
 }
 \details{
-  Generates tuples of points and rejects those outside the circle.
+    \code{polar(theta,rho)} creates a polar coordinate plot of the angle
+    \code{theta} versus the radius \code{rho}. \code{theta} is the angle
+    from the x-axis to the radius vector specified in radians; \code{rho}
+    is the length of the radius vector.
 }
 \value{
-  A pair of values representing a point in the circle, or a matrix of size
-  (n, 2).
+  Generates a plot; no returns.
 }
 \author{
   HwB  email: <hwborchers@googlemail.com>
 }
 \examples{
-U <- polar(1000, 2)
 \dontrun{
-plot(U[, 1], U[, 2], pch="+")}
-
-#-- v is 2 independent normally distributed elements
-# u <- polar(1); r <- t(u) %*% u
-# v <- sqrt(-2 * log(r)/r) * u
-
-n <- 5000; U <- polar(n)
-R <- apply(U*U, 1, sum)
-P <- sqrt(-2 * log(R)/R) * U  # rnorm(2*n)
-\dontrun{
-hist(c(P))}
+t <- deg2rad(seq(0, 360, by = 2))
+polar(t, cos(2*t), bxcol = "white", main = "Sine and Cosine")
+polar(t, sin(2*t), col = "red", add = TRUE)
 }
-\keyword{ stat }
+}
+\keyword{ graphs }

@@ -55,4 +55,4 @@
   \dontrun{
   length(primes(1e6))  # there are 78498 prime numbers less than 1,000,000.}
 }
-\keyword{ math }
+\keyword{ arith }

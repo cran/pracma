@@ -1,3 +1,7 @@
+##
+##  d i s t m a t . R  Distance matrix and Hausdorff dimension
+##
+
 # If a is m x r and b is n x r then 
 #
 #   apply(outer(a,t(b),"-"),c(1,4),function(x)sqrt(sum(diag(x*x))))
@@ -8,6 +12,7 @@
 # Modify, as necessary, if you want distances other than euclidean.
 #
 # The following code is 10-100 times faster.
+
 
 distmat <- function(X, Y)
 #   Computes Euclidean distance between two vectors as:
@@ -27,4 +32,21 @@ distmat <- function(X, Y)
     YY <- matrix( rep(apply(Y*Y, 1, sum), m), m, n, byrow=T )
 
     sqrt(XX + YY - 2*XY)
+}
+
+
+hausdorff_dist <- function(P, Q) {
+    stopifnot(is.numeric(P), is.numeric(Q))
+    if (is.vector(P)) P <- matrix(P, ncol = 1)
+    if (is.vector(Q)) Q <- matrix(Q, ncol = 1)
+    if (ncol(P) != ncol(Q))
+        stop("'P' and 'Q' must have the same number of columns.")
+
+    D <- distmat(P, Q)
+
+    # directional Hausdorff dimension
+    dhd_PQ <- max(apply(D, 1, min))
+    dhd_QP <- max(apply(D, 2, min))
+
+    return(max(dhd_PQ, dhd_QP))
 }

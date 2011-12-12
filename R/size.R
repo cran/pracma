@@ -24,6 +24,12 @@ numel <- function(x) {
 	else              return(NULL)
 }
 
+nnz <- function(x) {
+    if (length(x) == 0) return(0)
+    stopifnot(is.numeric(x) || is.complex(x))
+    sum(x != 0)
+}
+
 ndims <- function(x) {
 	sz <- size(x)
 	if (!is.null(sz)) length(sz)

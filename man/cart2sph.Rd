@@ -17,10 +17,10 @@ cart2pol(xyz)
 pol2cart(prz)
 }
 \arguments{
-  \item{xyz}{cartesian coordinates x, y, z as vector.}
-  \item{tpr}{spherical coordinates theta, phi, and r as vector.}
+  \item{xyz}{cartesian coordinates x, y, z as vector or matrix.}
+  \item{tpr}{spherical coordinates theta, phi, and r as vector or matrix.}
   \item{prz}{polar coordinates phi, r or cylindrical coordinates phi, r, z
-             as vector.}
+             as vector or matrix.}
 }
 \details{
   \code{cart2sph} returns spherical coordinates as (theta, phi, r), and
@@ -32,10 +32,13 @@ pol2cart(prz)
 
   To go from cylindrical to cartesian coordinates, transform to cartesian
   coordinates first --- or write your own function, see the examples.
+
+  All transformation functions are vectorized.
 }
 \value{
   All functions return a (2- or 3-dimensional) vector representing a point
-  in the requested coordinate system.
+  in the requested coordinate system, or a matrix with 2 or 3 named columns
+  where is row represents a point. The columns are named accordingly.
 }
 \note{
   In Matlab these functions accept two or three variables and return two or

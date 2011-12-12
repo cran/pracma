@@ -3,10 +3,47 @@
 \encoding{UTF-8}
 
 
+\section{Changes in Version 0.9.1 (2011-12-12)}{
+    \itemize{
+      \item plotyy() plots curves with y-axes on both left and right side.
+      \item fplot() plots components of a multivariate function.
+    }
+}
+
+\section{Changes in Version 0.9.0 (2011-12-11)}{
+    \itemize{
+      \item errorbar() routine for plotting error bars in both directions.
+      \item Whittaker-Henderson smoothing  ** Not yet running** .
+      \item rref() reduced row echelon form.
+    }
+}
+
+\section{Changes in Version 0.8.9 (2011-12-08)}{
+    \itemize{
+      \item cutpoints() automatically finds cutting points based on gaps.
+      \item hausdorff_dist calculates the Hausdorff distance / Hausdorff dimension.
+      \item nnz() number of non-zeros elements (Matlab style).
+    }
+}
+
+\section{Changes in Version 0.8.8 (2011-12-06)}{
+    \itemize{
+      \item polar() for polar plots (Matlab style), see the example plots.
+      \item andrewsplot() plots Andrews curves in polar coordinates.
+      \item Vectorized: cart2sph(), sph2cart(), cart2pol(), pol2cart().
+    }
+}
+
+\section{Changes in Version 0.8.7 (2011-11-30)}{
+    \itemize{
+      \item deg2rad(), rad2deg()
+      \item figure() Matlab style, and pltcross() plotting crosses.
+    }
+}
+
 \section{Changes in Version 0.8.6 (2011-11-21)}{
     \itemize{
       \item ridder() Ridder's method for zero finding of univariate functions.
-      \item Complete the NEWS.Rd file up to this version.
     }
 }
 
@@ -79,7 +116,6 @@
     \itemize{
       \item primes2(n1, n2) will return all prime numbers betweeen n1 and n2
         (without storing the numbers from sqrt(n2) up to n1).
-      \item Another change to the NEWS.Rd file.
     }
 }
 
@@ -130,7 +166,6 @@
 \section{Changes in Version 0.7.0 (2011-07-07)}{
     \itemize{
       \item Sigmoid and Einstein functions.
-      \item Updated NEWS.Rd, NEWS.pdf
     }
 }
 
@@ -204,8 +239,7 @@
     \itemize{
       \item muller() Muller's root finding method.
       \item Added differential equation example to expm()'s help page.
-      \item Changed NEWS file to become simpler (no subsections);
-        updated the NEWS.Rd, NEWS.pdf files.
+      \item Changed NEWS file to become simpler (no subsections).
     }
 }
 
@@ -638,6 +672,6 @@
 
       \item Remark: Typeset this document as:
 
-      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 0.8.6"}.
+      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 0.9.1"}.
     }
 }
