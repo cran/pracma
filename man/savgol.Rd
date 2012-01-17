@@ -29,7 +29,7 @@ savgol(T, fl, forder = 4, dorder = 0)
 }
 \author{
   Peter Riegler implemented a Matlab version in 2001. Based on this,
-  Hans W. Borchers did an implementation in R in 2003.
+  Hans W. Borchers published an R version in 2003.
 }
 \note{
   For derivatives T2 has to be divided by the step size to the order\cr

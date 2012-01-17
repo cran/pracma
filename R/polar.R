@@ -14,6 +14,7 @@ polar <- function(t, r, type="l",
 
     # transform coordinates
     xy <- pol2cart(z)
+    if (n == 1) dim(xy) <- c(1, 2)
     hy <- hypot(xy[, 1], xy[, 2])
 
     if (!add) {
@@ -62,7 +63,7 @@ polar <- function(t, r, type="l",
     }
 
     # Plot the function (type can be 'l', 'p', or 'n')
-    lines(xy[, 1], xy[, 2], type=type, col = col, ...)
+    lines(xy[, 1], xy[, 2], type = type, col = col, ...)
 
     invisible()
 }

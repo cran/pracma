@@ -9,12 +9,30 @@ modpower <- function(n, k, m) {
               is.numeric(m), floor(m) == ceiling(m), m >= 0)
 
     if (k == 0) return(1)
-    r <- n %% m; k <- k-1
-    while (k > 0) {
-        r <- (r*n) %% m; k <- k-1
+    if (n == 0) return(0)
+
+    b <- n %% m
+    if (b > 9e7)
+        warning("Integer overflow: value of base 'n' is too big.")
+
+    r <- 1
+    while (k != 0) {
+        if ( (k %/% 2) * 2 != k )
+            r <- (b * r) %% m
+        k <- k %/% 2
+        b <- (b * b) %% m
     }
     return(r)
 }
+
+##  this did not use modular exponentiation
+#   if (k == 0) return(1)
+#   r <- n %% m; k <- k-1
+#   while (k > 0) {
+#       r <- (r*n) %% m; k <- k-1
+#   }
+#   return(r)
+
 
 modorder <- function(n, m) {
     stopifnot(is.numeric(n), floor(n) == ceiling(n), n >= 0,
@@ -29,6 +47,7 @@ modorder <- function(n, m) {
     return(k)
 }
 
+
 primroot <- function(m) {
     stopifnot(is.numeric(m), floor(m) == ceiling(m), m >= 0)
 
@@ -41,15 +60,15 @@ primroot <- function(m) {
         if (k == m-1) break
     }
     return(r)
-
-    ##  Factorize (m-1):
-    # P <- unique(factorize(m-1))
-    # for (r in 2:(m-1)) {
-    #     x <- TRUE
-    #     for (p in P) {
-    #         if (modpower(r, (m-1)/p, m) == 1) x <- FALSE
-    #     }
-    #     if (isTRUE(x)) return(r)
-    # }
-    # stop("No prim root found.")
 }
+
+##  Factorize (m-1):
+# P <- unique(factorize(m-1))
+# for (r in 2:(m-1)) {
+#     x <- TRUE
+#     for (p in P) {
+#         if (modpower(r, (m-1)/p, m) == 1) x <- FALSE
+#     }
+#     if (isTRUE(x)) return(r)
+# }
+# stop("No prim root found.")

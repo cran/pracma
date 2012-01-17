@@ -3,7 +3,7 @@
 ##
 
 
-hampel <- function (x, k)
+hampel <- function (x, k, t0 = 3)
 {
     #   x:  vector or time series
     #   k:  window [x_(i-k),...,x_i,...,x_(i+k)]
@@ -12,7 +12,7 @@ hampel <- function (x, k)
     ind <- c()       # indices of outliers
 
     L  <- 1.4826     # constants for normal distributions
-    t0 <- 3          # Pearson's 3 sigma edit rule
+    # t0 <- 3        # Pearson's 3 sigma edit rule
 
     # we don't look at outliers at the end parts of x !
     for ( i in (k+1):(n-k) ) {

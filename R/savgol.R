@@ -5,6 +5,11 @@
 
 
 savgol <- function(T, fl, forder=4, dorder=0) {
+    stopifnot(is.numeric(T), is.numeric(fl))
+    if (fl <= 1 || fl %% 2 == 0)
+        stop("Argument 'fl' must be an odd integer greater than 1.")
+    n <- length(T)
+
     # -- calculate filter coefficients --
     fc <- (fl-1)/2                          # index: window left and right
     X <- outer(-fc:fc, 0:forder, FUN="^")   # polynomial terms and coeffs
@@ -14,7 +19,8 @@ savgol <- function(T, fl, forder=4, dorder=0) {
     T2 <- convolve(T, rev(Y[(dorder+1),]), type="o")   # convolve(...)
     T2 <- T2[(fc+1):(length(T2)-fc)]
 
-    return( (-1)^dorder * T2 )
+    Tsg <- (-1)^dorder * T2
+    return( Tsg )
 }
 
 pinv <- function (A, tol=.Machine$double.eps^(2/3)) {

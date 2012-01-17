@@ -3,6 +3,40 @@
 ------------------------------------------------------------------------------
 
 
+PLANNED FOR NEXT VERSIONS
+
+    o [tbd.]
+
+CHANGES IN VERSION 0.9.6 (2012-01-17)
+
+    o [tbd.]
+
+CHANGES IN VERSION 0.9.5 (2012-01-16)
+
+    o kmeanspp() kmeans++ clustering algorithm.
+    o interv_union() vectorized according to an idea of William Dunlap.
+    o savgol() and hampel() with new options, fuelled by a blog entry
+      of Ron Pearson in his ExploringDataBlog.
+
+CHANGES IN VERSION 0.9.4 (2012-01-08)
+
+    o DSCsearch() Davies-Swann-Campey search in one dimension.
+    o Improved modpower() through modular exponentiation.
+      added lehmann_test() Lehmann's primality test as example.
+    o Corrected polar() and andrewsplot().
+
+CHANGES IN VERSION 0.9.3 (2011-12-27)
+
+    o direct1d() one-dimensional version of the DIRECT algorithm for
+      global function minimization.
+
+CHANGES IN VERSION 0.9.2 (2011-12-26)
+
+    o ApEn() approximate entropy of a time series.
+    o circshift() circularly shifting arrays (Matlab Style).
+    o interv_union(), interv_intersect() union and intersection
+      of a set of (closed) intervals.
+
 CHANGES IN VERSION 0.9.1 (2011-12-12)
 
     o plotyy() plots curves with y-axes on both left and right side.
