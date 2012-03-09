@@ -7,16 +7,47 @@ PLANNED FOR NEXT VERSIONS
 
     o [tbd.]
 
-CHANGES IN VERSION 0.9.6 (2012-01-17)
+CHANGES IN VERSION 1.0.1 (2012-03-09)
 
-    o [tbd.]
+    o agm() example computes pi to an arbitrary number of decimal digits
+      using the Rmpfr package for variable precision arithmetic.
+    o plotyy() corrected right ordinate, prettying the labels.
+    o peaks() peaks function (Matlab style).
+
+CHANGES IN VERSION 1.0.0 (2012-03-01)
+
+    o Updated the NEWS.Rd file.
+
+CHANGES IN VERSION 0.9.9 (2012-02-29)
+
+    o qrSolve solves overdetermined system of linear equations.
+    o DSCsearch() removed, now in package 'pracopt'.
+    o randp() found a better, non-selective approach.
+
+CHANGES IN VERSION 0.9.8 (2012-02-23)
+
+    o gramSchmidt() modified Gram-Schmidt process.
+    o householder() Householder reflections and QR decomposition.
+    o givens() Givens rotation and QR decomposition.
+    o corrected a small error in ridder() (thanks to Roger Harbord); new
+      example of how to use ridder() with Rmpfr for multiple precision.
+
+CHANGES IN VERSION 0.9.7 (2012-02-17)
+
+    o erf() corrected, erfc() and erfcx() as new functions,
+      including their inverses erfinv() and erfcinv().
+    o hypot() now numerically more stable (thanks to Jerry Lewis).
+
+CHANGES IN VERSION 0.9.6 (2012-01-25)
+
+    o Changed third example for dblquad() [new Windows toolchain problem].
+    o Deactivated the test for gammaz() because of problems on Solaris.
 
 CHANGES IN VERSION 0.9.5 (2012-01-16)
 
     o kmeanspp() kmeans++ clustering algorithm.
     o interv_union() vectorized according to an idea of William Dunlap.
-    o savgol() and hampel() with new options, fuelled by a blog entry
-      of Ron Pearson in his ExploringDataBlog.
+    o hampel() with new option, fuelled by a blog entry of Ron Pearson.
 
 CHANGES IN VERSION 0.9.4 (2012-01-08)
 
@@ -181,7 +212,7 @@ CHANGES IN VERSION 0.6-6 (2011-07-02)
       Faddejew-Leverrier method.
     o froots() to find *all* roots (also of second or higher order) of
       a univariate function in a given interval. The same with fmins()
-      to find all minima.
+      to find *all* minima.
 
 CHANGES IN VERSION 0.6-5 (2011-07-01)
 
@@ -408,8 +439,7 @@ CHANGES IN VERSION 0.2-7
 
 CHANGES IN VERSION 0.2-6
 
-    o String functions blanks(), strtrim(), deblank(), strjust(),
-      and strrep().
+    o String functions blanks(), strtrim(), deblank(), strjust(), strrep().
     o interp1() one-dimensional interpolation (incl. spline)
 
 CHANGES IN VERSION 0.2-5
@@ -436,8 +466,7 @@ CHANGES IN VERSION 0.2-3
 CHANGES IN VERSION 0.2-2
 
     o vnorm() vector norm
-    o Warning about a nasty "non-ASCII input" in the savgol.RD file
-      has been resolved.
+    o Warning about a nasty "non-ASCII input" in the savgol.RD file resolved.
 
 CHANGES IN VERSION 0.2-1 (2011-03-17)
 
@@ -483,12 +512,12 @@ CHANGES IN VERSION 0.1-7 (2011-03-08)
 
 CHANGES IN VERSION 0.1-6 (2011-03-06)
 
-    o Matrix functions mdiag() and mtrace() added. inv() is introduced
-      as an alias for solve() in R.
+    o Matrix functions mdiag() and mtrace() added.
+      inv() is introduced as an alias for solve() in R.
     o Generate special matrices hankel(), rosser(), and wilkinson().
       kron() is an alias for the R function kronecker().
-    o Renamed factors() to ifactor() to distinguish it more clearly from
-      factors as used in R.
+    o Renamed factors() to ifactor() to distinguish it more clearly
+      from factors as used in R.
 
 CHANGES IN VERSION 0.1-5
 
@@ -498,9 +527,7 @@ CHANGES IN VERSION 0.1-5
 CHANGES IN VERSION 0.1-4
 
     o Added functions for generating sequences of (log-)linearly spaced
-      numeric values: linspace() and logspace(). Note that the functions
-      in the `matlab' package are not exactly mimicking the corresponding
-      Matlab/Octave functions.
+      numeric values: linspace() and logspace().
     o Added basic complex functions real(), imag(), conj(), and angle()
       which are essentially only aliases of the R functions Re(), Im(), 
       or Conj().
@@ -509,8 +536,8 @@ CHANGES IN VERSION 0.1-4
 
 CHANGES IN VERSION 0.1-3 (2011-02-20)
 
-    o Added compan() function for the `companion' matrix; the eig() function
-      is an alias for the R eigen()values function.
+    o Added compan() function for the `companion' matrix;
+      the eig() function is an alias for the R eigen()values function.
     o Added the polynomial functions poly(), polyder(), polyfit(),
       polyint(), and polyval().
     o roots() returns real and complex roots of polynomials.

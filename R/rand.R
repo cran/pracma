@@ -46,25 +46,13 @@ randi <- function(imax, n=1, m=n) { # drop?
 
 
 randp <- function(n = 1, r = 1) {
-	d <- 2
-	while (d > 1) {
-		u <- 2 * runif(2) - 1
-		d <- t(u) %*% u
-	}
-
-	if (n == 1) {
-		U <- u
-	} else {
-		U <- matrix(NA, nrow = n, ncol = 2)
-		U[1, ] <- u
-		for (i in 2:n) {
-			d <- 2
-			while (d > 1) {
-				u <- 2 * runif(2) - 1
-				d <- t(u) %*% u
-			}
-			U[i, ] <- u
-		}
-	}
-	return(r * U)
+    if (n < 1 || r < 0) return(c())
+    x <- rnorm(n)
+    y <- rnorm(n)
+    r <- r * sqrt(runif(n)/(x^2 + y^2))
+    if (n == 1)
+        U <- c(x, y)
+    else
+        U <- cbind(r*x, r*y)
+    return(U)
 }

@@ -4,7 +4,7 @@ broyden <- function(Ffun, x0, maxiter = 20, tol = .Machine$double.eps^(1/2)) {
     F <- match.fun(Ffun)
     y0 <- F(x0)
     if (length(x0) != length(y0))
-        stop("Function 'F' must be 'square, i.e. from R^n to R^n .")
+        stop("Function 'F' must be 'square', i.e. from R^n to R^n .")
 
     # Compute once the Jacobian and its inverse
     A0 <- jacobian(F, x0)

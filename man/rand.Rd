@@ -31,8 +31,7 @@ randp(n = 1, r = 1)
   resp. 1 and \code{imax}, if \code{imax} is a scalar.
 
   \code{randp()} generate uniformly random points in the unit circle (or in
-  a circle of radius r). It does that by generating tuples of points and
-  rejects those outside the circle. \code{n} can only be  a vector.
+  a circle of radius r).
 }
 \value{
   Matrices of size \code{nxm} resp. a vector of length \code{n}.

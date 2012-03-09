@@ -1,9 +1,12 @@
-\name{erf, erfc}
+\name{erf}
 \alias{erf}
+\alias{erfinv}
 \alias{erfc}
+\alias{erfcinv}
+\alias{erfcx}
 \alias{erfz}
 \title{
-  Error Functions (Matlab Style)
+  Error Functions and Inverses (Matlab Style)
 }
 \description{
   The error or Phi function is a variant of the cumulative normal (or
@@ -11,19 +14,22 @@
 }
 \usage{
 erf(x)
+erfinv(y)
 erfc(x)
+erfcinv(y)
+erfcx(x)
 
 erfz(z)
 }
 \arguments{
-  \item{x}{vector of real numbers.}
+  \item{x, y}{vector of real numbers.}
   \item{z}{real or complex number; must be a scalar.}
 }
 \details{
-  For real arguments, the following obvious relations
-  \deqn{erf(x) = 2 Phi(x \sqrt(2)) - 1}
-  \deqn{erfc(x) = 2 Phi(-x \sqrt(2))}
-  for the error and the complementary error functions were used.
+  \code{erf} and \code{erfinv} are the error and inverse error functions.\cr
+  \code{erfc} and \code{erfcinv} are the complementary error function and
+  its inverse.\cr
+  \code{erfcx} is the scaled complementary error function.
 }
 \value{
   Real or complex number, the value of the function.

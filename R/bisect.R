@@ -55,6 +55,9 @@ regulaFalsi <- function(f, a, b, maxiter=100, tol=.Machine$double.eps^0.5)
 
 
 ridder <- function(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5) {
+    # (!is.numeric(a) && !is.complex(a) && !is(a,"mpfr") ||
+    #  !is.numeric(b) && !is.complex(b) && !is(b,"mpfr"))
+    #     stop("Arguments 'a' and 'b' must be numeric, complex, or mpfr.")
 	x1 <- a;      x2 <- b
 	f1 <- f(x1);  f2 <- f(x2)
 	if (f1*f2 >= 0) stop("f(a) and f(b) must have different signs.")
@@ -74,7 +77,7 @@ ridder <- function(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5) {
             x1 <- xm;  f1 <- fm
             x2 <- x3;  f2 <- f3
         } else if (f1 * f3 < 0) {
-            x2 <- xm;  f2 <- fm
+            x2 <- x3;  f2 <- f3
         } else if (f2 * f3 < 0) {
             x1 <- x3;  f1 <- f3
         } else {

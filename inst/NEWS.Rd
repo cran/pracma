@@ -3,6 +3,44 @@
 \encoding{UTF-8}
 
 
+\section{Changes in Version 1.0.0 (2012-03-01)}{
+    \itemize{
+      \item Updated the NEWS.Rd file.
+    }
+}
+
+\section{Changes in Version 0.9.9 (2012-01-29)}{
+    \itemize{
+      \item qrSolve solves overdetermined system of linear equations.
+      \item DSCsearch() removed, now in package `pracopt'.
+      \item randp() found a better, non-selective approach.
+    }
+}
+
+\section{Changes in Version 0.9.8 (2012-02-23)}{
+    \itemize{
+      \item gramSchmidt() modified Gram-Schmidt process.
+      \item householder() Householder reflections and QR decomposition.
+      \item givens() Givens rotation and QR decomposition.
+      \item corrected a small error in ridder() (thanks to Roger Harbord).
+    }
+}
+
+\section{Changes in Version 0.9.7 (2012-02-17)}{
+    \itemize{
+      \item erf() corrected, erfc() and erfcx() as new functions,
+        including their inverses erfinv() and erfcinv().
+      \item hypot() now numerically more stable (thanks to Jerry Lewis).
+    }
+}
+
+\section{Changes in Version 0.9.6 (2012-01-25)}{
+    \itemize{
+      \item Changed third example for dblquad() [new Windows toolchain problem].
+      \item Deactivated the test for gammaz() because of problems on Solaris.
+    }
+}
+
 \section{Changes in Version 0.9.5 (2012-01-16)}{
     \itemize{
       \item kmeanspp() kmeans++ clustering algorithm.
@@ -707,6 +745,6 @@
 
       \item Remark: Typeset this document as:
 
-      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 0.9.5"}.
+      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.0.0"}.
     }
 }

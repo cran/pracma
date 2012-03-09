@@ -42,7 +42,7 @@ f <- function(t) 1 / sqrt(1-t^4)
 2 / pi * integrate(f, 0, 1)$value
 1 / agm(1, sqrt(2))$agm
 
-##  Calculate Pi with quadratic convergence (modified AGM)
+##  Calculate pi with quadratic convergence (modified AGM)
 #   See algorithm 2.1 in Borwein and Borwein
 y <- sqrt(sqrt(2))
 x <- (y+1/y)/2
@@ -54,5 +54,33 @@ for (i in 1:6){
   y <- (y*s + 1/s) / (1+y)
   x <- (s+1/s)/2
   }
+
+\dontrun{
+##  Calculate pi with arbitrary precision using the Rmpfr package
+require("Rmpfr")
+vpa <- function(., d = 32) mpfr(., precBits = 4*d)
+# Function to compute \pi to d decimal digits accuracy, based on the 
+# algebraic-geometric mean, correct digits are doubled in each step.
+agm_pi <- function(d) {
+    a <- vpa(1, d)
+    b <- 1/sqrt(vpa(2, d))
+    s <- 1/vpa(4, d)
+    p <- 1
+    n <- ceiling(log2(d));
+    for (k in 1:n) {
+        c <- (a+b)/2
+        b <- sqrt(a*b)
+        s <- s - p * (c-a)^2
+        p <- 2 * p
+        a <- c
+    }
+    return(a^2/s)
+}
+d <- 64
+pia <- agm_pi(d)
+print(pia, digits = d)
+# 3.141592653589793238462643383279502884197169399375105820974944592
+# 3.1415926535897932384626433832795028841971693993751058209749445923 exact
+}
 }
 \keyword{ math }

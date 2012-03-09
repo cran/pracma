@@ -1,6 +1,6 @@
 \name{hypot}
 \alias{hypot}
-\title{Hypothenuse Function}
+\title{Hypotenuse Function}
 \description{
 Square root of sum of squares
 }

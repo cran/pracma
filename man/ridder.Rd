@@ -63,16 +63,41 @@ f12 <- function(x)                          # [1, 3.4],     1.648 721 27070
             log(x) + x^2/(2*exp(1)) - 2 * x/sqrt(exp(1)) + 1
 
 r <- ridder(f1 , 0, 1.2);       r$root; r$niter # 18
-r <- ridder(f2 , 0.4, 1.6);     r$root; r$niter # 50
-r <- ridder(f3 ,-0.5, 1.9);     r$root; r$niter # 36
-r <- ridder(f4 ,-0.5, 0.7);     r$root; r$niter # 34
-r <- ridder(f5 ,-1.4, 1);       r$root; r$niter # 38
-r <- ridder(f6 ,-0.8, 1.6);     r$root; r$niter # 48
+r <- ridder(f2 , 0.4, 1.6);     r$root; r$niter # 14
+r <- ridder(f3 ,-0.5, 1.9);     r$root; r$niter # 20
+r <- ridder(f4 ,-0.5, 0.7);     r$root; r$niter # 12
+r <- ridder(f5 ,-1.4, 1);       r$root; r$niter # 16
+r <- ridder(f6 ,-0.8, 1.6);     r$root; r$niter # 20
 r <- ridder(f7 ,-0.5, 1.9);     r$root; r$niter # 16
-r <- ridder(f8 ,0.001, 1.201);  r$root; r$niter # 28
-r <- ridder(f9 ,-0.9, 1.5);     r$root; r$niter # 18
+r <- ridder(f8 ,0.001, 1.201);  r$root; r$niter # 18
+r <- ridder(f9 ,-0.9, 1.5);     r$root; r$niter # 20
 r <- ridder(f10,0.4, 1);        r$root; r$niter # 14
-r <- ridder(f11,-1.2, 0);       r$root; r$niter # 20
-r <- ridder(f12,1, 3.4);        r$root; r$niter # 28, err = 1e-5
+r <- ridder(f11,-1.2, 0);       r$root; r$niter # 12
+r <- ridder(f12,1, 3.4);        r$root; r$niter # 30, err = 1e-5
+
+\dontrun{
+##  Use ridder() with Rmpfr
+options(digits=16)
+library("Rmpfr") # unirootR
+prec <- 256
+.N <- function(.) mpfr(., precBits = prec)
+
+f12 <- function(x) {
+    e1 <- exp(.N(1))
+    log(x) + x^2/(2*e1) - 2*x/sqrt(e1) + 1
+}
+sqrte <- sqrt(exp(.N(1)))  # 1.648721270700128...
+f12(sqrte)                 # 0
+
+unirootR(f12, interval=mpfr(c(1, 3.4), prec), tol=1e-20)
+# $root
+# 1 'mpfr' number of precision  200   bits 
+# [1] 1.648721270700128...
+
+ridder(f12, .N(1), .N(3.4), maxiter=200, tol=1e-20)
+# $root
+# 1 'mpfr' number of precision  200   bits 
+# [1] 1.648721270700128...
+}
 }
 \keyword{ math }

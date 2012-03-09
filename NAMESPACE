@@ -5,4 +5,4 @@
 ## Public routines
 exportPattern("^[[:alpha:]]+")
 
-## S4 Methods
+## S3 and S4 Methods

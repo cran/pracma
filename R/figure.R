@@ -44,3 +44,7 @@ figure <- function(figno, title = "") {
     }
     invisible()
 }
+
+##  Comment:
+#   dev.new() may be platform independent.
+#
