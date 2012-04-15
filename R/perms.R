@@ -23,11 +23,28 @@ perms <- function(a) {
     return(b)
 }
 
-randperm <- function(a) {
-    n <- length(a)
-    if (n == 0)      return(c())
-    else if (n <= 1) return(a)
 
-    m <- sample(1:n, size = n, replace = FALSE)
-    return(a[m])
+randperm <- function(a, k) {
+    n <- length(a)
+    if (n == 0 || a[1] == 0) return(c())
+    if (n == 1) {
+        if (floor(a) != ceiling(a) || a < 1)
+            stop("Argument 'a' must be a positive integer.")
+        n <- a; a <- 1:a
+    }
+    if (missing(k)) k <- n
+    if (k > n)
+        stop("'k' must be smaller or equal to 'a' or length of 'a'.")
+
+    m <- sample(a, size = k, replace = FALSE)
+    return(m)
+}
+
+
+invperm <- function(p) {
+    n <- length(p)
+    if (any(sort(p) != 1:n))
+        stop("Vector 'p' must be a permutation of 1:length(p).")
+
+    return((1:n)[order(p)])
 }

@@ -74,3 +74,25 @@ nextPrime <-function(n) {
 	}
 	return( min(P) )
 }
+
+
+previousPrime <-function(n) {
+    if (n <= 2) return(c())
+    if (floor(n) == ceiling(n))  n <- n - 1
+    else n <- floor(n)
+
+    if (n <= 10) {
+        P <- c(2, 3, 5, 7)
+        return(max(P[P <= n]))
+    }
+
+	# m <- 2*n  # Bertrands law
+	d1 <- max(3, round(log(n)))
+	P  <- primes2(n - d1, n)
+
+	while(length(P) == 0 || n - d1 < 3) {
+		n <- n - d1 - 1
+		P  <- primes2(n - d1, n)
+	}
+	return( max(P) )
+}

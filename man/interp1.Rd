@@ -17,7 +17,7 @@ interp1(x, y, xi = x,
            \code{x} and \code{y} must be of the same length.}
   \item{xi}{Numeric vector; points at which to compute the interpolation;
             all points must lie between \code{min(x)} and \code{max(x)}.}
-  \item{method}{ One of ``constant", ``linear", ``nearest", ``spline", or ``cubic".}
+  \item{method}{One of ``constant", ``linear", ``nearest", ``spline", or ``cubic".}
 }
 \details{
   Interpolation to find \code{yi}, the values of the underlying function

@@ -44,7 +44,6 @@
 \section{Changes in Version 0.9.5 (2012-01-16)}{
     \itemize{
       \item kmeanspp() kmeans++ clustering algorithm.
-      \item interv_union() vectorized according to an idea of William Dunlap.
       \item savgol() and hampel() with new options, fuelled by a blog entry
         of Ron Pearson in his ExploringDataBlog.
     }
@@ -70,8 +69,6 @@
     \itemize{
       \item ApEn() approximate entropy of a time series.
       \item circshift() circularly shifting arrays (Matlab Style).
-      \item interv_union(), interv_intersect() union and intersection
-        of a set of (closed) intervals.
     }
 }
 

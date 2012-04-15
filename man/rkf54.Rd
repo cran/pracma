@@ -52,7 +52,7 @@ rkf54(f, a, b, y0, tol = .Machine$double.eps^0.5,
   This function serves demonstration purposes only.
 }
 \seealso{
-  \code{\link{rk4}}, \code{ode45}
+  \code{\link{rk4}}, \code{\link{ode23}}
 }
 \examples{
 # Example: y' = 1 + y^2
