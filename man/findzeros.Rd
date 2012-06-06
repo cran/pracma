@@ -1,5 +1,5 @@
-\name{froots}
-\alias{froots}
+\name{findzeros}
+\alias{findzeros}
 \title{
   Find All Roots
 }
@@ -8,7 +8,7 @@
   the interval in many small subintervals.
 }
 \usage{
-froots(f, a, b, n = 100, tol = .Machine$double.eps^(2/3), ...)
+findzeros(f, a, b, n = 100, tol = .Machine$double.eps^(2/3), ...)
 }
 \arguments{
   \item{f}{functions whose roots shall be found.}
@@ -32,12 +32,19 @@ froots(f, a, b, n = 100, tol = .Machine$double.eps^(2/3), ...)
 }
 \examples{
 f1 <- function(x) sin(pi/x)
-froots(f1, 1/10, 1)
+findzeros(f1, 1/10, 1)
 #  0.1000000  0.1111028  0.1250183  0.1428641  0.1666655
 #  0.2000004  0.2499867  0.3333441  0.4999794  1.0000000
 
 f2 <- function(x) 0.5*(1 + sin(10*pi*x))
-froots(f2, 0, 1)
+findzeros(f2, 0, 1)
 #  0.15  0.35  0.55  0.75  0.95
+
+\dontrun{
+# Dini function
+Dini <- function(x) x * besselJ(x, 1) + 3 * besselJ(x, 0)
+findzeros(Dini, 0, 100, n = 128)
+ezplot(Dini, 0, 100, n = 512)
+}
 }
 \keyword{ math }

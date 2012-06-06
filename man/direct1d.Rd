@@ -42,7 +42,7 @@ direct1d(f, a, b, maxiter = 20, ...)
   Journal of Global Optimization, Vol. 36, No. 4, pp. 597--608.
 }
 \seealso{
-  \code{\link{fmins}}, \code{dfoptim::direct}
+  \code{\link{findmins}}, \code{dfoptim::direct}
 }
 \examples{
 f <- function(x) sin(10*pi*x) + 0.5*(x-0.5)^2

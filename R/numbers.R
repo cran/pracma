@@ -3,16 +3,6 @@
 ##
 
 
-.isnatural <- function(n) {
-    if (is.numeric(n) && length(n) == 1 && 
-        floor(n) == ceiling(n) && n >= 1) {
-            TRUE
-    } else {
-        FALSE
-    }
-}
-
-
 eulersPhi <- function(n) {
     if (!.isnatural(n))
         stop("Arguments 'n' must be a single positive integers.")
@@ -100,3 +90,40 @@ Omega <- function(n) {
 	if (n == 1) 0
 	else sum(rle(factorize(n))$length)
 }
+
+#-- --------------------------------------------------------------------
+.isnatural <- function(n) {
+    if (is.numeric(n) && length(n) == 1 && 
+        floor(n) == ceiling(n) && n >= 1) {
+            TRUE
+    } else {
+        FALSE
+    }
+}
+
+
+.is.intpower <- function(p) {
+	int_root <- function(p, b) {
+		x <- 2^ceiling((nextpow2(p+1)/b))
+		while(TRUE) {
+			y <- floor(((b-1)*x + floor(p/x^(b-1)))/b)
+			if (y >= x) return(x)
+			x <- y
+		}
+	}
+	for (b in 2:floor(log2(p))) {
+		q <- int_root(p, b)
+		if (q^b == p) {
+			return(c(q, b))
+		}
+	}
+	return(c(p, 1))
+}
+
+
+##  Examples
+# for (p in 5^7:7^5) {
+# 	pp <- is_intpower(p)
+# 	if (pp[2] != 1) cat(p, ":\t", pp, "\n")
+# }
+

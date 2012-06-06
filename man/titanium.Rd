@@ -1,4 +1,3 @@
-% Data template RD file
 \name{titanium}
 \alias{titanium}
 \docType{data}

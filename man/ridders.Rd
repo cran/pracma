@@ -1,15 +1,15 @@
-\name{ridder}
-\alias{ridder}
+\name{ridders}
+\alias{ridders}
 \title{
-  Ridder's Method
+  Ridders' Method
 }
 \description{
-  Ridder's root finding method is a powerful variant of `regula falsi' (and
+  Ridders' root finding method is a powerful variant of `regula falsi' (and
   `false position'). In reliability and speed, this method is competitive
   with Brent-Dekker and similar approaches.
 }
 \usage{
-ridder(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
+ridders(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
 }
 \arguments{
 \item{f}{function whose root is to be found.}
@@ -62,21 +62,21 @@ f11 <- function(x) x^9 + 0.0001             # [-1.2, 0],   -0.359 381 3664
 f12 <- function(x)                          # [1, 3.4],     1.648 721 27070
             log(x) + x^2/(2*exp(1)) - 2 * x/sqrt(exp(1)) + 1
 
-r <- ridder(f1 , 0, 1.2);       r$root; r$niter # 18
-r <- ridder(f2 , 0.4, 1.6);     r$root; r$niter # 14
-r <- ridder(f3 ,-0.5, 1.9);     r$root; r$niter # 20
-r <- ridder(f4 ,-0.5, 0.7);     r$root; r$niter # 12
-r <- ridder(f5 ,-1.4, 1);       r$root; r$niter # 16
-r <- ridder(f6 ,-0.8, 1.6);     r$root; r$niter # 20
-r <- ridder(f7 ,-0.5, 1.9);     r$root; r$niter # 16
-r <- ridder(f8 ,0.001, 1.201);  r$root; r$niter # 18
-r <- ridder(f9 ,-0.9, 1.5);     r$root; r$niter # 20
-r <- ridder(f10,0.4, 1);        r$root; r$niter # 14
-r <- ridder(f11,-1.2, 0);       r$root; r$niter # 12
-r <- ridder(f12,1, 3.4);        r$root; r$niter # 30, err = 1e-5
+r <- ridders(f1 , 0, 1.2);       r$root; r$niter # 18
+r <- ridders(f2 , 0.4, 1.6);     r$root; r$niter # 14
+r <- ridders(f3 ,-0.5, 1.9);     r$root; r$niter # 20
+r <- ridders(f4 ,-0.5, 0.7);     r$root; r$niter # 12
+r <- ridders(f5 ,-1.4, 1);       r$root; r$niter # 16
+r <- ridders(f6 ,-0.8, 1.6);     r$root; r$niter # 20
+r <- ridders(f7 ,-0.5, 1.9);     r$root; r$niter # 16
+r <- ridders(f8 ,0.001, 1.201);  r$root; r$niter # 18
+r <- ridders(f9 ,-0.9, 1.5);     r$root; r$niter # 20
+r <- ridders(f10,0.4, 1);        r$root; r$niter # 14
+r <- ridders(f11,-1.2, 0);       r$root; r$niter # 12
+r <- ridders(f12,1, 3.4);        r$root; r$niter # 30, err = 1e-5
 
 \dontrun{
-##  Use ridder() with Rmpfr
+##  Use ridders() with Rmpfr
 options(digits=16)
 library("Rmpfr") # unirootR
 prec <- 256
@@ -94,7 +94,7 @@ unirootR(f12, interval=mpfr(c(1, 3.4), prec), tol=1e-20)
 # 1 'mpfr' number of precision  200   bits 
 # [1] 1.648721270700128...
 
-ridder(f12, .N(1), .N(3.4), maxiter=200, tol=1e-20)
+ridders(f12, .N(1), .N(3.4), maxiter=200, tol=1e-20)
 # $root
 # 1 'mpfr' number of precision  200   bits 
 # [1] 1.648721270700128...

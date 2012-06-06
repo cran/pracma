@@ -71,4 +71,4 @@ plot(x, y, type="l", col = "blue")
 points(x, Re(ys), col="red")
 grid()}
 }
-\keyword{ math }
+\keyword{ fitting }

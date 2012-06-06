@@ -39,7 +39,7 @@ regulaFalsi(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
   Hans W Borchers  <hwborchers@googlemail.com>
 }
 \seealso{
-\code{\link{ridder}}
+\code{\link{ridders}}
 }
 \examples{
 # Legendre polynomial of degree 5

@@ -3,6 +3,86 @@
 \encoding{UTF-8}
 
 
+\section{Changes in Version 1.1.0 (2012-06-06)}{
+    \itemize{
+      \item hurst(), hurstexp() calculate the Hurst exponent of a time series.
+      \item Updated the NEWS.Rd file.
+    }
+}
+
+\section{Changes in Version 1.0.9 (2012-06-03)}{
+    \itemize{
+      \item lsqnonneg() solves nonnegative least-squares problems by using 
+        the trick ``x --> exp(x)" and applying lsqnonlin();
+        example function lsqcurvefit() for nonlinear curve fitting.
+      \item Renamed ridder() to ridders(), thanks to Robert Monfera for 
+        pointing it out (he also suggested a multi-dimensional variant).
+    }
+}
+
+\section{Changes in Version 1.0.8 (2012-05-22)}{
+    \itemize{
+      \item movavg() moving average of types ``simple", ``weighted", 
+        ``modified", ``exponential" (EMA), or ``triangular".
+      \item modlin() solves modular linear equations.
+    }
+}
+
+\section{Changes in Version 1.0.7 (2012-05-11)}{
+    \itemize{
+      \item lsqnonlin() solves nonlinear least-squares problems using the
+        Levenberg-Marquardt approach.
+      \item renamed froots() to findzeros(), and fmins() to findmins().
+    }
+}
+
+\section{Changes in Version 1.0.6 (2012-04-21)}{
+    \itemize{
+      \item fornberg() finite difference (i.e., polynomial) approximation 
+        of derivatives for unevenly spaced grid points -- Fornberg's method.
+    }
+}
+
+\section{Changes in Version 1.0.5 (2012-04-15)}{
+    \itemize{
+      \item randsample() randomly sampling, alias for sample (Matlab style).
+      \item rands() generates uniform random points on an N-sphere.
+      \item Added tic(), toc() measuring elapsed time (Matlab style).
+      \item previousPrime() finds the next prime below a number.
+    }
+}
+
+\section{Changes in Version 1.0.4 (2012-04-01)}{
+    \itemize{
+      \item invlap() computes the inverse Lapacian numerically.
+      \item ppfit() piecewise polynomial fitting procedure.
+    }
+}
+
+\section{Changes in Version 1.0.3 (2012-03-21)}{
+    \itemize{
+      \item cubicspline() interpolating cubic spline (w/ endpoint conditions).
+      \item mkpp() and ppval() for piecewise polynomial structures.
+    }
+}
+
+\section{Changes in Version 1.0.2 (2012-03-17)}{
+    \itemize{
+      \item accumarray() resembles the related Matlab function more closely.
+      \item invperm() returns the inverse of a permutation.
+      \item randperm() changed to make it more Matlab-like.
+    }
+}
+
+\section{Changes in Version 1.0.1 (2012-03-09)}{
+    \itemize{
+      \item agm() example computes pi to an arbitrary number of decimal
+        digits using the Rmpfr package for variable precision arithmetic.
+      \item plotyy() corrected right ordinate, prettying the labels.
+      \item peaks() peaks function (Matlab style).
+    }
+}
+
 \section{Changes in Version 1.0.0 (2012-03-01)}{
     \itemize{
       \item Updated the NEWS.Rd file.
@@ -742,6 +822,6 @@
 
       \item Remark: Typeset this document as:
 
-      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.0.0"}.
+      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.1.0"}.
     }
 }

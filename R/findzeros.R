@@ -1,4 +1,4 @@
-froots <- function(f, a, b, n = 100, tol = .Machine$double.eps^(2/3), ...) {
+findzeros <- function(f, a, b, n = 100, tol = .Machine$double.eps^(2/3), ...) {
     stopifnot(is.numeric(a), length(a) == 1,
               is.numeric(b), length(b) == 1,
               is.numeric(n), floor(n) == ceiling(n), n >= 2)
@@ -32,7 +32,7 @@ froots <- function(f, a, b, n = 100, tol = .Machine$double.eps^(2/3), ...) {
 }
 
 
-fmins <- function(f, a, b, n = 100, tol = .Machine$double.eps^(2/3), ...) {
+findmins <- function(f, a, b, n = 100, tol = .Machine$double.eps^(2/3), ...) {
     stopifnot(is.numeric(a), length(a) == 1,
               is.numeric(b), length(b) == 1,
               is.numeric(n), floor(n) == ceiling(n), n >= 2)
