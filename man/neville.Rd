@@ -29,7 +29,7 @@ neville(x, y, xs)
   \code{\link{newtonInterp}}, \code{\link{barylag}}
 }
 \examples{
-p <- poly(c(1, 2, 3))
+p <- Poly(c(1, 2, 3))
 fp <- function(x) polyval(p, x)
 
 x <- 0:4; y <- fp(x)

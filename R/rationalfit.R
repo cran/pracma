@@ -9,7 +9,7 @@ rationalfit <- function(x, y, d1 = 5, d2 = 5) {
     if (is.unsorted(x))
         stop("Argument 'x' must be a sorted vector")
 
-    p <- find(!is.finite(y))
+    p <- finds(!is.finite(y))
 
     dinf <- c()
     while (length(p) > 0) {
@@ -18,7 +18,7 @@ rationalfit <- function(x, y, d1 = 5, d2 = 5) {
        dinf <- c(dinf, x[p[1]])     # remember where pole was   
        x <- x[-p[1]]                # now remove that x value too
        if (d2 > 0) d2 <- d2 - 1     # reduce expected order of den
-       p <- find(!is.finite(y))     # have all Inf values been removed yet?
+       p <- finds(!is.finite(y))     # have all Inf values been removed yet?
     }
 
     yy <- length(y)                 # x and y have a new length
@@ -40,7 +40,7 @@ rationalfit <- function(x, y, d1 = 5, d2 = 5) {
     if (D1 == 0) D1 <- 1
     N <- N/D1
     D <- D/D1
-    D <- poly(c(dinf, roots(D)))    # and then add the removed +/- Inf poles back in
+    D <- Poly(c(dinf, roots(D)))    # and then add the removed +/- Inf poles back in
 
     eps <- .Machine$double.eps      # remove small imaginary parts
     if (all(Im(D) < eps)) D <- Re(D)

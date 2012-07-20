@@ -101,6 +101,18 @@ lsqnonlin(f, x0)        # ssq 50.50144 at c(36.133144, 2.572373, 1.079811)
 #     start=list(a=21.16322, b=8.83669, c=2.957765), algorithm = "plinear")
 # Error: step factor 0.000488281 reduced below 'minFactor' of 0.000976563
 
+##  Example: Hougon function
+x1 <- c(470, 285, 470, 470, 470, 100, 100, 470, 100, 100, 100, 285, 285)
+x2 <- c(300,  80, 300,  80,  80, 190,  80, 190, 300, 300,  80, 300, 190)
+x3 <- c( 10,  10, 120, 120,  10,  10,  65,  65,  54, 120, 120,  10, 120)
+rate <- c(8.55,  3.79, 4.82, 0.02,  2.75, 14.39, 2.54,
+          4.35, 13.00, 8.50, 0.05, 11.32,  3.13)
+fun <- function(b)
+        (b[1]*x2 - x3/b[5])/(1 + b[2]*x1 + b[3]*x2 + b[4]*x3) - rate
+lsqnonlin(fun, rep(1, 5))
+# $x    [1.25258502 0.06277577 0.04004772 0.11241472 1.19137819]
+# $ssq  0.298901
+
 ## Least-squares data fitting
 # Define fun(p, x)
 lsqcurvefit <- function(fun, p0, xdata, ydata) {

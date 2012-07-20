@@ -25,7 +25,7 @@ blkdiag(...)
   use \code{matrix(v, nrow=1)} if a row vector is intended.
 }
 \seealso{
-\code{\link{mdiag}}
+\code{\link{Diag}}
 }
 \examples{
 a1 <- matrix(c(1,2), 1)

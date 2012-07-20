@@ -1,20 +1,28 @@
-\name{beep}
+\name{disp,beep}
+\alias{disp}
 \alias{beep}
 \title{
-Beep function (Matlab style)
+Utility functions (Matlab style)
 }
 \description{
-  Produce beep sound.
+  Display text or array, or produce beep sound.
 }
 \usage{
+disp(...)
 beep()
 }
+\arguments{
+  \item{...}{any R object that can be printed.}
+}
 \details{
-  Produces the computers default beep sound.
+  Display text or array, or produces the computer's default beep sound
+  using `cat' with closing newline.
 }
 \value{
-  NULL invisibly
+  beep() returns NULL invisibly, disp() displays with newline.
 }
 \examples{
+disp("Some text, and numbers:", pi, exp(1))
 # beep()
 }
+\keyword{ utilities }

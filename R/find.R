@@ -3,5 +3,5 @@
 ##
 
 
-find <- function(v) 
+finds <- function(v) 
     which( if (is.logical(v)) v else v != 0 )

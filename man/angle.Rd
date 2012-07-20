@@ -1,16 +1,14 @@
 \name{angle}
-\alias{real}
-\alias{imag}
-\alias{conj}
+\alias{Real}
+\alias{Imag}
 \alias{angle}
 \title{Basic Complex Functions}
 \description{
 Basic complex functions (Matlab style)
 }
 \usage{
-real(z)
-imag(z)
-conj(z)
+Real(z)
+Imag(z)
 angle(z)
 }
 \arguments{
@@ -24,6 +22,9 @@ These are just Matlab names for the corresponding functions in R. The
 returning real or complex values; \code{angle} returns in radians.
 }
 \note{
+The true Matlab names are \code{real}, \code{imag}, and \code{conj}, but as
+\code{real} was taken in R, all these beginnings are changed to capitals.
+
 The function \code{Mod} has no special name in Matlab;
 use \code{abs()} instead.
 }
@@ -32,9 +33,9 @@ use \code{abs()} instead.
 }
 \examples{
 z <- c(0, 1, 1+1i, 1i)
-real(z)   # Re(z)
-imag(z)   # Im(z)
-conj(z)   # Conj(z)
+Real(z)   # Re(z)
+Imag(z)   # Im(z)
+Conj(z)   # Conj(z)
 abs(z)    # Mod(z)
 angle(z)
 }

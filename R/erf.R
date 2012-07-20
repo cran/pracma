@@ -36,7 +36,7 @@ erfz <- function(z) {
     a0 <- abs(z);
     c0 <- exp(-z*z)
 
-    z1 <- if (real(z) < 0.0) -z else z
+    z1 <- if (Re(z) < 0.0) -z else z
 
     if(a0 <=  5.8) {
         cs <- z1
@@ -59,7 +59,7 @@ erfz <- function(z) {
         cer <- 1.0 - c0 * cl / sqrt(pi)
     }
 
-    if(real(z)< 0.0) cer <- -cer
+    if(Re(z)< 0.0) cer <- -cer
 
     return(cer)
 }

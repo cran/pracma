@@ -22,7 +22,7 @@ zeros(n, m = n)
   not a vector.
 }
 \seealso{ 
-  \code{\link{mdiag}},
+  \code{\link{Diag}},
 }   
 \examples{
 eye(3)

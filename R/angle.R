@@ -3,11 +3,11 @@
 ##
 
 
-real <- function(z) Re(z)
+Real <- function(z) Re(z)
 
-imag <- function(z) Im(z)
+Imag <- function(z) Im(z)
 
-conj <- function(z) Conj(z)
+# Conj <- function(z) Conj(z)
 
 # use abs() for Mod()
 

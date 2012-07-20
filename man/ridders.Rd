@@ -41,7 +41,7 @@ ridders(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
   Cambridge University Press.
 }
 \seealso{
-  \code{\link{brentDekker}}
+  \code{\link{brent_dekker}}
 }
 \examples{
 ##  Test functions

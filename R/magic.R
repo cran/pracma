@@ -25,7 +25,7 @@ magic <- function(n) {
         I <- matrix(rep(1:n, times = n), n, n)
         K <- trunc((I %% 4) / 2) == trunc((J %% 4) / 2)
         M <- t(matrix(1:(n*n), n, n))
-        # M <- t(pracma::reshape(as.matrix(1:(n * n)), n, n))
+        # M <- t(pracma::Reshape(as.matrix(1:(n * n)), n, n))
         M[K] = n * n + 1 - M[K]
 
         return(M)

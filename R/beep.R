@@ -4,3 +4,6 @@
 
 
 beep <- function() cat("\a")
+
+
+disp <- function(...) cat(..., "\n")

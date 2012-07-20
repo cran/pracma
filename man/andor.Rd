@@ -1,16 +1,16 @@
-\name{and, or}
-\alias{and}
-\alias{or}
+\name{And, Or}
+\alias{And}
+\alias{Or}
 \title{
   Logical AND, OR (Matlab Style)
 }
 \description{
-  \code{and(l, k)} resp. \code{or(l, k)} the same as \code{(l & k) + 0} resp.
+  \code{And(l, k)} resp. \code{Or(l, k)} the same as \code{(l & k) + 0} resp.
   \code{(l | k) + 0}.
 }
 \usage{
-and(l, k)
-or(l, k)
+And(l, k)
+Or(l, k)
 }
 \arguments{
   \item{l, k}{Arrays.}
@@ -33,7 +33,7 @@ B <- matrix(c( 0, 1, 0, 1, 0,
                0, 1, 1, 1, 0,
                0, 1, 0, 0, 1), 4, 5, byrow=TRUE)
 
-and(A, B)
-or(A, B)
+And(A, B)
+Or(A, B)
 }
 \keyword{ logic }

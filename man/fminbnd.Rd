@@ -1,24 +1,26 @@
 \name{fminbnd}
 \alias{fminbnd}
 \title{
-  Minimum Finding
+  Finding Function Minimum
 }
 \description{
   Find minimum of single-variable function on fixed interval.
 }
 \usage{
-fminbnd(f, x1, x2, ..., minimize = TRUE, tol = .Machine$double.eps^(2/3))
+fminbnd(f, a, b, ..., maxiter = 1000, maximum = FALSE,
+        tol = .Machine$double.eps^(2/3))
 }
 \arguments{
   \item{f}{function whose minimum or maximum is to be found.}
-  \item{x1, x2}{endpoints of the interval to be searched.}
-  \item{minimize}{logical; shall a minimum or a maximum be found.}
+  \item{a, b}{endpoints of the interval to be searched.}
+  \item{maxiter}{maximal number of iterations.}
+  \item{maximum}{logical; shall maximum or minimum be found; default FALSE.}
   \item{tol}{relative tolerance.}
-  \item{...}{additional variables to be passed to the function..}
+  \item{...}{additional variables to be passed to the function.}
 }
 \details{
   fminbnd finds the minimum of a function of one variable within a fixed
-  interval. The Matlab version is based on golden section search and
+  interval. It applies Brent's algorithm, based on golden section search and
   parabolic interpolation.
 
   \code{fminbnd} may only give local solutions.
@@ -26,17 +28,19 @@ fminbnd(f, x1, x2, ..., minimize = TRUE, tol = .Machine$double.eps^(2/3))
 }
 \value{
   List with
-  \item{x}{location of the location of minimum resp. maximum.}
-  \item{fval}{function value at the optimum.}
+  \item{xmin}{location of the minimum resp. maximum.}
+  \item{fmin}{function value at the optimum.}
+  \item{niter}{number of iterations used.}
+  \item{estim.prec}{estimated precision.}
 }
 \references{
-  Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.
-  Second Edition, Springer-Verlag, Berlin Heidelberg.
+  R. P. Brent (1973). Algorithms for Minimization Without Derivatives.
+  Dover Publications, reprinted 2002.
 }
 \note{
   \code{fminbnd} mimics the Matlab function of the same name and uses the
-  R function \code{optimize}.
-  Could easily be replaced by \code{pracma::fibsearch}.
+  Fortran code underlying the R function \code{optimize}.
+
 }
 \seealso{
   \code{\link{fibsearch}}, \code{\link{golden_ratio}}

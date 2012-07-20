@@ -19,14 +19,14 @@ strcmpi(c("yes", "no"), c("Yes", "No"))  # T
 
 blanks <- pracma::blanks
 deblank <- pracma::deblank
-strtrim <- pracma::strtrim
+strTrim <- pracma::strTrim
 strjust <- pracma::strjust
 strrep <- pracma::strrep
 
 identical(c(blanks(0), blanks(1), blanks(2)), c("", " ", "  "))
 s <- c("  abc", "abc   ", " abc ", " a b c ", "abc", "a b c")
 identical(deblank(s), c("  abc", "abc", " abc", " a b c", "abc", "a b c"))
-identical(strtrim(s), c("abc", "abc", "abc", "a b c", "abc", "a b c"))
+identical(strTrim(s), c("abc", "abc", "abc", "a b c", "abc", "a b c"))
 identical(strjust(s, justify = "center"),
           c(" abc ", " abc ", " abc ", "a b c", " abc ", "a b c"))
 s <- c('This is a good example.', "He has a good character.",

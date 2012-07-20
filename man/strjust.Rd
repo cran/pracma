@@ -30,7 +30,7 @@ strjust(s, justify = c("left", "right", "center"))
   A character vector of the same length.
 }
 \seealso{
-\code{\link{strtrim}}
+\code{\link{strTrim}}
 }
 \examples{
 S <- c("abc", "letters", "1", "2  2")

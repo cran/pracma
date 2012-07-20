@@ -37,7 +37,7 @@ triu(M, k = 0)
   HwB  email: <hwborchers@googlemail.com>
 }
 \seealso{
-  \code{\link{mdiag}}
+  \code{\link{Diag}}
 }
 \examples{
 tril(ones(4,4), +1)

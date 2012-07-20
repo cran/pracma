@@ -3,7 +3,7 @@
 ##
 
 
-mode <- function(x) {
+Mode <- function(x) {
     if (is.matrix(x))
         x <- c(x)
 

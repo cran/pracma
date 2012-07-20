@@ -20,7 +20,7 @@ repmat <- function(a, n, m = n) {
 	matrix(1, n, m) %x% a  # Kronecker product
 }
 
-reshape <- function(a, n, m) {
+Reshape <- function(a, n, m) {
 	if (missing(m)) m <- length(a) %/% n
 	if (length(a) != n*m)
 		stop("Matrix 'a' does not have n*m elements")

@@ -10,5 +10,5 @@ wilkinson <- function(n){
 
 	m <- (n-1)/2.0
 	r <- rep(1, n-1)
-	mdiag(abs(-m:m)) + mdiag(r, 1) + mdiag(r, -1)
+	Diag(abs(-m:m)) + Diag(r, 1) + Diag(r, -1)
 }

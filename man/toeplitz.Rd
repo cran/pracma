@@ -1,18 +1,18 @@
-\name{toeplitz}
-\alias{toeplitz}
+\name{Toeplitz}
+\alias{Toeplitz}
 \title{Toeplitz Matrix}
 \description{
   Generate Toeplitz matrix from column and row vector.
 }
 \usage{
-toeplitz(a, b)
+Toeplitz(a, b)
 }
 \arguments{
   \item{a}{vector that will be the first column}
   \item{b}{vector that if present will form the first row.}
 }
 \details{
-  \code{toeplitz(a, b)} returns a (non-symmetric) Toeplitz matrix whose
+  \code{Toeplitz(a, b)} returns a (non-symmetric) Toeplitz matrix whose
   first column is \code{a} and whose first row is \code{b}. The following
   rows are shifted to the left.
 
@@ -23,14 +23,14 @@ toeplitz(a, b)
   Matrix of size \code{(length(a), length(b))}.
 }
 \note{
-  \code{stats::toeplitz} does not allow to specify the row vector, that is
+  \code{stats::Toeplitz} does not allow to specify the row vector, that is
   returns only the \emph{symmetric} Toeplitz matrix.
 }
 \seealso{
   \code{\link{hankel}}
 }
 \examples{
-toeplitz(c(1, 2, 3, 4, 5))
-toeplitz(c(1, 2, 3, 4, 5), c(1.5, 2.5, 3.5, 4.5, 5.5))
+Toeplitz(c(1, 2, 3, 4, 5))
+Toeplitz(c(1, 2, 3, 4, 5), c(1.5, 2.5, 3.5, 4.5, 5.5))
 }
 \keyword{ array }

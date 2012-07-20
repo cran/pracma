@@ -3,7 +3,7 @@
 ##
 
 
-hadamard <- function(n) {
+Hadamard <- function(n) {
     if (!is.numeric(n) || length(n) != 1 ||
         floor(n) != ceiling(n) || n <= 1)
         stop("Argument 'n' must be a positiv integer.")
@@ -19,7 +19,7 @@ hadamard <- function(n) {
         H <- c(1)
     } else if (k == 2) {
         H <- ones(12, 12)
-        H[2:12, 2:12] <- toeplitz(c(-1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1),
+        H[2:12, 2:12] <- Toeplitz(c(-1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1),
                                   c(-1, 1, -1, 1, 1, 1, -1, -1, -1, 1, -1))
     } else if (k == 3) {
         H <- ones(20, 20)
@@ -36,7 +36,7 @@ hadamard <- function(n) {
 }
 
 
-toeplitz <- function(a, b = a) {
+Toeplitz <- function(a, b = a) {
     if (!is.vector(a) || !is.vector(b))
         stop("Arguments 'a' and 'b' must be vectors.")
     if (a[1] != b[1])

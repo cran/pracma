@@ -46,7 +46,7 @@ triquad <- function(f, x, y, n = 10, tol = 1e-10, ...) {
     ab <- cbind(A, c(2, B1, B))
     s <- sqrt(ab[2:N, 2])
 
-    VX <- eigen(mdiag(ab[1:N,1], 0) + mdiag(s, -1) + mdiag(s, 1))
+    VX <- eigen(Diag(ab[1:N,1], 0) + Diag(s, -1) + Diag(s, 1))
     X <- VX$values
     V <- VX$vectors
     I <- order(X)

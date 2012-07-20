@@ -1,5 +1,5 @@
-\name{mode}
-\alias{mode}
+\name{Mode}
+\alias{Mode}
 \title{
 Mode function (Matlab style)
 }
@@ -7,7 +7,7 @@ Mode function (Matlab style)
   Most frequent value in vector or matrix
 }
 \usage{
-mode(x)
+Mode(x)
 }
 \arguments{
   \item{x}{Real or complex vector or of factor levels.}
@@ -15,7 +15,7 @@ mode(x)
 \details{
   Computes the `sample mode', i.e. the most frequently occurring value in x.
 
-  Among values occurring equally frequently, \code{mode()} chooses the
+  Among values occurring equally frequently, \code{Mode()} chooses the
   smallest one (for a numeric vector), one with a smallest absolute value
   (for complex ones) or the first occurring value (for factor levels).
 
@@ -37,6 +37,6 @@ mode(x)
 }
 \examples{
 x <- round(rnorm(1000), 2)
-mode(x)
+Mode(x)
 }
 \keyword{ manip }

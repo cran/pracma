@@ -1,18 +1,18 @@
-\name{reshape}
-\alias{reshape}
+\name{Reshape}
+\alias{Reshape}
 \title{Reshape Matrix}
 \description{
   Reshape matrix or vector.
 }
 \usage{
-reshape(a, n, m)
+Reshape(a, n, m)
 }
 \arguments{
   \item{a}{matrix or vector}
   \item{n, m}{size of the result}
 }
 \details{
-  \code{reshape(a, n, m)} returns the n-by-m matrix whose elements are taken
+  \code{Reshape(a, n, m)} returns the n-by-m matrix whose elements are taken
   column-wise from \code{a}.
 
   An error results if \code{a} does not have \code{n*m} elements.
@@ -25,9 +25,9 @@ reshape(a, n, m)
 }
 \examples{
 a <- matrix(1:12, nrow=4, ncol=3)
-reshape(a, 6, 2)
-reshape(a, 6)     # the same
-reshape(a, 3, 4)
+Reshape(a, 6, 2)
+Reshape(a, 6)     # the same
+Reshape(a, 3, 4)
 }
 \keyword{array}
 

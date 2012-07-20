@@ -46,7 +46,7 @@ zeroin(f, interval, ..., tol = .Machine$double.eps^(1/2))
   \code{fzero} mimics the Matlab function of the same name 
 }
 \seealso{
-  \code{\link{brentDekker}}, \code{\link{newtonRaphson}}
+  \code{\link{brent_dekker}}, \code{\link{newtonRaphson}}
 }
 \examples{
 fzero(sin, 3)                    # 3.141593 +- 1.25e-13

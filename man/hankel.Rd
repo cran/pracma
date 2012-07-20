@@ -24,7 +24,7 @@ from the last element of \code{a} it is overwritten by this one.
   matrix of size \code{(length(a), length(b))}
 }
 \seealso{
-  \code{\link{toeplitz}}, \code{\link{hadamard}}
+  \code{\link{Toeplitz}}, \code{\link{Hadamard}}
 }
 \examples{
 hankel(1:5, 5:1)

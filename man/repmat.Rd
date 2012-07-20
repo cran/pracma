@@ -21,7 +21,7 @@ repmat(a, n, m = n)
   Defaults to square if dimension argument resolves to a single value.
 }
 \seealso{ 
-  \code{\link{reshape}},
+  \code{\link{Reshape}},
 }   
 \examples{
 repmat(1, 3)                  # same as ones(3)

@@ -15,8 +15,8 @@ pade <- function(p1, p2 = c(1), d1 = 5, d2 = 5) {
 	p2 <- rev(c(z, p2))[1:(d1+d2+3)]
 	p1 <- rev(c(z, p1))[1:(d1+d2+3)]
 
-	L <- toeplitz(p2[1:(d1+d2)]); L[upper.tri(L)] <- 0
-	R <- toeplitz(p1[1:(d1+d2)]); R[upper.tri(R)] <- 0
+	L <- Toeplitz(p2[1:(d1+d2)]); L[upper.tri(L)] <- 0
+	R <- Toeplitz(p1[1:(d1+d2)]); R[upper.tri(R)] <- 0
 
     # generate the linear system of coefficient equations
     D1 <- if (d1 > 0) 1:d1 else c()

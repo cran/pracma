@@ -35,7 +35,7 @@ strcmpi <- function(s1, s2) {
     strcmp(tolower(s1), tolower(s2))
 }
 
-strtrim <- function(s) {
+strTrim <- function(s) {
     if (! is.character(s))
         stop("Argument 's' must be a character vector.")
 
@@ -62,7 +62,7 @@ strjust <- function(s, justify = c("left", "right", "center")) {
 
     justify <- match.arg(justify)
 
-    s <- strtrim(s)
+    s <- strTrim(s)
     n <- length(s)
     M <- nchar(s)
     m <- max(M)

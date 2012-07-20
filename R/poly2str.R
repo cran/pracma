@@ -17,7 +17,7 @@ poly2str <- function(p, svar = "x", smul = "*",
     p <- abs(p)
 
     p <- formatC(p, digits = d)
-    p <- sub("^\\s+", "", p)  # p <- pracma::strtrim(p)
+    p <- sub("^\\s+", "", p)
 
     n <- length(p) - 1
     S <- ""

@@ -5,7 +5,6 @@ findzeros <- function(f, a, b, n = 100, tol = .Machine$double.eps^(2/3), ...) {
     if (! a < b)
         stop("Left interval border must be smaller than right one.")
 
-
     fun <- match.fun(f)
     f <- function(x) fun(x, ...)
 

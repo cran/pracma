@@ -2,7 +2,7 @@
 ### p o l y . R  Polynom
 ###
 
-poly <- function(x) {
+Poly <- function(x) {
     if (is.null(x) || length(x) == 0) return(c(1))
     if (is.vector(x, mode="numeric") || is.vector(x, mode="complex")) {
         y <- x

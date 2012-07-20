@@ -30,7 +30,7 @@ invlap <- function(Fs, t1, t2, nnt, a = 6, ns = 20, nd = 19) {
        s <- alfa/tt
        bt <- beta/tt
        btF <- bt * Fs(s)
-       ft[kt] <- sum(real(btF))
+       ft[kt] <- sum(Re(btF))
     }
 
     return(list(x = radt, y = ft))

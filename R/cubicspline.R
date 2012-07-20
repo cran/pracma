@@ -7,7 +7,7 @@ cubicspline <- function(x, y, xi = NULL, endp2nd = FALSE, der = c(0, 0)) {
     n <- length(x)
     h <- x[2:n] - x[1:(n-1)]
     e <- 2 * c(h[1], h[1:(n-2)] + h[2:(n-1)], h[n-1])
-    A <- mdiag(e) + mdiag(h, -1) + mdiag(h, 1)
+    A <- Diag(e) + Diag(h, -1) + Diag(h, 1)
     d <- (y[2:n] - y[1:(n-1)]) / h
     rhs <- 3* (d[2:(n-1)] - d[1:(n-2)])
     der0 <- der[1]; dern <- der[2]

@@ -24,7 +24,7 @@ The two largest eigenvalues of \code{wilkinson(21)} agree to 14, but not 15
 decimal places.
 }
 \seealso{
-\code{\link{toeplitz}}
+\code{\link{Toeplitz}}
 }
 \examples{
 (a <- wilkinson(7))

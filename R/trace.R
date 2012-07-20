@@ -3,7 +3,7 @@
 ##
 
 
-mtrace <- function(a) {
+Trace <- function(a) {
 	if (length(a) <= 1) return(a)
 	if ((!is.numeric(a) && !is.complex(a)) || !is.matrix(a))
 		stop("Argument 'a' must be a real or complex matrix.")

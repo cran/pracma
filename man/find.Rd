@@ -1,11 +1,11 @@
-\name{find}
-\alias{find}
-\title{Find function (Matlab Style)}
+\name{finds}
+\alias{finds}
+\title{find function (Matlab Style)}
 \description{
   Finds indices of nonzero elements.
 }
 \usage{
-find(v)
+finds(v)
 }
 \arguments{
   \item{v}{logical or numeric vector or array}
@@ -18,8 +18,8 @@ find(v)
   Indices of elements matching the expression \code{x}.
 }
 \examples{
-find(-3:3 >= 0)
-find(c(0, 1, 0, 2, 3))
+finds(-3:3 >= 0)
+finds(c(0, 1, 0, 2, 3))
 }
 \keyword{logic}
 

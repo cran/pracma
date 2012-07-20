@@ -3,6 +3,62 @@
 \encoding{UTF-8}
 
 
+\section{Changes in Version 1.1.6 (2012-07-20)}{
+    \itemize{
+      \item Removed '.Rapphistory' from the tests directory (again)
+        [and use "--as-cran" for the checks].
+      \item disp() display text or array (Matlab Style), cat() with newline.
+    }
+}
+
+\section{Changes in Version 1.1.5 (2012-07-18)}{
+    \itemize{
+      \item Renamed functions with capital first letter to avoid name clashes:
+        And/Or, mtrace -> Trace, mdiag -> Diag, strtrim -> strTrim,
+        reshape -> Reshape, find -> Find, fix -> Fix,
+        mode -> Mode, real -> Real, imag -> Imag,
+        hadamard -> Hadamard, toeplitz -> Toeplitz,
+        poly -> Poly.
+    }
+}
+
+\section{Changes in Version 1.1.4 (2012-06-26)}{
+    \itemize{
+      \item gammainc() (lower and upper) incomplete gamma function, also the
+        regularized gamma function, all allowing negative x values.
+      \item polylog() the polylogarithm functions for |z| < 1 and n >= -4 .
+    }
+}
+
+\section{Changes in Version 1.1.3 (2012-06-17)}{
+    \itemize{
+      \item fminsearch() implements Nelder-Mead (similar to optim), and
+        Fletcher-Powell when ``dfree=FALSE'' is chosen.
+      \item Test functions rosenbrock(), rastrigin(), and many more.
+    }
+}
+
+\section{Changes in Version 1.1.2 (2012-06-13)}{
+    \itemize{
+      \item nelder_mead() implements Nelder-Mead for nonlinear optimization.
+      \item hooke-jeeves() Hooke-Jeeves algorithm for direct search.
+      \item fletcher_powell() Davidon-Fletcher-Powell method for function 
+        minimization (alternative to BFGS approach).
+      \item steepest_descent() minimization of functions using steepest 
+        descent.
+    }
+}
+
+\section{Changes in Version 1.1.1 (2012-06-10)}{
+    \itemize{
+      \item fminbnd() implements Brent's function minimization algorithm with
+        golden section search and parabolic interpolation (same as optimize).
+      \item transfinite() transformation function between bounded and 
+        unbounded (box constraint) regions.
+      \item renamed brentDekker() to brent_dekker
+    }
+}
+
 \section{Changes in Version 1.1.0 (2012-06-06)}{
     \itemize{
       \item hurst(), hurstexp() calculate the Hurst exponent of a time series.

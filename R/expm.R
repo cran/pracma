@@ -12,7 +12,7 @@ expm <- function(A, np = 128) {
 
     N <- nrow(A)
     circle <- exp(2i*pi*(1:np)/np)      # generate np unit roots
-    z0 <- ceiling(mean(range(real(eig(A)))) + 0.1)
+    z0 <- ceiling(mean(range(Re(eig(A)))) + 0.1)
     radius <- ceiling(max(abs(eig(A) - z0)) + 0.1)
     z <- z0 + radius*circle
 
@@ -22,7 +22,7 @@ expm <- function(A, np = 128) {
       B <- B + R * (z[i]-z0) * exp(z[i])  # add up contributions to integral
     }
 
-    B <- real(B)/np
+    B <- Re(B)/np
     return(zapsmall(B))
 }
 
@@ -33,11 +33,11 @@ logm <- function(A) {
 
     E <- eigen(A)
     e <- E$values
-    if (any(imag(e) == 0 && real(e) <= 0))
+    if (any(Im(e) == 0 && Re(e) <= 0))
         stop("A must not have any nonpositive real eigenvalues.")
 
 
     D <- diag(log(E$values))
     X <- E$vectors %*% D %*% solve(E$vectors)
-    return(real(X))
+    return(Re(X))
 }

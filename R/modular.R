@@ -4,7 +4,7 @@
 
 ceil <- function(n) ceiling(n)
 
-fix <- function(n) trunc(n)
+Fix <- function(n) trunc(n)
 
 idiv <- function(n, m) return(n %/% m)
 

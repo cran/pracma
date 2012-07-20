@@ -3,12 +3,12 @@
 ##
 
 
-and <- function(l, k) {
+And <- function(l, k) {
     return((l & k) + 0)
 }
 
 
-or <- function(l, k) {
+Or <- function(l, k) {
     return((l | k) + 0)
 }
 

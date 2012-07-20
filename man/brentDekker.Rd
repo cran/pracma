@@ -1,5 +1,5 @@
-\name{brentDekker}
-\alias{brentDekker}
+\name{brent_dekker}
+\alias{brent_dekker}
 \title{
   Brent-Dekker Root Finding Method
 }
@@ -7,7 +7,7 @@
 Finding roots of univariate functions in bounded intervals.
 }
 \usage{
-brentDekker(f, a, b, ..., maxiter = 100, tol = .Machine$double.eps^0.5)
+brent_dekker(f, a, b, ..., maxiter = 100, tol = .Machine$double.eps^0.5)
 }
 \arguments{
   \item{f}{Function or its name as a string.}
@@ -44,6 +44,6 @@ brentDekker(f, a, b, ..., maxiter = 100, tol = .Machine$double.eps^0.5)
 # Legendre polynomial of degree 5
 lp5 <- c(63, 0, -70, 0, 15, 0)/8
 f <- function(x) polyval(lp5, x)
-brentDekker(f, 0.6, 1)  # 0.9061798459 correct to 10 places
+brent_dekker(f, 0.6, 1)  # 0.9061798459 correct to 10 places
 }
 \keyword{ math }

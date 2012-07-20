@@ -10,7 +10,7 @@ ppfit <- function(x, y, xi, method = c("linear", "cubic")) {
     method <- match.arg(method)
 
     y0 <- interp1(x, y, xi, method = method)
-    nn <- find (x >= xi[1] & x <= xi[length(xi)])
+    nn <- finds(x >= xi[1] & x <= xi[length(xi)])
     fcn <- function(yi) sum((interp1 (xi, yi, x[nn], method) - y[nn])^2)
     yi <- optim(y0, fcn)$par
 
