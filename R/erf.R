@@ -33,6 +33,9 @@ erfcx   <- function(x) {
 
 # Complex error function
 erfz <- function(z) {
+    if (is.null(z) || length(z) != 1)
+        stop("Argument 'z' must be single complex value.")
+
     a0 <- abs(z);
     c0 <- exp(-z*z)
 
@@ -62,6 +65,11 @@ erfz <- function(z) {
     if(Re(z)< 0.0) cer <- -cer
 
     return(cer)
+}
+
+# Imaginary error function
+erfi <- function(z) {
+	-1i * erfz(1i * z)
 }
 
 

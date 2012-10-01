@@ -17,6 +17,6 @@ fnorm <- function(f, g, x1, x2, p = 2, npoints = 100) {
     if (length(yf) != npoints || length(yg) != npoints)
         stop("Arguments 'f' and 'g' must be vectorized functions.")
 
-    fd <- vnorm(yf - yg, p = p)
+    fd <- Norm(yf - yg, p = p)
     return(fd)
 }

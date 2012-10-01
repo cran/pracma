@@ -1,6 +1,6 @@
 \name{wilkinson}
 \alias{wilkinson}
-\title{Wilkinson Matrix}
+\title{wilkinson Matrix}
 \description{
 Generate the Wilkinson matrix of size \code{n x n}.The Wilkinson matrix for
 testing eigenvalue computations

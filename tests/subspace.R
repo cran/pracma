@@ -14,7 +14,7 @@ all.equal(orth(M),
                    -0.644497,  0.646495), 3, 2, byrow = TRUE),
           tolerance = 1e-5)
 
-H <- pracma::Hadamard(8)
+H <- pracma::hadamard(8)
 A <- H[, 2:4]
 B <- H[, 5:8]
 all.equal(subspace(A, B), pi/2, tolerance = 1e-10)  

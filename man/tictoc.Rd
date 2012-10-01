@@ -1,4 +1,4 @@
-\name{tictoc}
+\name{tic,toc}
 \alias{tic}
 \alias{toc}
 \title{MATLAB timer functions}

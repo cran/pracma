@@ -1,9 +1,9 @@
 ##
-##  c o n t f r a c . R  Continuous Fractions
+##  r a t . R  Continuous Fractions
 ##
 
 
-contfrac <- function(x, tol = 1e-6) {
+.contfrac <- function(x, tol = 1e-6) {
     if (!is.numeric(x) || is.matrix(x))
         stop("Argument 'x' must be a numeric scalar or vector.")
 
@@ -14,7 +14,6 @@ contfrac <- function(x, tol = 1e-6) {
         for (i in seq(along=x)) {
             B <- B %*% matrix(c(x[i], 1, 1, 0), 2, 2)
         }
-        # cat(paste(B[1,1], B[2,1], sep="/"), "\n", sep = "")
         return(B[1,1]/B[2,1])
 
     } else {
@@ -37,6 +36,7 @@ contfrac <- function(x, tol = 1e-6) {
     }
 }
 
+
 rat <- function(x, tol = 1e-6) {
     if (length(x) == 0)
         return(c())
@@ -48,7 +48,7 @@ rat <- function(x, tol = 1e-6) {
     R <- character(n)
     for (i in 1:n) {
         x <- xs[i]
-        k <- contfrac(x, tol = tol)$cf
+        k <- .contfrac(x, tol = tol)$cf
         if (length(k) >= 1) {
             cf <- paste("[ ", k[1], sep="")
         }
@@ -77,7 +77,7 @@ rats <- function(x, tol = 1e-6) {
     R <- numeric(n)
     for (i in 1:n) {
         x <- xs[i]
-        k <- contfrac(x, tol = tol)$rat
+        k <- .contfrac(x, tol = tol)$rat
         cf <- paste(k[1], "/", k[2], sep="")
         cat(cf, "\n")
         R[i] <- k[1]/k[2]

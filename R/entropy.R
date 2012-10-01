@@ -1,9 +1,9 @@
 ##
-##  A p E n . R  (Fast) Approximate Entropy
+##  e n t r o p y . R  (Fast) Approximate Entropy
 ##
 
 
-ApEn <- function(ts, edim = 2, r = 0.2*sd(ts), elag = 1) {
+approx_entropy <- function(ts, edim = 2, r = 0.2*sd(ts), elag = 1) {
 
     N <- length(ts)
     result <- numeric(2)

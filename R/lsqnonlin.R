@@ -31,7 +31,7 @@ lsqnonlin <- function(fun, x0, options = list(), ...) {
     # Initialization: Compute f, r, and J
     x <- x0;              r <- fun(x)
     f <- 0.5 * sum(r^2);  J <- jacobian(fun, x)
-    g <- t(J) %*% r;     ng <- vnorm(g, Inf)
+    g <- t(J) %*% r;     ng <- Norm(g, Inf)
     A <- t(J) %*% J                     # g is a column vector
 
     mu <- tau * max(diag(A))            # damping parameter
@@ -47,7 +47,7 @@ lsqnonlin <- function(fun, x0, options = list(), ...) {
         R <- chol(A + mu*eye(n))        # use the Cholesky decomposition
         h <- c(-t(g) %*% chol2inv(R))   # h <- solve(R, solve(t(R), -g))
 
-        nh <- vnorm(h); nx <- tolx + vnorm(x)
+        nh <- Norm(h); nx <- tolx + Norm(x)
         if (nh <= tolx * nx) {errno <- 1; break}
 
         xnew <- x + h; h <- xnew - x
@@ -59,7 +59,7 @@ lsqnonlin <- function(fun, x0, options = list(), ...) {
 
         if (dL > 0 && df > 0) {
             x <- xnew;         f <- fn;  J <- Jn;       r <- rn; 
-            A <- t(J) %*% J;   g <- t(J) %*% r;         ng <- vnorm(g,Inf)
+            A <- t(J) %*% J;   g <- t(J) %*% r;         ng <- Norm(g,Inf)
             mu <- mu * max(1/3, 1 - (2*df/dL - 1)^3);   nu <- 2
         } else {
             mu <- mu*nu;  nu <- 2*nu
@@ -92,7 +92,7 @@ lsqnonneg <- function(C, d) {
 
     xs <- exp(sol$x)
     resi <- d - C %*% as.matrix(xs)
-    resn <- vnorm(resi)
+    resn <- Norm(resi)
     return(list(x = xs, resnorm = resn, residual = resi, 
                 exitflag = sol$errmess))
 }

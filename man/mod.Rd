@@ -1,13 +1,11 @@
 \name{mod, rem}
 \alias{mod}
 \alias{rem}
-\alias{idiv}
 \title{Integer Division}
 \description{
   Integer division functions and remainders
 }
 \usage{
-idiv(n, m)
 mod(n, m)
 rem(n, m)
 }
@@ -39,8 +37,12 @@ rem(n, m)
 Binary R operators \code{\%/\%} and \code{\%\%}.
 }
 \examples{
-idiv(20, 6)
 mod(c(-5:5), 5)
 rem(c(-5:5), 5)
+
+# Integer division
+idiv <- function(n, m) {
+    n \%/\% m
+}
 }
 \keyword{ arith }

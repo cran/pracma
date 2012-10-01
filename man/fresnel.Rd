@@ -1,4 +1,4 @@
-\name{Fresnel Integrals}
+\name{fresnelS/C}
 \alias{fresnelS}
 \alias{fresnelC}
 \title{

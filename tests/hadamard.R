@@ -3,20 +3,20 @@
 ##
 
 
-Hadamard <- pracma::Hadamard
+hadamard <- pracma::hadamard
 Toeplitz <- pracma::Toeplitz
 
-all.equal(Hadamard(2),
+all.equal(hadamard(2),
           matrix(c(1, 1, 1, -1), 2, 2))
-all.equal(Hadamard(4),
+all.equal(hadamard(4),
           matrix(c(1,  1,  1,  1,
                    1, -1,  1, -1,
                    1,  1, -1, -1,
                    1, -1, -1,  1), 4, 4))
-# H12 <- Hadamard(12)
+# H12 <- hadamard(12)
 # all.equal(t(H12) %*% H12,
 #           diag(12, 12, 12))
-# H20 <- Hadamard(20)
+# H20 <- hadamard(20)
 # all.equal(t(H20) %*% H20,
 #           diag(20, 20, 20))
 

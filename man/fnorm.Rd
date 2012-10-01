@@ -21,7 +21,7 @@ fnorm(f, g, x1, x2, p = 2, npoints = 100)
   of two functions \code{f} and \code{g} on the interval \code{[x1, x2]}.
 
   It takes \code{npoints} equidistant points in the interval, computes the
-  function values for \code{f} and \code{g} and applies \code{vnorm} to
+  function values for \code{f} and \code{g} and applies \code{Norm} to
   their difference.
 
   Especially \code{p=Inf} returns the maximum norm,
@@ -37,7 +37,7 @@ fnorm(f, g, x1, x2, p = 2, npoints = 100)
   difference \code{f-g} and dividing through the length of the interval.
 }
 \seealso{
-  \code{\link{vnorm}}
+  \code{\link{Norm}}
 }
 \examples{
 xp <- seq(-1, 1, length.out = 6)

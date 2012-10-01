@@ -1,9 +1,9 @@
 ###
-### f a c t o r i z e . R  Factorize natural number
+### f a c t o r s . R  Factorize natural number
 ###
 
 
-factorize <- function(n) {
+factors <- function(n) {
     if (!is.numeric(n) || length(n) != 1 || n != round(n) || n < 1)
         stop("Argument 'n' must be a nonnegative integer.")
     if (n >= 2^53)

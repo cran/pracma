@@ -1,11 +1,11 @@
-\name{Hadamard}
-\alias{Hadamard}
+\name{hadamard}
+\alias{hadamard}
 \title{Hadamard Matrix}
 \description{
   Generate Hadamard matrix of a certain size.
 }
 \usage{
-Hadamard(n)
+hadamard(n)
 }
 \arguments{
   \item{n}{An integer of the form 2^e, 12*2^e, or 20*2^e}
@@ -27,8 +27,8 @@ Hadamard(n)
   \code{\link{hankel}}, \code{\link{Toeplitz}}
 }
 \examples{
-Hadamard(4)
-H <- Hadamard(8)
+hadamard(4)
+H <- hadamard(8)
 t(H) %*% H        # t(H) %*% H == diag(n, n, n)
 }
 \keyword{ array }

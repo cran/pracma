@@ -3,6 +3,38 @@
 \encoding{UTF-8}
 
 
+\section{Changes in Version 1.2.0 (2012-09-27)}{
+    \itemize{
+      \item matlab() can reinstall Matlab function names.
+    }
+}
+
+\section{Changes in Version 1.1.9 (2012-09-25)}{
+    \itemize{
+      \item gcd(), lcm() greatest common divisor, least common multiple
+        now working on a vector of integers.
+      \item Removed number-theoretic functions: eulersPhi(),
+        moebiusFun(), mertensFun(), sigma(), tau(), omega(), Omega(),
+        primes2(), twinPrimes(), nextPrime(), previousPrime(),
+        modpower(), modorder(), modinv(), modlin(), agm(),
+        primroot(), contfrac(), coprime(), GCD(), LCM(), extGCD(),
+        (these functions are now available in the 'numbers' package).
+    }
+}
+
+\section{Changes in Version 1.1.8 (2012-09-19)}{
+    \itemize{
+      \item ezcontour(), ezmesh() wrappers for contour(), image(), persp().
+      \item erfi() imaginary error function.
+    }
+}
+
+\section{Changes in Version 1.1.7 (2012-08-06)}{
+    \itemize{
+      \item moler() Moler matrix
+    }
+}
+
 \section{Changes in Version 1.1.6 (2012-07-20)}{
     \itemize{
       \item Removed '.Rapphistory' from the tests directory (again)
@@ -293,7 +325,7 @@
 \section{Changes in Version 0.8.1 (2011-10-30)}{
     \itemize{
       \item Corrected pinv() for (nearly) singular matrices.
-      \item Renamed ifactor() to factorize().
+      \item Renamed ifactor() to factors().
     }
 }
 
@@ -417,8 +449,6 @@
 \section{Changes in Version 0.6.4 (2011-06-30)}{
     \itemize{
       \item Changed the description to be more precise about the package.
-      \item droplet_e() generation of digits for the Euler number.
-        (Should be followed by a function droplet_pi().)
     }
 }
 
@@ -878,6 +908,6 @@
 
       \item Remark: Typeset this document as:
 
-      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.1.0"}.
+      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.2.0"}.
     }
 }

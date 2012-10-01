@@ -5,6 +5,7 @@
 \alias{erfcinv}
 \alias{erfcx}
 \alias{erfz}
+\alias{erfi}
 \title{
   Error Functions and Inverses (Matlab Style)
 }
@@ -20,6 +21,7 @@ erfcinv(y)
 erfcx(x)
 
 erfz(z)
+erfi(z)
 }
 \arguments{
   \item{x, y}{vector of real numbers.}
@@ -29,11 +31,12 @@ erfz(z)
   \code{erf} and \code{erfinv} are the error and inverse error functions.\cr
   \code{erfc} and \code{erfcinv} are the complementary error function and
   its inverse.\cr
-  \code{erfcx} is the scaled complementary error function.
+  \code{erfcx} is the scaled complementary error function.\cr
+  \code{erfz} is the complex, \code{erfi} the imaginary error function.
 }
 \value{
   Real or complex number, the value of the function.
-  Please note that \code{erfz} is not (yet) vectorized.
+  Please note that \code{erfz}, \code{erfi} are not (yet) vectorized.
 }
 \note{
   For the complex error function we used Fortran code from the book 
@@ -43,7 +46,7 @@ erfz(z)
   \code{\link{pnorm}}
 }
 \examples{
-  x <- 1
+  x <- 1.0
   erf(x); 2*pnorm(sqrt(2)*x) - 1
 # [1] 0.842700792949715
 # [1] 0.842700792949715
@@ -51,7 +54,9 @@ erfz(z)
 # [1] 0.157299207050285
 # [1] 0.157299207050285
 # [1] 0.157299207050285
-  erfz(1)
+  erfz(x)
 # [1] 0.842700792949715
+  erfi(x)
+# [1] 1.650425758797543
 }
 \keyword{ stat }

@@ -1,5 +1,5 @@
 ##
-##  m t r a c e . R  Matrix trace
+##  t r a c e . R  Matrix trace
 ##
 
 

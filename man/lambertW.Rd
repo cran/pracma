@@ -41,7 +41,7 @@ lambertWp(z)
   Lambert W function could be calculated by Newton's method.
 }
 \seealso{
-  \code{\link{agm}}
+  \code{\link{newtonRaphson}}
 }
 \examples{
 ##  Examples

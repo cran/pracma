@@ -1,5 +1,5 @@
-\name{ApEn}
-\alias{ApEn}
+\name{approx_entropy}
+\alias{approx_entropy}
 \title{
   Approximate Entropy
 }
@@ -7,7 +7,7 @@
   Calculates the approximate entropy of a time series.
 }
 \usage{
-ApEn(ts, edim = 2, r = 0.2*sd(ts), elag = 1)
+approx_entropy(ts, edim = 2, r = 0.2*sd(ts), elag = 1)
 }
 \arguments{
   \item{ts}{a time series.}
@@ -51,11 +51,11 @@ ApEn(ts, edim = 2, r = 0.2*sd(ts), elag = 1)
 }
 \examples{
 ts <- rep(61:65, 10)
-ApEn(ts, edim = 2)                      # -0.000936195
+approx_entropy(ts, edim = 2)                      # -0.000936195
 
 set.seed(8237)
-ApEn(rnorm(500), edim = 2)              # 1.48944  high, random
-ApEn(sin(seq(1,100,by=0.2)), edim = 2)  # 0.22831  low,  deterministic
+approx_entropy(rnorm(500), edim = 2)              # 1.48944  high, random
+approx_entropy(sin(seq(1,100,by=0.2)), edim = 2)  # 0.22831  low,  deterministic
 
 \dontrun{(Careful: This will take several minutes.)
 # generate simulated data
@@ -68,9 +68,9 @@ whitet <- rnorm(N);          sd3 <- sd(whitet)  # white noise
 rnum <- 30; result <- zeros(3, rnum)
 for (i in 1:rnum) {
     r <- 0.02 * i
-    result[1, i] <- ApEn(sint,   2, r*sd1)
-    result[2, i] <- ApEn(chirpt, 2, r*sd2)
-    result[3, i] <- ApEn(whitet, 2, r*sd3)
+    result[1, i] <- approx_entropy(sint,   2, r*sd1)
+    result[2, i] <- approx_entropy(chirpt, 2, r*sd2)
+    result[3, i] <- approx_entropy(whitet, 2, r*sd3)
 }
 
 # plot curves

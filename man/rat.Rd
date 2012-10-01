@@ -33,7 +33,7 @@ rats(x, tol = 1e-06)
   Essentially, these functions apply \code{contfrac}.
 }
 \seealso{
-\code{\link{contfrac}}
+\code{numbers::contfrac}
 }
 \examples{
 rat(pi)

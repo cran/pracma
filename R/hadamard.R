@@ -3,7 +3,7 @@
 ##
 
 
-Hadamard <- function(n) {
+hadamard <- function(n) {
     if (!is.numeric(n) || length(n) != 1 ||
         floor(n) != ceiling(n) || n <= 1)
         stop("Argument 'n' must be a positiv integer.")

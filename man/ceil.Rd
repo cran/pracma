@@ -17,7 +17,8 @@ Fix(n)
   \code{ceil()} is an alias for \code{ceiling()} and rounds to the smallest
   integer equal to or above \code{n}.
 
-  \code{fix()} truncates values towards 0 and is an alias for \code{trunc()}.
+  \code{Fix()} truncates values towards 0 and is an alias for 
+  \code{trunc()}. Uses \code{ml} prefix to indicate Matlab style.
 
   The corresponding functions \code{floor()} (rounding to the largest interger
   equal to or smaller than \code{n}) and \code{round()} (rounding to the

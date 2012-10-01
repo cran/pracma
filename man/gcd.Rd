@@ -1,35 +1,45 @@
-\name{GCD, LCM}
-\alias{GCD}
-\alias{LCM}
+\name{gcd, lcm}
+\alias{gcd}
+\alias{Lcm}
 \title{GCD and LCM Integer Functions}
 \description{
   Greatest common divisor and least common multiple
 }
 \usage{
-GCD(n, m)
-LCM(n, m)
+gcd(a, b, extended = FALSE)
+Lcm(a, b)
 }
 \arguments{
-  \item{n, m}{integer scalars}
+  \item{a, b}{vectors of integers.}
+  \item{extended}{logical; if \code{TRUE}
+                           the extended Euclidean algorithm will be applied.}
 }
 \details{
-  Computation based on the extended Euclidean algorithm in \code{extGCD}.
+  Computation based on the extended Euclidean algorithm.
+
+  If both \code{a} and \code{b} are vectors of the same length, the greatest 
+  common divisor/lowest common multiple will be computed elementwise.
+  If one is a vektor, the other a scalar, the scalar will be replicated to
+  the same length.
 }
 \value{
-  a numeric (integer) value
+  A numeric (integer) value or vector of integers. Or a list of three vectors
+  named \code{c, d, g}, g containing the greatest common divisors, such that
+
+  \code{g = c * a + d * b}.
 }
 \note{
   The following relation is always true:
 
-  \code{n * m = GCD(n, m) * LCM(n, m)}
+  \code{n * m = gcd(n, m) * lcm(n, m)}
 }
 \seealso{
-\code{\link{extGCD}}, \code{\link{coprime}}
+\code{numbers::extGCD}
 }
 \examples{
-GCD(12, 10)
-GCD(46368, 75025)  # Fibonacci numbers are relatively prime to each other
-LCM(12, 10)
-LCM(46368, 75025)  # = 46368 * 75025
+gcd(12, 1:24)
+gcd(46368, 75025)  # Fibonacci numbers are relatively prime to each other
+Lcm(12, 1:24)
+Lcm(46368, 75025)  # = 46368 * 75025
 }
 \keyword{ arith }

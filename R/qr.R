@@ -20,7 +20,7 @@ gramSchmidt <- function(A, tol = .Machine$double.eps^0.5) {
                 Q[ , k] <- Q[, k] - R[i, k] * Q[, i]
             }
         }
-        R[k, k] <- vnorm(Q[, k])
+        R[k, k] <- Norm(Q[, k])
         if (abs(R[k, k]) <= tol)
             stop("Matrix 'A' does not have full rank.")
         Q[, k] <- Q[, k] / R[k, k]
@@ -50,7 +50,7 @@ qrSolve <- function(A, b) {
 # Givens transformation
 .givens <- function(xk, xl) {
     if (xl != 0) {
-        r <- vnorm(c(xk, xl))
+        r <- Norm(c(xk, xl))
         G <- matrix(c(xk, -xl, xl, xk), 2, 2) / r
         x <- as.matrix(c(r, 0))
     } else {
@@ -94,7 +94,7 @@ householder <- function(A) {
     for (k in 1:min(m-1, n)) {
         ak <- A[k:m, k, drop = FALSE]
         s  <- if (ak[1] >= 0) 1 else -1
-        vk <- ak + s * vnorm(ak) * c(1, rep(0, m-k))
+        vk <- ak + s * Norm(ak) * c(1, rep(0, m-k))
         vk2 <- c(t(vk) %*% vk)
         Hk <- eye(m-k+1) - 2/vk2 * (vk %*% t(vk))
         if (k == 1) Qk <- Hk

@@ -39,7 +39,7 @@ gaussNewton <- function(x0, Ffun, Jfun = NULL,
     if (!all(is.finite(dk))) dk <- .mdhess(Hk, gk)
     ak <- softline(xk, dk, f, g)
     adk <- ak * dk
-    err <- vnorm(adk)
+    err <- Norm(adk)
     
     k <- 1
     while (err > tol && k < maxiter) {

@@ -1,4 +1,4 @@
-\name{Steepest Descent}
+\name{steepest_descent}
 \alias{steep_descent}
 \title{
   Steepest Descent

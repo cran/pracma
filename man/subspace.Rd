@@ -35,7 +35,7 @@ subspace(A, B)
 180 * subspace(c(0, 1), c(1, 2)) / pi  #=> 26.565
 
 H <- 
-Hadamard(8)
+hadamard(8)
 A <- H[, 2:4]
 B <- H[, 5:8]
 subspace(A, B)    #=> 1.5708 or pi/2, i.e. A and B are orthogonal
