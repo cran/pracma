@@ -47,4 +47,4 @@ plot(abm1$x, abm1$y, type = "l", col = "blue")
 lines(abm2$x, abm2$y, type = "l", col = "red")
 grid()}
 }
-\keyword{ math }
+\keyword{ ode }

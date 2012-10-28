@@ -31,7 +31,7 @@ orth(M)
 }
 \examples{
 M <- matrix(1:12, 3, 4)
-mrank(M)                 #=> 2
+Rank(M)                 #=> 2
 orth(M)
 }
 \keyword{ array }

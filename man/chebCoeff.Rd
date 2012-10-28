@@ -26,9 +26,6 @@ chebCoeff(fun, a, b, n)
   From MathWorld --- A Wolfram Web Resource.
   \url{http://mathworld.wolfram.com/ChebyshevPolynomialoftheFirstKind.html}
 }
-\author{
-  HwB <hwborchers@googlemail.com>
-}
 \note{
   See the ``Chebfun Project'' <http://www.maths.ox.ac.uk/chebfun/> by
   Nick Trefethen.

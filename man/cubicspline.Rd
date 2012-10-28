@@ -30,9 +30,6 @@ cubicspline(x, y, xi = NULL, endp2nd = FALSE, der = c(0, 0))
   From the piecewise polynomial returned one can easily generate the spline
   function, see the examples.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \references{
   Quarteroni, Q., and F. Saleri (2006). Scientific Computing with Matlab
   and Octave. Springer-Verlag Berlin Heidelberg.

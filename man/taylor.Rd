@@ -22,9 +22,6 @@ taylor(f, x0, n = 4, ...)
 \value{
   Vector of length \code{n+1} representing a polynomial of degree \code{n}.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   TODO: Pade approximation.
 }

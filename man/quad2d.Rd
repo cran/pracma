@@ -34,9 +34,6 @@ quad2d(f, xa, xb, ya, yb, n = 32, ...)
   Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.
   Second Edition, Springer-Verlag, Berlin Heidelberg.
 }
-\author{
-  HwB  <hwborchers@googlemail.com>
-}
 \note{
   The extension of Gaussian quadrature to two dimensions is obvious, but
   see also the example `integral2d.m' at Nick Trefethens ``10 digits 1 page'',

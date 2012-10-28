@@ -22,9 +22,6 @@ barylag(xi, yi, x)
   Berrut, J.-P., and L. Nick Trefethen (2004). ``Barycentric Lagrange
   Interpolation''. SIAM Review, Vol. 46(3), pp.501--517.
 }
-\author{
-  HwB <hwborchers@googlemail.com>
-}
 \note{
   Barycentric interpolation is preferred because of its numerical stability.
 }

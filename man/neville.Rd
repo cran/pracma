@@ -19,9 +19,6 @@ neville(x, y, xs)
 \value{
   Interpolated value at \code{xs} of the polynomial defined by \code{x,y}.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \references{
   Each textbook on numerical analysis.
 }

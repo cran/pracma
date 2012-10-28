@@ -33,9 +33,6 @@ broyden(Ffun, x0, maxiter = 20, tol = .Machine$double.eps^(1/2))
   Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.
   Second Edition, Springer-Verlag, Berlin Heidelberg.
 }
-\author{
-  HwB <hwborchers@googlemail.com>
-}
 \note{
   Applied to a system of \code{n} linear equations it will stop in
   \code{2n} steps

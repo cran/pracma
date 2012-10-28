@@ -28,9 +28,6 @@ kmeanspp(X, k)
   Please note that it is not clear whether the approach of kmeans++ is 
   really preferable to, e.g., kmeans with several restarts.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \references{
   Arthur, D., and S. Vassilvitskii (2006). "k-means++: The Advantages of
   Careful Seeding", Technical Report 2006-13, Stanford InfoLab.

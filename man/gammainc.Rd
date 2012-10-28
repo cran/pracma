@@ -33,9 +33,6 @@ gammainc(x, a)
   Zhang, Sh., and J. Jin (1996). Computation of Special Functions.
   Wiley-Interscience, New York.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   Directly converting Fortran code is often easier than translating Matlab
   code generated with f2matlab.

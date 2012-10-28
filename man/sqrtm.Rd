@@ -86,9 +86,6 @@ rootm(A, p, kmax = 20, tol = .Machine$double.eps^(1/2))
   As these approaches all calculate the principal branch, the results are
   identical (but will numerically slightly differ).
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \references{
   N. J. Higham (1997). Stable Iterations for the Matrix Square Root.
   Numerical Algorithms, Vol. 15, pp. 227--242.

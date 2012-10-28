@@ -74,4 +74,4 @@ points(sol21$x, sol21$y, pch = "*", col = "blue")
 lines(sol22$x, sol22$y)
 grid()}
 }
-\keyword{ math }
+\keyword{ ode }

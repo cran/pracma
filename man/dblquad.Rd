@@ -26,9 +26,6 @@ dblquad(f, xa, xb, ya, yb, dim = 2, ...,
 \value{
   Numerical scalar, the value of the integral.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \seealso{
   \code{\link{integrate}}, \code{\link{quad2d}}
 }

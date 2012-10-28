@@ -1,9 +1,9 @@
 ##
-##  m r a n k . R  Matrix Rank
+##  r a n k . R  Matrix Rank
 ##
 
 
-mrank <- function(M) {
+Rank <- function(M) {
     if (length(M) == 0)
         return(0)
     if (!is.numeric(M))
@@ -31,14 +31,13 @@ nullspace <- function(M) {
     if (is.vector(M))
         M <- matrix(c(M), nrow = length(M), ncol = 1)
 
-    qrM <- qr(M)
-    rank <- qrM$rank
-    if (rank == ncol(M)) return(rep(0, ncol(M)))
+    qrM <- qr(t(M))
+    rnk <- qrM$rank
+    if (rnk == ncol(M)) return(NULL)
 
-    inds <- if (rank == 0) 1:ncol(M) else -(1:rank)
+    inds <- if (rnk == 0) 1:ncol(M) else -(1:rnk)
     qrQ <- qr.Q(qrM, complete = TRUE)[, inds, drop = FALSE]
 
-    if (length(qrQ) == 0)
-        return(rep(0, ))
-    return(t(qrQ))
+    if (length(qrQ) == 0) return(NULL)
+    else                  return(qrQ)
 }

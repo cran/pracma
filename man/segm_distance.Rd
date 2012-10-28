@@ -29,9 +29,6 @@ segm_distance(p1, p2, p3, p4 = c())
   If \code{p4=c()} then point \code{p} lies on the segment and \code{q} is
   \code{p4}.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   The interfaces of \code{segm_intersect} and \code{segm_distance} should be
   brought into line.

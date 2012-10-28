@@ -26,9 +26,6 @@ jacobian(f, x, h.eps=.Machine$double.eps^(1/3), ...)
   Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.
   Second Edition, Springer-Verlag, Berlin Heidelberg.
 }
-\author{
-  HwB <hwborchers@googlemail.com>
-}
 \note{
   Obviously, this function is \emph{not} vectorized.
 }

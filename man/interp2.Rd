@@ -39,9 +39,6 @@
   For methods ``constant'' and ``nearest'' the intervals are considered
   closed from left and below. Out of range values are returned as NAs.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   The corresponding Matlab function has also the methods ``cubic'' and
   ``spline''. If in need of a nonlinear interpolation, take a look at

@@ -34,9 +34,6 @@ pade(p1, p2 = c(1), d1 = 5, d2 = 5)
   of numerator and denominator are the same or when the degree of the
   numerator is one larger than that of the denominator.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \references{
   Press, W. H., S. A. Teukolsky, W. T Vetterling, and B. P. Flannery (2007).
   Numerical Recipes: The Art of Numerical Computing. Third Edition,

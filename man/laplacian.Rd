@@ -25,9 +25,6 @@ laplacian(f, x0, h = 1e-4, ...)
 \value{
   Real number.
 }
-\author{
-  HwB  <hwborchers@googlemail.com>
-}
 \references{
   Fausett, L. V. (2007). Applied Numerical Analysis Using Matlab.
   Second edition, Prentice Hall.

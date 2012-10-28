@@ -37,9 +37,6 @@ errorbar(x, y, xerr = NULL, yerr = NULL,
 \value{
   Generates a plot, no return value.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \seealso{
   \code{plotrix::plotCI}, \code{Hmisc::errbar}
 }

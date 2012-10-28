@@ -22,9 +22,6 @@ trigApprox(t, x, m)
 \value{
   Vector of values the same length as \code{t}.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   TODO: Return an approximating function instead.
 }

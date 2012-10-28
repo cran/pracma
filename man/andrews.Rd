@@ -39,9 +39,6 @@ andrewsplot(A, f, style = "pol", scaled = FALSE, npts = 101)
   There are variants utilizing principal component scores, in order of
   decreasing eigenvalues.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \references{
   R. Khattree and D. N. Naik (2002). Andrews PLots for Multivariate Data:
   Some New Suggestions and Applications. Journal of Statistical Planning

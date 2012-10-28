@@ -34,11 +34,6 @@ numdiff(f, x, maxiter = 16, h = 1, ..., accuracy = .Machine$double.eps)
   Mathews, J. H., and K. D. Fink (1999). Numerical Methods Using Matlab.
   Third Edition, Prentice Hall.
 }
-\author{
-  This version is adapted from a textbook Matlab version of Mathews and Fink.
-
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   See \code{grad} in the `numDeriv' package for another implementation of
   Richardson's method in the context of numerical differentiation.

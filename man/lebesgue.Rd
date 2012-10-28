@@ -25,9 +25,6 @@ lebesgue(x, refine = 4, plotting = FALSE)
   Berrut, J.-P., and L. Nick Trefethen (2004). ``Barycentric Lagrange
   Interpolation''. SIAM Review, Vol. 46(3), pp.501--517.
 }
-\author{
-  HwB <hwborchers@googlemail.com>
-}
 \note{
   The Lebesgue constant plays an important role when estimating the distance
   of interpolating polynomials from the minimax solution (see the Remez

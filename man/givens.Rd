@@ -19,9 +19,6 @@ givens(A)
   List with two matrices \code{Q} and \code{R}, \code{Q} orthonormal and
   \code{R} upper triangular, such that \code{A=Q\%*\%R}.
 }
-\author{
-  hwb \email{hwborchers@googlemail.com}
-}
 \references{
   Golub, G. H., and Ch. F. van Loan (1996). Matrix Computations.
   Third edition, John Hopkins University Press, Baltimore.

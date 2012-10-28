@@ -31,9 +31,6 @@ fornberg(x, y, xs, k = 1)
   Fornberg's method is considered to be numerically more stable than applying
   Vandermonde's matrix.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \references{
   LeVeque, R. J. (2007). Finite Difference Methods for Ordinary and Partial
   Differential Equations. Society for Industrial and Applied Mathematics 

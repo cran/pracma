@@ -33,9 +33,6 @@ fresnelC(x)
   Zhang, S., and J. Jin (1996). Computation of Special Functions.
   Wiley-Interscience.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   Copyright (c) 1996 Zhang and Jin for the Fortran routines, converted to
   Matlab using the open source project `f2matlab' by Ben Barrowes, posted to

@@ -67,4 +67,4 @@ lines(sol$t, sol$y[, 1], col = "blue")
 lines(sol$t, sol$y[, 2], col = "darkgreen")
 grid()}
 }
-\keyword{ math }
+\keyword{ ode }

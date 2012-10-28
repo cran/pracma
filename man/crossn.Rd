@@ -19,9 +19,6 @@ crossn(A)
 \value{
   a vector of length \code{n}
 }
-\author{
-HwB <hwborchers@googlemail.com>
-}
 \note{
   The `scalar triple product' in \eqn{R^3} can be defined as
 

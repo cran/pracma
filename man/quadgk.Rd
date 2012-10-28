@@ -28,9 +28,6 @@ quadgk(f, a, b, tol = .Machine$double.eps^0.5, ...)
   Uses the same nodes and weights as the \code{quadQK15} procedure in the
   QUADPACK library.
 }
-\author{
-  HwB  <hwborchers@googlemail.com>
-}
 \seealso{
   \code{gauss_kronrod}
 }

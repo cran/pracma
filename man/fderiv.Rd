@@ -41,9 +41,6 @@ fderiv(f, x, n = 1, h = 0,
   Kiusalaas, J. (2005). Numerical Methods in Engineering with Matlab.
   Cambridge University Press.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   Numerical differentiation suffers from the conflict between round-off
   and truncation errors. 

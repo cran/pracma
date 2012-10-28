@@ -19,9 +19,6 @@
 \value{
   an integer \code{n} such that \eqn{x \le 2^n}.
 }
-\author{
-  hwb \email{hwborchers@googlemail.com}
-}
 \seealso{
   \code{\link{pow2}}
 }

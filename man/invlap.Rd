@@ -32,9 +32,6 @@ invlap(Fs, t1, t2, nnt, a = 6, ns = 20, nd = 19)
   on MatlabCentral (by ) served as guide. The Talbot procedure from the 
   second reference could be an interesting alternative.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \references{
   J. Valsa and L. Brancik (1998). Approximate Formulae for Numerical Inversion 
   of Laplace Transforms. Intern. Journal of Numerical Modelling: Electronic 

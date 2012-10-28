@@ -6,7 +6,7 @@
   Complex step derivatives of real-valued functions.
 }
 \usage{
-complexstep(f, x0, h = 1e-20, test = FALSE, ...)
+complexstep(f, x0, h = 1e-20, ...)
 
 complexstepJ(f, x0, h = 1e-20, ...)
 }
@@ -14,9 +14,6 @@ complexstepJ(f, x0, h = 1e-20, ...)
   \item{f}{Function that is to be differentiated.}
   \item{x0}{Point at which to differentiate the function.}
   \item{h}{Step size to be applied; shall be \emph{very} small.}
-  \item{test}{logical; if \code{TRUE} the complex step derivative will be
-              compared to the central derivative formula and a warning
-              issued if the difference is too large.}
   \item{...}{Additional variables to be passed to \code{f}.}
 }
 \details{

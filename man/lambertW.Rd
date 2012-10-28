@@ -33,9 +33,6 @@ lambertWp(z)
   Vol. 5, pp. 329-359.
   \url{http://www.apmaths.uwo.ca/~djeffrey/Offprints/W-adv-cm.pdf}.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   See the examples how values for the second branch or the complex
   Lambert W function could be calculated by Newton's method.

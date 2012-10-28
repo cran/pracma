@@ -30,9 +30,6 @@ cutpoints(x, nmax = 8, quant = 0.95)
   here. Unfortunately, the `C5.0' package (of the R-Forge project ``Rulebased
   Models'') is quite cumbersome to use.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \references{
   Witten, I. H., and E. Frank (2005). Data Mining: Practical Machine
   Learning Tools and Techniques. Morgan Kaufmann Publishers, San Francisco.

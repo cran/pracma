@@ -3,18 +3,21 @@
 ##
 
 
-mldivide <- function(A, B) {
+mldivide <- function(A, B, pinv = TRUE) {
     stopifnot(is.numeric(A) || is.complex(A),
               is.numeric(B) || is.complex(B))
     if (is.vector(A)) A <- as.matrix(A)
     if (is.vector(B)) B <- as.matrix(B)
     if (nrow(A) != nrow(A))
         stop("Matrices 'A' and 'B' must have the same number of rows.")
-
-    qr.solve(A, B)
+    if (pinv) {
+        pinv(t(A) %*% A) %*% t(A) %*% B
+    } else {
+        qr.solve(A, B)
+    }
 }
 
-mrdivide <- function(A, B) {
+mrdivide <- function(A, B, pinv = TRUE) {
     stopifnot(is.numeric(A) || is.complex(A),
               is.numeric(B) || is.complex(B))
     if (is.vector(A)) A <- t(A)
@@ -22,5 +25,5 @@ mrdivide <- function(A, B) {
     if (ncol(A) != ncol(A))
         stop("Matrices 'A' and 'B' must have the same number of columns.")
 
-    t(mldivide(t(B), t(A)))
+    t(mldivide(t(B), t(A), pinv = pinv))
 }

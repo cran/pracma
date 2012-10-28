@@ -3,6 +3,47 @@
 \encoding{UTF-8}
 
 
+\section{Changes in Version 1.2.5 (2012-09-28)}{
+    \itemize{
+      \item histc() Histogram-like counting (Matlab style).
+      \item Added warning to complexstep() if imaginary part is zero.
+    }
+}
+
+\section{Changes in Version 1.2.4 (2012-10-25)}{
+    \itemize{
+      \item Added option 'pinv' to mldivide() to return the same results
+        as Matlab.
+      \item str2num(), num2str() conversion functions (Matlab style).
+      \item Removed some 'author' entries on help pages.
+    }
+}
+
+\section{Changes in Version 1.2.3 (2012-10-17)}{
+    \itemize{
+      \item Renamed mrank() to Rank().
+      \item Corrected nullspace() [thanks to Stephane Laurent], which now 
+        agrees with Octave's null() function (MASS:Null appears buggy, too).
+      \item Corrected gaussNewton() and fsolve() [thanks to Etienne Chamayou].
+    }
+}
+
+\section{Changes in Version 1.2.2 (2012-10-10)}{
+    \itemize{
+      \item bsxfun() apply binary function elementwise (Matlab style).
+      \item added the analytic solution for the example in bvp().
+    }
+}
+
+\section{Changes in Version 1.2.1 (2012-09-28)}{
+    \itemize{
+      \item rosenbrock() added, moved testfunctions to 'adagio' package.
+      \item euler_heun() improved Euler method for solving ODEs.
+      \item logit() function added to sigmoid().
+      \item Keyword 'ode' introduced.
+    }
+}
+
 \section{Changes in Version 1.2.0 (2012-09-27)}{
     \itemize{
       \item matlab() can reinstall Matlab function names.
@@ -908,6 +949,6 @@
 
       \item Remark: Typeset this document as:
 
-      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.2.0"}.
+      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.2.5"}.
     }
 }

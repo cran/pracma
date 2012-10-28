@@ -31,9 +31,6 @@ polar(t, r, type="l",
 \value{
   Generates a plot; no returns.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \examples{
 \dontrun{
 t <- deg2rad(seq(0, 360, by = 2))

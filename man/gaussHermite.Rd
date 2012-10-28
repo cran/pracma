@@ -31,9 +31,6 @@ gaussHermite(n)
   Trefethen, L. N. (2000). Spectral Methods in Matlab. SIAM, Society for
   Industrial and Applied Mathematics.
 }
-\author{
-  HwB  <hwborchers@googlemail.com>
-}
 \note{
   The basic quadrature rules are well known and can, e. g., be found in
   Gautschi (2004) --- and explicit Matlab realizations in Trefethen (2000).

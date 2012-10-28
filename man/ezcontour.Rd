@@ -41,9 +41,6 @@ ezmesh(f, xlim = c(-pi,pi), ylim = c(-pi,pi),
   Mimicks Matlab functions of the same names; Matlab's \code{ezcontourf} can 
   be generated with \code{filled=TRUE}.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \seealso{
   \code{\link{contour}}, \code{\link{image}}, \code{\link{persp}}
 }

@@ -12,10 +12,13 @@ matlab()
 \details{
   Reinstalls Matlab names of the following functions:
 
-  \code{find}, \code{fix}, \code{mode}, \code{poly},\cr
-  \code{diag}, \code{toeplitz}, \code{reshape}, \code{norm},\cr
-  \code{real}, \code{imag},\cr
-  \code{strtrim}.
+  \code{diag}, \code{find}, \code{fix}, \code{imag}, \code{lcm},\cr
+  \code{mode}, \code{norm}, \code{poly}, \code{rank}, \code{real},\cr
+  \code{reshape}, \code{strtrim}, \code{toeplitz},
+
+  and generates active bindings for
+
+  \code{ans}, \code{who}, \code{tic}, and \code{toc}.
 }
 \value{
   Invisible NULL value.

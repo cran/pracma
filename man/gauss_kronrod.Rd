@@ -25,9 +25,6 @@ gauss_kronrod(f, a, b, ...)
   Fausett, L. V. (2007). Applied Numerical Analysis Using Matlab.
   Second edition, Prentice Hall.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   The function needs to be vectorized (though this could easily be changed),
   but the function does not need to be defined at the end points.

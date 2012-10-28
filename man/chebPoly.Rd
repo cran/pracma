@@ -32,9 +32,6 @@ chebPoly(n, x = NULL)
   Bowling Green State University,
   URL: \url{http://personal.bgsu.edu/~carother/Approx.html}.
 }
-\author{
-  HwB <hwborchers@googlemail.com>
-}
 \note{
   See the ``Chebfun Project'' <http://www.maths.ox.ac.uk/chebfun/> by
   Nick Trefethen.

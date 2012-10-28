@@ -26,9 +26,6 @@ chebApprox(x, fun, a, b, n)
   Numerical Recipes in C: The Art of Scientific Computing. Second Edition,
   Cambridge University Press.
 }
-\author{
-  HwB <hwborchers@googlemail.com>
-}
 \note{
   TODO: Evaluate the Chebyshev approximative polynomial by using the
   Clenshaw recurrence formula.

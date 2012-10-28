@@ -42,9 +42,6 @@ fplot(f, a, b, n = 101, vectorized = FALSE,
 \note{
   \code{matplot} will plot the graph if the matrix is already generated.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \seealso{
   \code{\link{matplot}}
 }

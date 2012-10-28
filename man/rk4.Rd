@@ -74,4 +74,4 @@ matplot(sol$x, sol$y, type = "l", lty = 1, lwd = c(2, 1, 1),
         main = "Chemical composition")
 grid()}
 }
-\keyword{ math }
+\keyword{ ode }

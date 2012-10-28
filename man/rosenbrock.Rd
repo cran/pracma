@@ -1,4 +1,4 @@
-\name{Testfunctions}
+\name{rosenbrock}
 \alias{rastrigin}
 \alias{rosenbrock}
 \title{

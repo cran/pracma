@@ -66,9 +66,6 @@ lsqnonneg(C, d)
   The refined approach, Fletcher's version of the Levenberg-Marquardt
   algorithm, may be added at a later time; see the references.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \references{
   Madsen, K., and H. B.Nielsen (2010).Introduction to Optimization and
   Data Fitting. Technical University of Denmark, Intitute of Computer

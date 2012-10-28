@@ -34,9 +34,6 @@ polylog(z, n)
   Based on some equations, see references.
   A Matlab implementation is available in the Matlab File Exchange.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \references{
   V. Bhagat, et al. (2003). On the evaluation of generalized BoseEinstein and 
   FermiDirac integrals. Computer Physics Communications, Vol. 155, p.7.

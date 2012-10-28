@@ -30,9 +30,6 @@ brent_dekker(f, a, b, ..., maxiter = 100, tol = .Machine$double.eps^0.5)
   Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.
   Second Edition, Springer-Verlag, Berlin Heidelberg.
 }
-\author{
-  Hans W Borchers  <hwborchers@googlemail.com>
-}
 \note{
   \code{fzero} in Octave uses a more sophisticated approach with cubic
   interpolation.

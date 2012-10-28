@@ -35,9 +35,6 @@ approx_entropy(ts, edim = 2, r = 0.2*sd(ts), elag = 1)
   This code here derives from a Matlab version at Mathwork's File Exchange,
   ``Fast Approximate Entropy'', by Kijoon Lee under BSD license.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \references{
   Pincus, S.M. (1991). Approximate entropy as a measure of system complexity.
   Proc. Natl. Acad. Sci. USA, Vol. 88, pp. 2297--2301.

@@ -20,9 +20,6 @@
 \value{
   Returns a numeric vector of solutions to \eqn{x^{1/n}}.
 }
-\author{
-  hwb \email{hwborchers@googlemail.com}
-}
 \seealso{
   \code{\link{sqrt}}
 }

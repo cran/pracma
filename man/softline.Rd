@@ -30,9 +30,6 @@ softline(x0, d0, f, g = NULL)
   W.-S. Lu in their textbook ``Practical Optimization''. Translated to R
   by Hans W Borchers.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \references{
   Fletcher, R. (1980). Practical Methods of Optimization, Volume 1.,
   Section 2.6. Wiley, New York.

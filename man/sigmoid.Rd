@@ -1,5 +1,6 @@
 \name{sigmoid}
 \alias{sigmoid}
+\alias{logit}
 \title{
   Sigmoid Function
 }
@@ -8,18 +9,24 @@
 }
 \usage{
 sigmoid(x, a = 1, b = 0)
+logit(x, a = 1, b = 0)
 }
 \arguments{
-  \item{x}{numeric or complex vector.}
+  \item{x}{numeric vector.}
   \item{a, b}{parameters.}
 }
 \details{
   The \code{sigmoidal} function with parameters \code{a,b} is the function
-  \deqn{y = \frac{1}{1 + e^{-a (x-b)}}}
+  \deqn{y = 1/(1 + e^{-a (x-b)})}
 
-  The sigmoid function is also the solution of the ordinary differential equation
+  The \code{sigmoid} function is also the solution of the ordinary 
+  differentialequation
   \deqn{y' = y (1-y)}
   with \eqn{y(0) = 1/2} and has an indefinite integral \eqn{\ln(1 + e^x)}.
+
+  The \code{logit} function is the inverse of the sigmoid function and is
+  (therefore) omly defined between 0 and 1. Its definition is
+  \deqn{y = b + 1/a log(x/(1-x))}
 }
 \value{
   Numeric/complex scalar or vector.

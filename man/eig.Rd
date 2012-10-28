@@ -17,9 +17,6 @@
 \value{
   Vector of eigenvalues
 }
-\author{
-  hwb  e-mail:<hwborchers@googlemail.com>
-}
 \seealso{
   \code{\link{compan}}
 }

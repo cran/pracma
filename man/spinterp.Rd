@@ -41,9 +41,6 @@ spinterp(x, y, xp)
 \references{
   Stan Wagon (2010). Mathematica in Action. Third Edition, Springer-Verlag.
 }
-\author{
-  HwB <hwborchers@googlemail.com>
-}
 \note{
   At the moment, the data need to be monotonic and the case of convexity
   is not considered.

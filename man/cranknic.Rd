@@ -82,4 +82,4 @@ plot(sol$y[, 1], sol$y[, 2], type = "l", col = "blue",
      xlab = "", ylab = "", main = '"Herr und Hund"')
 grid()}
 }
-\keyword{ math }
+\keyword{ ode }

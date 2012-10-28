@@ -36,9 +36,6 @@ nelder_mead(x0, f, maxiter = 1000, scale = 1,
   J. H. Mathews and K. D. Fink (2006). Numerical Methods Using Matlab.
   Fourth Edition, Pearson Education.
 }
-\author{
-  HwB  <hwborchers@googlemail.com>
-}
 \note{
   Used Matlab code as provided in the textbook by Mathews and Fink.
 

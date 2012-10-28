@@ -44,9 +44,6 @@ fletcher_powell(x0, f, g = NULL,
   Numerical Optimization: Theoretical and Practical Aspects. Second Edition,
   Springer-Verlag, Berlin Heidelberg, 2006.
 }
-\author{
-  HwB  <hwborchers@googlemail.com>
-}
 \note{
   Used some Matlab code as described in the book ``Applied Numerical Analysis
   Using Matlab'' by L. V.Fausett.

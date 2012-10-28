@@ -30,9 +30,6 @@ newtonsys(Ffun, x0, Jfun = NULL, ...,
   Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.
   Second Edition, Springer-Verlag, Berlin Heidelberg.
 }
-\author{
-  HwB <hwborchers@googlemail.com>
-}
 \note{
   TODO: better error checking, e.g. when the Jacobian is not invertible.
 }

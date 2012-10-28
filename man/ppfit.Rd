@@ -27,9 +27,6 @@ ppfit(x, y, xi, method = c("linear", "cubic"))
 \note{
   Following an idea of Copyright (c) 2012 Ben Abbott, Martin Helm for Octave.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \seealso{
   \code{\link{mkpp}}, \code{\link{ppval}}
 }

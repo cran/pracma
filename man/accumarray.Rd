@@ -44,9 +44,6 @@ uniq(a, first = FALSE)
 \item{ m }{vector of indices such that \code{b = a[m]}}
 \item{ n }{vector of indices such that \code{a = b[n]}}
 }
-\author{
-  HwB  hwborchers@googlemail.com
-}
 \note{
   The Matlab function \code{accumarray} can also handle sparse matrices.
 }

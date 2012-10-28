@@ -21,9 +21,6 @@
   List with two matrices \code{Q} and \code{R}, \code{Q} orthonormal and
   \code{R} upper triangular, such that \code{A=Q\%*\%R}.
 }
-\author{
-  hwb \email{hwborchers@googlemail.com}
-}
 \references{
   Trefethen, L. N., and D. Bau III. (1997). Numerical Linear Algebra. SIAM,
   Society for Industrial and Applied Mathematics, Philadelphia.

@@ -27,9 +27,6 @@ deeve(x, y, yv = 0, idx = NULL)
 \value{
   A (time) point \code{x0} at which the event happens.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   The interpolation is linear only for the moment.
 }
@@ -49,4 +46,4 @@ deeve(sol$x, sol$y[,1])                   # y1 = 0 : elongation in [sec]
 # [1] 2.073507 5.414753 8.650250
 # matplot(sol$x, sol$y); grid()
 }
-\keyword{ math }
+\keyword{ ode }

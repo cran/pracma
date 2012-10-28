@@ -19,6 +19,6 @@ assign("elapsedTime", 0, envir = .pracmaEnv)
     environment(.pracmaEnv) <- asNamespace("pracma")
 
     packageStartupMessage(
-        "pracma 1.2.0 (HwB 2012) Practical Numerical Math Functions"
+        "pracma 1.2.5 (HwB 2012) Practical Numerical Math Functions"
     )
 }

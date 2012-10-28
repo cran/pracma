@@ -69,4 +69,4 @@ plot(sol$t, sol$y[, 1], type="l", col="blue",
 lines(sol$t, sol$y[, 2], col="darkgreen")
 grid()}
 }
-\keyword{ math }
+\keyword{ ode }

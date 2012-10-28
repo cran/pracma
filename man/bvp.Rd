@@ -38,14 +38,19 @@ bvp(f, a, b, ya, yb, N, cc, ...)
   \eqn{h \ge 2 c_1 / c_2}.
 }
 \seealso{
-  \code{feuler}
+  \code{\link{newmark}}
 }
 \examples{
 ##  Solve -y'' + 0.1*y = 1 + sin(4*pi*x) on [0, 1] with y(0) = y(1) = 0.
 fun <- function(x) 1 + sin(4*pi*x)
 sol <- bvp(fun, 0, 1, 0, 0, 40, c(1, 0, 0.1))
+
+# The analytic solution is
+fan <- function(x) cc[1]*exp(sqrt(0.1)*x) + cc[2]*exp(-sqrt(0.1)*x) + 
+                   1/((4*pi)^2+0.1)*sin(4*pi*x) + 10
 \dontrun{
-plot(sol$xh, sol$yh, type="l", col="blue")
+ezplot(fan, 0, 1, col="magenta", lty = 3)
+points(sol$xh, sol$yh, type="p", col="blue")
 grid()}
 }
-\keyword{ math }
+\keyword{ ode }

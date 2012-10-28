@@ -28,9 +28,6 @@ quadinf(f, xa, xb, tol = .Machine$double.eps^0.5, ...)
 \value{
   A single numeric value, the computed integral.
 }
-\author{
-  HwB  <hwborchers@googlemail.com>
-}
 \note{
   Based on my remarks on R-help in September 2010 in the thread
   ``bivariate vector numerical integration with infinite range''

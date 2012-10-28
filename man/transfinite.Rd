@@ -34,9 +34,6 @@ transfinite(lower, upper, n = length(lower))
   For positivity constraints, \code{x>=0}, this approach is considered to be
   numerically more stable than \code{x-->exp(x)} or \code{x-->x^2}.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \examples{
 lower <- c(-Inf, 0,   0)
 upper <- c( Inf, 0.5, 1)

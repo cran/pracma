@@ -3,19 +3,22 @@
 ##
 
 
-complexstep <- function(f, x0, h = 1e-20, test = FALSE, ...) {
+complexstep <- function(f, x0, h = 1e-20, ...) {
+    stopifnot(is.numeric(x0), is.numeric(h), h < 1e-15)
     fun <- match.fun(f)
     f <- function(x) fun(x, ...)
 
-    f_csd <- Im(f(x0 + h * 1i)) / h
-    # Test it as analycity may fail for function f
-    if (test) {
-        h0 <- 1e-5  # 2 * .Machine$double.eps^(1/3)
-        f_grd <- (f(x0+h0/2) - f(x0-h0/2))/ h0
-        if (abs(f_csd - f_grd) > h0)
-            warning(paste("Complex Step check failed: ", abs(f_csd - f_grd)))
-        else
-            cat("Derivation Difference: ", abs(f_csd - f_grd), "\n")
+    try(fx0hi <- f(x0 + h*1i))
+    if (inherits(fx0hi, "try-error"))
+        stop("Function 'f' does not accept complex arguments.")
+    
+    if (!is.complex(fx0hi) || !is.real(f(x0))) {
+        # apply Richardson's method
+        f_csd <- numderiv(f, x0, h = 0.1)$df
+        warning("Some maginary part is zero: applied Richardson instead.")
+    } else {
+        # apply complex-step method
+        f_csd <- Im(fx0hi) / h          # Im(f(x0 + h * 1i)) / h
     }
     return(f_csd)
 }

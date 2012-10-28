@@ -27,9 +27,6 @@ barylag2d(F, xn, yn, xf, yf)
   Berrut, J.-P., and L. Nick Trefethen (2004). ``Barycentric Lagrange
   Interpolation''. SIAM Review, Vol. 46(3), pp.501--517.
 }
-\author{
-  HwB <hwborchers@googlemail.com>
-}
 \note{
   Copyright (c) 2004 Greg von Winckel of a Matlab function under BSD license;
   translation to R by Hans W Borchers with permission.

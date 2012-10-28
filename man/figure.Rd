@@ -27,9 +27,6 @@ figure(figno, title = "")
 \note{
   Does not bring the activated graphics device in front.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \seealso{
   \code{dev.set, dev.off, dev.list}
 }

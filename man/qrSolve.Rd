@@ -17,9 +17,6 @@
 \value{
   The solution of the system as vector.
 }
-\author{
-  hwb \email{hwborchers@googlemail.com}
-}
 \references{
   Trefethen, L. N., and D. Bau III. (1997). Numerical Linear Algebra. SIAM,
   Society for Industrial and Applied Mathematics, Philadelphia.

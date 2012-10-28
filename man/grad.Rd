@@ -27,9 +27,6 @@ grad(f, x0, h = 1e-4, ...)
   Mathews, J. H., and K. D. Fink (1999). Numerical Methods Using Matlab.
   Third Edition, Prentice Hall.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \seealso{
   \code{\link{fderiv}}
 }

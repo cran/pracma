@@ -39,9 +39,6 @@ findpeaks(x, nups = 1, ndowns = nups, zero = "0", peakpat = NULL,
   the third and forth the indices of where the peak begins and ends --- in the
   sense of where the pattern starts and ends.
 }
-\author{
-HwB <hwborchers@googlemail.com>
-}
 \note{
   On Matlab Central there are several realizations for finding peaks, for
   example ``peakfinder'', ``peakseek'', or ``peakdetect''. And ``findpeaks''

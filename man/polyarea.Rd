@@ -29,9 +29,6 @@
 \value{
   Araea of the polygon as a positive number.
 }
-\author{
-  hwb \email{hwborchers@googlemail.com}
-}
 \seealso{
   \code{\link{trapz}}
 }

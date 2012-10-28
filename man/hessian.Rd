@@ -25,9 +25,6 @@ hessian(f, x0, h = 1e-4, ...)
   An n-by-n matrix with \eqn{\frac{\partial^2 f}{\partial x_i \partial x_j}}
   as (i, j) entry.
 }
-\author{
-  HwB  <hwborchers@googlemail.com>
-}
 \references{
   Fausett, L. V. (2007). Applied Numerical Analysis Using Matlab.
   Second edition, Prentice Hall.

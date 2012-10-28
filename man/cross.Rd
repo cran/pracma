@@ -23,9 +23,6 @@
   3-dim. vector if \code{x} and \code{<} are vectors, a matrix of
   3-dim. vectors if \code{x} and \code{y} are matrices themselves.
 }
-\author{
-  hwb \email{hwborchers@googlemail.com}
-}
 \seealso{
   \code{\link{dot}}, \code{\link{crossn}}
 }

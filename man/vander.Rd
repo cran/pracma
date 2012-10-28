@@ -18,9 +18,6 @@
 \value{
   Vandermonde matrix of dimension n where \code{n = length(x)}.
 }
-\author{
-  hwb \email{hwborchers@googlemail.com}
-}
 \examples{
   vander(c(1:10))
 }

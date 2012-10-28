@@ -22,9 +22,6 @@
 \value{
   Approximated integral of the function from \code{min(x)} to \code{max(x)}.
 }
-\author{
-  hwb \email{hwborchers@googlemail.com}
-}
 \seealso{
   \code{\link{polyarea}}
 }

@@ -33,9 +33,6 @@ newtonHorner(p, x0, maxiter = 50, tol = .Machine$double.eps^0.5)
   Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.
   Second Edition, Springer-Verlag, Berlin Heidelberg.
 }
-\author{
-  Hans W Borchers  <hwborchers@googlemail.com>
-}
 \seealso{
 \code{\link{newtonRaphson}}
 }

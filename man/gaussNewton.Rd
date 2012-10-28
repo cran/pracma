@@ -45,9 +45,6 @@ gaussNewton(x0, Ffun, Jfun = NULL,
   Antoniou, A., and W.-S. Lu (2007). Practical Optimization: Algorithms and
   Engineering Applications. Springer Business+Science, New York.
 }
-\author{
-  HwB <hwborchers@googlemail.com>
-}
 \note{
   If \code{n=m} then directly applying the \code{newtonsys} function might
   be a better alternative.

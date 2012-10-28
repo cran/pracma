@@ -22,9 +22,6 @@
 \value{
   vector of integers representing prime numbers
 }
-\author{
-  HwB \email{hwborchers@googlemail.com}
-}
 \seealso{
   \code{\link{isprime}, \link{factors}}
 }

@@ -48,9 +48,6 @@ hornerdefl(p, x)
   Quarteroni, A., and Saleri, F. (2006) Scientific Computing with Matlab
   and Octave. Second Edition, Springer-Verlag, Berlin Heidelberg.
 }
-\author{
-  HwB  <hwborchers@googlemail.com>
-}
 \seealso{
 \code{\link{polyval}}
 }

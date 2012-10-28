@@ -33,9 +33,6 @@ rmserr(x, y, summary = FALSE)
   Gentle, J. E. (2009). Computational Statistics, section 10.3.
   Springer Science+Business Media LCC, New York.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   Often used in Data Mining for \emph{predicting} the accuracy of predictions.
 }

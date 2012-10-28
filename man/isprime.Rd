@@ -19,9 +19,6 @@
 \value{
   array of elements 0, 1 with 1 indicating prime numbers
 }
-\author{
-  hwb \email{hwborchers@googlemail.com}
-}
 \seealso{
   \code{\link{factors}, \link{primes}}
 }

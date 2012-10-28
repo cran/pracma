@@ -7,18 +7,18 @@ fsolve <- function(f, x0, J = NULL,
                    maxiter = 100, tol = .Machine$double.eps^(0.5), ...) {
     if (!is.numeric(x0))
         stop("Argument 'x0' must be a numeric vector.")
-    n <- length(x0)
-    m <- length(f(x0))
-
     # Prepare objective function and its Jacobian
     fun <- match.fun(f)
     f <- function(x) fun(x, ...)
+
+    n <- length(x0)
+    m <- length(f(x0))
 
     if (!is.null(J)) {
         Jun <- match.fun(J)
         J <- function(x) J(x, ...)
     } else {
-        J <- function(x) jacobian(f, x, ...)
+        J <- function(x) jacobian(f, x)
     }
 
     sol <- gaussNewton(x0, f, Jfun = J, maxiter = maxiter, tol = tol)

@@ -26,9 +26,6 @@ deval(x, y, xp, idx = NULL)
   An \code{length(xp)}-by-\code{length(idx)} matrix of values at points
   \code{xp}.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   The interpolation is linear only for the moment.
 }
@@ -47,4 +44,4 @@ cbind(c(0.5,1,1.5,2), -deval(sol$x, sol$y, c(0.5, 1, 1.5, 2)))
 #  2.0  5.112068
 # plot(sol$x, -sol$y, type="l", col="blue"); grid()
 }
-\keyword{ math }
+\keyword{ ode }

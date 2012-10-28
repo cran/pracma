@@ -34,9 +34,6 @@ hooke_jeeves(x0, f, h = 1, scale = 1,
 \references{
   Quarteroni, Sacco, and Saleri (2007), Numerical Mathematics, Springer.
 }
-\author{
-  HwB  <hwborchers@googlemail.com>
-}
 \note{
   Hooke-Jeeves is notorious for its number of function calls. Memoization
   is often suggested as a remedy.

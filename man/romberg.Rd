@@ -26,9 +26,6 @@ romberg(f, a, b, tol = .Machine$double.eps^(2/3), ...)
   Mathews, J. H., and K. D. Fink (1999). Numerical Methods Using Matlab.
   Third Edition, Prentice Hall.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   The function does \emph{not} need to be vectorized.
   The relative error can sometimes be scaringly high. It may help

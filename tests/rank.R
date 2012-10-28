@@ -1,21 +1,21 @@
 ##
-##  m r a n k . r  Test suite
+##  r a n k . r  Test suite
 ##
 
 
-mrank <- pracma::mrank
+Rank <- pracma::Rank
 nullspace <- pracma::nullspace
 
 magic <- pracma::magic
-all.equal(mrank(c()), 0)
+all.equal(Rank(c()), 0)
 r <- numeric(8)
 for (i in 3:10){
-    r[i-2] <- mrank(magic(i))
+    r[i-2] <- Rank(magic(i))
 }
 identical(r, c(3, 3, 5, 5, 7, 3, 9, 7))
 
 hilb <- pracma::hilb
-identical(mrank(hilb(6)), 6L)
+identical(Rank(hilb(6)), 6L)
 
 # Vorzeichenwechsel moeglich
 # N <- nullspace(magic(4))

@@ -36,9 +36,6 @@ pltcross(x, y, cx = 0, cy = 0,
 \value{
   No value returned.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   See the example for generating a nice (abstract) picture generated with
   this function.

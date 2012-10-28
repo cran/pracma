@@ -36,9 +36,6 @@ plotyy(x1, y1, x2, y2, gridp = TRUE, box.col = "grey",
 \value{
   Generates a graph, no return values.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \seealso{
   \code{plotrix::twoord.plot}
 }

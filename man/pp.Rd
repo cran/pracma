@@ -39,9 +39,6 @@ ppval(pp, xx)
   Matlab allows to generate vector-valued piecewise polynomials. This may be
   included in later versions.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \seealso{
   \code{\link{cubicspline}}
 }

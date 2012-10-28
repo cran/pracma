@@ -29,9 +29,6 @@ hampel(x, k, t0 = 3)
   \code{L$ind} the indices of outliers in the `median absolut deviation'
   sense.
 }
-\author{
-  HwB  <hwborchers@googlemail.com>
-}
 \note{
   Don't take the expression \emph{outlier} too serious. It's just a hint to
   values in the time series that appear to be unusual in the vicinity of

@@ -24,9 +24,6 @@ golden_ratio(f, a, b, ..., maxiter = 100, tol = .Machine$double.eps^0.5)
   the function value at the minimum, \code{niter}, the number of iterations
   done, and the estimated precision \code{estim.prec}
 }
-\author{
-  Hans W Borchers  <hwborchers@googlemail.com>
-}
 \seealso{
 \code{\link{uniroot}}
 }

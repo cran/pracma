@@ -22,9 +22,6 @@ piecewise(x, y, abs = FALSE)
   Returns a list with the integral or area as first element and the vector
   as all zeroes as second.
 }
-\author{
-  HwB  <hwborchers@googlemail.com>
-}
 \seealso{
 \code{\link{trapz}}
 }

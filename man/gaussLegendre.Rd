@@ -27,9 +27,6 @@ gaussLegendre(n, a, b)
   Trefethen, L. N. (2000). Spectral Methods in Matlab. SIAM, Society for
   Industrial and Applied Mathematics.
 }
-\author{
-  HwB  <hwborchers@googlemail.com>
-}
 \note{
   Gauss quadrature is not suitable for functions with singularities.
 }

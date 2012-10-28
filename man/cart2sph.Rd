@@ -48,9 +48,6 @@ pol2cart(prz)
   These functions should be vectorized in the sense that they accept will
   accept matrices with number of rows or columns equal to 2 or 3.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \examples{
 x <- 0.5*cos(pi/6); y <- 0.5*sin(pi/6); z <- sqrt(1 - x^2 - y^2)
 (s <-cart2sph(c(x, y, z)))      # 0.5235988 1.0471976 1.0000000

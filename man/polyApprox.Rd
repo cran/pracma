@@ -28,9 +28,6 @@ polyApprox(f, a, b, n, ...)
   Bowling Green State University,
   URL: \url{http://personal.bgsu.edu/~carother/Approx.html}.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   The Chebyshev approximation is optimal in the sense of the \eqn{L^1} norm,
   but not as a solution of the \emph{minimax} problem; for this, an

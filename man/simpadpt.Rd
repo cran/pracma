@@ -23,11 +23,8 @@ simpadpt(f, a, b, tol = 1e-6, ...)
   A numerical value or vector, the computed integral.
 }
 \note{
-  Should possibly be extended to vector-valued functions.
-}
-\author{
-  HwB  email: <hwborchers@googlemail.com>, based on code from the book by
-  Quarteroni et al., with some tricks borrowed from Matlab and Octave.
+  Based on code from the book by Quarteroni et al.,
+  with some tricks borrowed from Matlab and Octave.
 }
 \references{
   Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.

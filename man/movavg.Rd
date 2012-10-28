@@ -42,9 +42,6 @@ movavg(x, n, type=c("s", "t", "w", "m", "e", "r"))
 \value{
   Vector the same length as time series \code{x}.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \references{
   Matlab Techdoc
 }

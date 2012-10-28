@@ -26,9 +26,6 @@ rats(x, tol = 1e-06)
 
   \code{rats} prints the rational number and returns a numeric vector.
 }
-\author{
-  HwB  <hwborchers@googlemail.com>
-}
 \note{
   Essentially, these functions apply \code{contfrac}.
 }

@@ -22,9 +22,6 @@
   A scalar or vector of length the number of columns of \code{x} and
   \code{y}. 
 }
-\author{
-  hwb \email{hwborchers@googlemail.com}
-}
 \seealso{
   \code{\link{cross}}
 }

@@ -24,9 +24,6 @@ simpson2d(f, xa, xb, ya, yb, nx = 128, ny = 128, ...)
 \value{
   Numerical scalar, the value of the integral.
 }
-\author{
-  HwB  <hwborchers@googlemail.com>
-}
 \note{
   Copyright (c) 2008 W. Padden and Ch. Macaskill for Matlab code published
   under BSD License on MatlabCentral.

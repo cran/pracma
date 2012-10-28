@@ -40,9 +40,6 @@ secant(fun, a, b, ..., maxiter = 100, tol = .Machine$double.eps^0.5)
   Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.
   Second Edition, Springer-Verlag, Berlin Heidelberg.
 }
-\author{
-  Hans W Borchers  <hwborchers@googlemail.com>
-}
 \seealso{
 \code{\link{newtonHorner}}
 }

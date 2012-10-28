@@ -19,9 +19,6 @@
 \value{
   matrix of dimension n
 }
-\author{
-  hwb \email{hwborchers@googlemail.com}
-}
 \seealso{
   \code{\link{vander}}
 }

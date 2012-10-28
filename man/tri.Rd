@@ -33,9 +33,6 @@ triu(M, k = 0)
   For \code{k==0} it is simply an application of the R functions
   \code{lower.tri} resp. \code{upper.tri}.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \seealso{
   \code{\link{Diag}}
 }

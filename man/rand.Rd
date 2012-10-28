@@ -62,9 +62,6 @@ randp(n = 1, r = 1)
   The Matlab style of setting a seed is not available; use R style
   \code{set.seed(...)}.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \references{
   Knuth, D. (1981). The Art of Computer programming; Vol. 2: Seminumerical
   Algorithms; Chapt. 3: Random Numbers. Addison-Wesley, Reading.

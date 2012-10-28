@@ -7,6 +7,37 @@ PLANNED FOR NEXT VERSIONS
 
     o mexpfit() exponentiell fitting.
     o lsqlin() least-squares solver with linear constraints.
+    o bvp4c() general linear differential equations of second order.
+
+CHANGES IN VERSION 1.2.5 (2012-10-28)
+
+    o histc() Histogram-like counting (Matlab style).
+    o Added warning to complexstep() if imaginary part is zero.
+
+CHANGES IN VERSION 1.2.4 (2012-10-25)
+
+    o Added option 'pinv' to mldivide() to return same results as Matlab.
+    o str2num(), num2str() conversion functions (Matlab style).
+    o Removed some 'author' entries on help pages.
+
+CHANGES IN VERSION 1.2.3 (2012-10-17)
+
+    o Renamed mrank() to Rank().
+    o Corrected nullspace() [thanks to Stephane Laurent], which now agrees
+      with Octave's null() function (MASS:Null appears buggy, too).
+    o Corrected gaussNewton() and fsolve() [thanks to Etienne Chamayou].
+
+CHANGES IN VERSION 1.2.2 (2012-10-10)
+
+    o bsxfun() apply binary function elementwise (Matlab style).
+    o added the analytic solution for the example in bvp().
+
+CHANGES IN VERSION 1.2.1 (2012-09-28)
+
+    o rosenbrock() added, moved testfunctions to 'adagio' package.
+    o euler_heun() improved Euler method for solving ODEs.
+    o logit() function added to sigmoid().
+    o Keyword 'ode' introduced.
 
 CHANGES IN VERSION 1.2.0 (2012-09-27)
 

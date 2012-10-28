@@ -19,9 +19,6 @@
 \value{
   Returns a numeric vector computing \eqn{f\,2^e}.
 }
-\author{
-  hwb \email{hwborchers@googlemail.com}
-}
 \seealso{
   \code{\link{nextpow2}}
 }

@@ -19,7 +19,7 @@ gaussNewton <- function(x0, Ffun, Jfun = NULL,
     # Define J as Jacobian of F, and f as sum(F_i)
     f <- function(x) sum(F(x)^2)
     if (is.null(Jfun)) {
-        J <- function(x) jacobian(F, x, ...)
+        J <- function(x) jacobian(F, x)
     } else {
         Jun <- match.fun(Jfun)
         J <- function(x) Jun(x, ...)

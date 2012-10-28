@@ -26,9 +26,6 @@ zeta(z)
   Zhang, Sh., and J. Jin (1996). Computation of Special Functions.
   Wiley-Interscience, New York.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   Copyright (c) 2001 Paul Godfrey for a Matlab version available on
   Mathwork's Matlab Central under BSD license.
