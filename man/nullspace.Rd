@@ -1,5 +1,6 @@
 \name{nullspace}
 \alias{nullspace}
+\alias{null}
 \title{
   Kernel or Nullspace
 }
@@ -8,6 +9,7 @@
 }
 \usage{
 nullspace(M)
+null(M)
 }
 \arguments{
   \item{M}{Numeric matrix; vectors will be considered as column vectors.}
@@ -16,6 +18,8 @@ nullspace(M)
   The kernel (aka null space/nullspace) of a matrix \code{M} is the set of
   all vectors \code{x} for which \code{Ax=0}. It is computed from the
   QR-decomposition of the matrix.
+
+  \code{null} is simply an alias for \code{nullspace} -- and the Matlab name.
 }
 \value{
   If \code{M} is an \code{n}-by-\code{m} (operating from left on

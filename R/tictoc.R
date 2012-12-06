@@ -19,7 +19,7 @@ toc <- function(echo = TRUE) {
     diffTimeSecs <- proc.time()[3] - prevTime
     if (echo) {
         cat(sprintf("elapsed time is %f seconds", diffTimeSecs), "\n")
-        return(invisible())
+        return(invisible(diffTimeSecs))
     } else {
         return(diffTimeSecs)
     }

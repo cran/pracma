@@ -4,23 +4,51 @@
 
 
 matlab <- function() {
-    assign("diag", pracma::Diag, envir = .GlobalEnv)
-    assign("find", pracma::finds, envir = .GlobalEnv)
-    assign("fix", pracma::Fix, envir = .GlobalEnv)
-    assign("imag", pracma::Imag, envir = .GlobalEnv)
-    assign("lcm", pracma::Lcm, envir = .GlobalEnv)
-    assign("mode", pracma::Mode, envir = .GlobalEnv)
-    assign("norm", pracma::Norm, envir = .GlobalEnv)
-    assign("poly", pracma::Poly, envir = .GlobalEnv)
-    assign("rank", pracma::Rank, envir = .GlobalEnv)
-    assign("real", pracma::Real, envir = .GlobalEnv)
-    assign("reshape", pracma::Reshape, envir = .GlobalEnv)
-    assign("strtrim", pracma::strTrim, envir = .GlobalEnv)
-    assign("toeplitz", pracma::Toeplitz, envir = .GlobalEnv)
-    # assign("", pracma::, envir = .GlobalEnv)
-    makeActiveBinding("ans", function() .Last.value, .GlobalEnv)
-    makeActiveBinding("who", ls, .GlobalEnv)
-    makeActiveBinding("tic", tic, .GlobalEnv)
-    makeActiveBinding("toc", toc, .GlobalEnv)
+    cat(paste("",
+  "The following functions are emulations of corresponding Matlab functions",
+  "and bear the same signature as their Matlab cousins as far as possible:",
+  "
+  accumarray, acot, acoth, acsc, acsch, and, angle, ans, asec, asech,
+  beep, blank, blkdiag, bsxfun,
+  cart2pol, cart2sph, ceil, clear, compan, cond, conv, cot, coth, cross,
+      csc, csch,
+  deblank, deconv, deg2rad, detrend, deval, disp, dot,
+  eig, eigint, ellipj, ellipke, erf, erfc, erfcinv, erfcx, erfi, erfinv,
+      errorbar, expm, eye, ezcontour, ezmesh, ezplot, ezpolar,
+  fact, factors, figure, findstr, flipdim, fliplr, flipud, fminbnd,
+      fminsearch, fplot, fsolve, fzero,
+  gammainc, gcd, gradient,
+  hadamard, hankel, hilb, histc, humps, hypot,
+  ifft, inpolygon, interp1, interp2, inv, isempty, isprime,
+  kron,
+  linspace, logm, logseq, logspace,
+  magic, meshgrid, mkpp, mldivide, mod, mrdivide,
+  nchoosek, ndims, nextpow2, nnz, normest, nthroot, null, num2str, numel,
+  ode23, ones, or, orth,
+  pascal, pchip, peaks, perms, piecewise, pinv, plotyy, pol2cart, polar,
+      polyfit, polyint, polylog, polyval, pow2, ppval, primes,
+  quad, quad2d, quadgk, quadl, quiver,
+  rad2deg, randi, randn, randsample, rat, rats, regexp, regexpi, regexpreg,
+      rem, repmat, roots, rosser, rot90, rref, runge,
+  sec, sech, sinc, size, sph2cart, sqrtm, std, str2num, strcat, strcmp,
+      strcmpi, strfind, strfindi, strjust, strrep, subspace,
+  tic, toc, trapz, tril, triu,
+  vander, vectorfield,
+  whittaker, who, wilkinson,
+  zeros, zeta.",
+  "", 
+  "The following Matlab function names have been capitalized in `pracma' to",
+  "avoid shadowing functions from R base or one of its recommended packages:",
+  "
+  Diag, factors, finds, Fix, Imag, Lcm, Mode, Norm, nullspace (null),
+  Poly, Rank, Real, Reshape, strTrim, Toeplitz, Trace, uniq (unique).", 
+  "",
+  "To use 'ans' instead of 'ans()' (i.e., as is common practice in Matlab)",
+  "type (and similar for other Matlab commands):",
+  "
+  makeActiveBinding('ans', function() .Last.value, .GlobalEnv)",
+  "\n",
+    sep = "\n", collapse = ""))
+  
     invisible(NULL)
 }

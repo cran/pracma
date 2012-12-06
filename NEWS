@@ -6,8 +6,54 @@
 PLANNED FOR NEXT VERSIONS
 
     o mexpfit() exponentiell fitting.
-    o lsqlin() least-squares solver with linear constraints.
-    o bvp4c() general linear differential equations of second order.
+    o special partial differential equations.
+    o expint() implements E1, the exponential integral.
+
+CHANGES IN VERSION 1.3.2 (2012-12-12)
+
+    o ellipke(), ellipj() elliptic and Jacobi elliptic integrals.
+    o eigjacobi() Jacobi's method for finding the eigenvalues and
+      eigenvectors of symmetric matrices.
+    o eigpower() power and inverse power method.
+
+CHANGES IN VERSION 1.3.1 (2012-12-06)
+
+    o Explicitely listing about 185 Matlab-emulating function names.
+    o Dismissed matlab(), using it now for infos only, not assigning any
+      Matlab function names to the environment (because of CRAN policies).
+
+CHANGES IN VERSION 1.3.0 (2012-12-05)
+
+    o cot(), csc(), sec() cotangens, cosecans, and secans functions.
+    o acot(), acsc(), asec() inverse cotangens, cosecans, secans functions.
+    o coth(), csch(), sech() hyperbolic cotangens, cosecans, secans functions.
+    o acoth(), acsch(), asech() inverse hyperbolic cotangens, cosecans, and
+      secans functions.
+
+CHANGES IN VERSION 1.2.9 (2012-12-02)
+
+    o bvp() changed to solve second order boundary value problems.
+    o trisolve() solves tridiagonal linear equation systems.
+    o curvefit() fits points in the plane with a polynomial curve.
+
+CHANGES IN VERSION 1.2.8 (2012-11-30)
+
+    o lsqlin() least-squares solver with linear equality constraints.
+    o pinv() now works like MASS::ginv() for singular matrices.
+    o Added the end-';' feature to str2num().
+    o toc() added invisible return value.
+
+CHANGES IN VERSION 1.2.7 (2012-11-22)
+
+    o procrustes() solving the Procrustes problem,
+      and kabsch() implements the Kabsch algorithm.
+    o kriging() ordinary and simple Kriging interpolation.
+    o Corrected some stupid errors in str2num().
+
+CHANGES IN VERSION 1.2.6 (2012-11-11)
+
+    o akimaInterp() univariate Akima interpolation.
+    o Moved transfinite() to package 'adagio'.
 
 CHANGES IN VERSION 1.2.5 (2012-10-28)
 

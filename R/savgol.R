@@ -1,10 +1,9 @@
 ##
-##  Savitzky-Golay Smoothing
-##  Pseudoinverse (Moore-Penrose Generalized Inverse)
+##  s a v g o l . R  Savitzky-Golay Smoothing
 ##
 
 
-savgol <- function(T, fl, forder=4, dorder=0) {
+savgol <- function(T, fl, forder = 4, dorder = 0) {
     stopifnot(is.numeric(T), is.numeric(fl))
     if (fl <= 1 || fl %% 2 == 0)
         stop("Argument 'fl' must be an odd integer greater than 1.")
@@ -21,25 +20,4 @@ savgol <- function(T, fl, forder=4, dorder=0) {
 
     Tsg <- (-1)^dorder * T2
     return( Tsg )
-}
-
-pinv <- function (A, tol=.Machine$double.eps^(2/3)) {
-    stopifnot(is.numeric(A), length(dim(A)) == 2, is.matrix(A))
-
-    s <- svd(A)
-    # D <- diag(s$d); Dinv <- diag(1/s$d)
-    # U <- s$u; V <- s$v
-    # A = U D V'
-    # X = V Dinv U'
-
-    p <- ( s$d > max(tol * s$d[1], 0) )
-    if (all(p)) {
-        mp <- s$v %*% diag(1/s$d) %*% t(s$u)
-    } else if (any(p)) {
-        mp <- s$v[, p, drop=FALSE] %*% diag(1/s$d[p]) %*% t(s$u[, p, drop=FALSE])
-    } else {
-        mp <- matrix(0, nrow=ncol(A), ncol=nrow(A))
-    }
-
-    return(mp)
 }

@@ -60,4 +60,4 @@ yy <- ratinterp(x, y, xs)
 lines(xs, yy, col="red")
 grid()}
 }
-\keyword{ math }
+\keyword{ fitting }

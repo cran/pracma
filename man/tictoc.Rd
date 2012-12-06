@@ -19,6 +19,9 @@ toc(echo=TRUE)
   Provides analog to \code{\link[base]{system.time}}.
   Function \code{toc} can be invoked multiple times in a row.
 }
+\value{
+  \code{toc} invisibly returns the elapsed time as a named scalar (vector).
+}
 \examples{
 tic()
 for(i in 1:100) mad(runif(1000))	# kill time

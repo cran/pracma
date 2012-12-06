@@ -54,4 +54,4 @@ xx <- r0 * cos(w) + x0
 yy <- r0 * sin(w) + y0
 lines(xx, yy, col="blue")}
 }
-\keyword{ optimize }
+\keyword{ fitting }

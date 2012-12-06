@@ -60,6 +60,52 @@ Practical Numerical Math Routines
   All referenced books have been utilized in one way or another.
   Web links have been provided where reasonable.
 }
+\note{
+  The following functions are emulations of correspondingly named Matlab 
+  functions and bear the same signature as their Matlab cousins if possible:
+  
+  \code{accumarray, acot, acoth, acsc, acsch, and, angle, ans, asec, asech,}\cr
+  \code{beep, blank, blkdiag, bsxfun,}\cr
+  \code{cart2pol, cart2sph, ceil, clear, compan, cond, conv, cot, coth, cross,}\cr
+  \code{    csc, csch,}\cr
+  \code{deblank, deconv, deg2rad, detrend, deval, disp, dot,}\cr
+  \code{eig, eigint, ellipj, ellipke, erf, erfc, erfcinv, erfcx, erfi, erfinv,}\cr
+  \code{    errorbar, expm, eye, ezcontour, ezmesh, ezplot, ezpolar,}\cr
+  \code{fact, factors, figure, findstr, flipdim, fliplr, flipud, fminbnd,}\cr
+  \code{    fminsearch, fplot, fsolve, fzero,}\cr
+  \code{gammainc, gcd, gradient,}\cr
+  \code{hadamard, hankel, hilb, histc, humps, hypot,}\cr
+  \code{ifft, inpolygon, interp1, interp2, inv, isempty, isprime,}\cr
+  \code{kron,}\cr
+  \code{linspace, logm, logseq, logspace,}\cr
+  \code{magic, meshgrid, mkpp, mldivide, mod, mrdivide,}\cr
+  \code{nchoosek, ndims, nextpow2, nnz, normest, nthroot, null, num2str, numel,}\cr
+  \code{ode23, ones, or, orth,}\cr
+  \code{pascal, pchip, peaks, perms, piecewise, pinv, plotyy, pol2cart, polar,}\cr
+  \code{    polyfit, polyint, polylog, polyval, pow2, ppval, primes,}\cr
+  \code{quad, quad2d, quadgk, quadl, quiver,}\cr
+  \code{rad2deg, randi, randn, randsample, rat, rats, regexp, regexpi, regexpreg,}\cr
+  \code{    rem, repmat, roots, rosser, rot90, rref, runge,}\cr
+  \code{sec, sech, sinc, size, sph2cart, sqrtm, std, str2num, strcat, strcmp,}\cr
+  \code{    strcmpi, strfind, strfindi, strjust, strrep, subspace,}\cr
+  \code{tic, toc, trapz, tril, triu,}\cr
+  \code{vander, vectorfield,}\cr
+  \code{whittaker, who, wilkinson,}\cr
+  \code{zeros, zeta.}
+
+  The following Matlab function names have been capitalized in `pracma' to
+  avoid shadowing functions from R base or one of its recommended packages
+  (on request of Bill Venables and because of CRAN policies):
+
+  \code{Diag, finds, Fix, Imag, Lcm, Mode, Norm, nullspace (<- null)},\cr
+  \code{Poly, Rank, Real, Reshape, strTrim, Toeplitz, uniq (<- unique).}
+
+  To use ``ans'' instead of ``ans()'' -- as is common practice in Matlab --
+  type (and similar for other Matlab commands):
+
+  \code{makeActiveBinding("ans", function() .Last.value, .GlobalEnv)}\cr
+  \code{makeActiveBinding("who", who(), .GlobalEnv)}
+}
 \author{
 Hans W Borchers
 
@@ -127,7 +173,6 @@ Maintainer: HwB  <hwborchers@googlemail.com>
   Zhang, S., and J. Jin (1996). Computation of Special Functions.
   John Wiley & Sons. \url{http://jin.ece.illinois.edu/specfunc.html}
 }
-\keyword{ package }
 \seealso{
   The R package `matlab' contains some of the basic routines from Matlab,
   but unfortunately not any of the higher math routines.
@@ -135,5 +180,6 @@ Maintainer: HwB  <hwborchers@googlemail.com>
 \examples{
 \dontrun{
 ##  See examples in the help files for all functions.
+    }
 }
-}
+\keyword{ package }

@@ -19,7 +19,9 @@ num2str(A, fmt = 3)
 \details{
   \code{str2num} converts a string containing numbers into a numerical object.
   The string can begin and end with '[' and ']', numbers can be separated with
-  blanks or commas. A semicolon indicates a new row for matrix input.
+  blanks or commas; a semicolon within the brackets indicates a new row for
+  matrix input. When a semicolon appears behind the braces, no output is shown
+  on the command line.
 
   \code{num2str} converts a numerical object, vector or matrix, into a 
   character object of the same size. \code{fmt} will be a format string for
@@ -37,9 +39,9 @@ str1 <- " [1 2 3; 4, 5, 6; 7,8,9]  "
 str2num(str1)
 # matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE)
 
-# str <- " [1 2 3; 45, 6; 7,8,9]  "
-# str2num(str)
-# Error in str2num(str) : 
+# str2 <- " [1 2 3; 45, 6; 7,8,9]  "
+# str2num(str2)
+# Error in str2num(str2) : 
 #   All rows in Argument 's' must have the same length.
 
 A <- matrix(c(pi, 0, exp(1), 1), 2, 2)

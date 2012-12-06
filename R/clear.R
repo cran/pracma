@@ -10,3 +10,6 @@ clear <- function(lst) {
     # capture.output(gc())
     null <- gc()
 }
+
+
+who <- function() ls(name = .GlobalEnv)

@@ -41,3 +41,6 @@ nullspace <- function(M) {
     if (length(qrQ) == 0) return(NULL)
     else                  return(qrQ)
 }
+
+
+null <- nullspace
