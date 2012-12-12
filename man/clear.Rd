@@ -1,5 +1,6 @@
 \name{clear, who}
 \alias{clear}
+\alias{what}
 \alias{who}
 \title{
 Clear function (Matlab style)
@@ -9,16 +10,20 @@ Clear function (Matlab style)
 }
 \usage{
 clear(lst)
+
+what(dname = getwd())
 who()
 }
 \arguments{
   \item{lst}{Character vector of names of variables in the global environment.}
+  \item{dname}{(relative or absolute) directory path.}
 }
 \details{
   Remove these or all items from the workspace, i.e. the global environment,
   and freeing up system memory.
 
   \code{who} lists all items on the workspace.
+  \code{what} lists all files in a directory.
 }
 \value{
   Invisibly NULL.
@@ -27,6 +32,7 @@ who()
   \code{\link{ls}}, \code{\link{rm}}
 }
 \examples{
-who()
 # clear()  # DON'T
+# what()
+# who()
 }

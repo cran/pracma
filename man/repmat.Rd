@@ -8,8 +8,8 @@
 repmat(a, n, m = n)
 }
 \arguments{
-  \item{a}{vector or matrix to be replicated}
-  \item{n, m}{number of times to replicate in each dimension}
+  \item{a}{vector or matrix to be replicated.}
+  \item{n, m}{number of times to replicate in each dimension.}
 }
 \details{
   \code{repmat(a,m,n)} creates a large matrix consisting of an m-by-n tiling
@@ -21,7 +21,7 @@ repmat(a, n, m = n)
   Defaults to square if dimension argument resolves to a single value.
 }
 \seealso{ 
-  \code{\link{Reshape}},
+  \code{\link{Reshape}}
 }   
 \examples{
 repmat(1, 3)                  # same as ones(3)

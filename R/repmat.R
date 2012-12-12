@@ -27,3 +27,19 @@ Reshape <- function(a, n, m) {
 	dim(a) <- c(n, m)
 	return(a)
 }
+
+
+sortrows <- function(A, k = 1) {  # l <- k+1
+    stopifnot(is.numeric(A), is.numeric(k))
+    if (!is.matrix(A))
+        stop("Argument 'A' must be a numeric matrix.")
+    if (length(k) != 1 || floor(k) != ceiling(k))
+        stop("Argument 'k' must be a single integer number.")
+
+    n <- nrow(A); m <- ncol(A)
+    if (k < 1 || k > m)
+        stop("Argument 'k' must satisfy 1 <= k <= ncol(A).")
+
+    o <- order(A[, k])
+    A[o, ]
+}

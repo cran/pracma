@@ -66,11 +66,11 @@ Practical Numerical Math Routines
   
   \code{accumarray, acot, acoth, acsc, acsch, and, angle, ans, asec, asech,}\cr
   \code{beep, blank, blkdiag, bsxfun,}\cr
-  \code{cart2pol, cart2sph, ceil, clear, compan, cond, conv, cot, coth, cross,}\cr
-  \code{    csc, csch,}\cr
+  \code{cart2pol, cart2sph, ceil, circshift, clear, compan, cond, conv, cot,}\cr
+  \code{    coth, cross, csc, csch,}\cr
   \code{deblank, deconv, deg2rad, detrend, deval, disp, dot,}\cr
   \code{eig, eigint, ellipj, ellipke, erf, erfc, erfcinv, erfcx, erfi, erfinv,}\cr
-  \code{    errorbar, expm, eye, ezcontour, ezmesh, ezplot, ezpolar,}\cr
+  \code{    errorbar, expint, expm, eye, ezcontour, ezmesh, ezplot, ezpolar,}\cr
   \code{fact, factors, figure, findstr, flipdim, fliplr, flipud, fminbnd,}\cr
   \code{    fminsearch, fplot, fsolve, fzero,}\cr
   \code{gammainc, gcd, gradient,}\cr
@@ -83,19 +83,19 @@ Practical Numerical Math Routines
   \code{ode23, ones, or, orth,}\cr
   \code{pascal, pchip, peaks, perms, piecewise, pinv, plotyy, pol2cart, polar,}\cr
   \code{    polyfit, polyint, polylog, polyval, pow2, ppval, primes,}\cr
-  \code{quad, quad2d, quadgk, quadl, quiver,}\cr
+  \code{quad, quad2d, quadgk, quadl, quadv, quiver,}\cr
   \code{rad2deg, randi, randn, randsample, rat, rats, regexp, regexpi, regexpreg,}\cr
   \code{    rem, repmat, roots, rosser, rot90, rref, runge,}\cr
-  \code{sec, sech, sinc, size, sph2cart, sqrtm, std, str2num, strcat, strcmp,}\cr
-  \code{    strcmpi, strfind, strfindi, strjust, strrep, subspace,}\cr
+  \code{sec, sech, sinc, size, sortrows, sph2cart, sqrtm, std, str2num, strcat,}\cr
+  \code{    strcmp, strcmpi, strfind, strfindi, strjust, strrep, subspace,}\cr
   \code{tic, toc, trapz, tril, triu,}\cr
   \code{vander, vectorfield,}\cr
-  \code{whittaker, who, wilkinson,}\cr
-  \code{zeros, zeta.}
+  \code{what, who, wilkinson,}\cr
+  \code{zeros, zeta}
 
   The following Matlab function names have been capitalized in `pracma' to
   avoid shadowing functions from R base or one of its recommended packages
-  (on request of Bill Venables and because of CRAN policies):
+  (on request of Bill Venables and because of Brian Ripley's CRAN policies):
 
   \code{Diag, finds, Fix, Imag, Lcm, Mode, Norm, nullspace (<- null)},\cr
   \code{Poly, Rank, Real, Reshape, strTrim, Toeplitz, uniq (<- unique).}

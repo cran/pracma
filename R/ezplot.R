@@ -78,3 +78,22 @@ ezmesh <- function(f, xlim = c(-pi,pi), ylim = c(-pi,pi),
     persp(xx, yy, F, col = col, ...)
     invisible(NULL)
 }
+
+
+ezpolar <- function(fun, interv = c(0, 2*pi)) {
+    stopifnot(is.numeric(interv))
+    if (length(interv) != 2 || interv[1] >= interv[2])
+        stop("Argument 'interv' must have two elements [a, b] with a < b.")
+
+    n <- 91
+    x <- seq(interv[1], interv[2], length.out = n)
+    y <- fun(x)
+    if (length(y) != n) {
+        warning("Function 'fun' not vectorized: will do that for you.")
+        y <- numeric(n)
+        for (i in 1:n) y[i] <- fun(x[i])
+    }
+
+    polar(x, y)
+    invisible(NULL)
+}
