@@ -3,9 +3,12 @@
 ##
 
 
-rand <- function(n=1, m=n) {
-    stopifnot(is.numeric(n), length(n) == 1,
-              is.numeric(m), length(m) == 1)
+rand <- function(n = 1, m = n) {
+    stopifnot(is.numeric(n), length(n) <= 2, is.numeric(m))
+    if (length(n) == 2)
+        return(rand(n[1], n[2]))
+
+    if (length(m) != 1) m <- m[1]
     n <- floor(n)
     m <- floor(m)
 
@@ -13,9 +16,12 @@ rand <- function(n=1, m=n) {
     else                  matrix(runif(n*m), nrow=n, ncol=m)
 }
 
-randn <- function(n=1, m=n) {
-    stopifnot(is.numeric(n), length(n) == 1,
-              is.numeric(m), length(m) == 1)
+randn <- function(n = 1, m = n) {
+    stopifnot(is.numeric(n), length(n) <= 2, is.numeric(m))
+    if (length(n) == 2)
+        return(randn(n[1], n[2]))
+
+    if (length(m) != 1) m <- m[1]
     n <- floor(n)
     m <- floor(m)
 
@@ -24,7 +30,7 @@ randn <- function(n=1, m=n) {
 }
 
 
-randi <- function(imax, n=1, m=n) { # drop?
+randi <- function(imax, n = 1, m = n) {
     stopifnot(is.numeric(n), length(n) == 1,
               is.numeric(m), length(m) == 1)
     if (length(imax) == 1) {

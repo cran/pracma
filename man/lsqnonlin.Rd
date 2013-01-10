@@ -1,6 +1,8 @@
 \name{lsqnonlin}
 \alias{lsqnonlin}
 \alias{lsqnonneg}
+\alias{lsqcurvefit}
+\alias{lsqsep}
 \title{
   Nonlinear Least-Squares Fitting
 }
@@ -12,8 +14,10 @@
 }
 \usage{
 lsqnonlin(fun, x0, options = list(), ...)
-
 lsqnonneg(C, d)
+
+lsqsep(flist, p0, xdata, ydata, const = TRUE)
+lsqcurvefit(fun, p0, xdata, ydata)
 }
 \arguments{
   \item{fun}{User-defined, vector-valued function.}
@@ -22,6 +26,11 @@ lsqnonneg(C, d)
   \item{options}{list of options, for details see below.}
   \item{C, d}{matrix and vector such that \code{C x - d} will be
               minimized with \code{x >= 0}.}
+
+  \item{flist}{list of (nonlinear) functions, depending on one extra parameter.}
+  \item{p0}{starting parameters.}
+  \item{xdata, ydata}{data points to be fitted.}
+  \item{const}{logical; shall a constant term be included.}
 }
 \details{
   \code{lsqnonlin} computes the sum-of-squares of the vector-valued function
@@ -36,7 +45,7 @@ lsqnonneg(C, d)
 
   \code{options} is a list with the following components and defaults:
   \itemize{
-    \item \code{tau}: used in starting value for Marquardt parameter.
+    \item \code{tau}: used as starting value for Marquardt parameter.
     \item \code{tolx}: stopping parameter for step length.
     \item \code{tolg}: stopping parameter for gradient.
     \item \code{maxeval} the maximum number of function evaluations.
@@ -48,9 +57,22 @@ lsqnonneg(C, d)
   \code{lsqnonneg} solves the linear least-squares problem \code{C x - d},
   \code{x} nonnegative, transforming it with the `trick' \code{x --> exp(x)}
   into a nonlinear one and solving it applying \code{lsqnonlin}.
+
+  \code{lsqsep} solves the separable least-squares fitting problem
+
+  \code{y = a0 + a1*f1(b1, x) + ... + an*fn(bn, x)}
+
+  where \code{fi} are nonlinear functions each depending on a single extra
+  paramater \code{bi}, and \code{ai} are additional linear parameters that
+  can be separated out to solve a nonlinear problem in the \code{bi} alone.
+
+  \code{lsqcurvefit} is simply an application of \code{lsqnonlin} to fitting
+  data points. \code{fun(p, x)} must be a function of two groups of variables
+  such that \code{p} will be varied to minimize the least squares sum, see
+  the example below.
 }
 \value{
-  Returns a list with the following elements:
+  \code{lsqnonlin} returns a list with the following elements:
   \itemize{
     \item \code{x}: the point with least sum of squares value.
     \item \code{ssq}: the sum of squares.
@@ -61,13 +83,17 @@ lsqnonneg(C, d)
     \item \code{errno}: error number, corresponds to error message.
     \item \code{errmess}: error message, i.e. reason for stopping.
   }
+
+  \code{lsqsep} will return the coefficients sparately, \code{a0} for the
+  constant term (being 0 if \code{const=FALSE}) and the vectors \code{a} and
+  \code{b} for the linear and nonlinear terms, respectively.
 }
 \note{
   The refined approach, Fletcher's version of the Levenberg-Marquardt
   algorithm, may be added at a later time; see the references.
 }
 \references{
-  Madsen, K., and H. B.Nielsen (2010).Introduction to Optimization and
+  Madsen, K., and H. B.Nielsen (2010). Introduction to Optimization and
   Data Fitting. Technical University of Denmark, Intitute of Computer
   Science and Mathematical Modelling.
 
@@ -110,25 +136,6 @@ lsqnonlin(fun, rep(1, 5))
 # $x    [1.25258502 0.06277577 0.04004772 0.11241472 1.19137819]
 # $ssq  0.298901
 
-## Least-squares data fitting
-# Define fun(p, x)
-lsqcurvefit <- function(fun, p0, xdata, ydata) {
-    fn <- function(p, x) fun(p, xdata) - ydata
-    lsqnonlin(fn, p0)    
-}
-
-##  Lanczos1 data (artificial data)
-#   f(x) = 0.0951*exp(-x) + 0.8607*exp(-3*x) + 1.5576*exp(-5*x)
-x <- linspace(0, 1.15, 24)
-y <- c(2.51340000, 2.04433337, 1.66840444, 1.36641802, 1.12323249, 0.92688972,
-       0.76793386, 0.63887755, 0.53378353, 0.44793636, 0.37758479, 0.31973932,
-       0.27201308, 0.23249655, 0.19965895, 0.17227041, 0.14934057, 0.13007002,
-       0.11381193, 0.10004156, 0.08833209, 0.07833544, 0.06976694, 0.06239313)
-
-p0 <- c(1.2, 0.3, 5.6, 5.5, 6.5, 7.6)
-fp <- function(p, x) p[1]*exp(-p[2]*x) + p[3]*exp(-p[4]*x) + p[5]*exp(-p[6]*x)
-lsqcurvefit(fp, p0, x, y)
-
 ##  Example for lsqnonneg()
 C <- matrix(c(0.0372, 0.2868,
               0.6861, 0.7071,
@@ -140,5 +147,42 @@ sol <- lsqnonneg(C, d)
 cbind(qr.solve(C, d), sol$x)
 # -2.563884  5.515869e-08
 #  3.111911  6.929003e-01
+
+##  Example for lsqcurvefit()
+#   Lanczos1 data (artificial data)
+#   f(x) = 0.0951*exp(-x) + 0.8607*exp(-3*x) + 1.5576*exp(-5*x)
+x <- linspace(0, 1.15, 24)
+y <- c(2.51340000, 2.04433337, 1.66840444, 1.36641802, 1.12323249, 0.92688972,
+       0.76793386, 0.63887755, 0.53378353, 0.44793636, 0.37758479, 0.31973932,
+       0.27201308, 0.23249655, 0.19965895, 0.17227041, 0.14934057, 0.13007002,
+       0.11381193, 0.10004156, 0.08833209, 0.07833544, 0.06976694, 0.06239313)
+
+p0 <- c(1.2, 0.3, 5.6, 5.5, 6.5, 7.6)
+fp <- function(p, x) p[1]*exp(-p[2]*x) + p[3]*exp(-p[4]*x) + p[5]*exp(-p[6]*x)
+lsqcurvefit(fp, p0, x, y)
+
+##  Example for lsqsep()
+f <- function(x) 0.5 + x^-0.5 + exp(-0.5*x)
+set.seed(8237); n <- 15
+x <- sort(0.5 + 9*runif(n))
+y <- f(x)                       #y <- f(x) + 0.01*rnorm(n)
+
+m <- 2
+f1 <- function(b, x) x^b
+f2 <- function(b, x) exp(b*x)
+flist <- list(f1, f2)
+start <- c(-0.25, -0.75)
+
+sol <- lsqsep(flist, start, x, y, const = TRUE)
+a0 <- sol$a0; a <- sol$a; b <- sol$b
+fsol <- function(x) a0 + a[1]*f1(b[1], x) + a[2]*f2(b[2], x)
+
+\dontrun{
+    ezplot(f, 0.5, 9.5, col = "gray")
+    points(x, y, col = "blue")
+    xs <- linspace(0.5, 9.5, 51)
+    ys <- fsol(xs)
+    lines(xs, ys, col = "red")
+}
 }
 \keyword{ fitting }

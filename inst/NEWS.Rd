@@ -3,10 +3,50 @@
 \encoding{UTF-8}
 
 
-\section{Changes in Version 1.3.3 (2012-12-09)}{
+\section{Changes in Version 1.3.8 (2013-01-10)}{
     \itemize{
+      \item Smaller corrections; no startup messages anymore.
+      \item geomean(), harmmean(), trimmean() geometric, harmonic, and
+        trimmed arithmetic mean (Matlab style).
+      \item agmean() algebraic-geometric mean.
+    }
+}
+
+\section{Changes in Version 1.3.7 (2013-01-07)}{
+    \itemize{
+      \item mexpfit() multi-exponentiell fitting.
+    }
+}
+
+\section{Changes in Version 1.3.6 (2013-01-06)}{
+    \itemize{
+      \item lsqsep() separable least-squares fitting.
+      \item lsqcurvefit() nonlinear least-squares curve fitting.
+    }
+}
+
+\section{Changes in Version 1.3.5 (2013-01-05)}{
+    \itemize{
+      \item cd(), pwd() directory functions (Matlab style).
+      \item rand(), randn() changed to accept size() as input.
+      \item whos(), what() corrected for empty lists resp. directories.
+    }
+}
+
+\section{Changes in Version 1.3.4 (2012-12-19)}{
+    \itemize{
+      \item what(), who(), whos(), ver() (Matlab style).
+      \item semilogx(), semilogy(), loglog() logarithmic plots (Matlab style)
+    }
+}
+
+\section{Changes in Version 1.3.3 (2012-12-12)}{
+    \itemize{
+      \item quadv() vectorized integration.
       \item ezpolar() easy access to the polar() function.
-      \item who(), null() alias for nullspace function (Matlab style).
+      \item sortrows() sorting rows of matrices (Matlab style).
+      \item null() alias for nullspace function (Matlab style).
+      \item eigjacobi() Jacobi's method for eigenvalues and eigenvectors.
     }
 }
 
@@ -124,7 +164,7 @@
       \item Removed number-theoretic functions: eulersPhi(),
         moebiusFun(), mertensFun(), sigma(), tau(), omega(), Omega(),
         primes2(), twinPrimes(), nextPrime(), previousPrime(),
-        modpower(), modorder(), modinv(), modlin(), agm(),
+        modpower(), modorder(), modinv(), modlin(),
         primroot(), contfrac(), coprime(), GCD(), LCM(), extGCD(),
         (these functions are now available in the 'numbers' package).
     }
@@ -272,8 +312,6 @@
 
 \section{Changes in Version 1.0.1 (2012-03-09)}{
     \itemize{
-      \item agm() example computes pi to an arbitrary number of decimal
-        digits using the Rmpfr package for variable precision arithmetic.
       \item plotyy() corrected right ordinate, prettying the labels.
       \item peaks() peaks function (Matlab style).
     }
@@ -629,7 +667,6 @@
       \item gaussLegendre() computes coefficients for Gauss Quadrature,
         and quad2d() uses these weights for 2-dimensional integration.
       \item quadinf() wrapper for integrate() on infinite intervals.
-      \item Added a version for rapid pi computation to the agm() examples.
     }
 }
 
@@ -772,7 +809,6 @@
 
 \section{Changes in Version 0.3.5 (2011-04-23)}{
     \itemize{
-      \item agm() for the arithmetic-geometric mean.
       \item Lambert W function lambertWp() for the real principal branch.
       \item ``Complex Step'' derivation with complexstep() and complexstepJ().
     }
@@ -1016,6 +1052,6 @@
 
       \item Remark: Typeset this document as:
 
-      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.3.3"}.
+      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.3.8"}.
     }
 }

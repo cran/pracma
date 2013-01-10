@@ -1,7 +1,7 @@
 \name{fornberg}
 \alias{fornberg}
 \title{
-  Finite Difference Approximation (Fornberg's Method)
+  Fornberg's Finite Difference Approximation
 }
 \description{
   Finite difference approximation using Fornberg's method for the derivatives

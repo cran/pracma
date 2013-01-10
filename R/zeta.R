@@ -5,7 +5,7 @@
 
 eta <- function(z) {
     if (!is.numeric(z) && !is.complex(z))
-        stop("Argument 'z' must be a real or comples vector.")
+        stop("Argument 'z' must be a real or complex vector.")
 
     # find special cases
     rez <- Re(z); imz <- Im(z)

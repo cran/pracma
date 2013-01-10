@@ -96,3 +96,14 @@ lsqnonneg <- function(C, d) {
     return(list(x = xs, resnorm = resn, residual = resi, 
                 exitflag = sol$errmess))
 }
+
+
+lsqcurvefit <- function(fun, p0, xdata, ydata) {
+    stopifnot(is.function(fun), is.numeric(p0))
+    stopifnot(is.numeric(xdata), is.numeric(ydata))
+    if (length(xdata) != length(ydata))
+        stop("Aguments 'xdata', 'ydata' must have the same length.")
+
+    fn <- function(p, x) fun(p, xdata) - ydata
+    lsqnonlin(fn, p0)    
+}

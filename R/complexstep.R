@@ -12,7 +12,7 @@ complexstep <- function(f, x0, h = 1e-20, ...) {
     if (inherits(fx0hi, "try-error"))
         stop("Function 'f' does not accept complex arguments.")
     
-    if (!is.complex(fx0hi) || !is.real(f(x0))) {
+    if (!is.complex(fx0hi) || !is.double(f(x0))) {
         # apply Richardson's method
         f_csd <- numderiv(f, x0, h = 0.1)$df
         warning("Some maginary part is zero: applied Richardson instead.")
