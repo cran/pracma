@@ -1,11 +1,13 @@
 \name{distmat}
 \alias{distmat}
+\alias{pdist}
 \title{Distance Matrix}
 \description{
   Computes the Euclidean distance between rows of two matrices.
 }
 \usage{
 distmat(X, Y)
+pdist(X, Y)
 }
 \arguments{
   \item{X}{matrix of some size \code{m x k}; vector will be taken as row matrix.}
@@ -17,6 +19,8 @@ distmat(X, Y)
     \code{||A-B|| = sqrt ( ||A||^2 + ||B||^2 - 2*A.B )}
 
   and vectorizes to rows of two matrices (or vectors).
+
+  \code{pdist} is an alias for \code{distmat}.
 }
 \value{
   matrix of size \code{m x n} if \code{x} is of size \code{m x k} and

@@ -3,7 +3,7 @@
 ##
 
 
-hessian <- function(f, x0, h = 1e-4, ...) {
+hessian <- function(f, x0, h = .Machine$double.eps^(1/4), ...) {
     if (!is.numeric(x0))
         stop("Argument 'x0' must be a numeric value.")
 
@@ -35,7 +35,7 @@ hessian <- function(f, x0, h = 1e-4, ...) {
 }
 
 
-laplacian <- function(f, x0, h = 1e-4, ...) {
+laplacian <- function(f, x0, h = .Machine$double.eps^(1/4), ...) {
     if (length(x0) != 2 || !is.numeric(x0))
         stop("Argument 'x0' must be a numeric vector of two elements.")
 

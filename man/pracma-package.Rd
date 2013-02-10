@@ -71,19 +71,19 @@ Practical Numerical Math Routines
   \code{deblank, deconv, deg2rad, detrend, deval, disp, dot,}\cr
   \code{eig, eigint, ellipj, ellipke, erf, erfc, erfcinv, erfcx, erfi, erfinv,}\cr
   \code{    errorbar, expint, expm, eye, ezcontour, ezmesh, ezplot, ezpolar,}\cr
-  \code{fact, factors, figure, findstr, flipdim, fliplr, flipud, fminbnd,}\cr
-  \code{    fminsearch, fplot, fsolve, fzero,}\cr
+  \code{fact, factors, fftshift, figure, findstr, flipdim, fliplr, flipud,}\cr
+  \code{    fminbnd, fminsearch, fplot, fsolve, fzero,}\cr
   \code{gammainc, gcd, geomean, gradient,}\cr
   \code{hadamard, hankel, harmmean, hilb, histc, humps, hypot,}\cr
-  \code{ifft, inpolygon, interp1, interp2, inv, isempty, isprime,}\cr
+  \code{ifft, ifftshift, inpolygon, interp1, interp2, inv, isempty, isprime,}\cr
   \code{kron,}\cr
   \code{linspace, loglog, logm, logseq, logspace, lsqcurvefit, lsqlin,}\cr
-  \code{    lsqnonlin, lsqnonneg,}\cr
+  \code{    lsqnonlin, lsqnonneg, lu,}\cr
   \code{magic, meshgrid, mkpp, mldivide, mod, mrdivide,}\cr
   \code{nchoosek, ndims, nextpow2, nnz, normest, nthroot, null, num2str, numel,}\cr
   \code{ode23, ones, or, orth,}\cr
-  \code{pascal, pchip, peaks, perms, piecewise, pinv, plotyy, pol2cart, polar,}\cr
-  \code{    polyfit, polyint, polylog, polyval, pow2, ppval, primes, pwd,}\cr
+  \code{pascal, pchip, pdist, peaks, perms, piecewise, pinv, plotyy, pol2cart,}\cr
+  \code{    polar, polyfit, polyint, polylog, polyval, pow2, ppval, primes, pwd,}\cr
   \code{quad, quad2d, quadgk, quadl, quadv, quiver,}\cr
   \code{rad2deg, randi, randn, randsample, rat, rats, regexp, regexpi,}\cr
   \code{    regexpreg, rem, repmat, roots, rosser, rot90, rref, runge,}\cr

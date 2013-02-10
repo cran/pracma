@@ -7,17 +7,17 @@ taylor <- function(f, x0, n = 4, ...) {
     if (!is.numeric(x0))
         stop("Argument 'x0' must be a numeric value or vector.")
     if (!is.numeric(n) || floor(n) != ceil(n) || length(n) != 1)
-        stop("Order 'n' must be an integer between 1 and 4.")
+        stop("Order 'n' must be an scalar integer between 1 and 8.")
 
     fun <- match.fun(f)
     f <- function(x) fun(x, ...)
 
-    if (n > 4) {
-        n <- 4
-        warning("Order 'n' is too high; will be set to 'n=4'.")
+    if (n > 8) {
+        # n <- 8
+        warning("Order 'n' is too high; should not be greater than 'n=8'.")
     } else if (n <= 0) {
-        n <- 1
-        warning("Order 'n' is too low; will be set to 'n=1'.")
+        n <- 4
+        warning("Order 'n' is too low; will be reset to the default 'n=4'.")
     }
 
     T <- f(x0)

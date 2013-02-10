@@ -35,6 +35,9 @@ distmat <- function(X, Y)
 }
 
 
+pdist <- distmat
+
+
 hausdorff_dist <- function(P, Q) {
     stopifnot(is.numeric(P), is.numeric(Q))
     if (is.vector(P)) P <- matrix(P, ncol = 1)

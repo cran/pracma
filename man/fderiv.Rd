@@ -9,12 +9,12 @@
 }
 \usage{
 fderiv(f, x, n = 1, h = 0,
-       method="central", ...)
+        method = c("central", "forward", "backward"), ...)
 }
 \arguments{
   \item{f}{function to be differentiated.}
   \item{x}{point(s) where differentiation will take place.}
-  \item{n}{order of derivative, can only be between 1 and 4;
+  \item{n}{order of derivative, should only be between 1 and 8;
            for \code{n=0} function values will be returned.}
   \item{h}{step size: if \code{h=0} step size will be set automatically.}
   \item{method}{one of ``central'', ``forward'', or ``backward''.}
@@ -33,6 +33,9 @@ fderiv(f, x, n = 1, h = 0,
   Assuming internal functions with an accuracy 2.2e-16, appropriate step
   sizes might be \code{5e-6, 1e-4, 5e-4, 2.5e-3} for \code{n=1,...,4} and
   precisions of about \code{10^-10, 10^-8, 5*10^-7, 5*10^-6} (at best).
+
+  For \code{n>4} a recursion (or finite difference) formula will be applied,
+  cd. the Wikipedia article on ``finite difference''.
 }
 \value{
   Vector of the same length as \code{x}.

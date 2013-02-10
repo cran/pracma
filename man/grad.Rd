@@ -7,18 +7,18 @@
   Numerical function gradient.
 }
 \usage{
-grad(f, x0, h = 1e-4, ...)
+grad(f, x0, heps = .Machine$double.eps^(1/3), ...)
 }
 \arguments{
   \item{f}{function of several variables.}
   \item{x0}{point where the gradient is to build.}
-  \item{h}{step size.}
+  \item{heps}{step size.}
   \item{...}{more variables to be passed to function \code{f}.}
 }
 \details{
   Computes the gradient
   \deqn{(\frac{\partial f}{\partial x_1}, \ldots, \frac{\partial f}{\partial x_n})}
-  numerically using the ``four point central difference formula''.
+  numerically using the ``central difference formula''.
 }
 \value{
   Vector of the same length as \code{x0}.

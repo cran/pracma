@@ -5,12 +5,12 @@
   Jacobian matrix of a function R^n --> R^m .
 }
 \usage{
-jacobian(f, x, h.eps=.Machine$double.eps^(1/3), ...)
+jacobian(f, x0, heps = .Machine$double.eps^(1/3), ...)
 }
 \arguments{
 \item{f}{\code{m} functions of \code{n} variables.}
-\item{x}{Numeric vector of length \code{n}.}
-\item{h.eps}{This is \code{h} in the derivative formula.}
+\item{x0}{Numeric vector of length \code{n}.}
+\item{heps}{This is \code{h} in the derivative formula.}
 \item{...}{parameters to be passed to f.}
 }
 \details{

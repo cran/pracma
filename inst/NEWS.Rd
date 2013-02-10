@@ -3,6 +3,22 @@
 \encoding{UTF-8}
 
 
+\section{Changes in Version 1.4.0 (2013-02-10)}{
+    \itemize{
+      \item fderiv(), taylor() expanded to higher orders.
+      \item itersolve() iteration methods for solving linear systems.
+      \item lu() LU decomposition with different schemes (w/o pivoting).
+    }
+}
+
+\section{Changes in Version 1.3.9 (2013-01-26)}{
+    \itemize{
+      \item pdist() as an alias for distmat() (Matlab style).
+      \item fftshift(), ifftshift() shifting Fourier frequencies.
+      \item Improved grad(), jacobian(), hessian(), and laplacian().
+    }
+}
+
 \section{Changes in Version 1.3.8 (2013-01-10)}{
     \itemize{
       \item Smaller corrections; no startup messages anymore.
@@ -61,7 +77,7 @@
 
 \section{Changes in Version 1.3.1 (2012-12-06)}{
     \itemize{
-      \item Explicitely listing about 185 Matlab-emulating function names.
+      \item Explicitely listing about 200 Matlab-emulating function names.
       \item Dismissed matlab(), using it now for infos only, not assigning
         Matlab function names to the environment (because of CRAN policies).
     }
@@ -1052,6 +1068,6 @@
 
       \item Remark: Typeset this document as:
 
-      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.3.8"}.
+      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.4.0"}.
     }
 }

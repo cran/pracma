@@ -7,7 +7,7 @@
   Numerically compute the Laplacian of a function.
 }
 \usage{
-laplacian(f, x0, h = 1e-4, ...)
+laplacian(f, x0, h = .Machine$double.eps^(1/4), ...)
 }
 \arguments{
   \item{f}{univariate function of two variables.}

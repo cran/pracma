@@ -18,12 +18,3 @@ conv <- function(x, y) {
         z <- Re(z)
     return(z)
 }
-
-ifft <- function(x) {
-    if (length(x) == 0)
-        return(c())
-    if ( (!is.vector(x, mode="numeric") && !is.vector(x, mode="complex")))
-        stop("Argument 'x' must be real or complex vector.")
-    
-    fft(x, inverse = TRUE) / length(x)
-}

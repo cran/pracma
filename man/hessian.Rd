@@ -7,7 +7,7 @@
   Numerically compute the Hessian matrix.
 }
 \usage{
-hessian(f, x0, h = 1e-4, ...)
+hessian(f, x0, h = .Machine$double.eps^(1/4), ...)
 }
 \arguments{
   \item{f}{univariate function of several variables.}

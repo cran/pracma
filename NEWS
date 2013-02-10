@@ -3,9 +3,17 @@
 ------------------------------------------------------------------------------
 
 
-PLANNED FOR NEXT VERSIONS
+CHANGES IN VERSION 1.4.0 (2013-02-10)
 
-    o [tbd.]
+    o fderiv(), taylor() expanded to higher orders.
+    o itersolve() iteration methods for solving linear systems.
+    o lu() LU decomposition with different schemes (w/o pivoting).
+
+CHANGES IN VERSION 1.3.9 (2013-01-26)
+
+    o pdist() as an alias for distmat() (Matlab style).
+    o fftshift(), ifftshift() shifting Fourier frequencies.
+    o Improved grad(), jacobian(), hessian(), and laplacian().
 
 CHANGES IN VERSION 1.3.8 (2013-01-10)
 
