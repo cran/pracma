@@ -61,36 +61,37 @@ Practical Numerical Math Routines
   Web links have been provided where reasonable.
 }
 \note{
-  The following 175 functions are emulations of correspondingly named Matlab 
+  The following 200 functions are emulations of correspondingly named Matlab 
   functions and bear the same signature as their Matlab cousins if possible:
   
-  \code{accumarray, acot, acoth, acsc, acsch, and, angle, ans, asec, asech,}\cr
+  \code{accumarray, acot, acoth, acsc, acsch, and, angle, ans, arrayfun, asec, asech,}\cr
   \code{beep, blank, blkdiag, bsxfun,}\cr
   \code{cart2pol, cart2sph, cd, ceil, circshift, clear, compan, cond, conv,}\cr
   \code{    cot, coth, cross, csc, csch,}\cr
-  \code{deblank, deconv, deg2rad, detrend, deval, disp, dot,}\cr
+  \code{dblquad, deblank, deconv, deg2rad, detrend, deval, disp, dot,}\cr
   \code{eig, eigint, ellipj, ellipke, erf, erfc, erfcinv, erfcx, erfi, erfinv,}\cr
   \code{    errorbar, expint, expm, eye, ezcontour, ezmesh, ezplot, ezpolar,}\cr
-  \code{fact, factors, fftshift, figure, findstr, flipdim, fliplr, flipud,}\cr
-  \code{    fminbnd, fminsearch, fplot, fsolve, fzero,}\cr
+  \code{fact, factors, fftshift, figure, findpeaks, findstr, flipdim, fliplr,}\cr
+  \code{    flipud, fminbnd, fminsearch, fplot, fsolve, fzero,}\cr
   \code{gammainc, gcd, geomean, gradient,}\cr
   \code{hadamard, hankel, harmmean, hilb, histc, humps, hypot,}\cr
-  \code{ifft, ifftshift, inpolygon, interp1, interp2, inv, isempty, isprime,}\cr
+  \code{idivide, ifft, ifftshift, inpolygon, integral, integral2, integral3,}\cr
+  \code{    interp1, interp2, inv, isempty, isprime,}\cr
   \code{kron,}\cr
-  \code{linspace, loglog, logm, logseq, logspace, lsqcurvefit, lsqlin,}\cr
+  \code{linprog, linspace, loglog, logm, logseq, logspace, lsqcurvefit, lsqlin,}\cr
   \code{    lsqnonlin, lsqnonneg, lu,}\cr
   \code{magic, meshgrid, mkpp, mldivide, mod, mrdivide,}\cr
   \code{nchoosek, ndims, nextpow2, nnz, normest, nthroot, null, num2str, numel,}\cr
   \code{ode23, ones, or, orth,}\cr
   \code{pascal, pchip, pdist, peaks, perms, piecewise, pinv, plotyy, pol2cart,}\cr
   \code{    polar, polyfit, polyint, polylog, polyval, pow2, ppval, primes, pwd,}\cr
-  \code{quad, quad2d, quadgk, quadl, quadv, quiver,}\cr
+  \code{quad, quad2d, quadgk, quadl, quadprog, quadv, quiver,}\cr
   \code{rad2deg, randi, randn, randsample, rat, rats, regexp, regexpi,}\cr
   \code{    regexpreg, rem, repmat, roots, rosser, rot90, rref, runge,}\cr
   \code{sec, sech, semilogx, semilogy, sinc, size, sortrows, sph2cart, sqrtm,}\cr
-  \code{    std, str2num, strcat, strcmp, strcmpi, strfind, strfindi, strjust,}\cr
-  \code{    strrep, subspace,}\cr
-  \code{tic, toc, trapz, tril, trimmean, triu,}\cr
+  \code{    squareform, std, str2num, strcat, strcmp, strcmpi, strfind, strfindi,}\cr
+  \code{    strjust, strrep, subspace,}\cr
+  \code{tic, toc, trapz, tril, trimmean, triplequad, triu,}\cr
   \code{vander, vectorfield, ver,}\cr
   \code{what, who, whos, wilkinson,}\cr
   \code{zeros, zeta}

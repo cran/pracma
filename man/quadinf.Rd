@@ -7,13 +7,15 @@ Infinite Integrals
   Adaptive quadrature of functions over an infinite interval.
 }
 \usage{
-quadinf(f, xa, xb, tol = .Machine$double.eps^0.5, ...)
+quadinf(f, xa, xb, tol = .Machine$double.eps^0.5,
+            method = NULL, ...)
 }
 \arguments{
   \item{f}{univariate function; needs to be vectorized.}
   \item{xa}{lower limit of integration; can be infinite}
   \item{xb}{upper limit of integration; can be infinite}
   \item{tol}{accuracy requested.}
+  \item{method}{select the integration method.}
   \item{\dots}{additional arguments to be passed to \code{f}.}
 }
 \details{
@@ -24,6 +26,10 @@ quadinf(f, xa, xb, tol = .Machine$double.eps^0.5, ...)
 
   The function needs to be vectorized as long as this is required by
   \code{integrate}.
+
+  Choices for adaptive integration methods are ``Kronrod", ``Richardson",
+  ``Clenshaw", ``Simpson", or ``Romberg". If the method is \code{NULL} the
+  standard integrate() function from R base will be used.
 }
 \value{
   A single numeric value, the computed integral.

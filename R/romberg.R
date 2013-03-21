@@ -3,46 +3,44 @@
 ##
 
 
-romberg <- function(f, a, b, tol = .Machine$double.eps^(2/3), ...)
+romberg <- function(f, a, b, maxit = 50, tol = 1e-6, ...)
 {
     stopifnot(is.numeric(a), is.numeric(b), length(a) == 1, length(b) == 1)
-
-    if (a == b) return(list(Q = 0, rel.error = 0, j = 0))
 
     fun <- match.fun(f)
     f <- function(x) fun(x, ...)
 
-    if (!is.finite(f(a)) || !is.finite(f(b)))
-        stop("Function 'f' is not finite at interval boundaries.")
+    if (a == b) return(list(value = 0, rel.error = 0))
+    eps <- .Machine$double.eps  # assume a < b
+    if (!is.finite(f(a))) a <- a + eps * sign(b-a)
+    if (!is.finite(f(b))) b <- b - eps * sign(b-a)
 
-    trap <- function(f, a, b, n) {
-        h <- (b-a) / n
-        S <- f(a)
-        if (n > 1) {
-            for (i in 1:(n-1)) { xi <- a + h * i; S <- S + 2*f(xi) }
+    n <- 1
+    I <- matrix(0, nrow = maxit+1, ncol = maxit+1)
+    iter <- 0
+    while (iter < maxit) {
+        iter <- iter+1
+        n <- 2^iter
+        I[iter+1, 1] <- .trap(f, a, b, n)
+        for (k in 2:(iter+1)) {
+            j <- 2+iter-k
+            I[j,k] <- (4^(k-1)*I[j+1,k-1] - I[j,k-1]) / (4^(k-1)-1)
         }
-        return((S + f(b)) * h/2)
+        err <- abs((I[1,iter+1] - I[2,iter]) / I[1,iter+1])
+        if (err < tol) break
     }
-
-    kmax <- 17
-    Q <- matrix(0, nrow = kmax+1, ncol = kmax+1)
-    k <- 1
-    n <- 2^k
-    Q[k+1, 1] <- trap(f, a, b, n)
-    Q[1, 2]   <- (4*Q[2, 1] - Q[1, 1])/3
-
-    for (k in 2:kmax) {
-       n <- 2^k
-       Q[k+1, 1] <- trap(f, a, b, n)
-       for (j in 2:(k+1)) {
-          c = 4^(j-1)
-          Q[k-j+2, j]  = (c*Q[k-j+3, j-1] - Q[k-j+2, j-1]) / (c-1)  
-       }
-       rel.error <- abs(Q[1, k+1] - Q[1, k]) / Q[1, k+1]
-       if (rel.error < tol) break
-    }
-    if (k == kmax)
+    if (iter == maxit)
         warning("Maximum number of iterations has been reached.")
 
-    return(list(value = Q[1, j], rel.error = abs(rel.error)))
+    return(list(value = I[1, iter+1], iter = iter, rel.error = err))
+}
+
+
+.trap <- function(f, a, b, n) {
+    h <- (b-a) / n
+    S <- f(a)
+    if (n > 1) {
+        for (i in 1:(n-1)) { xi <- a + h * i; S <- S + 2*f(xi) }
+    }
+    return((S + f(b)) * h/2)
 }

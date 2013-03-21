@@ -3,6 +3,33 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.4.5 (2013-03-21)
+
+    o quadcc() iterative Clenshaw-Curtis quadrature.
+    o squareform() formats distance matrix (Matlab style).
+
+CHANGES IN VERSION 1.4.4 (2013-03-12)
+
+    o integral2() implements the two-dimensional numerical integration
+      approach `TwoD', i.e. Gauss-Kronrod (3, 7)-points on rectangles.
+    o integral3() three-dimensional integration based on integral2().
+    o triplequad() 3-dim. integration based on dblquad() (Matlab style).
+
+CHANGES IN VERSION 1.4.3 (2013-03-10)
+
+    o integral() combines adaptive numerical integration procedures.
+    o cintegral() complex line integrals (rectangles and curves).
+
+CHANGES IN VERSION 1.4.2 (2013-03-03)
+
+    o linprog() linear programming solver for linear equality and
+      inequality constraints.
+
+CHANGES IN VERSION 1.4.1 (2013-02-20)
+
+   o romberg() Romberg integration completely rewritten.
+   o idivide() integer division with different roundings.
+
 CHANGES IN VERSION 1.4.0 (2013-02-10)
 
     o fderiv(), taylor() expanded to higher orders.
@@ -25,7 +52,8 @@ CHANGES IN VERSION 1.3.8 (2013-01-10)
 
 CHANGES IN VERSION 1.3.7 (2013-01-07)
 
-    o mexpfit() multi-exponentiell fitting.
+    o mexpfit() multi-exponentiell fitting, separating linear and
+      nonlinear parts of the problem.
 
 CHANGES IN VERSION 1.3.6 (2013-01-06)
 

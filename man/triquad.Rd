@@ -4,7 +4,7 @@
   Gaussian Triangle Quadrature
 }
 \description{
-  Numerically integrates a fuction over an arbitrary triangular domain by
+  Numerically integrates a function over an arbitrary triangular domain by
   computing the Gauss nodes and weights.
 }
 \usage{

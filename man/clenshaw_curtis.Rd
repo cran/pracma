@@ -7,7 +7,7 @@
   Clenshaw-Curtis Quadrature Formula
 }
 \usage{
-clenshaw_curtis(f, a = -1, b = 1, n = 32, ...)
+clenshaw_curtis(f, a = -1, b = 1, n = 1024, ...)
 }
 \arguments{
   \item{f}{function, the integrand, without singularities.}

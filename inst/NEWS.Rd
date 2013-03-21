@@ -3,6 +3,44 @@
 \encoding{UTF-8}
 
 
+\section{Changes in Version 1.4.5 (2013-03-21)}{
+    \itemize{
+      \item quadcc() iterative/adaptive Clenshaw-Curtis quadrature.
+      \item squareform() formats distance matrix (Matlab style).
+    }
+}
+
+\section{Changes in Version 1.4.4 (2013-02-12)}{
+    \itemize{
+      \item integral2() implements the two-dimensional numerical integration
+        approach `TwoD',\cr
+        i.e. Gauss-Kronrod (3, 7)-points on rectangles.
+      \item integral3() three-dimensional integration based on integral2().
+      \item triplequad() 3-dim. integration based on dblquad() (Matlab style).
+    }
+}
+
+\section{Changes in Version 1.4.3 (2013-03-10)}{
+    \itemize{
+      \item integral() combines adaptive numerical integration procedures.
+      \item cintegral() complex line integrals (rectangles and curves).
+    }
+}
+
+\section{Changes in Version 1.4.2 (2013-03-03)}{
+    \itemize{
+      \item linprog() linear programming solver for linear equality and
+        inequality constraints.
+    }
+}
+
+\section{Changes in Version 1.4.1 (2013-02-20}{
+    \itemize{
+      \item romberg() Romberg integration completely rewritten.
+      \item idivide() integer division with different roundings.
+    }
+}
+
 \section{Changes in Version 1.4.0 (2013-02-10)}{
     \itemize{
       \item fderiv(), taylor() expanded to higher orders.
@@ -1068,6 +1106,6 @@
 
       \item Remark: Typeset this document as:
 
-      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.4.0"}.
+      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.4.5"}.
     }
 }

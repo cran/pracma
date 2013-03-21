@@ -36,6 +36,29 @@ dblquad <- function(f, xa, xb, ya, yb, dim = 2, ...,
 }
 
 
+triplequad <- function(f, xa, xb, ya, yb, za, zb, 
+                        subdivs = 300, tol = .Machine$double.eps^0.5, ...) {
+    stopifnot(is.numeric(xa), length(xa) == 1, is.numeric(xb), length(xb) == 1,
+              is.numeric(ya), length(ya) == 1, is.numeric(yb), length(yb) == 1,
+              is.numeric(za), length(za) == 1, is.numeric(zb), length(zb) == 1)
+
+    fun <- match.fun(f)
+    f <- function(x, y, z) fun(x, y, z, ...)
+
+    fyz <- function(y, z) {
+        Qin <- numeric(length(y))
+        for (i in 1:length(y)) {
+            fx  <- function(x) f(x, y[i], z[i])
+            Qin <- integrate(fx, xa, xb,
+                             subdivisions = subdivs, rel.tol = 1e-10)$value
+        }
+        Qin
+    }
+    fyz <- Vectorize(fyz)
+    dblquad(fyz, ya, yb, za, zb, tol = tol)
+}
+
+
 simpson2d <- function(f, xa, xb, ya, yb, nx = 128, ny = 128, ...) {
     stopifnot(is.numeric(xa), length(xa) == 1, is.numeric(xb), length(xb) == 1,
               is.numeric(ya), length(ya) == 1, is.numeric(yb), length(yb) == 1)

@@ -30,6 +30,31 @@ rem <- function(n, m) {
 }
 
 
+idivide <- function(n, m, rounding = c("fix", "floor", "ceil", "round")) {
+    stopifnot(is.numeric(n), is.numeric(m))
+    rounding <- match.arg(rounding)
+    if (length(n) == 1) {
+        n <- rep(n, length(m))
+    } else if (length(m) == 1) {
+        m <- rep(m, length(n))
+    }
+    ln <- length(n); lm <- length(m)
+    if (ln != lm)
+        stop("Arguments 'n', 'm' must be scalars or have the same length.")
+    if (any(floor(n) != ceiling(n)) || any(floor(m) != ceiling(m)))
+        stop("Arguments 'n', 'm' must be integers or vectors of integers.")
+
+    k <- n / m
+    if      (rounding == "fix")   k <- Fix(k)
+    else if (rounding == "floor") k <- floor(k)
+    else if (rounding == "ceil")  k <- ceil(k)
+    else if (rounding == "round") k <- round(k)
+    else
+        stop("Rounding must be one of 'fix', 'floor', 'ceil', 'round'.")
+    return(k)
+}
+
+
 gcd <- function(a, b, extended = FALSE) {
     stopifnot(is.numeric(a), is.numeric(b))
     if (length(a) == 1) {

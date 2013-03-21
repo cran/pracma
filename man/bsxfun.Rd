@@ -1,5 +1,6 @@
 \name{bsxfun}
 \alias{bsxfun}
+\alias{arrayfun}
 \title{
   Elementwise Function Application (Matlab Style)
 }
@@ -7,16 +8,21 @@
   Apply a binary function elementwise.
 }
 \usage{
-  bsxfun(f, x, y, ...)
+  bsxfun(func, x, y)
+
+  arrayfun(func, ...)
 }
 \arguments{
-  \item{f}{function with two input parameters.}
+  \item{func}{function with two or more input parameters.}
   \item{x, y}{two vectors, matrices, or arrays of the same size.}
-  \item{...}{optional parameters to be passed to the function.}
+  \item{...}{list of arrays of the same size.}
 }
 \details{
-  Apply element-by-element a binary function to two vectors or matrices of
-  the same size.
+  \code{bsxfun} applies element-by-element a binary function to two vectors
+  or matrices of the same size.
+
+  \code{arrayfun} applies \code{func} to each element of the arrays and
+  returns an array of the same size.
 }
 \value{
   The result will be a vector or matrix of the same size as \code{x, y}.
@@ -36,5 +42,10 @@
 X <- matrix(rep(1:10, each = 10), 10, 10)
 Y <- t(X)
 bsxfun("*", X, Y)  # multiplication table
+
+f <- function(x, y) x[1] * y[1]     # function not vectorized
+A <- matrix(c(2, 3, 5, 7), 2, 2)
+B <- matrix(c(11, 13, 17, 19), 2, 2)
+arrayfun(f, A, B)
 }
 \keyword{ math }

@@ -1,8 +1,8 @@
 Package: pracma
 Type: Package
 Title: Practical Numerical Math Functions
-Version: 1.4.0
-Date: 2013-02-10
+Version: 1.4.5
+Date: 2013-03-21
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
 Depends: R (>= 2.11.1)
@@ -15,7 +15,8 @@ LazyLoad: yes
 LazyData: yes
 Repository: CRAN
 Repository/R-Forge/Project: optimist
-Repository/R-Forge/Revision: 285
-Repository/R-Forge/DateTimeStamp: 2013-02-10 15:37:31
-Date/Publication: 2013-02-12 05:54:13
-Packaged: 2013-02-10 19:16:37 UTC; rforge
+Repository/R-Forge/Revision: 297
+Repository/R-Forge/DateTimeStamp: 2013-03-19 16:16:46
+Date/Publication: 2013-03-25 07:03:41
+Packaged: 2013-03-19 23:17:17 UTC; rforge
+NeedsCompilation: no
