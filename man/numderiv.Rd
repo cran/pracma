@@ -8,9 +8,9 @@
   Richardson's method applied to the computation of the numerical derivative.
 }
 \usage{
-numderiv(f, x0, maxiter = 16, h = 1, ..., accuracy = .Machine$double.eps)
+numderiv(f, x0, maxiter = 16, h = 1/2, ..., accuracy = .Machine$double.eps)
 
-numdiff(f, x, maxiter = 16, h = 1, ..., accuracy = .Machine$double.eps)
+numdiff(f, x, maxiter = 16, h = 1/2, ..., accuracy = .Machine$double.eps)
 }
 \arguments{
   \item{f}{function to be differentiated.}

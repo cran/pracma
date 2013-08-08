@@ -5,7 +5,7 @@
 
 hessian <- function(f, x0, h = .Machine$double.eps^(1/4), ...) {
     if (!is.numeric(x0))
-        stop("Argument 'x0' must be a numeric value.")
+        stop("Argument 'x0' must be a numeric vector.")
 
     fun <- match.fun(f)
     f <- function(x) fun(x, ...)
@@ -36,16 +36,20 @@ hessian <- function(f, x0, h = .Machine$double.eps^(1/4), ...) {
 
 
 laplacian <- function(f, x0, h = .Machine$double.eps^(1/4), ...) {
-    if (length(x0) != 2 || !is.numeric(x0))
-        stop("Argument 'x0' must be a numeric vector of two elements.")
+    if (!is.numeric(x0))
+        stop("Argument 'x0' must be a numeric vector.")
 
     fun <- match.fun(f)
     f <- function(x) fun(x, ...)
 
-    if (length(f(x0)) != 1)
-        stop("Function 'f' must be a univariate function of 2 variables.")
+	n  <- length(x0)
+	hh <- rep(0, n)
+	L  <- 0
+	for (i in 1:n) {
+		hh[i] <- h
+		L <- L + (f(x0+hh) + f(x0-hh) - 2*f(x0)) / h^2
+		hh[i] <- 0
+	}
 
-    h1 <- c(h, 0); h2 <- c(0, h)
-    L <- (-4*f(x0) + f(x0+h1) + f(x0-h1) + f(x0+h2) + f(x0-h2)) / h^2
     return(L)
 }

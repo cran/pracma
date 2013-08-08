@@ -35,7 +35,14 @@ distmat <- function(X, Y)
 }
 
 
-pdist <- distmat
+pdist <- function(X) {
+    distmat(X, X)
+}
+
+
+pdist2 <- function(X, Y) {
+    distmat(X, Y)
+}
 
 
 hausdorff_dist <- function(P, Q) {

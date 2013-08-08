@@ -27,8 +27,16 @@
 }
 \examples{
   # Calculate the area under the sine curve from 0 to pi:
-  x <- seq(0, pi, len=101)
+  n <- 101
+  x <- seq(0, pi, len = n)
   y <- sin(x)
-  trapz(x, y)  #=> 1.999836
+  trapz(x, y)                       #=> 1.999835504
+
+  # Use a correction term at the boundary: -h^2/12*(f'(b)-f'(a))
+  h  <- x[2] - x[1]
+  ca <- (y[2]-y[1]) / h
+  cb <- (y[n]-y[n-1]) / h
+  trapz(x, y) - h^2/12 * (cb - ca)  #=> 1.999999969
 }
+
 \keyword{ math }

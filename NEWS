@@ -3,9 +3,39 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.5.0 (2013-08-08)
+
+    o gmres() generalized minimum residual method.
+    o nearest_spd() find nearest symmetric positive-definite matrix.
+    o eps() floating point relative accuracy.
+
+CHANGES IN VERSION 1.4.9 (2013-07-16)
+
+    o lapacian() now works in n dimensions, not only for n=2.
+    o mldivide(), mrdivide() corrected a severe typo.
+    o numderiv(), numdiff() start with h = 1/2 instead of h = 1.
+    o figure() platform-independent by using dev.new().
+
+CHANGES IN VERSION 1.4.8 (2013-06-17)
+
+    o findzeros() now finds 'quadratic' roots, too.
+    o fsolve() will use newtonsys() if m = n.
+    o pdist2() added as an alias for distmat(),
+      while pdist(X) now is distmat(X, X) (Matlab style).
+
+CHANGES IN VERSION 1.4.7 (2013-05-20)
+
+    o histcc() histogram with optimized number of bins.
+    o Example of correction term for the trapz() integration.
+
+CHANGES IN VERSION 1.4.6 (2013-03-31)
+
+    o psi() Psi polygamma function (Matlab style).
+    o rosenbrock() and rastrigin() functions removed.
+
 CHANGES IN VERSION 1.4.5 (2013-03-21)
 
-    o quadcc() iterative Clenshaw-Curtis quadrature.
+    o quadcc() new, iterative Clenshaw-Curtis quadrature.
     o squareform() formats distance matrix (Matlab style).
 
 CHANGES IN VERSION 1.4.4 (2013-03-12)

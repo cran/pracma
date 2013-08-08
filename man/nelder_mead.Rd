@@ -47,6 +47,12 @@ nelder_mead(x0, f, maxiter = 1000, scale = 1,
 }
 \examples{
 ##  Rosenbrock function
+rosenbrock <- function(x) {
+    n <- length(x)
+    x1 <- x[2:n]
+    x2 <- x[1:(n-1)]
+    sum(100*(x1-x2^2)^2 + (1-x2)^2)
+}
 nelder_mead(c(0, 0), rosenbrock)
 # $xmin
 # [1] 0.9999969 0.9999936

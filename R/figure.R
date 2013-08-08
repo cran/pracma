@@ -18,20 +18,20 @@ figure <- function(figno, title = "") {
         }
     }
 
-    if (.Platform$OS.type == "unix") {
-        if (.Platform$GUI == "AQUA") win <- quartz
-        else if (.Platform$GUI == "X11") win <- X11
-        else
-            stop("Unknown platform GUI for Unix platform type.")
-    } else if (.Platform$OS.type == "Linux") {
-        win <- X11
-    } else if (.Platform$OS.type == "windows") {
-        win <- windows
-    } else
-        stop(paste("Unknown platform type:", .Platform$OS.type))
+#     if (.Platform$OS.type == "unix") {
+#         if (.Platform$GUI == "AQUA") win <- quartz
+#         else if (.Platform$GUI == "X11") win <- X11
+#         else
+#             stop("Unknown platform GUI for Unix platform type.")
+#     } else if (.Platform$OS.type == "Linux") {
+#         win <- X11
+#     } else if (.Platform$OS.type == "windows") {
+#         win <- windows
+#     } else
+#         stop(paste("Unknown platform type:", .Platform$OS.type))
 
     if (is.null(figno)) {
-        win()
+        dev.new()               # dev.new() may be platform independent
     } else {
         devl <- dev.list()
         if (abs(figno) %in% devl) {
@@ -44,7 +44,3 @@ figure <- function(figno, title = "") {
     }
     invisible()
 }
-
-##  Comment:
-#   dev.new() may be platform independent.
-#

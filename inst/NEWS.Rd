@@ -3,6 +3,46 @@
 \encoding{UTF-8}
 
 
+\section{Changes in Version 1.5.0 (2013-08-08)}{
+    \itemize{
+      \item gmres() generalized minimum residual method.
+      \item nearest_spd() find nearest symmetric positive-definite matrix.
+      \item eps() floating point relative accuracy.
+    }
+}
+
+\section{Changes in Version 1.4.9 (2013-07-16)}{
+    \itemize{
+      \item lapacian() now works in n dimensions, not only for n=2.
+      \item mldivide(), mrdivide() corrected a severe typo.
+      \item numderiv(), numdiff() start with h = 1/2 instead of h = 1.
+      \item figure() platform-independent by using dev.new().
+    }
+}
+
+\section{Changes in Version 1.4.8 (2013-06-17)}{
+    \itemize{
+      \item findzeros() now finds `quadratic' roots, too.
+      \item fsolve() will use newtonsys() if m = n.
+      \item pdist2() added as an alias for distmat(),
+        while pdist(X) now is distmat(X, X) (Matlab style).
+    }
+}
+
+\section{Changes in Version 1.4.7 (2013-05-20)}{
+    \itemize{
+      \item histcc() histogram with optimized number of bins.
+      \item Example of correction term for the trapz() integration.
+    }
+}
+
+\section{Changes in Version 1.4.6 (2013-03-31)}{
+    \itemize{
+      \item psi() Psi polygamma function (Matlab style).
+      \item rosenbrock() and rastrigin() functions removed.
+    }
+}
+
 \section{Changes in Version 1.4.5 (2013-03-21)}{
     \itemize{
       \item quadcc() iterative/adaptive Clenshaw-Curtis quadrature.
@@ -160,7 +200,7 @@
 \section{Changes in Version 1.2.6 (2012-11-11)}{
     \itemize{
       \item akimaInterp() univariate Akima interpolation.
-      \item Moved transfinite() to package 'adagio'.
+      \item Moved transfinite() to package `adagio'.
     }
 }
 
@@ -173,10 +213,10 @@
 
 \section{Changes in Version 1.2.4 (2012-10-25)}{
     \itemize{
-      \item Added option 'pinv' to mldivide() to return the same results
+      \item Added option `pinv' to mldivide() to return the same results
         as Matlab.
       \item str2num(), num2str() conversion functions (Matlab style).
-      \item Removed some 'author' entries on help pages.
+      \item Removed some `author' entries on help pages.
     }
 }
 
@@ -198,10 +238,10 @@
 
 \section{Changes in Version 1.2.1 (2012-09-28)}{
     \itemize{
-      \item rosenbrock() added, moved testfunctions to 'adagio' package.
+      \item rosenbrock() added, moved testfunctions to `adagio' package.
       \item euler_heun() improved Euler method for solving ODEs.
       \item logit() function added to sigmoid().
-      \item Keyword 'ode' introduced.
+      \item Keyword `ode' introduced.
     }
 }
 
@@ -220,7 +260,7 @@
         primes2(), twinPrimes(), nextPrime(), previousPrime(),
         modpower(), modorder(), modinv(), modlin(),
         primroot(), contfrac(), coprime(), GCD(), LCM(), extGCD(),
-        (these functions are now available in the 'numbers' package).
+        (these functions are now available in the `numbers' package).
     }
 }
 
@@ -239,8 +279,8 @@
 
 \section{Changes in Version 1.1.6 (2012-07-20)}{
     \itemize{
-      \item Removed '.Rapphistory' from the tests directory (again)
-        [and use "--as-cran" for the checks].
+      \item Removed `.Rapphistory' from the tests directory (again)
+        [and use ``--as-cran'' for the checks].
       \item disp() display text or array (Matlab Style), cat() with newline.
     }
 }
@@ -1106,6 +1146,6 @@
 
       \item Remark: Typeset this document as:
 
-      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.4.5"}.
+      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.5.0"}.
     }
 }

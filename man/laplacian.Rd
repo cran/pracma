@@ -10,13 +10,13 @@
 laplacian(f, x0, h = .Machine$double.eps^(1/4), ...)
 }
 \arguments{
-  \item{f}{univariate function of two variables.}
+  \item{f}{univariate function of several variables.}
   \item{x0}{point in \eqn{R^n}.}
   \item{h}{step size.}
   \item{...}{variables to be passed to \code{f}.}
 }
 \details{
-  Computes the Laplacian operator \eqn{f_{xx} + f_{yy}}
+  Computes the Laplacian operator \eqn{f_{x_1 x_1} + \ldots + f_{x_n x_n}}
   based on the three-point central difference formula, expanded to this
   special case.
 
@@ -30,7 +30,7 @@ laplacian(f, x0, h = .Machine$double.eps^(1/4), ...)
   Second edition, Prentice Hall.
 }
 \seealso{
-  \code{\link{fderiv}}, \code{\link{hessian}}
+  \code{\link{hessian}}
 }
 \examples{
 f <- function(x) x[1]^2 + 2*x[1]*x[2] + x[2]^2

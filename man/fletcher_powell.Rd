@@ -53,6 +53,12 @@ fletcher_powell(x0, f, g = NULL,
 }
 \examples{
 ##  Rosenbrock function
+rosenbrock <- function(x) {
+    n <- length(x)
+    x1 <- x[2:n]
+    x2 <- x[1:(n-1)]
+    sum(100*(x1-x2^2)^2 + (1-x2)^2)
+}
 fletcher_powell(c(0, 0), rosenbrock)
 # $xmin
 # [1] 1 1

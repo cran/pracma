@@ -27,7 +27,7 @@ dblquad <- function(f, xa, xb, ya, yb, dim = 2, ...,
                           subdivisions = subdivs, rel.tol = tol)$value
         Fx <- Vectorize(fx)
         Q  <- integrate(Fx, ya, yb,
-                        subdivisions = subdivs, rel.tol = tol)$value
+                        subdivisions = subdivs, rel.tol = 10*tol)$value
 
     } else
         stop("Argument 'dim' can only be 1 (x-) or 2 (y-variable first).")

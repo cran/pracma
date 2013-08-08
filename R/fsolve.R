@@ -21,10 +21,15 @@ fsolve <- function(f, x0, J = NULL,
         J <- function(x) jacobian(f, x)
     }
 
-    sol <- gaussNewton(x0, f, Jfun = J, maxiter = maxiter, tol = tol)
-    xs <- sol$xs; fs <- sol$fs
-    if (fs > tol)
-        warning("Minimum appears not to be a zero -- change starting point.")
+    if (m == n) {
+        sol = newtonsys(f, x0, Jfun = J, maxiter = maxiter, tol = tol)
+        xs <- sol$zero; fs <- f(xs)
+    } else {
+        sol <- gaussNewton(x0, f, Jfun = J, maxiter = maxiter, tol = tol)
+        xs <- sol$xs; fs <- sol$fs
+        if (fs > tol)
+            warning("Minimum appears not to be a zero -- change starting point.")
+    }
 
     return(list(x = xs, fval = fs))
 }

@@ -22,13 +22,17 @@ findzeros(f, a, b, n = 100, tol = .Machine$double.eps^(2/3), ...)
   to any subinterval where the sign of the function changes. The endpoints of
   the interval will be tested separately.
 
+  If the function points are both positive or negative and the slope in this
+  interval is high enough, the minimum or maximum will be determined with
+  \code{optimize} and checked for a possible zero. 
+
   The function need not be vectorized.
 }
 \value{
   Numeric vector with the x-positions of all roots found in the interval.
 }
 \seealso{
-  \code{\link{uniroot}}
+  \code{\link{findmins}}
 }
 \examples{
 f1 <- function(x) sin(pi/x)
@@ -39,6 +43,14 @@ findzeros(f1, 1/10, 1)
 f2 <- function(x) 0.5*(1 + sin(10*pi*x))
 findzeros(f2, 0, 1)
 #  0.15  0.35  0.55  0.75  0.95
+
+f3 <- function(x) sin(pi/x) + 1
+findzeros(f3, 0.1, 0.5)
+# 0.1052632 0.1333333 0.1818182 0.2857143
+
+f4 <- function(x) sin(pi/x) - 1
+findzeros(f4, 0.1, 0.5)
+# 0.1176471 0.1538462 0.2222222 0.4000000
 
 \dontrun{
 # Dini function
