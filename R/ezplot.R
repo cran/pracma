@@ -3,7 +3,8 @@
 ##
 
 
-ezplot <- function(f, a, b, n = 101, col = "blue",
+ezplot <- function(f, a, b, n = 101, col = "blue", add = FALSE,
+                   lty = 1, lwd = 1, marker = 0, pch = 1,
                    grid = TRUE, gridcol = "gray", 
                    fill = FALSE, fillcol = "lightgray",
                    xlab = "x", ylab = "f (x)", main = "Function Plot", ...) {
@@ -14,7 +15,10 @@ ezplot <- function(f, a, b, n = 101, col = "blue",
 
     x <- seq(a, b, length.out = n)
     y <- f(x)
-    plot(x, y, type = "n", xlab = xlab, ylab = ylab, main = main, ...)
+
+    if (!add)
+        plot(x, y, type = "n",
+        xlab = xlab, ylab = ylab, main = main, ...)
 
     if (grid)
         grid(col = gridcol)
@@ -25,7 +29,22 @@ ezplot <- function(f, a, b, n = 101, col = "blue",
         polygon(xx, yy, col = fillcol, border = "darkgray")
     }
 
-    lines(x, y, col = col)
+    lines(x, y, col = col, lty = lty, lwd = lwd)
+
+    if (marker > 0) {
+        m <- min(max(marker, 3), n %/% 3)
+        d  <- c(0, sqrt(diff(x)^2 + diff(y)^2))
+        cs <- cumsum(d)
+        s  <- cs[n]  # sum(d)
+        l  <- s / (m-1)
+
+        inds <- numeric(m)
+        inds[c(1, m)] <- c(1, n)
+        for (k in 2:(m-1))
+            inds[k] <- which.min(abs(cs - (k-1)*l))
+        points(x[inds], y[inds], col = col, pch = pch)
+    } 
+
     invisible(NULL)
 }
 

@@ -51,5 +51,19 @@ newtonsys(F2, c(1, 1))
 # $zero   0.2555197 0.8948303 , i.e.  z0 = 0.2555 + 0.8948i
 # $fnorm  2.220446e-16
 # $niter  8
+
+##  Two more problematic examples
+F3 <- function(x)
+        c(2*x[1] - x[2] - exp(-x[1]), -x[1] + 2*x[2] - exp(-x[2]))
+newtonsys(F3, c(0, 0))
+# $zero   0.5671433 0.5671433
+# $fnorm  0
+# $niter  4
+
+\dontrun{
+F4 <- function(x)  # Dennis Schnabel
+        c(x[1]^2 + x[2]^2 - 2, exp(x[1] - 1) + x[2]^3 - 2)
+newtonsys(F4, c(2.0, 0.5))
+# will result in an error ``missing value in  ... err<tol && niter<maxiter''}
 }
 \keyword{ math }

@@ -7,15 +7,22 @@
   Easy function plot/wo the need to define \code{x, y} coordinates.
 }
 \usage{
-ezplot(f, a, b, n = 101, col = "blue",
-       grid = TRUE, gridcol = "gray", fill = FALSE, fillcol = "lightgray",
-       xlab = "x", ylab = "f (x)", main = "Function Plot", ...)
+ezplot( f, a, b, n = 101, col = "blue", add = FALSE,
+        lty = 1, lwd = 1, marker = 0, pch = 1,
+        grid = TRUE, gridcol = "gray", 
+        fill = FALSE, fillcol = "lightgray",
+        xlab = "x", ylab = "f (x)", main = "Function Plot", ...)
 }
 \arguments{
   \item{f}{Function to be plotted.}
   \item{a, b}{Left and right endpoint for the plot.}
   \item{n}{Number of points to plot.}
   \item{col}{Color of the function graph.}
+  \item{add}{logical; shall the polt be added to an existing plot.}
+  \item{lty}{line type; default 1.}
+  \item{lwd}{line width; default 1.}
+  \item{marker}{no. of markers to be added to the curve; defailt: none.}
+  \item{pch}{poimt character; default circle.}
   \item{grid}{Logical; shall a grid be plotted?; default \code{TRUE}.}
   \item{gridcol}{Color of grid points.}
   \item{fill}{Logical; shall the area between function and axis be filled?;
@@ -32,6 +39,9 @@ ezplot(f, a, b, n = 101, col = "blue",
 
   If \code{fill} is \code{TRUE}, also calls the \code{polygon} function
   with the \code{x, y} coordinates in appropriate order.
+
+  If the no. of \code{markers} is greater than 2, this number of markers
+  will be added to the curve, with equal distances measured along the curve.
 }
 \value{
   Plots the function graph and invisibly returns \code{NULL}.

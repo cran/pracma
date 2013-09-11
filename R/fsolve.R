@@ -7,6 +7,8 @@ fsolve <- function(f, x0, J = NULL,
                    maxiter = 100, tol = .Machine$double.eps^(0.5), ...) {
     if (!is.numeric(x0))
         stop("Argument 'x0' must be a numeric vector.")
+    x0 <- c(x0)
+
     # Prepare objective function and its Jacobian
     fun <- match.fun(f)
     f <- function(x) fun(x, ...)
@@ -22,7 +24,7 @@ fsolve <- function(f, x0, J = NULL,
     }
 
     if (m == n) {
-        sol = newtonsys(f, x0, Jfun = J, maxiter = maxiter, tol = tol)
+        sol = broyden(f, x0, J0 = J(x0), maxiter = maxiter, tol = tol)
         xs <- sol$zero; fs <- f(xs)
     } else {
         sol <- gaussNewton(x0, f, Jfun = J, maxiter = maxiter, tol = tol)
@@ -58,6 +60,6 @@ fzsolve <- function(fz, z0) {
         else                    Z <- c(NA, NA)
         return(Z)
     }
-    x <- newtonsys(fn, x0)$zero
+    x <- broyden(fn, x0)$zero
     return(x[1] + x[2]*1i)
 }

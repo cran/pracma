@@ -21,7 +21,7 @@ fsolve(f, x0, J = NULL,
 \details{
   \code{fsolve} tries to solve the components of function \code{f}
   simultaneously and uses the Gauss-Newton method with numerical gradient
-  and Jacobian. If \code{m = n}, it uses \code{newtonsys}.
+  and Jacobian. If \code{m = n}, it uses \code{broyden}.
 }
 \value{
   List with
@@ -36,7 +36,7 @@ fsolve(f, x0, J = NULL,
   \code{fsolve} mimics the Matlab function of the same name.
 }
 \seealso{
-  \code{\link{newtonsys}}, \code{\link{gaussNewton}}
+  \code{\link{broyden}}, \code{\link{gaussNewton}}
 }
 \examples{
 \dontrun{
@@ -46,9 +46,9 @@ fsolve(f, x0, J = NULL,
     X <- matrix(x,             nrow = 2, ncol = 2, byrow = TRUE)
     return(c(X \%*\% X \%*\% X - a))
   }
-  x0 <- matrix(1, nrow = 2, ncol = 2)
-  fsolve(F, x0)
-  # $x
+  x0 <- matrix(1, 2, 2)
+  X  <- matrix(fsolve(F, x0)$x, 2, 2)
+  X
   # -0.1291489  0.8602157
   #  1.2903236  1.1611747
 }

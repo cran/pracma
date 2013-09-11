@@ -6,11 +6,14 @@
   \code{n} equations in \code{n} variables.
 }
 \usage{
-broyden(Ffun, x0, maxiter = 20, tol = .Machine$double.eps^(1/2))
+broyden(Ffun, x0, J0 = NULL, ...,
+        maxiter = 100, tol = .Machine$double.eps^(1/2))
 }
 \arguments{
 \item{Ffun}{\code{n} functions of \code{n} variables.}
 \item{x0}{Numeric vector of length \code{n}.}
+\item{J0}{Jacobian of the function at \code{x0}.}
+\item{...}{additional parameters passed to the function.}
 \item{maxiter}{Maximum number of iterations.}
 \item{tol}{Tolerance, relative accuracy.}
 }
@@ -38,7 +41,7 @@ broyden(Ffun, x0, maxiter = 20, tol = .Machine$double.eps^(1/2))
   \code{2n} steps
 }
 \seealso{
-  \code{\link{newtonsys}}
+  \code{\link{newtonsys}}, \code{\link{fsolve}}
 }
 \examples{
 ##  Example from Quarteroni & Saleri
@@ -66,5 +69,15 @@ broyden(F2, c(1, 1))
 # zero   0.2555197 0.8948303 , i.e.  z0 = 0.2555 + 0.8948i
 # fnorm  7.284374e-10
 # niter  13
+
+##  Two more problematic examples
+F3 <- function(x)
+        c(2*x[1] - x[2] - exp(-x[1]), -x[1] + 2*x[2] - exp(-x[2]))
+broyden(F3, c(0, 0))
+# $zero   0.5671433 0.5671433   # x = exp(-x)
+
+F4 <- function(x)   # Dennis Schnabel
+        c(x[1]^2 + x[2]^2 - 2, exp(x[1] - 1) + x[2]^3 - 2)
+broyden(F4, c(2.0, 0.5), maxiter = 100)
 }
 \keyword{ math }

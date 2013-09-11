@@ -29,7 +29,7 @@
   by Hans W Borchers.
 }
 \references{
-  Akima, H. (1070). A New Method of Interpolation and Smooth Curve Fitting
+  Akima, H. (1970). A New Method of Interpolation and Smooth Curve Fitting
   Based on Local Procedures. Journal of the ACM, Vol. 17(4), pp 589-602.
 
   Hyman, J. (1983). Accurate Monotonicity Preserving Cubic Interpolation.
@@ -47,12 +47,15 @@
 \examples{
 x <- c( 0,  2,  3,  5,  6,  8,  9,   11, 12, 14, 15)
 y <- c(10, 10, 10, 10, 10, 10, 10.5, 15, 50, 60, 85)
-plot(x, y, col="blue"); grid()
+xs <- seq(12, 14, 0.5)          # 12.0 12.5     13.0     13.5     14.0
+ys <- akimaInterp(x, y, xs)     # 50.0 54.57405 54.84360 55.19135 60.0
+xs; ys
+
+\dontrun{
+plot(x, y, col="blue", main = "Akima Interpolation")
 xi <- linspace(0,15,51)
 yi <- akimaInterp(x, y, xi)
 lines(xi, yi, col = "darkred")
-
-x <- 1:10
-x <- c(0, 1, 3, 4, 6, 7, 9, 10, 12, 13, 15)
+grid()}
 }
 \keyword{ fitting }
