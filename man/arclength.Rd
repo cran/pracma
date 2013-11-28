@@ -53,6 +53,15 @@ arclength(f, 0, 3*pi)
 f <- function(t) c(t, sin(t))
 arclength(f, 0, pi)             # true length  3.82019...
 
+## Example: Length of an ellipse with axes a = 1 and b = 0.5
+# parametrization x = a*cos(t), y = b*sin(t)
+a <- 1.0; b <- 0.5
+f <- function(t) c(a*cos(t), b*sin(t))
+L <- arclength(f, 0, 2*pi, tol = 1e-10)     #=> 4.84422411027
+# compare with elliptic integral of the second kind
+e <- sqrt(1 - b^2/a^2)                      # ellipticity
+L <- 4 * a * ellipke(e^2)$e                 #=> 4.84422411027
+
 \dontrun{
 ##  Example: oscillating 1-dimensional function (from 0 to 5)
 f <- function(x) x * cos(0.1*exp(x)) * sin(0.1*pi*exp(x))

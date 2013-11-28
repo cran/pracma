@@ -3,6 +3,34 @@
 \encoding{UTF-8}
 
 
+\section{Changes in Version 1.5.8 (2013-08-20)}{
+    \itemize{
+      \item Removed pltcross() and kmeanspp().
+    }
+}
+
+\section{Changes in Version 1.5.7 (2013-10-11)}{
+    \itemize{
+      \item runs.test() implements the statistical `Runs test'.
+      \item Corrected parameter `waypoints' in cintegral().
+    }
+}
+
+\section{Changes in Version 1.5.6 (2013-09-22)}{
+    \itemize{
+      \item odregress() orthogonal distance (or: total least-squares)
+        regression.
+      \item Changed maintainer name to its long form (CRAN request).
+    }
+}
+
+\section{Changes in Version 1.5.5 (2013-09-11)}{
+    \itemize{
+      \item L1linreg() L1 (a.k.a. LAD or median) linear regression.
+      \item geo_median() geometric median (minimizes sum of distances).
+    }
+}
+
 \section{Changes in Version 1.5.4 (2013-08-29)}{
     \itemize{
       \item rectint() rectangular intersection areas (Matlab style).
@@ -547,8 +575,8 @@
 
 \section{Changes in Version 0.8.7 (2011-11-30)}{
     \itemize{
-      \item deg2rad(), rad2deg()
-      \item figure() Matlab style, and pltcross() plotting crosses.
+      \item deg2rad(), rad2deg().
+      \item figure() Matlab style and pltcross() plotting crosses.
     }
 }
 
@@ -863,14 +891,14 @@
     }
 }
 
-\section{Changes in Version 0.4.4 (2001-05-23)}{
+\section{Changes in Version 0.4.4 (2011-05-23)}{
     \itemize{
       \item Dirichlet's eta() and Riemann's zeta() function.
       \item rmserr() different accuracy measures; std_err() standard error.
     }
 }
 
-\section{Changes in Version 0.4.3 (2001-05-22)}{
+\section{Changes in Version 0.4.3 (2011-05-22)}{
     \itemize{
       \item polypow() and polytrans() for polynomials.
       \item polyApprox() polynomial approximation using Chebyshev.
@@ -878,7 +906,7 @@
     }
 }
 
-\section{Changes in Version 0.4.2 (2001-05-17)}{
+\section{Changes in Version 0.4.2 (2011-05-17)}{
     \itemize{
       \item segm_intersect() and segm_distance() segment distances.
       \item inpolygon().

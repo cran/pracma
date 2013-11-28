@@ -1,7 +1,7 @@
 1df731e91fc9b9ec8bd99058b5e11758 *COPYING
-94d5c75eab796b281b7fd60aba9227a9 *DESCRIPTION
+feebcc36e3bd1ec4164791b061a71bf3 *DESCRIPTION
 608c67ad24c5df2399c1815bf21d96ba *NAMESPACE
-7c3d132acd6975e19710471a2d3a240b *NEWS
+a7d8103d5c79104ebd5ae58b107682a5 *NEWS
 8e2ec5415edc8417dd8da8cb53d8d0b9 *R/abm3.R
 556a17b11b7876e19e56a799aa125485 *R/accumarray.R
 e4d83d65938be51cbe18769012079bab *R/agmean.R
@@ -103,15 +103,14 @@ e10e53a3f69d3f6f937fa2c071341334 *R/hurst.R
 ab29151d9f62ff8791b5b32b91ea41f2 *R/hyperbolic.R
 6b12e3b0d673f494dfceb1169413454a *R/hypot.R
 5d8f535d7964cc3589325ce0d8b0b3ca *R/inpolygon.R
-7491720e2344c8ddb247cfe2179c3336 *R/integral.R
+be5f99246f792a6087730d1d842948e4 *R/integral.R
 33cfa660231a48d6dcc6796aa983c44e *R/integral2.R
-a5d42b4cb9178f4cb9b99c2529c02692 *R/interp1.R
+3c1c7df569447d7082f1f36c752165d6 *R/interp1.R
 a7eec4a294d924da5700ad81f86bb44f *R/interp2.R
 547ef452c198dfc77e94bdec5bd59157 *R/inv.R
 bb967115030a2ad25bf534f151f3beb2 *R/invlap.R
 e4d7d1216d4484b2c0aea86ff0c9ab50 *R/isprime.R
 dc89fabdab452c471b07d4c4235a2190 *R/itersolve.R
-f5c2cd9f6c649d8a541b2bb9a35396f6 *R/kmeanspp.R
 239058bb1a545c942a6e52ba2b679018 *R/kriging.R
 8042eddeb863a3c316cd4645c99aa77b *R/kron.R
 8c6e662ec6029bce5677f85ed4f82895 *R/l1linreg.R
@@ -148,6 +147,7 @@ e17e65a86178d35db3b292b3264209d6 *R/norm.R
 51a165a4141187bfcb436fb70e608e54 *R/nthroot.R
 b143e0102a1c4dd93b43ee1e7d2245c0 *R/numderiv.R
 e8ebd09763b98781069880e805c2d954 *R/ode23.R
+0e337f7057164fd73018b143ff23c46e *R/odregress.R
 e163938a5699839aa2b2cd4726f15f51 *R/pade.R
 69eac0c2321f2d49fec8b71fb0932c04 *R/pascal.R
 21c22cf9c25871947e144064f89006a4 *R/pchip.R
@@ -202,6 +202,7 @@ e63ba7247aaf72e25dedd1f1a340eac2 *R/rmserr.R
 3c0c222e651f9d1239fe8e60496fd691 *R/rosser.R
 cdb956e79c550f1e0b24ea66b8e23610 *R/rref.R
 e4d0bd6fac6edd6b4ec0049b8ab663de *R/runge.R
+885e5893ce8ddee87d1ad197602b4b10 *R/runstest.R
 2172e21cf2611fec497309a6ec4ddbf3 *R/savgol.R
 173d038957f6ea9d0c2a88b0723dbb7a *R/segment.R
 214bff066f5f17cafbba8379a7c4c883 *R/semilog.R
@@ -232,11 +233,11 @@ fbbbbfe94fec1640962dd18820c2d305 *R/whittaker.R
 f52be7d201dbc9a815c229b58dab11dd *R/wilkinson.R
 e09f92a7ba7e72fbfbc3e2dec887b3fc *R/zeta.R
 f9ccb58211bc1dfbd6910db8dc4d3250 *R/zzz.R
-0be7bde763b209e79792e0a8d40c1e86 *data/brown72.rda
-03d5693f1fd5eedfe1fa36ddc22b5348 *data/titanium.rda
+172c47238222e25e6f014ce7a9be2a8a *data/brown72.rda
+3c370b1a410b59b542aeb0e9f8b382eb *data/titanium.rda
 b0665e750dc8a153600fa13f2863447a *demo/00Index
 dadc96a0ba340629e215cdd44344dcb3 *demo/pracma.R
-49b9abe3fbc1e249352cad1af1685c03 *inst/NEWS.Rd
+4bdaddefb1234663c6cb70708be5da5a *inst/NEWS.Rd
 eea1168db7aa66ec4d8c040707b3554b *inst/doc/NEWS.pdf
 ca30ca6722fad23dde2a739ec7b57e4f *man/abm3.Rd
 b1d87bf72c53b58ecf57a72d677583d8 *man/accumarray.Rd
@@ -246,7 +247,7 @@ c9ac278601cafcd30780cfa7134210d4 *man/akima.Rd
 5d88a0d8036409e06cf42ed2ba39d589 *man/andor.Rd
 b7cd06192a6d3bcf1ba1b1c49f01efd9 *man/andrews.Rd
 18210f37cc8db522e20ba4d9d1c7351c *man/angle.Rd
-a1daa7dffe443862003164eb1d8d7ea6 *man/arclength.Rd
+d22dfc8e3e27742a8a5249043d039e1e *man/arclength.Rd
 7e284a426f5c259c3f41f17289f50360 *man/barylag.Rd
 b0123a086103cd7333f2be74c5e2311d *man/barylag2d.Rd
 a461d36d634becb0561e856b1d758569 *man/beep.Rd
@@ -361,7 +362,7 @@ e64e6f1e7f3a6b57a47df9b4a8ad2d0e *man/householder.Rd
 9023020a15e8e46fe7a94c2d8ad9aeee *man/inpolygon.Rd
 dbbdfb83c82fd73254543331f9d82858 *man/integral.Rd
 b4de23392630880fbf291aac2980971f *man/integral2.Rd
-4d1dd411bd0f5321b3f84afcf7e6a1fa *man/interp1.Rd
+1314563be79c4321d8d32d886613c1dc *man/interp1.Rd
 b5c10c231e12412ccdd157e8da31b5be *man/interp2.Rd
 04bfb2eeb463c2a0a8e6d0d3dc400a35 *man/inv.Rd
 6bd6c4a16ee82b97c0bf0cae1d5e69f7 *man/invlap.Rd
@@ -370,7 +371,6 @@ b5c10c231e12412ccdd157e8da31b5be *man/interp2.Rd
 9a4231348da80d3bf2f1572444e7db44 *man/isprime.Rd
 3ab4e5e262aca6e82f991433a4804a69 *man/itersolve.Rd
 d8bed0d44f02f810973fbbcbd78d5a4a *man/jacobian.Rd
-07ae14bd760457851ccb5849ec640870 *man/kmeanspp.Rd
 10b1e5a35777808ebfee4d194bcdf715 *man/kriging.Rd
 9849b0eb0f7e3912a9ce096660642c88 *man/kron.Rd
 f9d8237fc77fdc67f63e7406198e13fe *man/l1linreg.Rd
@@ -415,6 +415,7 @@ a8f5c277cf359ab48729435c26dac33e *man/nextpow2.Rd
 bb6c8fa1b099e603c8761b736fa33608 *man/numderiv.Rd
 bfe28186612b58ccb6e8297b6b9059f3 *man/numel.Rd
 daab2b1c66734d1fca0fe7e3c6700dcf *man/ode23.Rd
+b1605975d7b5fda135686d8af27b1dfb *man/odregress.Rd
 707249d0a5f0558d225e1c561d53aab2 *man/orth.Rd
 55df8637ff57d3d19031cc72a3e76fc8 *man/pade.Rd
 df8a720ad811188cbfb01ba1ae7d3e4c *man/pascal.Rd
@@ -480,6 +481,7 @@ c832a39761c22451763315f05c2d02c4 *man/rosser.Rd
 b3da2a1d5c9cdbeec4046162e9beb819 *man/rot90.Rd
 c438f9abc2e6592eff0f314a76709022 *man/rref.Rd
 0f91c57df0012344f42eca12fa2fa8fb *man/runge.Rd
+ce2f1659b247a8725b917b876cbbd4f6 *man/runstest.Rd
 c537e8b1fed55e528742e5e41a926fd3 *man/savgol.Rd
 413f7afa073c7f7ef4f21d827200be9f *man/segm_distance.Rd
 df9a1b1d905f7a132b75a12a03d28cf7 *man/segm_intersect.Rd

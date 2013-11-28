@@ -46,8 +46,8 @@ integral <- function(fun, xmin, xmax,
 
 
 cintegral <- function (fun, waypoints, method = NULL, reltol = 1e-6, ...) {
-    stopifnot(is.complex(points) || is.numeric(points))
-    if (length(points) <= 1) return(0 + 0i)
+    stopifnot(is.complex(waypoints) || is.numeric(waypoints))
+    if (length(waypoints) <= 1) return(0 + 0i)
 
     fun <- match.fun(fun)
     f <- function(z) fun(z, ...)

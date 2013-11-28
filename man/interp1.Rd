@@ -36,14 +36,15 @@ interp1(x, y, xi = x,
   Numeric vector representing values at points \code{xi}.
 }
 \note{
-  Method `spline' uses the ``fmm'' approach by Moler et al. and is identical
-  with the Matlab option of the same name.
+  Method `spline' uses the spline approach by Moler et al., and is identical 
+  with the Matlab option of the same name, but slightly different from R's 
+  spline function.
 
   The Matlab option ``cubic'' seems to have no direct correspondence in R.
   Therefore, we simply use \code{pchip} here.
 }
 \seealso{
-\code{\link{approx}}, \code{\link{splinefun}}
+\code{\link{approx}}, \code{\link{spline}}
 }
 \examples{
 x <- c(0.8, 0.3, 0.1, 0.6, 0.9, 0.5, 0.2, 0.0, 0.7, 1.0, 0.4)
@@ -58,6 +59,22 @@ plot(x, y); grid()
 lines(xi, yl, col="blue", lwd = 2)
 lines(xi, yn, col="black", lty = 2)
 lines(xi, ys, col="red")
-}
+  }
+
+## Difference between spline (Matlab) and spline (R).
+x <- 1:6
+y <- c(16, 18, 21, 17, 15, 12)
+xs <- linspace(1, 6, 51)
+ys <- interp1(x, y, xs, method = "spline")
+sp <- spline(x, y, n = 51, method = "fmm")
+
+\dontrun{
+plot(x, y, main = "Matlab and R splines")
+grid()
+lines(xs, ys, col = "red")
+lines(sp$x, sp$y, col = "blue")
+legend(4, 20, c("Matlab spline", "R spline"), 
+              col = c("red", "blue"), lty = 1)
+  }
 }
 \keyword{ math }

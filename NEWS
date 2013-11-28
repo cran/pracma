@@ -3,6 +3,22 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.5.8 (2013-11-28)
+
+    o interp1() with option method ``spline'' now uses Moler's spline 
+      functions, not R's spline function (for compatibility with Matlab).
+    o Removed pltcross() and kmeanspp().
+
+CHANGES IN VERSION 1.5.7 (2013-10-11)
+
+    o runs.test() implements the statistical 'Runs test'.
+    o Corrected parameter 'waypoints' in cintegral().
+
+CHANGES IN VERSION 1.5.6 (2013-09-22)
+
+    o odregress() orthogonal distance (or: total least-squares) regression.
+    o Changed maintainer name to its long form (CRAN request).
+
 CHANGES IN VERSION 1.5.5 (2013-09-11)
 
     o L1linreg() L1 (a.k.a. LAD or median) linear regression.
@@ -413,8 +429,8 @@ CHANGES IN VERSION 0.8.8 (2011-12-06)
 
 CHANGES IN VERSION 0.8.7 (2011-11-30)
 
-    o deg2rad(), rad2deg()
-    o figure() Matlab style, and pltcross() plotting crosses.
+    o deg2rad(), rad2deg().
+    o figure() Matlab style and pltcross() plotting crosses.
 
 CHANGES IN VERSION 0.8.6 (2011-11-21)
 
@@ -643,18 +659,18 @@ CHANGES IN VERSION 0.4-5 (2011-05-24)
     o Lebesgue coefficient: lebesgue().
     o poly2str() for string representation of a polynomial.
 
-CHANGES IN VERSION 0.4-4 (2001-05-23)
+CHANGES IN VERSION 0.4-4 (2011-05-23)
 
     o Dirichlet's eta() and Riemann's zeta() function.
     o rmserr() different accuracy measures; std_err() standard error.
 
-CHANGES IN VERSION 0.4-3 (2001-05-22)
+CHANGES IN VERSION 0.4-3 (2011-05-22)
 
     o polypow() and polytrans() for polynomials.
     o polyApprox() polynomial approximation using Chebyshev.
     o trigPoly(), trigApprox() for trigonometric regression.
 
-CHANGES IN VERSION 0.4-2 (2001-05-17)
+CHANGES IN VERSION 0.4-2 (2011-05-17)
 
     o segm_intersect() and segm_distance() segment distances.
     o inpolygon().
