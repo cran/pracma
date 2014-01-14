@@ -35,8 +35,11 @@ erfi(z)
   \code{erfz} is the complex, \code{erfi} the imaginary error function.
 }
 \value{
-  Real or complex number, the value of the function.
-  Please note that \code{erfz}, \code{erfi} are not (yet) vectorized.
+  Real or complex number(s), the value(s) of the function.
+}
+\author{
+  First version by Hans W Borchers;
+  vectorized version of \code{erfz} by Michael Lachmann.
 }
 \note{
   For the complex error function we used Fortran code from the book 

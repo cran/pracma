@@ -62,9 +62,14 @@ integral3(fun, xmin, xmax, ymin, ymax, zmin, zmax,
   With value \code{singular=TRUE}, this option causes \code{integral2} to use
   transformations to weaken singularities for better performance.
 
-  \code{integral3} reduces the triple integral by first integrating over
-  the second and third variable with \code{integral2}, and then integrating
-  over a single variable with \code{integral}.
+  \code{integral3} also accepts functions for the inner interval limits.
+  \code{ymin, ymax} must be constants or functions of one variable (\code{x}),
+  \code{zmin, zmax} constants or functions of two variables (\code{x, y}), all
+  functions vectorized.
+
+  The triple integral will be first integrated over the second and third 
+  variable with \code{integral2}, and then integrated over a single variable 
+  with \code{integral}.
 }
 \value{
   Returns a list with \code{Q} the integral and \code{error} the error term.
@@ -113,8 +118,30 @@ rmax <- function(theta) 1/(sin(theta) + cos(theta))
 I <- integral2(f, 0,pi/2, 0,rmax, sector = TRUE, singular = TRUE)
 I$Q + 1/2 - pi/4                # -4.998646e-11
 
-##  Compute a triple integral
-fun <- function(x, y, z) y*sin(x) + z*cos(x)
-integral3(fun, 0,pi, 0,1, -1,1) # - 2.0 => 0.0
+##  Examples of computing triple integrals
+f0 <- function(x, y, z) y*sin(x) + z*cos(x)
+integral3(f0, 0, pi, 0,1, -1,1) # - 2.0 => 0.0
+
+f1 <- function(x, y, z) exp(x+y+z)
+integral3(f1, 0, 1, 1, 2, 0, 0.5)
+## [1] 5.206447                         # 5.20644655
+
+f2 <- function(x, y, z) x^2 + y^2 + z
+a <- 2; b <- 4
+ymin <- function(x) x - 1
+ymax <- function(x) x + 6
+zmin <- -2
+zmax <- function(x, y) 4 + y^2
+integral3(f2, a, b, ymin, ymax, zmin, zmax)
+## [1] 47416.75556                      # 47416.7555556
+
+f3 <- function(x, y, z) sqrt(x^2 + y^2)
+a <- -2; b <- 2
+ymin <- function(x) -sqrt(4-x^2)
+ymax <- function(x)  sqrt(4-x^2)
+zmin <- function(x, y)  sqrt(x^2 + y^2)
+zmax <- 2
+integral3(f3, a, b, ymin, ymax, zmin, zmax)
+## [1] 8.37758                          # 8.377579076269617
 }
 \keyword{ math }

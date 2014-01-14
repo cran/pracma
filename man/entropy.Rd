@@ -1,13 +1,16 @@
 \name{approx_entropy}
 \alias{approx_entropy}
+\alias{sample_entropy}
 \title{
-  Approximate Entropy
+  Approximate and Sample Entropy
 }
 \description{
-  Calculates the approximate entropy of a time series.
+  Calculates the approximate or sample entropy of a time series.
 }
 \usage{
 approx_entropy(ts, edim = 2, r = 0.2*sd(ts), elag = 1)
+
+sample_entropy(ts, edim = 2, r = 0.2*sd(ts), tau = 1)
 }
 \arguments{
   \item{ts}{a time series.}
@@ -19,21 +22,27 @@ approx_entropy(ts, edim = 2, r = 0.2*sd(ts), elag = 1)
               set to the smallest lag at which the autocorrelation function
               of the time series is close to zero.
               (At the moment it cannot be changed by the user.)}
+  \item{tau}{delay time for subsampling, similar to \code{elag}.}
 }
 \details{
   Approximate entropy was introduced to quantify the the amount of
   regularity and the unpredictability of fluctuations in a time series.
   A low value of the entropy indicates that the time series is deterministic;
   a high value indicates randomness.
+
+  Sample entropy is conceptually similar with the following differences:
+  It does not count self-matching, and it does not depend that much on the
+  length of the time series.
 }
 \value{
-  The approximate entropy, a scalar value.
+  The approximate, or sample, entropy, a scalar value.
 }
 \note{
   There exists a translation of the Kaplan code to R by Ben Bolker, see
   \url{http://www.macalester.edu/~kaplan/hrv/doc/funs/apen.html}.\cr
-  This code here derives from a Matlab version at Mathwork's File Exchange,
-  ``Fast Approximate Entropy'', by Kijoon Lee under BSD license.
+  This code here derives from Matlab versions at Mathwork's File Exchange,
+  ``Fast Approximate Entropy'' and ``Sample Entropy'' by Kijoon Lee under
+  BSD license.
 }
 \references{
   Pincus, S.M. (1991). Approximate entropy as a measure of system complexity.
@@ -42,6 +51,10 @@ approx_entropy(ts, edim = 2, r = 0.2*sd(ts), elag = 1)
   Kaplan, D., M. I. Furman, S. M. Pincus, S. M. Ryan, L. A. Lipsitz, and
   A. L. Goldberger (1991). Aging and the complexity of cardiovascular
   dynamics, Biophysics Journal, Vol. 59, pp. 945--949.
+
+  Yentes, J.M., N. Hunt, K.K. Schmid, J.P. Kaipust, D. McGrath, N. Stergiou
+  (2012). The Appropriate use of approximate entropy and sample entropy with
+  short data sets. Ann. Biomed. Eng.
 }
 \seealso{
   \code{RHRV::CalculateApEn}
@@ -49,10 +62,12 @@ approx_entropy(ts, edim = 2, r = 0.2*sd(ts), elag = 1)
 \examples{
 ts <- rep(61:65, 10)
 approx_entropy(ts, edim = 2)                      # -0.000936195
+sample_entropy(ts, edim = 2)                      #  0
 
 set.seed(8237)
 approx_entropy(rnorm(500), edim = 2)              # 1.48944  high, random
 approx_entropy(sin(seq(1,100,by=0.2)), edim = 2)  # 0.22831  low,  deterministic
+sample_entropy(sin(seq(1,100,by=0.2)), edim = 2)  # 0.2359326
 
 \dontrun{(Careful: This will take several minutes.)
 # generate simulated data

@@ -31,7 +31,7 @@ distmat <- function(X, Y)
     XX <- matrix( rep(apply(X*X, 1, sum), n), m, n, byrow=F )
     YY <- matrix( rep(apply(Y*Y, 1, sum), m), m, n, byrow=T )
 
-    sqrt(XX + YY - 2*XY)
+    sqrt(pmax(XX + YY - 2*XY, 0))
 }
 
 

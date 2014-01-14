@@ -2,12 +2,29 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
+CHANGES IN VERSION 1.6.1 (2014-01-14)
+
+    o samp_entropy() complements approx_entropy() for short time series.
+    o Removed NEWS.Rd and NEWS.pdf in favour of NEWS.
+
+CHANGES IN VERSION 1.6.0 (2013-12-06)
+
+    o integral3() now handles functions as inner interval limits.
+    o poly_crossings() calculates crossing points of two polygons.
+    o erfz() complex error function vectorized (thanks to Michael Lachmann).
+
+CHANGES IN VERSION 1.5.9 (2013-11-30)
+
+    o muller() implements Muller's root-finding method [Mueller, 1956],
+      especially suited for polynomials and complex functions.
+    o Inserted a safeguard for the distmat() function to prevent different
+      results on Mac OS X, (Ubuntu) Linux, and Windows operating systems.
+    o Removed pltcross() and kmeanspp().
 
 CHANGES IN VERSION 1.5.8 (2013-11-28)
 
-    o interp1() with option method ``spline'' now uses Moler's spline 
-      functions, not R's spline function (for compatibility with Matlab).
-    o Removed pltcross() and kmeanspp().
+    o interp1() with option method ``spline'' now computes Moler's spline 
+      functions, for compatibility with Matlab (hint by Boudewijn Klijn).
 
 CHANGES IN VERSION 1.5.7 (2013-10-11)
 
@@ -574,7 +591,6 @@ CHANGES IN VERSION 0.6-1 (2011-06-25)
 
 CHANGES IN VERSION 0.6-0 (2011-06-24)
 
-    o muller() Muller's root finding method.
     o Added differential equation example to expm()'s help page.
     o Changed NEWS file to become simpler (no subsections).
 

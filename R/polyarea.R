@@ -54,3 +54,55 @@ poly_length <- function(x, y) {
     dX <- diff(X)
     return(sum(sqrt(rowSums(dX^2))))
 }
+
+
+poly_crossings <- function(L1, L2) {
+    stopifnot(is.numeric(L1), is.numeric(L2))
+    # L1, L2 marices with two rows: rbind(x, y)
+    if (!is.matrix(L1) || !is.matrix(L2) || nrow(L1) != 2 || nrow(L2) != 2)
+        stop("Arguments 'L1', 'L2' must be matrices with 2 rows.")
+
+    # Utility function
+    Dd <- function(x, y) {
+        x1 <- x[, 1:(ncol(x)-1)]
+        x2 <- x[, 2:ncol(x)]
+        y1 <- repmat(as.matrix(y), 1, ncol(x1))
+        y2 <- repmat(y, nrow(x2), 1)
+        (x1 - y1) * (x2 - y1)
+    }
+
+    # Preliminary stuff
+    x1  <- L1[1, ];    x2  <- L2[1, ]
+    y1  <- L1[2, ];    y2  <- L2[2, ]
+    dx1 <- diff(x1);   dy1 <- diff(y1)
+    dx2 <- diff(x2);   dy2 <- diff(y2)
+    n1  <- length(x1); n2  <- length(x2)
+
+    # Determine 'signed differences'
+    S1 <- dx1 * y1[1:(n1-1)] - dy1 * x1[1:(n1-1)]
+    S2 <- dx2 * y2[1:(n2-1)] - dy2 * x2[1:(n2-1)]
+    X1 <- outer(dx1, y2, "*") - outer(dy1, x2, "*")
+    X2 <- outer(y1, dx2, "*") - outer(x1, dy2, "*")
+
+    C1 <- Dd(X1, S1)
+    C2 <- t(Dd(t(X2), S2))
+
+    # Segments with expected intersection
+    ij <- which((C1 <= 0) & (C2 <= 0), arr.ind = TRUE)
+    if (length(ij) == 0)
+        return(c())
+
+    # Prepare for output
+    i <- ij[, 1]; j <- ij[, 2]
+    L <- dy2[j] * dx1[i] - dy1[i] * dx2[j]
+    i <- i[L != 0]; j <- j[L != 0]
+    L <- L[L != 0]              # avoid divisions by 0
+
+    # Get the common points
+    P <- cbind(dx2[j] * S1[i] - dx1[i] * S2[j],
+               dy2[j] * S1[i] - dy1[i] * S2[j]) / cbind(L, L)
+    # TO DO: throw out equal points
+
+    colnames(P) <- c('x', 'y')
+    return(P)
+}

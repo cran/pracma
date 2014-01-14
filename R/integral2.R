@@ -252,19 +252,44 @@ integral2 <- function(fun, xmin, xmax, ymin, ymax, sector = FALSE,
 
 #-- --------------------------------------------------------------------------
 
-integral3 <- function(fun, xmin, xmax, ymin, ymax, zmin, zmax,
-                        reltol = 1e-6, ...) {
-    stopifnot(is.numeric(xmin), length(xmin) == 1, is.numeric(xmax), length(xmax) == 1,
-              is.numeric(ymin), length(ymin) == 1, is.numeric(ymax), length(ymax) == 1,
-              is.numeric(zmin), length(zmin) == 1, is.numeric(zmax), length(zmax) == 1)
-
+integral3 <- function (fun, xmin, xmax, ymin, ymax, zmin, zmax, 
+                          reltol = 1e-06, ...) 
+{
     fct <- match.fun(fun)
     fun <- function(x, y, z) fct(x, y, z, ...)
 
-    fx <- function(x) {
-        fyz <- function(y, z) fun(x, y, z)
-        integral2(fyz, ymin, ymax, zmin, zmax, reltol = reltol)$Q
+    if (is.function(ymin)) { yBvar <- ymin
+    } else if (is.numeric(ymin)) {
+        yBvar <- function(x) rep(ymin, length(x))
+    } else {
+        stop("Argument 'ymin' must be a constant or a function of x.")
     }
+    if (is.function(ymax)) { yTvar <- ymax
+    } else if (is.numeric(ymax)) {
+        yTvar <- function(x) rep(ymax, length(x))
+    } else {
+        stop("Argument 'ymax' must be a constant or a function of x.")
+    }
+    if (is.function(zmin)) {zBvar <- zmin
+    } else if (is.numeric(zmin)) {
+        zBvar <- function(x, y) rep(zmin, length(y))
+    } else {
+        stop("Argument 'zmin' must be a constant or a function of x and y.")
+    }
+    if (is.function(zmax)) { zTvar <- zmax
+    } else if (is.numeric(zmax)) {
+        zTvar <- function(x, y) rep(zmax, length(y))
+    } else {
+        stop("Argument 'zmax' must be a constant or a function of x and y.")
+    }
+
+    fx <- function(x) {
+        z1 <- function(y) zBvar(x, y)
+        z2 <- function(y) zTvar(x, y)
+        fyz <- function(y, z) fun(x, y, z)
+        integral2(fyz, yBvar(x), yTvar(x), z1, z2, reltol = reltol)$Q
+    }
+
     f <- Vectorize(fx)
-    integral(f, xmin, xmax, reltol = reltol)
+    integrate(f, xmin, xmax, subdivisions = 300L, rel.tol = reltol)$value
 }
