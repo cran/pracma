@@ -1,9 +1,9 @@
 ##
-##  b r e n t D e k k e r . R
+##  b r e n t d e k k e r . R  Brent-Dekker Algorithm
 ##
 
 
-brent_dekker <- function(f, a, b, ...,
+brentDekker <- function(f, a, b,
                         maxiter = 100, tol = .Machine$double.eps^0.5)
 # Brent and Dekker's root finding method,
 # based on bisection, secant method and quadratic interpolation
@@ -11,19 +11,12 @@ brent_dekker <- function(f, a, b, ...,
     stopifnot(is.numeric(a), is.numeric(b),
               length(a) == 1, length(b) == 1)
 
-    err <- try(fun <- match.fun(f), silent = TRUE)
-    if (class(err) == "try-error") {
-        stop("Argument function 'f' not known in parent environment.")
-    } else {
-        f <- function(x) fun(x, ...)
-    }
-
 	x1 <- a; f1 <- f(x1)
-	if (f1 == 0) return(a)
+	if (f1 == 0) return(list(root = a, f.root = 0, f.calls = 1, estim.prec = 0))
 	x2 <- b; f2 <- f(x2)
-	if (f2 == 0) return(b)
+	if (f2 == 0) return(list(root = b, f.root = 0, f.calls = 1, estim.prec = 0))
 	if (f1*f2 > 0.0)
-	    stop("Root is not bracketed in [a, b].")
+	    stop("Brent-Dekker: Root is not bracketed in [a, b].")
 
 	x3 <- 0.5*(a+b)
 	# Beginning of iterative loop
@@ -74,10 +67,10 @@ brent_dekker <- function(f, a, b, ...,
 		x3 <- x;
 	}
 
-    if (niter > maxiter) {
+    if (niter > maxiter)
         warning("Maximum numer of iterations, 'maxiter', has been reached.")
-        return(NA)
-    } else {
-        return(x0)
-    }
+
+    prec <- min(abs(x1-x3), abs(x2-x3))
+    return(list(root = x0, f.root = f(x0),
+                f.calls = niter+2, estim.prec = prec))
 }

@@ -104,7 +104,7 @@
   xa <- r * cos(t)
   ya <- r*sin(t)
   lines(xa, ya, type = "l", lwd = 2, col = "red")
-  legend(-6, -2, c("Logarithmic", "Archimedian"),
+  legend(-6.2, -1.0, c("Logarithmic", "Archimedian"),
          lwd = 2, col = c("blue", "red"), bg = "whitesmoke")
 
   L1 <- rbind(xl, yl)

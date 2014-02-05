@@ -1,14 +1,21 @@
 \name{complexstep}
 \alias{complexstep}
-\alias{complexstepJ}
-\title{Complex Step Derivation}
+\alias{grad_csd}
+\alias{jacobian_csd}
+\alias{hessian_csd}
+\alias{laplacian_csd}
+\title{Complex Step Derivatives}
 \description{
-  Complex step derivatives of real-valued functions.
+  Complex step derivatives of real-valued functions, including gradients,
+  Jacobians, and Hessians.
 }
 \usage{
 complexstep(f, x0, h = 1e-20, ...)
 
-complexstepJ(f, x0, h = 1e-20, ...)
+grad_csd(f, x0, h = 1e-20, ...)
+jacobian_csd(f, x0, h = 1e-20, ...)
+hessian_csd(f, x0, h = 1e-20, ...)
+laplacian_csd(f, x0, h = 1e-20, ...)
 }
 \arguments{
   \item{f}{Function that is to be differentiated.}
@@ -27,6 +34,18 @@ complexstepJ(f, x0, h = 1e-20, ...)
     \item \code{x0} \bold{and} \code{f(x0)} must be real.
     \item \code{h} is real and \emph{very} small: \code{0 < h << 1}.
   }
+
+  \code{complexstep} handles differentiation of univariate functions, while
+  \code{grad_csd} and \code{jacobian_csd} compute gradients and Jacobians by
+  applying the complex step approach iteratively. Please understand that these 
+  functions are not vectorized, but \code{complexstep} is.
+
+  As complex step cannot be applied twice (the first derivative does not
+  fullfil the conditions), \code{hessian_csd} works differently. For the
+  first derivation, complex step is used, to the one time derived function
+  Richardson's method is applied. The same applies to \code{lapalacian_csd}.
+
+  
 }
 \value{
   \code{complexstep(f, x0)} returns the derivative \eqn{f'(x_0)} of \eqn{f}
@@ -45,7 +64,7 @@ complexstepJ(f, x0, h = 1e-20, ...)
   Taylor formula.
 }
 \seealso{
-\code{\link{jacobian}}
+\code{\link{numderiv}}
 }
 \examples{
 ##  Example from Martins et al.
@@ -56,6 +75,31 @@ f <- function(x) exp(x)/sqrt(sin(x)^3 + cos(x)^3)  # derivative at x0 = 1.5
 complexstep(f, 1.5)       # 4.05342789389862, error 1e-15
 # Symbolic calculation:   # 4.05342789389862
 
-complexstepJ(f, 1.5)
+jacobian_csd(f, 1.5)
+
+f1 <- function(x) sum(sin(x))
+grad_csd(f1, rep(2*pi, 3))
+## [1] 1 1 1
+
+laplacian_csd(f1, rep(pi/2, 3))
+## [1] -3
+
+f2 <- function(x) c(sin(x[1]) * exp(-x[2]))
+hessian_csd(f2, c(0.1, 0.5, 0.9))
+##             [,1]        [,2] [,3]
+## [1,] -0.06055203 -0.60350053    0
+## [2,] -0.60350053  0.06055203    0
+## [3,]  0.00000000  0.00000000    0
+
+f3 <- function(u) {
+    x <- u[1]; y <- u[2]; z <- u[3]
+    matrix(c(exp(x^+y^2), sin(x+y), sin(x)*cos(y), x^2 - y^2), 2, 2)
+  }
+jacobian_csd(f3, c(1,1,1))
+##            [,1]       [,2] [,3]
+## [1,]  2.7182818  0.0000000    0
+## [2,] -0.4161468 -0.4161468    0
+## [3,]  0.2919266 -0.7080734    0
+## [4,]  2.0000000 -2.0000000    0
 }
 \keyword{ math }
