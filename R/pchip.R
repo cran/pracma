@@ -18,12 +18,12 @@ pchip <- function(xi, yi, x) {
     # Find subinterval indices k so that xi[k] <= x < xi[k+1]
     k <- rep(1, length(x))
     for (j in 2:(n-1)) {
-       k[xi[j] <= x] <- j;
+       k[xi[j] <= x] <- j
     }
 
     # Evaluate interpolant
     s <- x - xi[k]
-    v = yi[k] + s*(d[k] + s*(a[k] + s*b[k]));
+    v <- yi[k] + s*(d[k] + s*(a[k] + s*b[k]))
 
     return(v)
 }
@@ -37,7 +37,7 @@ pchip <- function(xi, yi, x) {
     k <- which(sign(delta[1:(n-2)]) * sign(delta[2:(n-1)]) > 0) + 1
     w1 <- 2*h[k] + h[k-1]
     w2 <- h[k]+2*h[k-1]
-    d[k] = (w1+w2) / (w1/delta[k-1] + w2/delta[k])
+    d[k] <- (w1+w2) / (w1/delta[k-1] + w2/delta[k])
 
     # Slopes at endpoints
     d[1] <- .pchipend(h[1], h[2], delta[1], delta[2])

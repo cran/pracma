@@ -3,29 +3,53 @@
 ##
 
 
-bisect <- function(f, a, b, maxiter=100, tol=.Machine$double.eps^0.5)
-# Bisection search for zero of a univariate function in a bounded interval
+# bisect <- function(f, a, b, maxiter=100, tol=.Machine$double.eps^0.5)
+# # Bisection search for zero of a univariate function in a bounded interval
+# {
+#     if (f(a)*f(b) > 0) stop("f(a) and f(b) must have different signs.")
+#     x1 <- min(a, b); x2 <- max(a,b)
+#     xm <- (x1+x2)/2.0
+#     n <- 0
+#     while (abs(x1-x2)/2.0 > tol) {
+#         n <- n+1
+#         if (abs(f(xm)) <= tol) break
+#         if (f(x1)*f(xm) < 0) {
+#             x2 <- xm
+#         } else {
+#             x1 <- xm
+#         }
+#         xm <- (x1+x2)/2.0  # xm <- x1 - f(x1) * (x2-x1) / (f(x2)-f(x1))
+#         if (n >= maxiter) break
+#     }
+#     return(list(root=xm, f.root=f(xm), iter=n, estim.prec=abs(x1-x2)/2.0))
+# }
+
+
+bisect <- function(f, a, b, maxiter = 100, tol = NA)
+# Bisection search, trimmed for exactness, not no. of iterations
 {
+    if (!is.na(tol)) warning("Deprecated: Argument 'tol' not used anymore.")
 	if (f(a)*f(b) > 0) stop("f(a) and f(b) must have different signs.")
 	x1 <- min(a, b); x2 <- max(a,b)
 	xm <- (x1+x2)/2.0
-	n <- 0
-	while (abs(x1-x2)/2.0 > tol) {
+	n <- 1
+	while (x1 < xm && xm < x2 && n < maxiter) {
 		n <- n+1
-		if (abs(f(xm)) <= tol) break
-		if (f(x1)*f(xm) < 0) {
+		if (sign(x1) != sign(x2) && x1 != 0 && x2 != 0) {
+		    xm <- 0.0
+		    if (f(xm) == 0.0) {x1 <- x2 <- xm; break}
+		}
+		if (sign(f(x1)) != sign(f(xm))) {
 			x2 <- xm
 		} else {
 			x1 <- xm
 		}
-		xm <- (x1+x2)/2.0  # xm <- x1 - f(x1) * (x2-x1) / (f(x2)-f(x1))
-		if (n >= maxiter) break
+		xm <- (x1 + x2) / 2.0
 	}
-	return(list(root=xm, f.root=f(xm), iter=n, estim.prec=abs(x1-x2)/2.0))
+	return(list(root=xm, f.root=f(xm), iter=n, estim.prec=abs(x1-x2)))
 }
 
-
-regulaFalsi <- function(f, a, b, maxiter=100, tol=.Machine$double.eps^0.5)
+regulaFalsi <- function(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
 #Regula Falsi search for zero of a univariate function in a bounded interval
 {
 	x1 <- a;      x2 <- b
@@ -79,3 +103,4 @@ secant <- function(fun, a, b, ...,
 	}
 	return(list(root=x3, f.root=f3, iter=n, estim.prec=2*abs(x3-x2)))
 }
+

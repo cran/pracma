@@ -78,24 +78,24 @@ lsqnonlin <- function(fun, x0, options = list(), ...) {
 }
 
 
-lsqnonneg <- function(C, d) {
-    stopifnot(is.numeric(C), is.numeric(d))
-    if (!is.matrix(C) || !is.vector(d))
-        stop("Argument 'C' must be a matrix, 'd' a vector.")
-    n <- nrow(C); m <- ncol(C); ld <- length(d)
-    if (n != ld)
-        stop("Arguments 'C' and 'd' have nonconformable dimensions.")
-
-    fn <- function(x) C %*% as.matrix(exp(x)) - d
-    x0 <- rep(0, m)
-    sol <- lsqnonlin(fn, x0)
-
-    xs <- exp(sol$x)
-    resi <- d - C %*% as.matrix(xs)
-    resn <- Norm(resi)
-    return(list(x = xs, resnorm = resn, residual = resi, 
-                exitflag = sol$errmess))
-}
+# lsqnonneg <- function(C, d) {
+#     stopifnot(is.numeric(C), is.numeric(d))
+#     if (!is.matrix(C) || !is.vector(d))
+#         stop("Argument 'C' must be a matrix, 'd' a vector.")
+#     n <- nrow(C); m <- ncol(C); ld <- length(d)
+#     if (n != ld)
+#         stop("Arguments 'C' and 'd' have nonconformable dimensions.")
+# 
+#     fn <- function(x) C %*% as.matrix(exp(x)) - d
+#     x0 <- rep(0, m)
+#     sol <- lsqnonlin(fn, x0)
+# 
+#     xs <- exp(sol$x)
+#     resi <- d - C %*% as.matrix(xs)
+#     resn <- Norm(resi)
+#     return(list(x = xs, resnorm = resn, residual = resi, 
+#                 exitflag = sol$errmess))
+# }
 
 
 lsqcurvefit <- function(fun, p0, xdata, ydata) {

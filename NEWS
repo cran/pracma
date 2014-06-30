@@ -2,6 +2,37 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
+CHANGES IN VERSION 1.7.0 (2014-06-30)
+
+    o ode45() ODE solver using Dormand-Prince (4,5) coefficients.
+    o ode78() ODE solver using Fehlberg (7,8) coefficients.
+    o cintegral() renamed to line_integral()
+      (alias cintegral() is deprecated until version 1.7.5).
+
+CHANGES IN VERSION 1.6.9 (2014-06-14)
+
+    o Version 1.6.8 "Failed to build" on R-Forge.
+      [Maybe it's time to move pracma to a github repository.]
+
+CHANGES IN VERSION 1.6.8 (2014-06-07)
+
+    o nelmin() a more efficient and accurate version of Nelder-Mead.
+    o nelminb() Nelder-Mead in bounded regions (applies a transformation).
+
+CHANGES IN VERSION 1.6.7 (2014-05-23)
+
+    o trisolve() stopping for singular tridiagonal matrices.
+    o romberg() slightly improved accuracy and speed.
+
+CHANGES IN VERSION 1.6.6 (2014-04-12)
+
+    o Corrected rref() (as pointed out by Peter Audano).
+
+CHANGES IN VERSION 1.6.5 (2014-02-24)
+
+    o lsqnonneg() changed to an active-set approach.
+    o bisect() trimmed bisection to return almost exact results.
+
 CHANGES IN VERSION 1.6.4 (2014-02-05)
 
     o halley() Halley's variant of the Newton-Raphson method.
@@ -20,7 +51,7 @@ CHANGES IN VERSION 1.6.2 (2014-01-19)
     o Removed zeroin(); for fzero() a variation of Brent-Dekker is used,
       that applies cubic instead of quadratic interpolation.
     o brent_dekker() renamed brentDekker(); it returns a list now.
-    o corrected an oversight in newtonRaphson().
+    o Corrected an oversight in newtonRaphson().
 
 CHANGES IN VERSION 1.6.1 (2014-01-14)
 

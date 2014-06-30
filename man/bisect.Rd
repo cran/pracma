@@ -8,7 +8,7 @@ Rootfinding Through Bisection
 Finding roots of univariate functions in bounded intervals.
 }
 \usage{
-bisect(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
+bisect(f, a, b, maxiter = 100, tol = NA)
 
 regulaFalsi(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
 }
@@ -19,12 +19,17 @@ regulaFalsi(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
   \item{tol}{absolute tolerance; default \code{eps^(1/2)}}
 }
 \details{
-  Well known root finding algorithms for real, univariate, continuous
-  functions. Bisection works in any case if the function has opposite
-  signs at the endpoints of the interval.
+  ``Bisection'' is a well known root finding algorithms for real, univariate, 
+  continuous functions. Bisection works in any case if the function has
+  opposite signs at the endpoints of the interval.
 
-  ``Regula falsi'' combines bisection and secant methods. The so-called
-  `Illinois' improvement is used.
+  \code{bisect} stops when floating point precision is reached, attaching
+  a tolerance is no longer needed. This version is trimmed for exactness, 
+  not speed. Special care is taken when 0.0 is a root of the function.
+  Argument 'tol' is deprecated and not used anymore.
+
+  ``Regula falsi'' combines bisection and secant methods.
+  The so-called `Illinois' improvement is used.
 }
 \value{
   Return a list with components \code{root}, \code{f.root}, 
@@ -39,10 +44,18 @@ regulaFalsi(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
 \code{\link{ridders}}
 }
 \examples{
+bisect(sin, 3.0, 4.0)
+# $root             $f.root             $iter   $estim.prec
+# 3.1415926536      1.2246467991e-16    52      4.4408920985e-16
+
+bisect(sin, -1.0, 1.0)
+# $root             $f.root             $iter   $estim.prec
+# 0                 0                   2       0
+
 # Legendre polynomial of degree 5
 lp5 <- c(63, 0, -70, 0, 15, 0)/8
 f <- function(x) polyval(lp5, x)
-bisect(f, 0.6, 1)       # 0.9061798453 correct to  9 decimals
-regulaFalsi(f, 0.6, 1)  # 0.9061798459 correct to 10 decimals
+bisect(f, 0.6, 1)       # 0.9061798453      correct to 15 decimals
+regulaFalsi(f, 0.6, 1)  # 0.9061798459      correct to 10 decimals
 }
 \keyword{ math }

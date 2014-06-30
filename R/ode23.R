@@ -81,3 +81,4 @@ ode23 <- function(f, t0, tfinal, y0, ..., rtol = 1e-3, atol = 1e-6) {
     # Return results
     return(list(t = as.matrix(tout), y = yout))
 }
+

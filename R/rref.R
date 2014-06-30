@@ -4,30 +4,37 @@
 
 
 rref <- function(A) {
-    m <- A
-    pivot <- 1
-    norow <- nrow(m)
-    nocolumn <- ncol(m)
-    for(r in 1:norow) {
-        if ( nocolumn <= pivot ) break;
-        i <- r
-        while( m[i,pivot] == 0 ) {
-            i <- i + 1
-            if ( norow == i ) {
-                i <- r
-                pivot <- pivot + 1
-                if ( nocolumn == pivot ) return(m)
+    stopifnot(is.numeric(A))
+    if (!is.matrix(A))
+        stop("Input parameter 'A' must be a matrix.")
+
+    nr <- nrow(A); nc <- ncol(A)
+    tol <- eps() * max(nr, nc) * max(abs(A))
+
+    r <- 1
+    for (i in 1:nc) {
+        pivot <- which.max(abs(A[r:nr, i]))
+        pivot <- r + pivot - 1
+        m <- abs(A[pivot, i])
+        if (m <= tol) {
+            A[r:nr, i] <- 0  # zeros(nr-r+1, 1)
+        } else {
+            A[c(pivot, r), i:nc] <- A[c(r, pivot), i:nc]
+            A[r, i:nc] <- A[r, i:nc] / A[r, i]
+            if (r == 1) {
+                ridx <- c((r+1):nr)
+            } else if (r == nr) {
+                ridx <- c(1:(r-1))
+            } else {
+                ridx <- c(1:(r-1), (r+1):nr)
             }
+            A[ridx, i:nc] <- A[ridx, i:nc] - 
+                             A[ridx, i, drop=FALSE] %*% A[r, i:nc, drop=FALSE]
+            if (r == nr) break
+            r <- r+1
         }
-        trow <- m[i, ]
-        m[i, ] <- m[r, ]
-        m[r, ] <- trow
-        m[r, ] <- m[r, ] / m[r, pivot]
-        for(i in 1:norow) {
-            if ( i != r )
-                m[i, ] <- m[i, ] - m[r, ] * m[i, pivot]
-        }
-        pivot <- pivot + 1
     }
-    return(m)
+    A[abs(A) < tol] <- 0
+    return(A)
 }
+

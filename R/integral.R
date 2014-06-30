@@ -5,11 +5,11 @@
 
 integral <- function(fun, xmin, xmax,
                 method = c("Kronrod","Richardson","Clenshaw","Simpson","Romberg"),
-                vectorized = TRUE, arrayValued = FALSE, waypoints = NULL,
+                vectorized = TRUE, arrayValued = FALSE,
                 reltol = 1e-8, abstol = 0, ...)
 {
-    stopifnot(is.numeric(xmin) || is.complex(xmin), length(xmin) == 1,
-              is.numeric(xmax) || is.complex(xmax), length(xmax) == 1)
+    stopifnot(is.numeric(xmin), length(xmin) == 1,
+              is.numeric(xmax), length(xmax) == 1)
     fun <- match.fun(fun)
     f <- function(x) fun(x, ...)
     # if (!vectorized(f))       # check with those routines called
@@ -19,11 +19,7 @@ integral <- function(fun, xmin, xmax,
     method <- match.arg(method)
     tol <- reltol               # abstol not used
 
-    if (is.complex(xmin) || is.complex(xmax) || !is.null(waypoints)) {
-        Q <- cintegral(f, waypoints = as.complex(c(xmin, waypoints, xmax)),
-                        method = method, tol = reltol)
-
-    } else if (arrayValued) {
+    if (arrayValued) {
         if (method != "Simpson")
             warning("Only method 'Simpson' available for array-valued functions.")
         Q <- quadv(f, xmin, xmax, tol = tol)$Q
@@ -40,13 +36,15 @@ integral <- function(fun, xmin, xmax,
                 "Simpson"    = simpadpt(f, xmin, xmax, tol = tol)
                 )
     }
-    Q <- Q
+
     return(Q)
 }
 
 
-cintegral <- function (fun, waypoints, method = NULL, reltol = 1e-6, ...) {
-    stopifnot(is.complex(waypoints) || is.numeric(waypoints))
+line_integral <- function (fun, waypoints, method = NULL, reltol = 1e-8, ...) {
+    stopifnot(is.complex(waypoints) || is.numeric(waypoints),
+              is.null(method) || is.character(method))
+
     if (length(waypoints) <= 1) return(0 + 0i)
 
     fun <- match.fun(fun)
@@ -61,10 +59,20 @@ cintegral <- function (fun, waypoints, method = NULL, reltol = 1e-6, ...) {
         f1 <- function(t) Re(f(a + t*d))
         f2 <- function(t) Im(f(a + t*d))
 
-        Qre <- integral(f1, 0, 1, reltol = reltol, method = method)
-        Qim <- integral(f2, 0, 1, reltol = reltol, method = method)
+        if (is.null(method)) {
+            Qre <- integrate(f1, 0, 1, subdivisions = 300L, rel.tol = reltol)$value
+            Qim <- integrate(f2, 0, 1, subdivisions = 300L, rel.tol = reltol)$value
+        } else {
+            Qre <- integral(f1, 0, 1, reltol = reltol, method = method)
+            Qim <- integral(f2, 0, 1, reltol = reltol, method = method)
+        }
         Q <- Q + d * (Qre + Qim*1i)
     }
 
     return(Q)
+}
+
+cintegral <- function (fun, waypoints, method = NULL, reltol = 1e-8, ...) {
+    warning("cintegral() is deprecated: use line_integral() instead.")
+    line_integral(fun, waypoints, method = NULL, reltol = 1e-6, ...)
 }

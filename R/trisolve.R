@@ -35,6 +35,10 @@ trisolve <- function(a, b, d, rhs) {
             x[i+1] <- -h*si + x[i+1]*co
         }
     }
+
+    if (any(a == 0.0))
+        stop("Triangular matrix is singular -- system not solvable.")
+
     x[n]   <- x[n]/a[n]
     x[n-1] <- ( x[n-1] - b[n-1]*x[n] ) / a[n-1]
     for (i in (n-2):1) {
@@ -42,4 +46,3 @@ trisolve <- function(a, b, d, rhs) {
     }
     return(x)
 }
-

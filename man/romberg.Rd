@@ -7,7 +7,7 @@
   Romberg Integration
 }
 \usage{
-romberg(f, a, b, maxit = 50, tol = 1e-6, ...)
+romberg(f, a, b, maxit = 25, tol = 1e-12, ...)
 }
 \arguments{
   \item{f}{function to be integrated.}
@@ -18,9 +18,9 @@ romberg(f, a, b, maxit = 50, tol = 1e-6, ...)
 }
 \details{
   Simple Romberg integration with an explicit Richardson method applied
-  to a series of trapezoidal integrals. This scheme works best with very
-  smmoth functions and needs the least number of function calls among all
-  integration routines.
+  to a series of trapezoidal integrals. This scheme works best with smooth
+  and non-oscillatory functions and needs the least number of function calls
+  among all integration routines.
 
   The function does \emph{not} need to be vectorized.
 }
@@ -40,12 +40,12 @@ romberg(f, a, b, maxit = 50, tol = 1e-6, ...)
   \code{\link{integrate}}, \code{\link{quadgr}}
 }
 \examples{
-romberg(sin, 0, pi, tol = 1e-12)    #  2.000000000000001 , rel.error 0
-romberg(exp, 0, 1,  tol = 1e-12)    #  1.718281828458432 , rel error 3.6e-13
+romberg(sin, 0, pi, tol = 1e-15)    #  2                 , rel.error 1e-15
+romberg(exp, 0, 1,  tol = 1e-15)    #  1.718281828459044 , rel error 1e-15
                                     #  1.718281828459045 , i.e. exp(1) - 1
 
 f <- function(x, p) sin(x) * cos(p*x)
-romberg(f, 0, pi, tol = 1e-10, p = 2)   # 2/3
-# value: -0.6666667, iter: 6, rel.error: 6.57967e-11
+romberg(f, 0, pi, p = 2)            #  2/3               , abs.err 1.5e-14
+# value: -0.6666667, iter: 7, rel.error: 1e-12
 }
 \keyword{ math }

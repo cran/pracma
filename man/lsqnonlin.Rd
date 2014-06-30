@@ -55,8 +55,7 @@ lsqcurvefit(fun, p0, xdata, ydata)
   bad starting points.
 
   \code{lsqnonneg} solves the linear least-squares problem \code{C x - d},
-  \code{x} nonnegative, transforming it with the `trick' \code{x --> exp(x)}
-  into a nonlinear one and solving it applying \code{lsqnonlin}.
+  \code{x} nonnegative, treating it through an active-set approach..
 
   \code{lsqsep} solves the separable least-squares fitting problem
 
@@ -84,6 +83,9 @@ lsqcurvefit(fun, p0, xdata, ydata)
     \item \code{errmess}: error message, i.e. reason for stopping.
   }
 
+  \code{lsqnonneg} returns a list of \code{x} the non-negative solition, and
+  \code{resid.norm} the norm of the residual.
+
   \code{lsqsep} will return the coefficients sparately, \code{a0} for the
   constant term (being 0 if \code{const=FALSE}) and the vectors \code{a} and
   \code{b} for the linear and nonlinear terms, respectively.
@@ -96,6 +98,9 @@ lsqcurvefit(fun, p0, xdata, ydata)
   Madsen, K., and H. B.Nielsen (2010). Introduction to Optimization and
   Data Fitting. Technical University of Denmark, Intitute of Computer
   Science and Mathematical Modelling.
+
+  Lawson, C.L., and R.J. Hanson (1974). Solving Least-Squares Problems.
+  Prentice-Hall, Chapter 23, p. 161.
 
   Fletcher, R., (1971). A Modified Marquardt Subroutine for Nonlinear Least
   Squares. Report AERE-R 6799, Harwell.
@@ -137,16 +142,21 @@ lsqnonlin(fun, rep(1, 5))
 # $ssq  0.298901
 
 ##  Example for lsqnonneg()
-C <- matrix(c(0.0372, 0.2868,
-              0.6861, 0.7071,
-              0.6233, 0.6245,
-              0.6344, 0.6170), nrow = 4, ncol = 2, byrow = TRUE)
-d <- c(0.8587, 0.1781, 0.0747, 0.8405)
-
-sol <- lsqnonneg(C, d)
-cbind(qr.solve(C, d), sol$x)
-# -2.563884  5.515869e-08
-#  3.111911  6.929003e-01
+C1 <- matrix( c(0.1210, 0.2319, 0.4398, 0.9342, 0.1370,
+                0.4508, 0.2393, 0.3400, 0.2644, 0.8188,
+                0.7159, 0.0498, 0.3142, 0.1603, 0.4302,
+                0.8928, 0.0784, 0.3651, 0.8729, 0.8903,
+                0.2731, 0.6408, 0.3932, 0.2379, 0.7349,
+                0.2548, 0.1909, 0.5915, 0.6458, 0.6873,
+                0.8656, 0.8439, 0.1197, 0.9669, 0.3461,
+                0.2324, 0.1739, 0.0381, 0.6649, 0.1660,
+                0.8049, 0.1708, 0.4586, 0.8704, 0.1556,
+                0.9084, 0.9943, 0.8699, 0.0099, 0.1911), ncol = 5, byrow = TRUE)
+C2 <- C1 - 0.5
+d <- c(0.4225, 0.8560, 0.4902, 0.8159, 0.4608,
+       0.4574, 0.4507, 0.4122, 0.9016, 0.0056)
+( sol <- lsqnonneg(C1, d) )     #-> resid.norm   0.3694372
+( sol <- lsqnonneg(C2, d) )     #-> $resid.norm  2.863979
 
 ##  Example for lsqcurvefit()
 #   Lanczos1 data (artificial data)
