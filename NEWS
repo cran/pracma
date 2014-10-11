@@ -2,6 +2,27 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
+
+CHANGES IN VERSION 1.7.3 (2014-10-11)
+
+    o quadinf() now uses the double exponential method with the
+      tanh-sinh quadrature scheme for (semi-)infinite intervals.
+    o Renamed brentDekker() to brent_dekker().
+    o Removed the non-exported and too slow .quadcc() function.
+
+CHANGES IN VERSION 1.7.2 (2014-09-08)
+
+    o pchipfun() function wrapper around pchip();
+      missing error handling in pchip() was added.
+    o hurst() removed, functionality merged with hurstexp().
+    o Nile overflow data set 1871--1984 added as time series.
+
+CHANGES IN VERSION 1.7.1 (2014-08-12)
+
+    o bits() binary representation of a number as string.
+    o agmean() returns AGM, no of iterations, and estimated precision.
+    o trapz() tiny improvement on error handling.
+
 CHANGES IN VERSION 1.7.0 (2014-06-30)
 
     o ode45() ODE solver using Dormand-Prince (4,5) coefficients.
@@ -50,8 +71,8 @@ CHANGES IN VERSION 1.6.2 (2014-01-19)
 
     o Removed zeroin(); for fzero() a variation of Brent-Dekker is used,
       that applies cubic instead of quadratic interpolation.
-    o brent_dekker() renamed brentDekker(); it returns a list now.
     o Corrected an oversight in newtonRaphson().
+    o brentDekker() returns a list now.
 
 CHANGES IN VERSION 1.6.1 (2014-01-14)
 
@@ -361,7 +382,6 @@ CHANGES IN VERSION 1.1.1 (2012-06-10)
       golden section search and parabolic interpolation (same as optimize).
     o transfinite() transformation function between bounded and unbounded
       (box constraint) regions.
-    o renamed brentDekker() to brent_dekker
 
 CHANGES IN VERSION 1.1.0 (2012-06-06)
 

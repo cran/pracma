@@ -20,7 +20,9 @@ agmean(a, b)
   is applied.
 }
 \value{
-  Returns vector of arithmetic-geometric means, component-wise.
+  Returns a list with compoinents: \code{agm} a vector of arithmetic-geometric 
+  means, component-wise, \code{niter} the number of iterations, and \code{prec}
+  the overall estimated precision.
 }
 \note{
   Gauss discovered that elliptic integrals can be effectively computed via
@@ -36,7 +38,7 @@ agmean(a, b)
 }
 \examples{
 ##  Accuracy test: Gauss constant
-1/agmean(1, sqrt(2)) - 0.834626841674073186     # 1.11e-16 < eps = 2.22e-16
+1/agmean(1, sqrt(2))$agm - 0.834626841674073186  # 1.11e-16 < eps = 2.22e-16
 
 ##  Example: Approximate elliptic integral
 N <- 20
@@ -52,7 +54,7 @@ b <- a * (1-m) / (m+1)
 
 \dontrun{
 plot(m, E, main = "Elliptic Integrals vs. arith.-geom. Mean")
-lines(m, (a+b)*pi / 4 / agmean(a, b), col="blue")
+lines(m, (a+b)*pi / 4 / agmean(a, b)$agm, col="blue")
 grid()}
 }
 \keyword{ arith }

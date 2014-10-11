@@ -1,5 +1,9 @@
+##
+##  h u r s t . R  Hurst Exponent
+##
 
-hurst <- function(x) {
+
+.hurstrs <- function(x) {
 	# half intervals of indices
 	half <- function(N) sort(c(N, N[-length(N)]+((diff(N)+1)%/%2)))
 	# define the R/S scale
@@ -34,6 +38,15 @@ hurst <- function(x) {
 hurstexp <- function(x, d = 50, display = TRUE) {
     stopifnot(is.numeric(x), is.numeric(d))
     d <- max(2, floor(d[1]))
+
+    # Calculate simple R/S
+    rssimple <- function(x){
+        n <- length(x)
+        y <- x - mean(x)
+        s <- cumsum(y)
+        rs <- (max(s) - min(s)) / sd(x)
+        log(rs) / log(n)
+    }
 
     # Calculate empirical R/S
     rscalc <- function(z, n) {
@@ -89,15 +102,17 @@ hurstexp <- function(x, d = 50, display = TRUE) {
     P  <- polyfit(log10(d), log10(ERS), 1)
     Ht <- P[1]
 
-    Hrs <- hurst(x)
+    Hs   <- rssimple(x)
+    Hrs <- .hurstrs(x)
 
     if (display) {
+        cat("Simple R/S Hurst estimation:        ", Hs,  "\n")
         cat("Corrected R over S Hurst exponent:  ", Hrs, "\n")
-        cat("Theoretical Hurst exponent:         ", Ht,  "\n")
-        cat("Corrected empirical Hurst exponent: ", Hal, "\n")
         cat("Empirical Hurst exponent:           ", He,  "\n")
-        invisible(list(Hrs = Hrs, Hal = Hal, Ht = Ht, He = He))
+        cat("Corrected empirical Hurst exponent: ", Hal, "\n")
+        cat("Theoretical Hurst exponent:         ", Ht,  "\n")
+        invisible(list(Hs = Hs, Hrs = Hrs, He = He, Hal = Hal, Ht = Ht))
     } else {
-        return(list(Hrs = Hrs, Hal = Hal, Ht = Ht, He = He))
+        return(list(Hs = Hs, Hrs = Hrs, He = He, Hal = Hal, Ht = Ht))
     }
 }

@@ -3,7 +3,7 @@
 ##
 
 
-brentDekker <- function(f, a, b,
+brent_dekker <- function(f, a, b,
                         maxiter = 100, tol = .Machine$double.eps^0.5)
 # Brent and Dekker's root finding method,
 # based on bisection, secant method and quadratic interpolation

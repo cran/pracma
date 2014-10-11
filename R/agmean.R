@@ -22,7 +22,9 @@ agmean <- function(a, b) {
         if (length(a) != length(b)) 
             stop("Arguments must have the same length or one has length 1.")
 
+    niter = 0
     while ( any(abs(a-b) >= eps) ) {
+        niter = niter + 1
         a1 <- (a + b) / 2
         b1 <- sqrt(a * b)
         if (max(abs(a-a1)) < eps && max(abs(b-b1)) < eps) break
@@ -30,5 +32,6 @@ agmean <- function(a, b) {
         b <- b1
     }
 
-    return( (a+b)/2 )
+    return( list(agm = (a+b)/2, niter = niter, prec = max(abs(b-a))) )
 }
+

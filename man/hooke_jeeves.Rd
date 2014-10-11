@@ -1,4 +1,4 @@
-\name{hooke-jeeves}
+\name{hooke_jeeves}
 \alias{hooke_jeeves}
 \title{
   Hooke-Jeeves Method

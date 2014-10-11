@@ -25,7 +25,7 @@ integral <- function(fun, xmin, xmax,
         Q <- quadv(f, xmin, xmax, tol = tol)$Q
 
     } else if (is.infinite(xmin) || is.infinite(xmax)) {
-        Q <- quadinf(f, xmin, xmax, tol = tol, method = method)
+        Q <- quadinf(f, xmin, xmax, tol = tol)$Q
 
     } else {
         Q <- switch(method,

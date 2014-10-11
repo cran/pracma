@@ -4,6 +4,15 @@
 
 
 pchip <- function(xi, yi, x) {
+    stopifnot(is.numeric(xi), is.numeric(yi), is.numeric(x))
+    # xi <- c(xi); yi <- c(yi); x <- c(x)
+    if (!is.sorted(xi))
+        stop("Argument 'xi' must be a sorted vector of real numbers.")
+    n <- length(xi);
+    if (length(yi) != n)
+        stop("Arguments 'xi', 'yi' must be vectors of equal length.")
+    if (n <= 2)
+        stop("At least three points needed for cubic interpolation.")
 
     # First derivatives
     h <- diff(xi)
@@ -11,7 +20,6 @@ pchip <- function(xi, yi, x) {
     d <- .pchipslopes(h, delta)
 
     # Piecewise polynomial coefficients
-    n <- length(xi);
     a <- (3*delta - 2*d[1:(n-1)] - d[2:n]) / h
     b <- (d[1:(n-1)] - 2*delta + d[2:n]) / h^2;
 
@@ -56,4 +64,19 @@ pchip <- function(xi, yi, x) {
         d <- 3*del1
     }
     return(d)
+}
+
+
+pchipfun <- function(xi, yi) {
+    stopifnot(is.numeric(xi), is.numeric(yi))
+    # xi <- c(xi); yi <- c(yi)
+    if (!is.sorted(xi))
+        stop("Argument 'xi' must be a sorted vector of real numbers.")
+    n <- length(xi);
+    if (length(yi) != n)
+        stop("Arguments 'xi', 'yi' must be vectors of equal length.")
+    if (n <= 2)
+        stop("At least three points needed for cubic interpolation.")
+
+    function(x) pchip(xi, yi, x)
 }

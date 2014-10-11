@@ -45,7 +45,7 @@ fzero(f, x, ..., maxiter = 100, tol = .Machine$double.eps^(1/2))
   from Octave's \code{fzero} function, copyrighted (c) 2009 by Jaroslav Hajek.
 }
 \seealso{
-  \code{\link{uniroot}}, \code{\link{brentDekker}}
+  \code{\link{uniroot}}, \code{\link{brent_dekker}}
 }
 \examples{
 fzero(sin, 3)                    # 3.141593
