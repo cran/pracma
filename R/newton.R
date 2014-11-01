@@ -35,6 +35,9 @@ newtonRaphson <- function(fun, x0, dfun = NULL, ...,
 }
 
 
+newton <- newtonRaphson
+
+
 halley <- function(fun, x0,
                    maxiter = 100, tol = .Machine$double.eps^0.5) {
     f0 <- fun(x0)
@@ -87,3 +90,4 @@ newtonHorner <- function(p, x0,
     return(list(root = x, f.root = defl$y, deflate = defl$q,
                 iters = niter, estim.prec = diff))
 }
+

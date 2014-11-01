@@ -1,141 +1,46 @@
 ##
-##  n e l d e r _ m e a d . R  Nelder-Mead Minimization Algorithm
+##  n e l d e r _ m e a d . R  Nelder-Mead Minimization
 ##
 
 
-nelder_mead <- function(x0, fn, maxfeval = 5000, scale = 1, tol = 1e-10, ...) {
-
-    show <- FALSE
-    if (!is.numeric(x0) || length(x0) < 2)
-        stop("Argument 'x0' must be a numeric vector of length greater 1.")
-    
-
-    fun <- match.fun(fn)
-    F   <- function(x) scale * fun(x, ...)
-
+nelder_mead <- function(x0, f, lb = NULL, ub = NULL, tol = 1e-10,
+                        maxfeval = 20000, step = rep(1.0, length(x0)), ...) {
+    if (!is.numeric(x0))
+        stop("Argument 'x0' must be a numeric vector.",
+              call. = FALSE)
     n <- length(x0)
-    # simplex vertices around x0
-    V <- t(1/(2*n) * cbind(diag(n), rep(-1, n)) + x0)
+    if (n == 1)
+        stop("Do not use Nelder-Mead for univariate functions.",
+              call. = FALSE)
+    if (length(step) != n)
+        stop("Argument 'step' must be of the same length as 'x0'.",
+             call. = FALSE)
 
-    if (show) {
-        P <- Q <- c()
-    }
+    if (!is.function(f) || is.null(f))
+        stop("Function argument 'f' must be a valid R function.",
+              call. = FALSE)
+    fun <- match.fun(f)
+    f <- function(x) fun(x, ...)
 
-    # Function values at vertices
-    Y <- numeric(n+1)
-    for (j in 1:(n+1)) Y[j] <- F(V[j, ])
-    ho <- lo <- which.min(Y)
-    li <- hi <- which.max(Y)
-
-    for (j in 1:(n+1)) {
-       if (j != lo && j != hi && Y[j] <= Y[li]) li <- j
-       if (j != hi && j != lo && Y[j] >= Y[ho]) ho <- j
-    }
-
-    cnt <- 0
-    while ( Y[hi] > Y[lo] + tol && cnt < maxfeval ) {
-        S <- numeric(n)
-        for (j in 1:(n+1)) S <- S + V[j,1:n]
-        M <- ( S - V[hi,1:n])/n
-        R <- 2*M - V[hi,1:n]
-        yR <- F(R)
-
-        if (yR < Y[ho]) {
-           if (Y[li] < yR) {
-              V[hi,1:n] <- R
-              Y[hi] <- yR
-           } else {
-              E <- 2*R - M
-              yE <- F(E)
-              if (yE < Y[li]) {
-                 V[hi,1:n] <- E
-                 Y[hi] <- yE
-              } else {
-                 V[hi,1:n] <- R
-                 Y[hi] <- yR
-              }
-           }
-        } else {
-           if (yR < Y[hi]) {
-              V[hi,1:n] <- R
-              Y[hi] <- yR
-           }
-           C <- (V[hi,1:n] + M)/2
-           yC <- F(C)
-           C2 <- (M + R)/2
-           yC2 <- F(C2)
-           if (yC2 < yC) {
-              C <- C2
-              yC <- yC2
-           }
-           if (yC < Y[hi]) {
-              V[hi,1:n] <- C
-              Y[hi] <- yC
-           } else {
-              for (j in 1:(n+1)) {
-                 if (j != lo) {
-                    V[j,1:n] <- (V[j,1:n] + V[lo,1:n])/2
-                    Z <- V[j,1:n]
-                    Y[j] <- F(Z)
-                 }
-              }
-           }
-        }
-
-        ho <- lo <- which.min(Y)
-        li <- hi <- which.max(Y)
-        for (j in 1:(n+1)) {
-           if (j != lo && j != hi && Y[j] <= Y[li]) li <- j
-           if (j != hi && j != lo && Y[j] >= Y[ho]) ho <- j
-        }
-
-        cnt <- cnt + 1
-        if (show) {
-            P <- rbind(P, V[lo, ])
-            Q <- c(Q, Y[lo])
-        }
-    }
-
-    snorm <- 0
-    for (j in 1:(n+1)) {
-       s <- abs(V[j] - V[lo])
-       if (s >= snorm) snorm <- s
-    }
-
-    V0 <- V[lo, 1:n]
-    y0 <- Y[lo]
-    dV <- snorm
-    dy <- abs(Y[hi] - Y[lo])
-
-    if (show) {
-        return(list(xmin = V0, fmin = y0/scale, nfeval = cnt,
-                    dV = dV, dy = dy, P = P, Q = Q))
+    if (is.null(lb) && is.null(ub)) {
+        result <- .nelmin(x0, f, tol, maxfeval, step)
     } else {
-        return(list(xmin = V0, fmin = y0/scale, nfeval = cnt))
+        result <- .nelminb(x0, f, lb, ub, tol, maxfeval, step)
     }
+
+    return(result)
 }
 
 
-nelmin <- function(x0, fn, maxfeval = 50000, scale = 1, tol = 1e-10, ..., 
-            step = rep(1.0, length(x0))) {
-
-    stopifnot(is.numeric(x0), is.numeric(step))
-    if (scale == 0)
-        stop("Argument 'scale' cannot be 0; use -1 for maximization.")
+.nelmin <- function(x0, fn, tol, maxfeval, step) {
     n <- length(x0)
-    if (length(step) != n)
-        stop("Argument 'step' must be of the same length as 'x0'.")
-
-
-    fun <- match.fun(fn)
-    fn  <- function(x) scale * fun(x, ...)
-
                         # Inputs:
     start  <- x0        # starting point
-    reqmin <- tol       # the terminating limit for the variance of function values
+    reqmin <- tol       # terminating limit for the variance of function values
     # step <- step      # size and shape of the initial simplex
     kcount <- maxfeval  # maximum number of function evaluations.
-    konvge <- kcount/100# convergence check is carried out every KONVGE iterations, >= 1
+    konvge <- kcount/100# convergence check is carried out every
+                        # KONVGE iterations, >= 1
 
                         # Outputs:
     xmin   <- NA        # estimated minimum of the function
@@ -164,8 +69,8 @@ nelmin <- function(x0, fn, maxfeval = 50000, scale = 1, tol = 1e-10, ...,
     y <- numeric(n+1)
     p <- matrix(0, n, n+1)
 
+    #-- Start the main loop ------------
     while ( TRUE ) {                    # outer while loop
-        
         # Initial or restarted loop
         p[, nn] <- start
         y[nn] <- fn ( start )
@@ -184,8 +89,9 @@ nelmin <- function(x0, fn, maxfeval = 50000, scale = 1, tol = 1e-10, ...,
         ilo <- which.min(y)
         ylo <- y[ilo]
 
+        iinner <- 0
         while ( icount < kcount ) {                # inner while loop
-
+            iinner <- iinner + 1
             # indicate the vertex of the simplex to be replaced
             ihi <- which.max(y)
             ynewlo <- y[ihi]
@@ -328,21 +234,26 @@ nelmin <- function(x0, fn, maxfeval = 50000, scale = 1, tol = 1e-10, ...,
         numres <- numres + 1
     }                                   # end outer while loop
 
-    return(list(xmin = xmin, fmin = ynewlo/scale, nfeval = icount, restarts = numres))
+    return(list(xmin = xmin, fmin = ynewlo,
+                nfeval = icount, restarts = numres))
 } # end of function
 
 
-nelminb <- function (x0, fn, lower, upper, maxfeval = 10000, tol = 1e-10, ..., 
-                     step = rep(1, length(x0))) {
-    if (length(lower) != length(x0) || length(upper) != length(x0))
+.nelminb <- function (x0, fn, lower, upper, tol, maxfeval, step) {
+    n <- length(x0)
+    if(!is.numeric(lower) || !is.numeric(upper))
+        stop("Lower and upper limits must be numeric.", call. = FALSE)
+    if (length(lower) == 1) lower <- rep(lower, n)
+    if (length(upper) == 1) upper <- rep(upper, n)
+    if (length(lower) != n || length(upper) != n)
         stop("Length of 'x0', 'lower', and 'upper' must all be the same.")
     if (any(x0 <= lower) || any (x0 >= upper))
         stop("Starting point must lie in the interior of the bounded region.")
     Trf <- .transfinite(lower, upper, length(x0))
     h <- Trf$h; hinv <- Trf$hinv
 
-    f <- function(x) fn(hinv(x), ...)  # f must be defined on all of R^n
-    S <- nelmin(h(x0), f, tol = tol, maxfeval = maxfeval, step = step)
+    f <- function(x) fn(hinv(x))  # f must be defined on all of R^n
+    S <- .nelmin(h(x0), f, tol = tol, maxfeval = maxfeval, step = step)
     S$xmin <- hinv(S$xmin)
 
     return(S)
@@ -391,3 +302,116 @@ nelminb <- function (x0, fn, lower, upper, maxfeval = 10000, tol = 1e-10, ...,
 
     return(list(h = h, hinv = hinv))
 }
+
+
+# nelder_mead <- function(x0, fn, maxfeval = 5000, scale = 1, tol = 1e-10, ...)
+# {
+#     show <- FALSE
+#     if (!is.numeric(x0) || length(x0) < 2)
+#         stop("Argument 'x0' must be a numeric vector of length greater 1.")
+#     
+# 
+#     fun <- match.fun(fn)
+#     F   <- function(x) scale * fun(x, ...)
+# 
+#     n <- length(x0)
+#     # simplex vertices around x0
+#     V <- t(1/(2*n) * cbind(diag(n), rep(-1, n)) + x0)
+# 
+#     if (show) {
+#         P <- Q <- c()
+#     }
+# 
+#     # Function values at vertices
+#     Y <- numeric(n+1)
+#     for (j in 1:(n+1)) Y[j] <- F(V[j, ])
+#     ho <- lo <- which.min(Y)
+#     li <- hi <- which.max(Y)
+# 
+#     for (j in 1:(n+1)) {
+#        if (j != lo && j != hi && Y[j] <= Y[li]) li <- j
+#        if (j != hi && j != lo && Y[j] >= Y[ho]) ho <- j
+#     }
+# 
+#     cnt <- 0
+#     while ( Y[hi] > Y[lo] + tol && cnt < maxfeval ) {
+#         S <- numeric(n)
+#         for (j in 1:(n+1)) S <- S + V[j,1:n]
+#         M <- ( S - V[hi,1:n])/n
+#         R <- 2*M - V[hi,1:n]
+#         yR <- F(R)
+# 
+#         if (yR < Y[ho]) {
+#            if (Y[li] < yR) {
+#               V[hi,1:n] <- R
+#               Y[hi] <- yR
+#            } else {
+#               E <- 2*R - M
+#               yE <- F(E)
+#               if (yE < Y[li]) {
+#                  V[hi,1:n] <- E
+#                  Y[hi] <- yE
+#               } else {
+#                  V[hi,1:n] <- R
+#                  Y[hi] <- yR
+#               }
+#            }
+#         } else {
+#            if (yR < Y[hi]) {
+#               V[hi,1:n] <- R
+#               Y[hi] <- yR
+#            }
+#            C <- (V[hi,1:n] + M)/2
+#            yC <- F(C)
+#            C2 <- (M + R)/2
+#            yC2 <- F(C2)
+#            if (yC2 < yC) {
+#               C <- C2
+#               yC <- yC2
+#            }
+#            if (yC < Y[hi]) {
+#               V[hi,1:n] <- C
+#               Y[hi] <- yC
+#            } else {
+#               for (j in 1:(n+1)) {
+#                  if (j != lo) {
+#                     V[j,1:n] <- (V[j,1:n] + V[lo,1:n])/2
+#                     Z <- V[j,1:n]
+#                     Y[j] <- F(Z)
+#                  }
+#               }
+#            }
+#         }
+# 
+#         ho <- lo <- which.min(Y)
+#         li <- hi <- which.max(Y)
+#         for (j in 1:(n+1)) {
+#            if (j != lo && j != hi && Y[j] <= Y[li]) li <- j
+#            if (j != hi && j != lo && Y[j] >= Y[ho]) ho <- j
+#         }
+# 
+#         cnt <- cnt + 1
+#         if (show) {
+#             P <- rbind(P, V[lo, ])
+#             Q <- c(Q, Y[lo])
+#         }
+#     }
+# 
+#     snorm <- 0
+#     for (j in 1:(n+1)) {
+#        s <- abs(V[j] - V[lo])
+#        if (s >= snorm) snorm <- s
+#     }
+# 
+#     V0 <- V[lo, 1:n]
+#     y0 <- Y[lo]
+#     dV <- snorm
+#     dy <- abs(Y[hi] - Y[lo])
+# 
+#     if (show) {
+#         return(list(xmin = V0, fmin = y0/scale, nfeval = cnt,
+#                     dV = dV, dy = dy, P = P, Q = Q))
+#     } else {
+#         return(list(xmin = V0, fmin = y0/scale, nfeval = cnt))
+#     }
+# }

@@ -62,3 +62,77 @@ lu <- function(A, scheme = c("kji", "jki", "ijk")) {
     return(list(L = L, U = U))
 }
 
+
+lufact <- function(A) {
+    stopifnot(is.numeric(A), is.matrix(A))
+    m <- nrow(A); n <- ncol(A)
+    if (m != n || m == 1)
+        stop("Matrix 'A' must be a square matrix with 2 rows at least.")
+
+    detA <- 1
+    rows <- 1:n
+    for (p in 1:(n-1)) {
+        prow <- which.max(abs(A[p:n, p])) + (p-1)
+        if (p < prow) {
+            rows[c(p, prow)] <- rows[c(prow, p)]
+            detA <- -detA
+        }
+        detA <- detA * A[rows[p], p]
+        if (detA == 0) {
+            warning("Matrix 'A' is singular, no results computed.")
+            return(list(LU = A, perm = rows, det = NA, x = NULL))
+        }
+
+        for (k in (p+1):n) {
+            f <- A[rows[k], p] / A[rows[p], p]
+            A[rows[k], p] <- f
+            A[rows[k], (p+1):n] <- A[rows[k],(p+1):n] - f*A[rows[p], (p+1):n]
+        }
+    }
+    detA <- detA * A[rows[n], n]
+    return(list(LU = A, perm = rows, det = detA))
+ }
+
+
+lusys <- function(A, b) {
+    stopifnot(is.numeric(A), is.matrix(A), is.numeric(b))
+    b <- as.matrix(b)
+
+    m <- nrow(A); n <- ncol(A)
+    if (m != n || m == 1)
+        stop("Matrix 'A' must be a square matrix with 2 rows at least.")
+
+    x <- zeros(n, 1); y <- zeros(n, 1)
+    r <- c(1:n)
+
+    for (p in 1:(n-1)) {
+        # find the pivot row for column p
+        q <- which.max(abs(A[p:n, p])) + (p-1)
+
+        # interchange rows p and q
+        A[c(p, q), ] <- A[c(q, p), ]
+        r[c(p, q)] <- r[c(q, p)]
+
+        if (A[p, p] == 0)
+            stop("Matrix 'A' singular: no unique solution.")
+
+        # calculate multiplier and place
+        for (k in (p+1):n) {
+            a = A[k, p] / A[p, p]
+            A[k, p] <- a
+            A[k, (p+1):n] <- A[k, (p+1):n] - a*A[p, (p+1):n]
+        }
+    }
+    # solve for y
+    y[1] = b[r[1]]
+    for (k in 2:n)
+        y[k] <- b[r[k]] - A[k,1:(k-1)] %*% y[1:(k-1)]
+
+    # solve for x
+    x[n] <- y[n] / A[n, n]
+    for (k in (n-1):1)
+        x[k] <- (y[k] - A[k, (k+1):n] %*% x[(k+1):n]) / A[k, k]
+
+    return(x)
+}
+

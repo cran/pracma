@@ -72,7 +72,3 @@ line_integral <- function (fun, waypoints, method = NULL, reltol = 1e-8, ...) {
     return(Q)
 }
 
-cintegral <- function (fun, waypoints, method = NULL, reltol = 1e-8, ...) {
-    warning("cintegral() is deprecated: use line_integral() instead.")
-    line_integral(fun, waypoints, method = NULL, reltol = 1e-6, ...)
-}

@@ -3,12 +3,38 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.7.7 (2014-11-01)
+
+    o lufact() LU factorization with partial pivoting;
+      lusys() solves linear systems through Gaussian elimination.
+
+CHANGES IN VERSION 1.7.6 (2014-10-30)
+
+    o ode23s() for stiff ordinary differential equations refining
+      Rosenbrock's method (supply Jacobian if available).
+    o euler_heun() Euler-Heun ODE solver has been corrected.
+
+CHANGES IN VERSION 1.7.5 (2014-10-20)
+
+    o fminbnd() much improved implementation of Brent's method;
+      added challenging example by Trefethen to the help page.
+    o lambertWn() for the second (real) branch of Lambert W.
+    o Function name alias cintegral() removed.
+
+CHANGES IN VERSION 1.7.4 (2014-10-13)
+
+    o hooke_jeeves() replaced by a much more efficient implementation
+      and equipped with a special approach to bound constraints.
+    o nelder_mead() replaced by a much more efficient implementation
+      and utilizing a transformation to handle bound constraints;
+      functions nelmin() and nelminb() are not exported anymore.
+
 CHANGES IN VERSION 1.7.3 (2014-10-11)
 
     o quadinf() now uses the double exponential method with the
       tanh-sinh quadrature scheme for (semi-)infinite intervals.
-    o Renamed brentDekker() to brent_dekker().
-    o Removed the non-exported and too slow .quadcc() function.
+    o Removed the not-exported and too slow .quadcc() function.
+    o brent() alias for brentDekker(), newton() for newtonRaphson().
 
 CHANGES IN VERSION 1.7.2 (2014-09-08)
 
@@ -27,8 +53,7 @@ CHANGES IN VERSION 1.7.0 (2014-06-30)
 
     o ode45() ODE solver using Dormand-Prince (4,5) coefficients.
     o ode78() ODE solver using Fehlberg (7,8) coefficients.
-    o cintegral() renamed to line_integral()
-      (alias cintegral() is deprecated until version 1.7.5).
+    o cintegral() renamed to line_integral().
 
 CHANGES IN VERSION 1.6.9 (2014-06-14)
 
@@ -58,7 +83,6 @@ CHANGES IN VERSION 1.6.4 (2014-02-05)
 
     o halley() Halley's variant of the Newton-Raphson method.
     o numderiv() corrected Richardson's method by breaking the loop.
-    o D_lambertWp() exact derivative of the lambertWp() function.
 
 CHANGES IN VERSION 1.6.3 (2014-01-25)
 
@@ -374,7 +398,7 @@ CHANGES IN VERSION 1.1.2 (2012-06-13)
     o hooke-jeeves() Hooke-Jeeves algorithm for direct search.
     o fletcher_powell() Davidon-Fletcher-Powell method for function 
       minimization (alternative to BFGS approach).
-    o steepest_descent() minimization of functions using steepest descent.
+    o steep_descent() minimization of functions using steepest descent.
 
 CHANGES IN VERSION 1.1.1 (2012-06-10)
 
@@ -987,3 +1011,4 @@ INITIAL VERSION 0.1-0
     o This package provides R implementations of more advanced math
       functions from Matlab and Octave (and the Euler Math Toolbox)
       with a special view on optimization and time series routines.
+  

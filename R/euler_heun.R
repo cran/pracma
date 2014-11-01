@@ -20,7 +20,7 @@ euler_heun <- function(f, a, b, y0, n = 100, improved = TRUE, ...) {
     for (i in 1:n) {
         y[i+1] <- y[i] + h*f(t[i], y[i])
         if (improved) {
-            y[i+1] <- y[i] + h * (f(t[i], y[i]) + f(t[i], y[i+1]))/2
+            y[i+1] <- y[i] + h * (f(t[i], y[i]) + f(t[i+1], y[i+1]))/2.0
         }
     }
     return(list(t = t, y = y))

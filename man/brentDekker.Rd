@@ -1,5 +1,6 @@
-\name{brent_dekker}
-\alias{brent_dekker}
+\name{brentDekker}
+\alias{brentDekker}
+\alias{brent}
 \title{
   Brent-Dekker Root Finding Algorithm
 }
@@ -7,7 +8,8 @@
   Find root of continuous function of one variable.
 }
 \usage{
-brent_dekker(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
+brentDekker(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.75)
+brent(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.75)
 }
 \arguments{
   \item{f}{function whose root is to be found.}
@@ -17,13 +19,15 @@ brent_dekker(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
   \item{tol}{relative tolerance.}
 }
 \details{
-  \code{brent_dekker} implements a version of the Brent-Dekker algorithm,
+  \code{brentDekker} implements a version of the Brent-Dekker algorithm,
   a well known root finding algorithms for real, univariate, continuous
   functions. The Brent-Dekker approach is a clever combination of secant
   and bisection with quadratic interpolation.
+
+  \code{brent} is simply an alias for \code{brentDekker}.
 }
 \value{
-  \code{brent_dekker} returns a list with
+  \code{brent} returns a list with
     \item{root}{location of the root.}
     \item{f.root}{funtion value at the root.}
     \item{f.calls}{number of function calls.}
@@ -40,6 +44,6 @@ brent_dekker(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
 # Legendre polynomial of degree 5
 lp5 <- c(63, 0, -70, 0, 15, 0)/8
 f <- function(x) polyval(lp5, x)
-brent_dekker(f, 0.6, 1)             # 0.9061798459 correct to 10 places
+brent(f, 0.6, 1)                # 0.9061798459 correct to 10 places
 }
 \keyword{ math }

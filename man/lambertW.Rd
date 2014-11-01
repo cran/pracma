@@ -1,37 +1,35 @@
 \name{lambertWp}
 \alias{lambertWp}
-\alias{D_lambertWp}
+\alias{lambertWn}
 \title{
   Lambert's W Function
 }
 \description{
-  Principal branch of the Lambert W function
+  Principal real branch of the Lambert W function.
 }
 \usage{
-lambertWp(z)
-
-D_lambertWp(z) 
+lambertWp(x)
+lambertWn(x) 
 }
 \arguments{
-  \item{z}{Numeric vector of real numbers \code{>= -1/e}.}
+  \item{x}{Numeric vector of real numbers \code{>= -1/e}.}
 }
 \details{
-  The Lambert W function is the inverse of \code{x --> x e^x}, which
-  is unique for \code{x >= -1/e}. Here only the principal branch is
-  computed for real \code{z}.
+  The Lambert W function is the inverse of \code{x --> x e^x}, with two
+  real branches, W0 for \code{x >= -1/e} and W-1 for \code{-1/e <= x < 0}.
+  Here the principal branch is called \code{lambertWp}, tho other one
+  \code{lambertWp}, computed for real \code{x}.
 
   The value is calculated using an iteration that stems from applying
-  Newton's method. This iteration is quite fast.
+  Halley's method. This iteration is quite fast and accurate.
 
-  \code{D_lambertWp} returns the exact derivative of \code{lambertWp},
-  based on the fact that \code{lambertWp} is the inverse of \code{x*exp(x)}.
-
-  The functions is not really vectorized, but at least return a vector of
+  The functions is not really vectorized, but at least returns a vector of
   values when presented with a numeric vector of length \code{>= 2}.
 }
 \value{
-  Returns the solution \code{w} of \code{w*exp(w) = z} for real \code{z}
-  with \code{NA} if \code{z < 1/exp(1)}.
+  Returns the solution \code{w} of \code{w*exp(w) = x} for real \code{x}
+  with \code{NaN} if \code{x < 1/exp(1)} (resp. \code{x >= 0} for the
+  second branch).
 }
 \references{
   Corless, R. M., G. H.Gonnet, D. E. G Hare, D. J. Jeffrey, and D. E. Knuth
@@ -44,7 +42,7 @@ D_lambertWp(z)
   Lambert W function could be calculated by Newton's method.
 }
 \seealso{
-  \code{\link{newtonRaphson}}
+  \code{\link{halley}}
 }
 \examples{
 ##  Examples
@@ -57,6 +55,11 @@ lambertWp(-log(2)/2)  #=> -log(2)
 # x * 123^(x-1) = 3
 lambertWp(3*123*log(123))/log(123)  #=> 1.19183018...
 
+x <- seq(-0.35, 0.0, by=0.05)
+w <- lambertWn(x)
+w * exp(w)            # max. error < 3e-16
+# [1] -0.35 -0.30 -0.25 -0.20 -0.15 -0.10 -0.05   NaN
+
 \dontrun{
 xs <- c(-1/exp(1), seq(-0.35, 6, by=0.05))
 ys <- lambertWp(xs)
@@ -64,9 +67,18 @@ plot(xs, ys, type="l", col="darkred", lwd=2, ylim=c(-2,2),
      main="Lambert W0 Function", xlab="", ylab="")
 grid()
 points(c(-1/exp(1), 0, 1, exp(1)), c(-1, 0, lambertWp(1), 1))
-text(1.8, 0.5, "Omega constant")}
+text(1.8, 0.5, "Omega constant")
+  }
 
-# Second branch resp. the complex function lambertWm()
+## Analytic derivative of lambertWp (similar for lambertWn)
+D_lambertWp <- function(x) {
+    xw <- lambertWp(x)
+    1 / (1+xw) / exp(xw)
+}
+D_lambertWp(c(-1/exp(1), 0, 1, exp(1)))
+# [1] Inf 1.0000000 0.3618963 0.1839397
+
+## Second branch resp. the complex function lambertWm()
 F <- function(xy, z0) {
     z <- xy[1] + xy[2]*1i
     fz <- z * exp(z) - z0

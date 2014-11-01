@@ -1,31 +1,24 @@
 \name{nelder_mead}
 \alias{nelder_mead}
-\alias{nelmin}
-\alias{nelminb}
 \title{
-  Nelder-Mead Minimization Method
+  Nelder-Mead Minimization
 }
 \description{
   An implementation of the Nelder-Mead algorithm for derivative-free
   optimization / function minimization.
 }
 \usage{
-nelder_mead(x0, fn, maxfeval = 5000, scale = 1, tol = 1e-10, ...)
-
-nelmin(x0, fn, maxfeval = 50000, scale = 1, tol = 1e-10, ..., 
-            step = rep(1.0, length(x0)))
-nelminb(x0, fn, lower, upper, maxfeval = 10000, tol = 1e-10, ..., 
-            step = rep(1, length(x0)))
+nelder_mead(x0, f, lb = NULL, ub = NULL, tol = 1e-10,
+            maxfeval = 20000, step = rep(1.0, length(x0)), ...)
 }
 \arguments{
   \item{x0}{starting vector.}
-  \item{fn}{nonlinear function to be minimized.}
-  \item{maxfeval}{maximum number of function calls.}
-  \item{scale}{scale factor, for -1 the maximum will be searched for.}
+  \item{f}{nonlinear function to be minimized.}
+  \item{lb, ub}{lower and upper of a bounded region.}
   \item{tol}{relative tolerance, to be used as stopping rule.}
+  \item{maxfeval}{maximum number of function calls.}
   \item{step}{size and shape of initial simplex; relative magnitudes of
               its elements should reflect the units of the variables.}
-  \item{lower, upper}{lower and upper of a bounded region.}
   \item{\ldots}{additional arguments to be passed to the function.}
 }
 \details{
@@ -34,14 +27,13 @@ nelminb(x0, fn, lower, upper, maxfeval = 10000, tol = 1e-10, ...,
   values at the vertices of the simplex. The process generates a sequence of
   simplices with ever reducing sizes.
 
-  `nelmin()' is a more elaborate version of Nelder-Mead, including restarts. It
-  can be used up to 20 dimensions and more (than `tol' and `maxfeval need to be
-  increased), while `nelder_mead' should only be used up to 10 dimensions.
+  `nelder_mead()'   can be used up to 20 dimensions (than `tol' and `maxfeval'
+  need to be increased).
 
-  `nelminb()' applies a transformation of bounded to unbounded regions before
-  utilizing Nelder-Mead. Of course, if the optimum is near to the boundary,
-  results will not be as accurate as in the interior.
-  
+  With upper and/or lower bounds, `nelder_mead()' applies a transformation of
+  bounded to unbounded regions before utilizing Nelder-Mead. Of course, if the
+  optimum is near to the boundary, results will not be as accurate as when the
+  minimum is in the interior.
 }
 \value{
   List with following components:
@@ -61,8 +53,6 @@ nelminb(x0, fn, lower, upper, maxfeval = 10000, tol = 1e-10, ...,
   Original FORTRAN77 version by R O'Neill; MATLAB version by John Burkardt
   under LGPL license. Re-implemented in R by Hans W. Borchers. For another
   elaborate implementation of Nelder-Mead see the package `dfoptim'.
-
-  `nelder_mead()' used Matlab code as provided in the textbook by Mathews/Fink.
 }
 \seealso{
   \code{\link{hooke_jeeves}}
@@ -75,32 +65,25 @@ rosenbrock <- function(x) {
     x2 <- x[1:(n-1)]
     sum(100*(x1-x2^2)^2 + (1-x2)^2)
 }
-nelder_mead(c(0, 0), rosenbrock)
-# $xmin
-# [1] 0.9999969 0.9999936
-# $fmin
-# [1] 1.131857e-11
-# $nfeval
-# [1] 47
 
-nelmin(c(0, 0), rosenbrock)
+nelder_mead(c(0,0,0,0), rosenbrock)
 # $xmin
-# [1] 1 1
+# [1] 1 1 1 1
 # $fmin
-# [1] 1.389895e-17
+# [1] 8.802801e-25
 # $nfeval
-# [1] 200
+# [1] 678
 # $restarts
 # [1] 0
 
-nelminb(c(0, 0), rosenbrock, c(-0.5,-0.5), c(0.5,0.5))
+nelder_mead(c(0,0,0,0), rosenbrock, rep(-0.5, 4), rep(0.5, 4))
 # $xmin
-# [1] 0.50 0.25
+# [1] 0.50000000 0.26221321 0.07797600 0.00608026
 # $fmin
-# [1] 0.25
+# [1] 1.667875
 # $nfeval
-# [1] 195
+# [1] 1501
 # $restarts
-# [1] 0
+# [1] 3
 }
 \keyword{ optimize }

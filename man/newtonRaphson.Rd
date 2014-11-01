@@ -1,5 +1,6 @@
 \name{newtonRaphson}
 \alias{newtonRaphson}
+\alias{newton}
 \alias{secant}
 \title{
   Rootfinding through Newton-Raphson or Secant.
@@ -9,6 +10,8 @@
 }
 \usage{
 newtonRaphson(fun, x0, dfun = NULL, ...,
+              maxiter = 100, tol = .Machine$double.eps^0.5)
+newton(fun, x0, dfun = NULL, ...,
        maxiter = 100, tol = .Machine$double.eps^0.5)
 
 secant(fun, a, b, ..., maxiter = 100, tol = .Machine$double.eps^0.5)
@@ -47,7 +50,7 @@ secant(fun, a, b, ..., maxiter = 100, tol = .Machine$double.eps^0.5)
 # Legendre polynomial of degree 5
 lp5 <- c(63, 0, -70, 0, 15, 0)/8
 f <- function(x) polyval(lp5, x)
-newtonRaphson(f, 1.0)  # 0.9061798459 correct to 10 decimals in 5 iterations
+newton(f, 1.0)         # 0.9061798459 correct to 10 decimals in 5 iterations
 secant(f, 0.9, 1)      # 0.9061798459 correct to 10 decimals in 5 iterations
 }
 \keyword{ math }

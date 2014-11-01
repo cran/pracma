@@ -13,7 +13,7 @@ fminsearch <- function(f, x0, ..., minimize = TRUE, dfree = TRUE,
     f <- function(x) scl * fun(x, ...)
 
     if (dfree) {
-        opt <- nelder_mead(x0, f, maxfeval = 5*maxiter, tol = tol)
+        opt <- nelder_mead(x0, f, tol = tol, maxfeval = 10*maxiter)
     } else {
         opt <- fletcher_powell(x0, f, maxiter = maxiter, tol = tol)
     }

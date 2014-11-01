@@ -3,13 +3,15 @@
 ##
 
 
-brent_dekker <- function(f, a, b,
-                        maxiter = 100, tol = .Machine$double.eps^0.5)
+brentDekker <- function(f, a, b,
+                  maxiter = 100, tol = .Machine$double.eps^0.75)
 # Brent and Dekker's root finding method,
 # based on bisection, secant method and quadratic interpolation
 {
     stopifnot(is.numeric(a), is.numeric(b),
               length(a) == 1, length(b) == 1)
+    if (!is.function(f) || is.null(f))
+        stop("Argument 'f' must be a valid R function.")
 
 	x1 <- a; f1 <- f(x1)
 	if (f1 == 0) return(list(root = a, f.root = 0, f.calls = 1, estim.prec = 0))
@@ -74,3 +76,8 @@ brent_dekker <- function(f, a, b,
     return(list(root = x0, f.root = f(x0),
                 f.calls = niter+2, estim.prec = prec))
 }
+
+
+# alias
+brent <- brentDekker
+

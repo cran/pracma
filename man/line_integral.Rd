@@ -1,6 +1,5 @@
 \name{line_integral}
 \alias{line_integral}
-\alias{cintegral}
 \title{
   Line integral (in the complex plane)
 }
@@ -9,8 +8,6 @@
 }
 \usage{
 line_integral(fun, waypoints, method = NULL, reltol = 1e-8, ...)
-
-cintegral(fun, waypoints, method = NULL, reltol = 1e-8, ...)
 }
 \arguments{
   \item{fun}{integrand, complex (vectorized) function.}
@@ -26,8 +23,6 @@ cintegral(fun, waypoints, method = NULL, reltol = 1e-8, ...)
 
   \code{line_integral} will accept the same methods as \code{integral};
   default is \code{integrate} from Base R.
-
-  \code{cintegral} is the deprecated alias.
 }
 \value{
   Returns the integral, no error terms given.

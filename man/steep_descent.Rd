@@ -1,7 +1,7 @@
-\name{steepest_descent}
+\name{steep_descent}
 \alias{steep_descent}
 \title{
-  Steepest Descent
+  Steepest Descent Minimization
 }
 \description{
   Function minimization by steepest descent.

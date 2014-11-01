@@ -1,9 +1,10 @@
 \name{ode23}
 \alias{ode23}
+\alias{ode23s}
 \alias{ode45}
 \alias{ode78}
 \title{
-  Non-stiff ODE solvers
+  Non-stiff (and stiff) ODE solvers
 }
 \description{
   Runge-Kutta (2, 3)-method with variable step size, resp. (4,5)-method
@@ -12,6 +13,9 @@
 }
 \usage{
 ode23(f, t0, tfinal, y0, ..., rtol = 1e-3, atol = 1e-6)
+
+ode23s(f, t0, tfinal, y0, jac = NULL, ...,
+            rtol = 1e-03, atol = 1e-06, hmax = 0.0)
 
 ode45(f, t0, tfinal, y0, ..., atol = 1e-6, hmax = 0.0)
 ode78(f, t0, tfinal, y0, ..., atol = 1e-6, hmax = 0.0)
@@ -23,14 +27,20 @@ ode78(f, t0, tfinal, y0, ..., atol = 1e-6, hmax = 0.0)
   \item{t0, tfinal}{start and end points of the interval.}
   \item{y0}{starting values as column vector;
     for \eqn{m} equations \code{u0} needs to be a vector of length \code{m}.}
+  \item{jac}{jacobian of \code{f} as a function of \code{x} alone;
+    if not specified, a finite difference approximation will be used.}
   \item{rtol, atol}{relative and absolute tolerance.}
-  \item{hmax}{maximal step size, default is \code{(tfinal - t0)/2.5}}
+  \item{hmax}{maximal step size, default is \code{(tfinal - t0)/10.}}
   \item{...}{Additional parameters to be passed to the function.}
 }
 \details{
   \code{ode23} is an integration method for systems of ordinary differential
   equations using second and third order Runge-Kutta-Fehlberg formulas with
   automatic step-size.
+
+  \code{ode23s} can be used to solve a stiff system of ordinary differential
+  equations, based on a modified Rosenbrock triple method of order (2,3);
+  See section 4.1 in [Shampine and Reichelt].
 
   \code{ode45} implements Dormand-Prince (4,5) pair that minimizes the local
   truncation error in the 5th-order estimate which is what is used to step
@@ -52,6 +62,9 @@ ode78(f, t0, tfinal, y0, ..., atol = 1e-6, hmax = 0.0)
 \references{
   Ascher, U. M., and L. R. Petzold (1998). Computer Methods for Ordinary
   Differential Equations and Differential-Algebraic Equations. SIAM.
+
+  L.F. Shampine and M.W. Reichelt (1997). The MATLAB ODE Suite.
+  SIAM Journal on Scientific Computing, Vol. 18, pp. 1-22.
 
   Moler, C. (2004). Numerical Computing with Matlab. Revised Reprint, SIAM.
   \url{http://www.mathworks.com/moler/chapters.html}.
@@ -92,7 +105,18 @@ lines(sol$t, sol$y[, 1], col = "blue")
 lines(sol$t, sol$y[, 2], col = "darkgreen")
 grid()}
 
-##  Example: pendulum
+##  Example3: Van der Pol as stiff equation
+vdP  <- function(t,y) as.matrix(c(y[2], 10*(1-y[1]^2)*y[2]-y[1]))
+ajax <- function(t, y)
+            matrix(c(0, 1, -20*y[1]*y[2]-1, 10*(1-y[1]^2)), 2,2, byrow = TRUE)
+sol <- ode23s(vdP, t0, tf, c(2, 0), jac = ajax, hmax = 1.0)
+\dontrun{
+plot(sol$t, sol$y[, 1], col = "blue")
+lines(sol$t, sol$y[, 1], col = "blue")
+lines(sol$t, sol$y[, 2]/8, col = "red", lwd = 2)
+grid()}
+
+##  Example4: pendulum
 m = 1.0;  l = 1.0   # [kg] resp. [m]
 g = 9.81; b = 0.7   # [m/s^2] resp. [N s/m]
 fp = function(t, x)
