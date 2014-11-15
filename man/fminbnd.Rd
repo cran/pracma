@@ -8,13 +8,14 @@
 }
 \usage{
 fminbnd(f, a, b, maxiter = 1000, maximum = FALSE,
-        rel.tol = sqrt(eps()), abs.tol = eps(), ...)
+        tol = 1e-07, rel.tol = tol, abs.tol = 1e-15, ...)
 }
 \arguments{
   \item{f}{function whose minimum or maximum is to be found.}
   \item{a, b}{endpoints of the interval to be searched.}
   \item{maxiter}{maximal number of iterations.}
   \item{maximum}{logical; shall maximum or minimum be found; default FALSE.}
+  \item{tol}{relative tolerance; left over for compatibility.}
   \item{rel.tol, abs.tol}{relative and absolute tolerance.}
   \item{...}{additional variables to be passed to the function.}
 }

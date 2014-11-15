@@ -3,8 +3,8 @@
 ##
 
 
-fminbnd <- function(f, a, b, maxiter = 1000, maximum = FALSE, 
-                     rel.tol = sqrt(eps()), abs.tol = eps(), ...) {
+fminbnd <- function(f, a, b, maxiter = 1000, maximum = FALSE,
+                    tol = 1e-07, rel.tol = tol, abs.tol = 1e-15, ...) {
     stopifnot(is.numeric(a), length(a) == 1,
               is.numeric(b), length(b) == 1)
     if (a >= b)

@@ -3,6 +3,18 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.7.9 (2014-11-15)
+
+    o qpspecial() special quadratic programming solver.
+    o Reintroduces 'tol' keyword in fminbnd() for compatibility.
+
+CHANGES IN VERSION 1.7.8 (2014-11-10)
+
+    o bulirsch_stoer() Bulirsch-Stoer method for solving
+      ordinary differential equations with high accuracy.
+    o midpoint() implements the midpoint rule for solving ODEs
+      combined with Richardson extrapolation for high accuracy.
+
 CHANGES IN VERSION 1.7.7 (2014-11-01)
 
     o lufact() LU factorization with partial pivoting;

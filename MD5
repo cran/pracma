@@ -1,7 +1,7 @@
 97f6eedc10d90921a363632f2f85721d *COPYING
-a7e0c17c0ba8e56c43d0815e3c7dab79 *DESCRIPTION
+f620d37178fb3d5abda4fb51299f854d *DESCRIPTION
 608c67ad24c5df2399c1815bf21d96ba *NAMESPACE
-28b895db1f9a537fbcf2416aa59a6034 *NEWS
+966a5ef654909cf4bd5c83b349369af5 *NEWS
 8e2ec5415edc8417dd8da8cb53d8d0b9 *R/abm3.R
 556a17b11b7876e19e56a799aa125485 *R/accumarray.R
 3a2bb5e25f1e3c1bbd2bfc930776a25d *R/agmean.R
@@ -73,7 +73,7 @@ de147e19f68da165be9624d11f62179c *R/fft.R
 c5d7590f1b2a1b683ab39ef041e35369 *R/findzeros.R
 0cd881a78a8e35e7c0258e3c6489e1f4 *R/fletcher_powell.R
 d99ccd15d4f16139ee0dfa612f763064 *R/flipdim.R
-bfe42dd6e214586c3fece2be1a629a24 *R/fminbnd.R
+30a87c9a3ada95cb756ee2b071285c4b *R/fminbnd.R
 09111f26b8f421da72cd1a04190b3806 *R/fminsearch.R
 508b6a97c85342713d5b2a4b1a0ce256 *R/fnorm.R
 1ecf8f2687247b9eb35da04a1c0f4d36 *R/fornberg.R
@@ -130,6 +130,7 @@ ccd5339f552e637dafbbb490a206d069 *R/matlab.R
 c6ea360afbbfa25f7e99570f8ad6a814 *R/mean.R
 6cfc4756848dc1b6dd6b71bb61e5ece7 *R/meshgrid.R
 f8cf47ad7fa3e693452945167e43ff60 *R/mexpfit.R
+88dfe302153c5ab5d4a7d7bae6214c90 *R/midpoint.R
 7a71a240ed11fb6d9ae81a85848039ef *R/mldivide.R
 c74c614e13ae79ffb03977ebc98394d0 *R/mode.R
 deea7a0520e4bf7da6873ac214ecbc1b *R/modular.R
@@ -179,6 +180,7 @@ a2534b63036c8b6306b2e9b65204fe00 *R/ppfit.R
 2984bf2666ba87d36fa62d2a6ac297c0 *R/primes.R
 e805a0b620e99a42ef609668e987a7d3 *R/procrustes.R
 549db7cfa6b1ed1bba389b6b2984a7ca *R/psi.R
+552415148ed28839753a30fbe0d1e694 *R/qpspecial.R
 bc41a8bd21c03cb26cbd5cc4e06d9b33 *R/qr.R
 0b1ca126c97c3d5305958cfd4de1a60f *R/quad.R
 f536d23fe8a50dfee816923a819b286c *R/quad2d.R
@@ -237,9 +239,9 @@ fbbbbfe94fec1640962dd18820c2d305 *R/whittaker.R
 f52be7d201dbc9a815c229b58dab11dd *R/wilkinson.R
 e09f92a7ba7e72fbfbc3e2dec887b3fc *R/zeta.R
 f9ccb58211bc1dfbd6910db8dc4d3250 *R/zzz.R
-6d5f6ce06083ca938ef02a1faea3a55b *data/brown72.rda
-3253053e06a4b6a89b52cd13baa6b982 *data/nile.rda
-d72440a086af5471812867de104268a4 *data/titanium.rda
+be5f1ec89b63f658d574fb3005428643 *data/brown72.rda
+f93966ff3648bf9a85b49c80e3eff875 *data/nile.rda
+da7834081b57b51104f81f1726ea2692 *data/titanium.rda
 b0665e750dc8a153600fa13f2863447a *demo/00Index
 dadc96a0ba340629e215cdd44344dcb3 *demo/pracma.R
 ca30ca6722fad23dde2a739ec7b57e4f *man/abm3.Rd
@@ -323,7 +325,7 @@ ca05625e095519e04aa0f2214e632b2d *man/findpeaks.Rd
 04e5c86a442ec65ef3604ffd030395e7 *man/findzeros.Rd
 d29420b1499bab0e3238053782f13af7 *man/fletcher_powell.Rd
 b6ed9b3d935eb2410b319077e579b8cf *man/flipdim.Rd
-fca041f6236511b486c9eecb3bde90fa *man/fminbnd.Rd
+304294f36ab7bf25a6b0007b3e24e510 *man/fminbnd.Rd
 529bea8ffc4c50912a76f8d1962c3d59 *man/fminsearch.Rd
 6a7c4a699841ecb4e74c63210dc54feb *man/fnorm.Rd
 431b5105e9ccb1c07d506d0f9a4a3f8b *man/fornberg.Rd
@@ -396,6 +398,7 @@ d10b9378eac9601500e92fb2eac442a1 *man/magic.Rd
 04d39f78c3a8dc9a838829d93219f8ba *man/mean.Rd
 f1afe7c965b684dc31ca8bf58b9b8995 *man/meshgrid.Rd
 ec423bc0f10bfa2b96d0bbbdcf539f38 *man/mexpfit.Rd
+a4ac71b36cf7d07ea93c55a01e1231e8 *man/midpoint.Rd
 46867b51da6a3556e44c0e7e2a8fdcc1 *man/mldivide.Rd
 f363b0a289a8ff045ec4009168189c40 *man/mod.Rd
 84a3a564b8dd09029b772e44ebc5c7c0 *man/mode.Rd
@@ -449,10 +452,11 @@ f263142e1520396fcd0b41e25fbe80ce *man/polymul.Rd
 14a8f0043c10b08c81e5fe167023ed47 *man/pow2.Rd
 be23c2ec43a7556246b793e40696a6fb *man/pp.Rd
 905080fd4c87b75f74bb36b19882a8f5 *man/ppfit.Rd
-f1dc2babeeffc73266b7fe13bd979602 *man/pracma-package.Rd
+24df1363606469932376de2cc479f20e *man/pracma-package.Rd
 a9be341b14772cff514afed39fb9553a *man/primes.Rd
 e555638294f1dabd1f459b319d58e9cc *man/procrustes.Rd
 e0421c3ad0f8d836e74a3329ddf6d85d *man/psi.Rd
+bab2db718ead94d4cb3f8230dc970b28 *man/qpspecial.Rd
 16a63023d4110036c7af816be884357b *man/qrSolve.Rd
 071720ddcbad53dea55948a2d3aabf03 *man/quad.Rd
 b4df439895084ee9c32f4bfee1c07fcd *man/quad2d.Rd

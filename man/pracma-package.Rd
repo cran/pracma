@@ -51,11 +51,13 @@ Practical Numerical Math Routines
     programming language.
     \item Wrapping functions with appropriate Matlab names to simplify
     porting programs from Matlab or Octave to R.
+    \item Providing an environment in which R can be used as a full-blown
+    numerical computing system.
   }
 
   Besides that, many of these functions could be called in R applications
-  as they do not have comparable counterparts in R packages (at least at
-  this moment). 
+  as they do not have comparable counterparts in other R packages (at least
+  at this moment, as far as I know). 
 
   All referenced books have been utilized in one way or another.
   Web links have been provided where reasonable.
@@ -111,9 +113,9 @@ Practical Numerical Math Routines
   \code{makeActiveBinding("who", who(), .GlobalEnv)}
 }
 \author{
-Hans W Borchers
+Hans Werner Borchers
 
-Maintainer: HwB  <hwborchers@googlemail.com>
+Maintainer: Hans W Borchers  <hwborchers@googlemail.com>
 }
 \references{
   Abramowitz, M., and I. A. Stegun (1972). Handbook of Mathematical Functions
@@ -126,6 +128,9 @@ Maintainer: HwB  <hwborchers@googlemail.com>
 
   Cormen, Th. H., Ch. E. Leiserson, and R. L. Rivest (2009). Introduction
   to Algorithms. Third Edition, The MIT Press, Cambridge, MA.
+
+  Encyclopedia of Mathematics (2012). Editor-in-Chief: Ulf Rehmann.
+  \url{http://www.encyclopediaofmath.org/}.
 
   Gautschi, W. (1997). Numerical Analysis: An Introduction.
   Birkhaeuser, Boston.
