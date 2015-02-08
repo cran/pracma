@@ -46,4 +46,4 @@ gammaz(c(-2-2i, -1-1i, 0, 1+1i, 2+2i))
 z <- 1+1i
 gammaz(1-z) * gammaz(z)  # == pi/sin(pi*z)
 }
-\keyword{ math }
+\keyword{ specfun }

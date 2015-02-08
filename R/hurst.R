@@ -38,6 +38,11 @@
 hurstexp <- function(x, d = 50, display = TRUE) {
     stopifnot(is.numeric(x), is.numeric(d))
     d <- max(2, floor(d[1]))
+    N <- length(x)
+    if (N %% 2 != 0) {
+        x <- c(x, (x[N-1] + x[N])/2)
+        N <- N + 1
+    }
 
     # Calculate simple R/S
     rssimple <- function(x){

@@ -25,4 +25,4 @@ matrix of size \code{n x n}
 (a <- moler(10))
 min(eig(a))
 }
-\keyword{ array }
+\keyword{ specmat }

@@ -73,4 +73,4 @@ lines(ys, yc, col = "red")
 lines(-ys, -yc, col = "red")
 grid()}
 }
-\keyword{ math }
+\keyword{ specfun }

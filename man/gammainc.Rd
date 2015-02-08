@@ -44,4 +44,4 @@ gammainc(x, a)
 gammainc( 1.5, 2)
 gammainc(-1.5, 2)
 }
-\keyword{ math }
+\keyword{ specfun }

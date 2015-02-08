@@ -38,4 +38,4 @@ eta(z)
 z <- c(0, 0.5+1i, 1, 1i, 2+2i, -1, -2, -1-1i)
 eta(z)
 }
-\keyword{ math }
+\keyword{ specfun }

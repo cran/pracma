@@ -52,4 +52,4 @@ legend(0, 2.4, c("real part", "imaginary part", "absolute value"),
        lty = 1, lwd = c(1, 1, 2), col = c("blue", "darkgreen", "red"))
 grid()}
 }
-\keyword{ math }
+\keyword{ specfun }

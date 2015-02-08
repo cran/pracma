@@ -31,4 +31,4 @@ hadamard(4)
 H <- hadamard(8)
 t(H) %*% H        # t(H) %*% H == diag(n, n, n)
 }
-\keyword{ array }
+\keyword{ specmat }

@@ -22,4 +22,4 @@ matrix of size 8 x 8
 \examples{
 rosser()
 }
-\keyword{ array }
+\keyword{ specmat }

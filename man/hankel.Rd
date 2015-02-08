@@ -29,4 +29,4 @@ from the last element of \code{a} it is overwritten by this one.
 \examples{
 hankel(1:5, 5:1)
 }
-\keyword{ array }
+\keyword{ specmat }

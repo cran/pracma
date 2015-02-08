@@ -15,12 +15,9 @@
   Monthly flow data taken at the Dongola measurement station just upstream
   from the high dam at Aswan.
 }
-\source{
-  \url{https://raw.githubusercontent.com/LCAV/SignalsOfTheDay/master/Day\%203/FloodsOfTheNile_data.txt}
-}
 \references{
   R. Weron (2001). Estimating long range dependence: finite sample properties and
-  confidence intervals. arXiv: \url{http://arxiv.org/pdf/cond-mat/0103510v2.pdf}.
+  confidence intervals. arXiv.org:cond-mat0103510.pdf .
 }
 \examples{
 data(nile)                      # loads "nile" data frame

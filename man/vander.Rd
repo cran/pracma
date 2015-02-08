@@ -21,4 +21,4 @@
 \examples{
   vander(c(1:10))
 }
-\keyword{ array }
+\keyword{ specmat }

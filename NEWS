@@ -3,10 +3,28 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.8.3 (2015-02-08)
+
+    o Deleted some URLs that were not working properly anymore.
+
+CHANGES IN VERSION 1.8.2 (2015-02-07)
+
+    o Special functions gathered under topics 'specfun' resp. 'specmat'.
+
+CHANGES IN VERSION 1.8.1 (2015-02-06)
+
+    o sumalt() accelerating (infinite) alternating sums.
+    o Option 'fast=FALSE' in circlefit() to avoid optim().
+    o Added Gauss' AGM-based computation of pi to agmean(). 
+
+CHANGES IN VERSION 1.8.0 (2015-01-26)
+
+    o hurstexp() amended for vectors of uneven length.
+
 CHANGES IN VERSION 1.7.9 (2014-11-15)
 
     o qpspecial() special quadratic programming solver.
-    o Reintroduces 'tol' keyword in fminbnd() for compatibility.
+    o Reintroduces the 'tol' keyword in fminbnd() for compatibility.
 
 CHANGES IN VERSION 1.7.8 (2014-11-10)
 
@@ -131,12 +149,11 @@ CHANGES IN VERSION 1.5.9 (2013-11-30)
 
 CHANGES IN VERSION 1.5.8 (2013-11-28)
 
-    o interp1() with option method ``spline'' now computes Moler's spline 
+    o interp1() with option method ``spline'' now computes Moler's spline
       functions, for compatibility with Matlab (hint by Boudewijn Klijn).
 
 CHANGES IN VERSION 1.5.7 (2013-10-11)
 
-    o runs.test() implements the statistical 'Runs test'.
     o Corrected parameter 'waypoints' in cintegral().
 
 CHANGES IN VERSION 1.5.6 (2013-09-22)
@@ -408,7 +425,7 @@ CHANGES IN VERSION 1.1.2 (2012-06-13)
 
     o nelder_mead() implements Nelder-Mead for nonlinear optimization.
     o hooke-jeeves() Hooke-Jeeves algorithm for direct search.
-    o fletcher_powell() Davidon-Fletcher-Powell method for function 
+    o fletcher_powell() Davidon-Fletcher-Powell method for function
       minimization (alternative to BFGS approach).
     o steep_descent() minimization of functions using steepest descent.
 
@@ -446,7 +463,7 @@ CHANGES IN VERSION 1.0.7 (2012-05-11)
 
 CHANGES IN VERSION 1.0.6 (2012-04-21)
 
-    o fornberg() finite difference (i.e., polynomial) approximation of 
+    o fornberg() finite difference (i.e., polynomial) approximation of
       derivatives for unevenly spaced grid points -- Fornberg's method.
 
 CHANGES IN VERSION 1.0.5 (2012-04-15)
@@ -607,7 +624,7 @@ CHANGES IN VERSION 0.7.9 (2011-10-22)
 CHANGES IN VERSION 0.7.8 (2011-10-17)
 
     o bvp() solves boundary value problems of the following kind:
-      -u''(x) + c1 u'(x) + c2 u(x) = f(x) for x in [a, b]. 
+      -u''(x) + c1 u'(x) + c2 u(x) = f(x) for x in [a, b].
 
 CHANGES IN VERSION 0.7.7 (2011-10-14)
 
@@ -862,7 +879,7 @@ CHANGES IN VERSION 0.3-2 (2011-04-17)
     o Sorting functions: bubbleSort(), insertionSort(), selectionSort(),
       shellSort(), heapSort(), mergeSort(), mergeOrdered(), quickSort(),
       quickSortx(), is.sorted(), and testSort().
-    o Functions from number theory: eulersPhi(), moebiusFun() and the 
+    o Functions from number theory: eulersPhi(), moebiusFun() and the
       mertensFun(), sigma(), tau(), omega(), and Omega().
 
 CHANGES IN VERSION 0.3-1 (2011-04-16)
@@ -984,7 +1001,7 @@ CHANGES IN VERSION 0.1-4
     o Added functions for generating sequences of (log-)linearly spaced
       numeric values: linspace() and logspace().
     o Added basic complex functions real(), imag(), conj(), and angle()
-      which are essentially only aliases of the R functions Re(), Im(), 
+      which are essentially only aliases of the R functions Re(), Im(),
       or Conj().
       angle() returns the angle of a complex number in radians. The R
       function Mod() is here only available as abs().
@@ -1023,4 +1040,3 @@ INITIAL VERSION 0.1-0
     o This package provides R implementations of more advanced math
       functions from Matlab and Octave (and the Euler Math Toolbox)
       with a special view on optimization and time series routines.
-  

@@ -30,4 +30,4 @@ decimal places.
 (a <- wilkinson(7))
 eig(a)
 }
-\keyword{ array }
+\keyword{ specmat }

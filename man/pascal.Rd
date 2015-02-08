@@ -27,4 +27,4 @@ pascal(5)
 pascal(5, 1)
 pascal(5, 2)
 }
-\keyword{ math }
+\keyword{ specmat }

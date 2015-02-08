@@ -68,4 +68,4 @@ je <- ellipj(u, m)
 je$sn^2 + je$cn^2       # 1 1 1 1 1 1
 je$dn^2 + m * je$sn^2   # 1 1 1 1 1 1
 }
-\keyword{ math }
+\keyword{ specfun }

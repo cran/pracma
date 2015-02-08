@@ -87,4 +87,4 @@ F <- function(xy, z0) {
 newtonsys(F, c(-1, -1), z0 = -0.1)   #=> -3.5771520639573
 newtonsys(F, c(-1, -1), z0 = -pi/2)  #=> -1.5707963267949i = -pi/2 * 1i
 }
-\keyword{ math }
+\keyword{ specfun }

@@ -25,4 +25,4 @@
 \examples{
   hilb(5)
 }
-\keyword{ array }
+\keyword{ specmat }

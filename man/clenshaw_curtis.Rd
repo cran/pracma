@@ -24,8 +24,8 @@ clenshaw_curtis(f, a = -1, b = 1, n = 1024, ...)
   Numerical scalar, the value of the integral.
 }
 \references{
-  Trefethen, L. N. (2008). Is Gauss Quadrature Better Than Clenshaw-Curtis?.
-  \url{http://www.comlab.ox.ac.uk/nick.trefethen/CC.pdf}.
+  Trefethen, L. N. (2008). Is Gauss Quadrature Better Than Clenshaw-Curtis?
+  SIAM Review, Vol. 50, No. 1, pp 67--87.
 }
 \seealso{
 \code{\link{gaussLegendre}}, \code{\link{gauss_kronrod}}
