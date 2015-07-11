@@ -83,7 +83,7 @@ strjust <- function(s, justify = c("left", "right", "center")) {
    return(S)
 }
 
-strrep <- function(s, old, new) {
+strRep <- function(s, old, new) {
     # Find and replace substring
     if (! is.character(s))
         stop("Argument 's' must be a character vector.")

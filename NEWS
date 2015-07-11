@@ -3,6 +3,22 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.8.6 (2015-07-11)
+
+    o Removed two non-existing links pointing to Gander's pages at the ETHZ.
+    o Removed a link explaining approximate entropy.
+
+CHANGES IN VERSION 1.8.5 (2015-07-07)
+
+    o Added 'Imports' field in description and 'import' in namespace,
+      as requested for the new R development version.
+    o strrep() renamed to strRep(), because of a new function in R Base.
+
+CHANGES IN VERSION 1.8.4 (2015-06-25)
+
+    o bernoulli() calculates the Bernoulli numbers and polynomials.
+    o factorial2() the product of all even resp. odd integers below n.
+
 CHANGES IN VERSION 1.8.3 (2015-02-08)
 
     o Deleted some URLs that were not working properly anymore.

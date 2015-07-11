@@ -21,7 +21,7 @@ blanks <- pracma::blanks
 deblank <- pracma::deblank
 strTrim <- pracma::strTrim
 strjust <- pracma::strjust
-strrep <- pracma::strrep
+strRep <- pracma::strRep
 
 identical(c(blanks(0), blanks(1), blanks(2)), c("", " ", "  "))
 s <- c("  abc", "abc   ", " abc ", " a b c ", "abc", "a b c")
@@ -31,6 +31,6 @@ identical(strjust(s, justify = "center"),
           c(" abc ", " abc ", " abc ", "a b c", " abc ", "a b c"))
 s <- c('This is a good example.', "He has a good character.",
        'This is good, good food.', "How goodgood this is!")
-identical(strrep(s, 'good', 'great'),
+identical(strRep(s, 'good', 'great'),
           c('This is a great example.', "He has a great character.",
             'This is great, great food.', "How greatgreat this is!"))

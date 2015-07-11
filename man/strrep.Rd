@@ -1,5 +1,5 @@
-\name{strrep}
-\alias{strrep}
+\name{strRep}
+\alias{strRep}
 \title{
   Find and replace substring
 }
@@ -8,7 +8,7 @@
   in all strings of a character vector.
 }
 \usage{
-strrep(s, old, new)
+strRep(s, old, new)
 }
 \arguments{
   \item{s}{Character vector.}
@@ -28,6 +28,6 @@ strrep(s, old, new)
 \examples{
 S <- c('This is a good example.', "He has a good character.",
        'This is good, good food.', "How goodgood this is!")
-strrep(S, 'good', 'great')
+strRep(S, 'good', 'great')
 }
 \keyword{ string }

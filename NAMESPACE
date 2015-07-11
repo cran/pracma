@@ -5,4 +5,11 @@
 ## Public routines
 exportPattern("^[[:alpha:]]+")
 
+## Imports
+# import("datasets")
+import("graphics")
+import("grDevices")
+import("stats")
+import("utils")
+
 ## S3 and S4 Methods

@@ -38,8 +38,6 @@ sample_entropy(ts, edim = 2, r = 0.2*sd(ts), tau = 1)
   The approximate, or sample, entropy, a scalar value.
 }
 \note{
-  There exists a translation of the Kaplan code to R by Ben Bolker, see
-  \url{http://www.macalester.edu/~kaplan/hrv/doc/funs/apen.html}.\cr
   This code here derives from Matlab versions at Mathwork's File Exchange,
   ``Fast Approximate Entropy'' and ``Sample Entropy'' by Kijoon Lee under
   BSD license.

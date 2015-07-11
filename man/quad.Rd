@@ -29,7 +29,7 @@ quad(f, xa, xb, tol = .Machine$double.eps^0.5, trace = FALSE, ...)
 }
 \references{
   Gander, W. and W. Gautschi (2000). ``Adaptive Quadrature --- Revisited''.
-  BIT, Vol. 40, 2000, pp. 84-101. \url{http://www.inf.ethz.ch/personal/gander}
+  BIT, Vol. 40, 2000, pp. 84-101.
 }
 \author{
   Copyright (c) 1998 Walter Gautschi for the Matlab version published as

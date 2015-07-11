@@ -1,7 +1,7 @@
 97f6eedc10d90921a363632f2f85721d *COPYING
-04cdee3458bf005e7fee8e7480eadf61 *DESCRIPTION
-608c67ad24c5df2399c1815bf21d96ba *NAMESPACE
-991cc23169a57066ca794c0958385229 *NEWS
+af3ff88a8124c986856b1c64b06f2dc8 *DESCRIPTION
+5ba868be89ccdda1a2e15870f9f9d368 *NAMESPACE
+313ffc1c9a67d2526c7106156a9f4e81 *NEWS
 8e2ec5415edc8417dd8da8cb53d8d0b9 *R/abm3.R
 556a17b11b7876e19e56a799aa125485 *R/accumarray.R
 3a2bb5e25f1e3c1bbd2bfc930776a25d *R/agmean.R
@@ -13,6 +13,7 @@ c4751d2108981466d37c2bc65dc7aec0 *R/andrews.R
 8391dd460a3417a85d996c15aeafb001 *R/arclength.R
 51738592c790f0df96cc39018dfbad2e *R/barycentric.R
 ca6fbf27ca08f18b2a41032af12b1cbb *R/beep.R
+970902bcf45662793ec8aaa2d1b2dc33 *R/bernoulli.R
 17e814f3f597080072991f1d20051dcb *R/bisect.R
 1aa758af79d57e55006c0b28abc6ef8b *R/bits.R
 dc8f057f63bf3734aa7fb097f3f6200f *R/blkdiag.R
@@ -61,7 +62,7 @@ f9280c4a9e244cddc14d669517a77e68 *R/expint.R
 17385703e51f8e338b327f35939a122a *R/expm.R
 25add2b4e740038778e4722741620322 *R/eye.R
 f297ef9e4bcbeed773166fcdef31872b *R/ezplot.R
-3a9dda1143e0789ba7f8b1fddbfd8b14 *R/fact.R
+d279f62dd074c176543eff0377b9f7a1 *R/fact.R
 44337c1fc4ed686379bf16fde8f05d6e *R/factors.R
 8cb7a998103694043c56c887f7ce7301 *R/fderiv.R
 de147e19f68da165be9624d11f62179c *R/fft.R
@@ -126,7 +127,7 @@ f5ba573c81263a3fa84cb1027a5a40cb *R/linspace.R
 d822cd6389752fa30a5f40493ac683c4 *R/lsqnonneg.R
 b2511db2adbd247fda9c1af969923299 *R/lu.R
 f384616a04f11141cfb8e3774e6e1472 *R/magic.R
-ccd5339f552e637dafbbb490a206d069 *R/matlab.R
+a22fe553c5026171c8aa424d2b9ace67 *R/matlab.R
 c6ea360afbbfa25f7e99570f8ad6a814 *R/mean.R
 6cfc4756848dc1b6dd6b71bb61e5ece7 *R/meshgrid.R
 f8cf47ad7fa3e693452945167e43ff60 *R/mexpfit.R
@@ -222,7 +223,7 @@ d08d663609017622c9e0fe78a3a5545d *R/sqrtm.R
 b672a8a211b3cb6693dd6793cad4b6c3 *R/steep_descent.R
 aadfe165c5c08368d382a03e373cd88b *R/str2num.R
 7ece14893f9c98556e3a303a96979a42 *R/strfind.R
-cf4dce5d7d5a091489d9e5d17a989f0e *R/strings.R
+26976cf70e08a396523573a2ecd6fa29 *R/strings.R
 4fb132e2d7f7dc302d447c07928c0ad7 *R/subspace.R
 79ce8079b10fa2e6b77a324de77f8cdb *R/sumalt.R
 46222a6afa44cb7e9decf84ec7cf5e21 *R/taylor.R
@@ -239,9 +240,9 @@ fbbbbfe94fec1640962dd18820c2d305 *R/whittaker.R
 f52be7d201dbc9a815c229b58dab11dd *R/wilkinson.R
 e09f92a7ba7e72fbfbc3e2dec887b3fc *R/zeta.R
 f9ccb58211bc1dfbd6910db8dc4d3250 *R/zzz.R
-be5f1ec89b63f658d574fb3005428643 *data/brown72.rda
-f93966ff3648bf9a85b49c80e3eff875 *data/nile.rda
-da7834081b57b51104f81f1726ea2692 *data/titanium.rda
+3add91a9c6c6569551f79f3aa8f666f0 *data/brown72.rda
+3253053e06a4b6a89b52cd13baa6b982 *data/nile.rda
+4001bc8e5357b1f0c2684f7ffc173ab8 *data/titanium.rda
 b0665e750dc8a153600fa13f2863447a *demo/00Index
 dadc96a0ba340629e215cdd44344dcb3 *demo/pracma.R
 ca30ca6722fad23dde2a739ec7b57e4f *man/abm3.Rd
@@ -256,6 +257,7 @@ d22dfc8e3e27742a8a5249043d039e1e *man/arclength.Rd
 7e284a426f5c259c3f41f17289f50360 *man/barylag.Rd
 b0123a086103cd7333f2be74c5e2311d *man/barylag2d.Rd
 a461d36d634becb0561e856b1d758569 *man/beep.Rd
+1a49d9c8f477f3d21c65f33bcd6e0bfd *man/bernoulli.Rd
 6311822169b830506498f759cbdc8c23 *man/bisect.Rd
 2f2c1969da40d754f616e58055f92693 *man/bits.Rd
 a3f44a1b3f4e3904e3d780b6839f67bf *man/blanks.Rd
@@ -301,7 +303,7 @@ a7363acb92860f0174370ed8a96b1ab4 *man/direct1d.Rd
 ae2e2f4debc98c03e0c9baff3dbc61dc *man/eigjacobi.Rd
 67ad09b49dc55793ef424c7681ed01ad *man/einsteinF.Rd
 dcff06212f33fc2aa51f70fe7de116e0 *man/ellip.Rd
-99831b83170d3b35edd39fe85943d346 *man/entropy.Rd
+cb2c1ce9efd7536d79606e672ad6ed52 *man/entropy.Rd
 bf73a3aa553d60119ce7bbd4474fd96f *man/eps.Rd
 6316ec531efad10c2c4df1c80b8867b5 *man/erfz.Rd
 b61079df802afdcac37929f819633a2e *man/errorbar.Rd
@@ -313,7 +315,7 @@ eea42e38f0e90ae5159f264f216a2851 *man/euler_heun.Rd
 5e1904a27096cc18b5cf0157391d4610 *man/ezcontour.Rd
 db352668f868737bac07a45b2046bf23 *man/ezplot.Rd
 5d71bcb2c900160ad6e0c16462b60192 *man/ezpolar.Rd
-e99bd0e893d8daae19c67d0f8627a788 *man/fact.Rd
+69f61ad723545a4f7591f8b94c65d63b *man/fact.Rd
 7ef1c8290955e2c5986abdccb46bddc0 *man/factors.Rd
 d857bf92a75f47782715774371107f4f *man/fderiv.Rd
 16598fc3e338efeacee6d60bf52d6b41 *man/fibsearch.Rd
@@ -452,19 +454,19 @@ f263142e1520396fcd0b41e25fbe80ce *man/polymul.Rd
 14a8f0043c10b08c81e5fe167023ed47 *man/pow2.Rd
 be23c2ec43a7556246b793e40696a6fb *man/pp.Rd
 905080fd4c87b75f74bb36b19882a8f5 *man/ppfit.Rd
-24df1363606469932376de2cc479f20e *man/pracma-package.Rd
+a53f251dd08d40df99140dda3a3fc3e9 *man/pracma-package.Rd
 a9be341b14772cff514afed39fb9553a *man/primes.Rd
 e555638294f1dabd1f459b319d58e9cc *man/procrustes.Rd
 e0421c3ad0f8d836e74a3329ddf6d85d *man/psi.Rd
 bab2db718ead94d4cb3f8230dc970b28 *man/qpspecial.Rd
 16a63023d4110036c7af816be884357b *man/qrSolve.Rd
-071720ddcbad53dea55948a2d3aabf03 *man/quad.Rd
+b70a8fc880037255fed3ef8b57ffedd2 *man/quad.Rd
 b4df439895084ee9c32f4bfee1c07fcd *man/quad2d.Rd
 f75804cdcb802ff1fa8f859ab1dd7b61 *man/quadcc.Rd
 f78e6988a5313cb7edab8699fe4a0970 *man/quadgk.Rd
 c5c1a0403a8b99a1afb6ede2860b7d12 *man/quadgr.Rd
 c6a032f353349a0b604c66d0fbe0eb40 *man/quadinf.Rd
-9e7e210e994edf452d9231493f7d7201 *man/quadl.Rd
+26f86eaf809847d34dc03e516ac33f57 *man/quadl.Rd
 ab5e12394bdabd8b18daef3b8fec5c94 *man/quadv.Rd
 809bcd3b9a64e1d3cc3529c59abf0cab *man/quiver.Rd
 1aa98eca28034d2da0fadd36c7645ff0 *man/rand.Rd
@@ -513,7 +515,7 @@ bb690a941a730c77d3ba34a975d5ff6d *man/steep_descent.Rd
 2637efd0d40950038596265e56ac48fb *man/strcmp.Rd
 55bebbf63ffa0788f1d99155e73f9ef2 *man/strfind.Rd
 8e768d337a93221fe499644edb581853 *man/strjust.Rd
-cc85bbcd0315755a2c4ed6f8425db612 *man/strrep.Rd
+bcc9e5e78301a401fe408f5544f8c196 *man/strrep.Rd
 4f658bbde9fbb2c4b14741ed7fa8039c *man/strtrim.Rd
 bee36c3c6e77a430dd2fc9dc110216cc *man/subspace.Rd
 a932f78643285a736e358930f086ed39 *man/sumalt.Rd
@@ -598,7 +600,7 @@ e606750e8b2da61d73b6f3fd4590763e *tests/roots.R
 e003cd1f6518efcc4bfbc9c234caab56 *tests/size.R
 d643a1f1ec646d90f6992bea9cf7bfc9 *tests/std.R
 0ca39d0545a8ba5f1cfd1ee6e8cc98c1 *tests/strfind.R
-54fcac0cf0b8e915411fa7f54c761300 *tests/strings.R
+5d9cad0025ac590f5cfcc95db71586c3 *tests/strings.R
 68ae294090618df1a69f1085ab0f9695 *tests/subspace.R
 135a210ff49e55f9413179b903593482 *tests/trace.R
 d0cab15f1e524b68082968f60498c3a4 *tests/trapz.R
