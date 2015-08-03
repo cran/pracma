@@ -1,5 +1,5 @@
 interp1 <- function (x, y, xi = x,
-             method = c("constant", "linear", "nearest", "spline", "cubic"))
+             method = c("linear", "constant", "nearest", "spline", "cubic"))
 {
     if (!is.vector(x, mode="numeric") || !is.vector(y, mode="numeric"))
         stop("Arguments 'x' and 'y' must be numeric vectors.")
