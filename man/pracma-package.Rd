@@ -152,7 +152,7 @@ Maintainer: Hans W Borchers  <hwborchers@googlemail.com>
   Internet: NIST Digital Library of Mathematical Functions, 
   \url{http://dlmf.nist.gov/};
   Dictionary of Algorithms and Data Structures,
-  \url{http://xlinux.nist.gov/dads/};
+  \url{http://www.nist.gov/};
   Guide to Available Mathematical Software, \url{http://gams.nist.gov/}
 
   Press, W. H., S. A. Teukolsky, W. T Vetterling, and B. P. Flannery (2007).

@@ -45,8 +45,7 @@ rkf54(f, a, b, y0, tol = .Machine$double.eps^0.5,
 
   Mathematica code associated with the book:\cr
   Mathews, J. H., and K. D. Fink (2004). Numerical Methods Using Matlab.
-  Fourth Edition, Prentice Hall.\cr
-  \url{http://math.fullerton.edu/mathews/software/software.htm}.
+  Fourth Edition, Prentice Hall.
 }
 \note{
   This function serves demonstration purposes only.

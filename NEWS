@@ -3,6 +3,17 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.8.8 (2015-10-28)
+
+    o Option 'minpeakdistance' for function findpeaks() added
+      (thanks to Razvan Chereji for providing a workable approach).
+
+CHANGES IN VERSION 1.8.7 (2015-07-20)
+
+    o Removed invperm().
+    o 'linear' is now the default method for interp1().
+    o Cases n = 0, 1 for legendre() corrected (thanks to Nuzhdin Yury).
+
 CHANGES IN VERSION 1.8.6 (2015-07-11)
 
     o Removed two non-existing links pointing to Gander's pages at the ETHZ.

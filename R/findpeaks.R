@@ -43,13 +43,33 @@ findpeaks <- function(x,nups = 1, ndowns = nups, zero = "0", peakpat = NULL,
     X <- cbind(xv[inds], xp[inds], x1[inds], x2[inds])
 
     # eliminate peaks that are near by
-    if (minpeakdistance != 1)
-        warning("Handling 'minpeakdistance' has not yet been implemented.")
+    if (minpeakdistance < 1)
+        warning("Handling 'minpeakdistance < 1' is logically not possible.")
 
-    # Sort according to peak height
-    if (sortstr) {
+    # sort according to peak height
+    if (sortstr || minpeakdistance > 1) {
         sl <- sort.list(X[, 1], na.last = NA, decreasing = TRUE)
         X <- X[sl, , drop = FALSE]
+    }
+
+    # return NULL if no peaks
+    if (length(X) == 0) return(c())
+
+	# find peaks sufficiently distant
+    if (minpeakdistance > 1) {
+        no_peaks <- nrow(X)
+        badpeaks <- rep(FALSE, no_peaks)
+
+        # eliminate peaks that are close to bigger peaks
+        for (i in 1:no_peaks) {
+            ipos <- X[i, 2]
+            if (!badpeaks[i]) {
+                dpos <- abs(ipos - X[, 2])
+                badpeaks <- badpeaks | (dpos > 0 & dpos < minpeakdistance)
+            }
+        }
+        # select the good peaks
+        X <- X[!badpeaks, ]
     }
 
     # Return only the first 'npeaks' peaks
@@ -57,7 +77,5 @@ findpeaks <- function(x,nups = 1, ndowns = nups, zero = "0", peakpat = NULL,
         X <- X[1:npeaks, , drop = FALSE]
     }
 
-    if (length(X) == 0)    return(c())
-    # else if (nrow(X) == 1) return(drop(X))
-    else return(X)
+    return(X)
 }

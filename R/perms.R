@@ -39,12 +39,3 @@ randperm <- function(a, k) {
     m <- sample(a, size = k, replace = FALSE)
     return(m)
 }
-
-
-invperm <- function(p) {
-    n <- length(p)
-    if (any(sort(p) != 1:n))
-        stop("Vector 'p' must be a permutation of 1:length(p).")
-
-    return((1:n)[order(p)])
-}

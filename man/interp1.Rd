@@ -8,7 +8,7 @@
 }
 \usage{
 interp1(x, y, xi = x,
-        method = c("constant", "linear", "nearest", "spline", "cubic"))
+        method = c("linear", "constant", "nearest", "spline", "cubic"))
 }
 \arguments{
   \item{x}{Numeric vector; points on the x-axis; at least two points require;
@@ -17,7 +17,7 @@ interp1(x, y, xi = x,
            \code{x} and \code{y} must be of the same length.}
   \item{xi}{Numeric vector; points at which to compute the interpolation;
             all points must lie between \code{min(x)} and \code{max(x)}.}
-  \item{method}{One of ``constant", ``linear", ``nearest", ``spline", or ``cubic".}
+  \item{method}{One of ``constant", ``linear", ``nearest", ``spline", or ``cubic"; default is ``linear"}
 }
 \details{
   Interpolation to find \code{yi}, the values of the underlying function
@@ -25,8 +25,8 @@ interp1(x, y, xi = x,
 
   Methods can be:
   \tabular{ll}{
-  \code{constant} \tab constant between points \cr
   \code{linear} \tab linear interpolation (default) \cr
+  \code{constant} \tab constant between points \cr
   \code{nearest} \tab nearest neighbor interpolation \cr
   \code{spline} \tab cubic spline interpolation \cr
   \code{cubic} \tab cubic Hermite interpolation \cr
