@@ -19,9 +19,11 @@ polyApprox(f, a, b, n, ...)
   Uses the Chebyshev coefficients to derive polynomial coefficients.
 }
 \value{
-  List with three components: the approximating polynomial, a function
-  evaluating this polynomial, and the estimated precision over the given
-  interval.
+  List with four components:
+  \item{p}{the approximating polynomial.}
+  \item{f}{a function evaluating this polynomial.}
+  \item{cheb.coeff}{the Chebyshev coefficients.} 
+  \item{estim.prec}{the estimated precision over the given interval.}
 }
 \references{
   Carothers, N. L. (1998). A Short Course on Approximation Theory.
@@ -41,14 +43,17 @@ polyApprox(f, a, b, n, ...)
 #   Polynomial approximation for sin
 polyApprox(sin, -pi, pi, 9)
 # $p
-#  [1]  0.06549943  0.00000000 -0.58518036  0.00000000  2.54520983
-#  [7]  0.00000000 -5.16709776  0.00000000  3.14158037  0.00000000
-# 
+#  [1]  2.197296e-06  0.000000e+00 -1.937495e-04  0.000000e+00  8.317144e-03
+#  [6]  0.000000e+00 -1.666468e-01  0.000000e+00  9.999961e-01  0.000000e+00
+#
 # $f
 # function (x) 
-# polyval(r, x)
-# <environment: 0x1f978e8>
-# 
+# polyval(p, x)
+#
+# $cheb.coeff
+#  [1]  0.06549943  0.00000000 -0.58518036  0.00000000  2.54520983  0.00000000
+#  [7] -5.16709776  0.00000000  3.14158037  0.00000000
+#
 # $estim.prec
 # [1] 1.151207e-05
 

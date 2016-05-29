@@ -4,7 +4,7 @@
   Boundary Value Problems
 }
 \description{
-  Solves boundary value problems of second order differential equations.
+  Solves boundary value problems of linear second order differential equations.
 }
 \usage{
 bvp(f, g, h, x, y, n = 50)
@@ -20,8 +20,8 @@ bvp(f, g, h, x, y, n = 50)
   \item{n}{number of intermediate grid points; default 50.}
 }
 \details{
-  Solves the two-point boundary value problem given as a differential equation
-  of second order in the form:
+  Solves the two-point boundary value problem given as a linear differential 
+  equation of second order in the form:
   \deqn{y'' = f(x) y' + g(x) y + h(x)}
   with the finite element method. The solution \eqn{y(x)} shall exist
   on the interval \eqn{[a, b]} with boundary conditions \eqn{y(a) = y_a} 
@@ -61,19 +61,6 @@ sfun <- function(x) 1.25 + 0.4860896526*x - 2.25*x^2 +
 xx <- linspace(0, 4)
 yy <- sfun(xx)
 lines(xx, yy, col="red")
-grid()}
-
-\dontrun{
-##  Solve -y'' + 0.1*y = 1 + sin(4*pi*x)
-##  on [0, 1] with y(0) = y(1) = 0.
-f3 <- function(x) -sin(4*pi*x) - 1
-sol <- bvp(0, 0.1, f3, c(0, 1), c(0, 0), n = 40)
-
-# The analytic solution is
-fan <- function(x) cc[1]*exp(sqrt(0.1)*x) + cc[2]*exp(-sqrt(0.1)*x) + 
-                   1/((4*pi)^2+0.1)*sin(4*pi*x) + 10
-ezplot(fan, 0, 1, col = "magenta", lty = 3)
-points(sol$xs, sol$ys, type = "p", col = "blue")
 grid()}
 }
 \keyword{ ode }

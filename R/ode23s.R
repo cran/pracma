@@ -95,6 +95,6 @@ ode23s <- function(f, t0, tfinal, y0, jac = NULL, ...,
         if (abs(h) > hmax)
             h <- sign(h)*hmax
     }
-    return(list(t = as.matrix(tout), y = t(yout)))
+    return(list(t = c(tout), y = t(yout)))
 }
 

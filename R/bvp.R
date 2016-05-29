@@ -35,33 +35,20 @@ bvp <- function(f, g, h, x, y, n = 50) {
 }
 
 
-# bvp <- function(f, a, b, ya, yb, N, cc, ...) {
-#     stopifnot(is.numeric(a), length(a) == 1, is.numeric(b), length(b) == 1,
-#               is.numeric(ya), length(ya) == 1, is.numeric(yb), length(yb) == 1)
+# bvp <- function(p, q, r, a, b, ya, yb) {
+#     z0 <- as.matrix(c(ya, 0, 0, 1))
+#     fun0 <- function(x, z) {
+#         as.matrix(c(z[2],
+#                     p(x)*z[2] + q(x)*z[1] + r(x),
+#                     z[4],
+#                     p(x)*z[4] + q(x)*z[3]
+#                    )
+#         )
+#     }
+#     res <- ode45(fun0, a, b, z0, hmax = 0.05)
+#     t <- res$t; z <- res$y
+#     n <- length(t)
 # 
-#     if (!is.numeric(N) || length(N) != 1 || floor(N) != ceiling(N) || N < 0)
-#         stop("Argument 'N' must be an integer greater or equal 1.")
-#     if (!is.numeric(cc) || length(cc) != 3)
-#         stop("Argument 'cc' must be a real vector of length 3.")
-# 
-#     fun <- match.fun(f)
-#     f   <- function(x) fun(x, ...)
-# 
-#     h <- (b-a)/(N+1)
-#     xh <- linspace(a, b, N+2)
-#     hm <- cc[1]/h^2
-#     hd <- cc[2]/(2*h)
-# 
-#     A <- diag((2*hm + cc[3]), N, N)
-#     A[col(A) == row(A)-1] <- -hm - hd
-#     A[col(A) == row(A)+1] <- -hm - hd
-# 
-#     F <- f(xh[2:(N+1)])
-#     F[1] <- F[1] + ya*(hm + hd)
-#     F[N] <- F[N] + yb*(hm - hd)
-# 
-#     yh <- qr.solve(A, F)
-#     yh <- c(ya, yh, yb)
-# 
-#     return(list(xh = xh, yh = yh))
+#     y <- z[, 1] + (yb - z[n, 1]) * z[, 3] / z[n, 3]
+#     return(list(xs = t, ys = y))
 # }

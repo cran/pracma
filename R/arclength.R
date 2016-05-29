@@ -9,6 +9,9 @@ arclength <- function(f, a, b, nmax = 20, tol = 1e-05, ...) {
  	fun <- match.fun(f)
  	f <- function(x) fun(x, ...)
 
+ 	if (abs(b-a) < tol)
+ 	    return(list(length = 0, niter = 0, rel.err = tol))
+
     fa <- f(a); fb <- f(b)
     m <- length(fa)
     if (length(fa) < 2)

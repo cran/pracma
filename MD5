@@ -1,7 +1,7 @@
 97f6eedc10d90921a363632f2f85721d *COPYING
-be3b6e699170b08e4bf700f28cc21694 *DESCRIPTION
-5ba868be89ccdda1a2e15870f9f9d368 *NAMESPACE
-1251398c10abbf8aec86b736690aed91 *NEWS
+97eedea14e4c2cf4ffd222ccd53c15e4 *DESCRIPTION
+29a1117b7b961bc85c2580a440dce8d9 *NAMESPACE
+d197b21ffbc5313e9113060239dc27b4 *NEWS
 8e2ec5415edc8417dd8da8cb53d8d0b9 *R/abm3.R
 556a17b11b7876e19e56a799aa125485 *R/accumarray.R
 3a2bb5e25f1e3c1bbd2bfc930776a25d *R/agmean.R
@@ -10,7 +10,7 @@ c4a7fa3da031e3cc0e19ff03cf3fa304 *R/akima.R
 0878d5c778f27549674adacba78d44eb *R/andor.R
 c4751d2108981466d37c2bc65dc7aec0 *R/andrews.R
 52b916762d9c51bc7479906eab7f83ac *R/angle.R
-8391dd460a3417a85d996c15aeafb001 *R/arclength.R
+a7c73bd0537e8f7d7898878c599703d8 *R/arclength.R
 51738592c790f0df96cc39018dfbad2e *R/barycentric.R
 ca6fbf27ca08f18b2a41032af12b1cbb *R/beep.R
 970902bcf45662793ec8aaa2d1b2dc33 *R/bernoulli.R
@@ -20,7 +20,7 @@ dc8f057f63bf3734aa7fb097f3f6200f *R/blkdiag.R
 71038654e10d017e5bccb4310b92d10d *R/brentdekker.R
 2ba69b215030ec4d902e483744a04eeb *R/broyden.R
 f89a4f2c93d9d4f1816df786eb3a5742 *R/bsxfun.R
-08cc2f031bff16200f4a300e90737fe9 *R/bvp.R
+cf30354a8e529526a39c63faaf48c106 *R/bvp.R
 e8513dc322aee02d4d9f902747405d22 *R/cart2sph.R
 aea7658470693c1dfeb2b48e5c4ba090 *R/charpoly.R
 a54f4ba4671587dafe6fedcc2dc910d6 *R/chebyshev.R
@@ -79,6 +79,7 @@ d99ccd15d4f16139ee0dfa612f763064 *R/flipdim.R
 508b6a97c85342713d5b2a4b1a0ce256 *R/fnorm.R
 1ecf8f2687247b9eb35da04a1c0f4d36 *R/fornberg.R
 f99689ae2dfd4dd3cfb8b12827ee39bc *R/fplot.R
+74f5c84804dbe855ed1819a2b9e312c0 *R/fractalcurve.R
 79a43056700701e86763f4ff1425b28e *R/fresnel.R
 4b056168d0f27d4a54c5123861e77e9d *R/fsolve.R
 079b8d84b9f225a1fe3fd10950265a4d *R/fzero.R
@@ -123,6 +124,7 @@ ab6e7f8446b9e832f8166c0598b3e5f6 *R/legendre.R
 bdfd4166c6e97a94ee8ab3f924220414 *R/linprog.R
 f5ba573c81263a3fa84cb1027a5a40cb *R/linspace.R
 226d83f126fe8a93823cbe245deae998 *R/lsqlin.R
+d616eda9eaaecbfb3d1c79cc0ec7b191 *R/lsqlincon.R
 5aca5f3b8e5a0bd5b99a0672d32a8e4a *R/lsqnonlin.R
 d822cd6389752fa30a5f40493ac683c4 *R/lsqnonneg.R
 b2511db2adbd247fda9c1af969923299 *R/lu.R
@@ -150,8 +152,8 @@ e17e65a86178d35db3b292b3264209d6 *R/norm.R
 31abc42a8888dbed197f3cdc45dd5726 *R/normest.R
 51a165a4141187bfcb436fb70e608e54 *R/nthroot.R
 5a20423ab216b530a0a5c9c55c939d6f *R/numderiv.R
-4e7e24195eac81865448445f1a24874b *R/ode23.R
-ac39ba7f92e8ef45f374e021ef7b6ab0 *R/ode23s.R
+227edff61515a5ebfdee9bc92983efd7 *R/ode23.R
+9113726eeb629f95c947f999a3008a9b *R/ode23s.R
 e2bb80a60048bc6d36d9873e93cb47c5 *R/ode45.R
 a44881cfa37b0c3dfe2e0095b04dce9a *R/ode78.R
 0e337f7057164fd73018b143ff23c46e *R/odregress.R
@@ -165,11 +167,11 @@ a5ad6f5fca02f735f55d0e89d1d3485c *R/plotyy.R
 ce4320e4ce3c7d8e2033f3b78ef18157 *R/polar.R
 4f2b6e5299c9209e6160752f9f08fdce *R/poly.R
 d113868b72b490eb387eed78bee668b7 *R/poly2str.R
-bd3e7f3a7bc7df0005f7158e94809755 *R/polyApprox.R
+21201a6fc7716307fb8cb129d8df344c *R/polyApprox.R
 24260a352d00ee9c9cda02fd31c878b4 *R/polyadd.R
 91c5ac884815a0b6b22091f198b0563b *R/polyarea.R
 79cb9e35bd39492cdc2621bc36a6e09d *R/polyder.R
-d87231d615d893a85ac7b7d6ffe0eb50 *R/polyfit.R
+12e464e35b21432bd53dd1dfcba09395 *R/polyfit.R
 931d3b5ccf18cfabcdf82c2cac9a44a5 *R/polyint.R
 2e8d039be82f14ed71fa06b563a0b82d *R/polylog.R
 59647fdfb896828caa82721140b9f837 *R/polymul.R
@@ -190,6 +192,7 @@ b89add8a0127b680043cd00de82e7185 *R/quadcc.R
 24aba26411c536da2b8028e66e45e887 *R/quadgr.R
 134ed0714bfad0269e8d7c518f6bcebb *R/quadinf.R
 25513ce418ecdb2684bc3a34a735fd56 *R/quadl.R
+d8f208aa2a6f4c49403111738dcd860f *R/quadprog.R
 990a7f5faf9d905d31071f8ebf756d8d *R/quadv.R
 d1ebd06a85cc0a05e314fb0abbacbcac *R/rand.R
 5a6e727d03d721f4cddf28521420eb25 *R/rank.R
@@ -203,7 +206,7 @@ dd20a5d7f54f429acacbf33a74d742b7 *R/repmat.R
 f62b223d0e3ecc2131d98ee9b15f91fb *R/rk4.R
 195da6b01418209cf5ea3a46bafa6996 *R/rkf54.R
 e63ba7247aaf72e25dedd1f1a340eac2 *R/rmserr.R
-093974c2a5b58530d3f14bed60eac07b *R/romberg.R
+4b60c91641b3c30c67f155a6836bc2bf *R/romberg.R
 19d3acb79ff637202b16d7c525a4893b *R/roots.R
 49030137e68aed3c481e82437c9b7fd7 *R/rortho.R
 3c0c222e651f9d1239fe8e60496fd691 *R/rosser.R
@@ -229,7 +232,7 @@ aadfe165c5c08368d382a03e373cd88b *R/str2num.R
 46222a6afa44cb7e9decf84ec7cf5e21 *R/taylor.R
 c50895f647c784d80309a399bc616974 *R/tictoc.R
 02897bca5d57aed20ae7357386154b22 *R/trace.R
-5df3df24c29725789ebddd43ede0a029 *R/trapz.R
+aa34353051c74e4b35735089ee80ff70 *R/trapz.R
 475601ba8dad6827c1aff6551f5f75ea *R/tri.R
 8468a641fd8f1238c4d4d34b610e2549 *R/trigregress.R
 9b7491bfcb3e7c547c6ef1558c4c2743 *R/triquad.R
@@ -240,9 +243,9 @@ fbbbbfe94fec1640962dd18820c2d305 *R/whittaker.R
 f52be7d201dbc9a815c229b58dab11dd *R/wilkinson.R
 e09f92a7ba7e72fbfbc3e2dec887b3fc *R/zeta.R
 f9ccb58211bc1dfbd6910db8dc4d3250 *R/zzz.R
-f6a665f5803e090af5d431f74138997c *data/brown72.rda
-424cf95f7a3d97b000278e76823d2851 *data/nile.rda
-256d6b22b9684fcce9eaf63ddf0da532 *data/titanium.rda
+5e2b3da0638f93d6776441acc3c8446d *data/brown72.rda
+64151449f247a50555b7d87fe52abf8b *data/nile.rda
+a44e176301a847563251cba8bea9d35a *data/titanium.rda
 b0665e750dc8a153600fa13f2863447a *demo/00Index
 dadc96a0ba340629e215cdd44344dcb3 *demo/pracma.R
 ca30ca6722fad23dde2a739ec7b57e4f *man/abm3.Rd
@@ -253,7 +256,7 @@ c9ac278601cafcd30780cfa7134210d4 *man/akima.Rd
 5d88a0d8036409e06cf42ed2ba39d589 *man/andor.Rd
 b7cd06192a6d3bcf1ba1b1c49f01efd9 *man/andrews.Rd
 18210f37cc8db522e20ba4d9d1c7351c *man/angle.Rd
-d22dfc8e3e27742a8a5249043d039e1e *man/arclength.Rd
+ee7ca1b93d9694de161eb24395e6d486 *man/arclength.Rd
 7e284a426f5c259c3f41f17289f50360 *man/barylag.Rd
 b0123a086103cd7333f2be74c5e2311d *man/barylag2d.Rd
 a461d36d634becb0561e856b1d758569 *man/beep.Rd
@@ -266,7 +269,7 @@ a3f44a1b3f4e3904e3d780b6839f67bf *man/blanks.Rd
 28ca91b0a7740aaaa478ea7bf44966a7 *man/brown72.Rd
 fa1d9614b2eaa79dc5421b47148e14e1 *man/broyden.Rd
 16372b5de30ce28c62ed501023ed7498 *man/bsxfun.Rd
-1b3edb7faf609ac6df34f6e735bfaf60 *man/bvp.Rd
+ccd90a2598c34a3d2a270b82d2b1087f *man/bvp.Rd
 03291f138fd823189b63fe5f7786c161 *man/cart2sph.Rd
 c3c7b8b2b92976c387544d8f1574904e *man/cd.Rd
 7088879cbc952d05a1ff4270da186eac *man/ceil.Rd
@@ -332,6 +335,7 @@ b6ed9b3d935eb2410b319077e579b8cf *man/flipdim.Rd
 6a7c4a699841ecb4e74c63210dc54feb *man/fnorm.Rd
 431b5105e9ccb1c07d506d0f9a4a3f8b *man/fornberg.Rd
 654d553cc955e689ae38c93705e9af8f *man/fplot.Rd
+befb665b74155e19b65f5eb7dfff6209 *man/fractalcurve.Rd
 5e427cde7ab20bd82defcaa3e0ce9f8d *man/fresnel.Rd
 baf150526d46ca07651bb6b4f9233521 *man/fsolve.Rd
 b14feadb494ddd999b1b8a8acfe823b4 *man/fzero.Rd
@@ -391,7 +395,8 @@ e0e94623450a96018b917a295bea02ed *man/legendre.Rd
 6dc0d582825104a3b1f7e7097c47d16f *man/linprog.Rd
 4d031279caac8963f8903a7363953502 *man/linspace.Rd
 0f905f01ddf2cd36654c5efee0436399 *man/logspace.Rd
-64d2446e6d09938acbbe1d1908362e93 *man/lsqlin.Rd
+2b77bf88cb9c27525115c591b8e680e5 *man/lsqlin.Rd
+497e23dede0ce0ad6eab1b769ca6f28e *man/lsqlincon.Rd
 6e035a297e18b54f94867011cd8f961f *man/lsqnonlin.Rd
 80780f0daafd70391bc748f09049da34 *man/lu.Rd
 d10b9378eac9601500e92fb2eac442a1 *man/magic.Rd
@@ -439,11 +444,11 @@ ac0eb3a8827ff362eda88fe83a5777c0 *man/plotyy.Rd
 801f147b139f54615f2abd40660deaef *man/polar.Rd
 8f05b956562622297bfccb098afa7c1c *man/poly.Rd
 cf72258739e2ab7aa44afb2a852d3e1c *man/poly2str.Rd
-68d90a63b53cd93d8884106b8f8cdcf0 *man/polyApprox.Rd
+35e28fe5d2eb071697fd61b77290028b *man/polyApprox.Rd
 63b5c56b36ff8dfd0fa7449f29a1bf54 *man/polyadd.Rd
 4a79487021e35831041862499510f060 *man/polyarea.Rd
 668fc1227731ac66ab9de26b3a2df230 *man/polyder.Rd
-b643bc89a4d720e81d30defea76ad04f *man/polyfit.Rd
+e5b1162b5236ffc5ab9dccb890b5700d *man/polyfit.Rd
 eb4bdb8303670ef4a9c2e92696d91e60 *man/polyint.Rd
 f8d28b28323935223d3b6b3a7731271b *man/polylog.Rd
 f263142e1520396fcd0b41e25fbe80ce *man/polymul.Rd
@@ -466,6 +471,7 @@ f78e6988a5313cb7edab8699fe4a0970 *man/quadgk.Rd
 c5c1a0403a8b99a1afb6ede2860b7d12 *man/quadgr.Rd
 c6a032f353349a0b604c66d0fbe0eb40 *man/quadinf.Rd
 26f86eaf809847d34dc03e516ac33f57 *man/quadl.Rd
+12219937d22cc841d595d02762fc0091 *man/quadprog.Rd
 ab5e12394bdabd8b18daef3b8fec5c94 *man/quadv.Rd
 809bcd3b9a64e1d3cc3529c59abf0cab *man/quiver.Rd
 1aa98eca28034d2da0fadd36c7645ff0 *man/rand.Rd
@@ -523,7 +529,7 @@ a5f503e5d9456191ea28d008a8a4b357 *man/taylor.Rd
 e2f3cbba480da2dcd6657444a88a237c *man/titanium.Rd
 57e64ce59a9824b113268ab0aaf5e658 *man/toeplitz.Rd
 987d14179138078b158beffa12071993 *man/trace.Rd
-bb8a3a3fd8504f9f913ccb1a95bc9fd9 *man/trapz.Rd
+d95679fe0d204e8d5dbf8edf9e3532a6 *man/trapz.Rd
 6f0017a9064392f52509d5fc16e82e9a *man/tri.Rd
 408007999265cb6e9b4bbe0e126be55f *man/trigApprox.Rd
 96ec0de7650171c02770cfc3d4190faa *man/trigPoly.Rd

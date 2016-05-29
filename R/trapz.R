@@ -54,3 +54,33 @@ cumtrapz <- function(x, y) {
 
     return(rbind(zeros(1, n), ct))
 }
+
+
+trapzfun <- function(f, a, b, maxit = 25, tol = 1e-07, ...) {
+    stopifnot(is.numeric(a), length(a) == 1, is.finite(a),
+              is.numeric(b), length(b) == 1, is.finite(b))
+
+    fun <- match.fun(f)
+    f <- function(x) fun(x, ...)
+
+    if (a == b) return(list(area = 0.0, iter = 0, error = 0))
+	
+    n <- 1
+    h <- b - a
+    T <- h * (f(a) + f(b)) / 2.0
+
+    for (i in 1:maxit) {
+        M <- 0
+        for (j in 0:(n-1)) {
+            M <- M + f(a + (j + 0.5) * h)
+        }
+        M <- h * M
+        T <- (T + M) / 2.0
+        h <- h / 2.0
+        n <- 2 * n
+        err <- abs(T - M)
+        if (err < tol) break
+    }
+
+    return(list(value = T, iter = i, rel.err = err))
+}

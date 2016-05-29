@@ -14,16 +14,16 @@ polyApprox <- function(f, a, b, n, ...) {
 
     # Compute the Chebyshev coefficients
     cP <- chebPoly(n)
-    cC <- chebCoeff(sin, a, b, n)
-    p  <- drop(cC %*% cP)
+    cC <- chebCoeff(f, a, b, n)
+    pC <- drop(cC %*% cP)
     c0 <- cC[1]
 
     # Compute the corresponding polynomial
     q  <- c(2, -(b+a))/(b-a)
-    r  <- polytrans(p, q)
-    r  <- polyadd(r, c(-c0/2))
+    p  <- polytrans(pC, q)
+    p  <- polyadd(p, c(-c0/2))
 
-    rf <- function(x) polyval(r, x)
+    rf <- function(x) polyval(p, x)
     ep <- fnorm(f, rf, a, b, p = Inf)
-    return(list(p = p, f = rf, estim.prec = ep))
+    return(list(p = p, f = rf, cheb.coeff = pC, estim.prec = ep))
 }

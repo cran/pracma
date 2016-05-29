@@ -27,10 +27,8 @@
 }
 \note{
   The Matlab function \code{lsqlin} solves a more general problem, allowing
-  additional linear inequalities and bound constraints.
-  In R, bound constraints could be treated using function \code{transfinite}
-  in package `adagio'. Linear inequalities will be added later applying
-  Linear Algebra methods alone.
+  additional linear inequalities and bound constraints. In \code{pracma} this
+  task is solved applying function \code{lsqlincon}.
 }
 \author{
   HwB  email: <hwborchers@googlemail.com>
@@ -40,7 +38,7 @@
   SIAM, Society for Industrial and Applied Mathematics, Philadelphia.
 }
 \seealso{
-  \code{\link{nullspace}}, \code{\link{pinv}}
+  \code{\link{nullspace}}, \code{\link{pinv}}, \code{\link{lsqlincon}}
 }
 \examples{
 A <- matrix(c(

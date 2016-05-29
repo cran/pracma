@@ -83,5 +83,30 @@ L1 <- quadgk(f1, 0, 5, tol = 1e-14)
 print(L1, digits = 16)
 # [1] 82.81020372882216
   }
+
+\dontrun{
+#-- --------------------------------------------------------------------
+#   Arc-length parametrization of Fermat's spiral
+#-- --------------------------------------------------------------------
+# Fermat's spiral: r = a * sqrt(t) 
+f <- function(t) 0.25 * sqrt(t) * c(cos(t), sin(t))
+
+t1 <- 0; t2 <- 6*pi
+a  <- 0; b  <- arclength(f, t1, t2)$length
+fParam <- function(w) {
+    fct <- function(u) arclength(f, a, u)$length - w
+    urt <- uniroot(fct, c(a, 6*pi))
+    urt$root
+}
+
+ts <- linspace(0, 6*pi, 250)
+plot(matrix(f(ts), ncol=2), type='l', col="blue", 
+     asp=1, xlab="", ylab = "",
+     main = "Fermat's Spiral", sub="20 subparts of equal length")
+
+for (i in seq(0.05, 0.95, by=0.05)) {
+    v <- fParam(i*b); fv <- f(v)
+    points(fv[1], f(v)[2], col="darkred", pch=20)
+} }
 }
 \keyword{ math }

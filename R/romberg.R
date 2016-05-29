@@ -39,12 +39,11 @@ romberg <- function(f, a, b, maxit = 25, tol = 1e-12, ...)
             j <- 2+iter-k
             I[j,k] <- (4^(k-1)*I[j+1,k-1] - I[j,k-1]) / (4^(k-1)-1)
         }
-        err <- abs((I[1,iter+1] - I[2,iter]) / I[1,iter+1])
+        err <- abs(I[1,iter+1] - I[2,iter])
     }
 
     if (iter == maxit)
         warning("Maximum number of iterations has been reached.")
-    if (err < tol) err <- tol 
 
     return(list(value = I[1, iter+1], iter = iter, rel.error = err))
 }

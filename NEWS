@@ -3,6 +3,45 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.9.4 (planned)
+
+    o bvp4c() solves the general boundary value problem for nonlinear ODEs.
+
+CHANGES IN VERSION 1.9.3 (2016-05-28)
+
+    o bvp() now solves boundary value problems for linear 2nd order ODEs
+      using a 'finite differences' approach and a tridiagonal solver.
+    o polyfit2() has been removed, use polyfix() instead.
+
+CHANGES IN VERSION 1.9.2 (2016-03-04)
+
+    o romberg() corrected an error estimation that diminished the accuracy.
+    o trapzfun() realizes trapezoidal integration with iterated calculations.
+
+CHANGES IN VERSION 1.9.1 (2016-02-15)
+
+    o fractalcurve() generates some fractal curves of order n, i.e. the
+      Hilbert, Sierpinski, Snowflake, Dragon, and Molecule curves.
+    o ode23(), ode23s() changed the size of the returned components,
+      now it is similar to what is returned by ode45() and ode78().
+    o arclength() corrected a boundary condition ('on the left'), added
+      an example how to generate an arc-length parametrization of a curve.
+
+CHANGES IN VERSION 1.9.0 (2015-12-17)
+
+    o quadprog() solves quadratic programming problems (QP) with linear
+      equality and inequality constraints, based on package 'quadprog'.
+    o lsqlincon() solves linear least-squares problems with linear equality 
+      *and* inequality constraints (as well as bound constraints), internally
+      applying solve.QP from the 'quadprog' package.
+    o pracma now imports package 'quadprog'.
+
+CHANGES IN VERSION 1.8.9 (2015-12-05)
+
+    o polyfix() fits a polynomial that exactly passes through given
+      fixed points. polyfit2() will be deprecated in future versions.
+    o Important bug fix for polyApprox() (thanks to Max Marchi).
+
 CHANGES IN VERSION 1.8.8 (2015-10-28)
 
     o Option 'minpeakdistance' for function findpeaks() added
