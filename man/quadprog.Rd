@@ -23,7 +23,7 @@ quadprog(C, d, A = NULL, b = NULL,
 \details{
   Finds a minimum for the quadratic programming problem specified as:
   \deqn{min 1/2 x'Cx + d'x}
-  such that the followi.g constraints are satisfied:
+  such that the following constraints are satisfied:
   \deqn{A x <= b}
   \deqn{Aeq x = beq}
   \deqn{lb <= x <= ub}

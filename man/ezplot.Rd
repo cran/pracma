@@ -1,12 +1,15 @@
 \name{ezplot}
 \alias{ezplot}
+\alias{fplot}
 \title{
   Easy Function Plot
 }
 \description{
-  Easy function plot/wo the need to define \code{x, y} coordinates.
+  Easy function plot w/o the need to define \code{x, y} coordinates.
 }
 \usage{
+fplot(f, interval, ...)
+
 ezplot( f, a, b, n = 101, col = "blue", add = FALSE,
         lty = 1, lwd = 1, marker = 0, pch = 1,
         grid = TRUE, gridcol = "gray", 
@@ -15,6 +18,7 @@ ezplot( f, a, b, n = 101, col = "blue", add = FALSE,
 }
 \arguments{
   \item{f}{Function to be plotted.}
+  \item{interval}{interval [a, b] to plot the function in}
   \item{a, b}{Left and right endpoint for the plot.}
   \item{n}{Number of points to plot.}
   \item{col}{Color of the function graph.}
@@ -47,8 +51,11 @@ ezplot( f, a, b, n = 101, col = "blue", add = FALSE,
   Plots the function graph and invisibly returns \code{NULL}.
 }
 \note{
-  Should mimick the Matlab function of the same name, has some more
-  functionality, misses the possibility to plot several functions.
+  \code{fplot} is almost an alias for \code{ezplot} as all \code{ez...} 
+  will be replaced by MATLAB with function names \code{f...} in 2017.
+
+  \code{ezplot} should mimick the Matlab function of the same name, has
+  more functionality, misses the possibility to plot several functions.
 }
 \seealso{
   \code{\link{curve}}

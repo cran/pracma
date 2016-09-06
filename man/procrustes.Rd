@@ -61,7 +61,7 @@ kabsch(A, B, w = NULL)
 }
 \examples{
 ##  Procrustes
-U <- rortho(5)                  # random orthogonal matrix
+U <- randortho(5)               # random orthogonal matrix
 P <- procrustes(U, eye(5))
 
 ##  Kabsch

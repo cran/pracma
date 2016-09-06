@@ -3,6 +3,12 @@
 ##
 
 
+fplot <- function(f, interval, ...) {
+    stopifnot(is.numeric(interval), length(interval) == 2)
+    a <- interval[1]; b <- interval[2]
+    ezplot(f, a, b, main = "")
+}
+
 ezplot <- function(f, a, b, n = 101, col = "blue", add = FALSE,
                    lty = 1, lwd = 1, marker = 0, pch = 1,
                    grid = TRUE, gridcol = "gray", 
@@ -78,23 +84,55 @@ ezcontour <- function(f, xlim = c(-pi,pi), ylim = c(-pi,pi),
 }
 
 
+ezsurf <- function (f, xlim = c(-pi, pi), ylim = c(-pi, pi),
+                    n = 60, ...) {
+    fun <- match.fun(f)
+    f <- function(x) fun(x)
+    stopifnot(is.numeric(xlim), is.numeric(ylim), length(xlim) == 2,
+              length(ylim) == 2, xlim[1] < xlim[2], ylim[1] < ylim[2])
+    
+    x <- linspace(xlim[1], xlim[2], n)
+    y <- linspace(ylim[1], ylim[2], n)
+    # z <- outer(xx, yy, f)
+    z <- matrix(NA, n, n)
+    for (i in 1:n) {
+        for (j in 1:n) {
+            z[i, j] <- f(c(x[i], y[j]))
+        }
+    }
+    
+    # interpolating colors in the range of specified colors
+    nbcol <- 100
+    # jet.colors <- colorRampPalette( c("blue", "yellow") )
+    # colors <- jet.colors(nbcol)
+    colors <- topo.colors(nbcol)
+    
+    # Compute the z-value at the facet centres
+    zfacet <- z[-1, -1] + z[-1, -n] + z[-n, -1] + z[-n, -n]
+    facetcol <- cut(zfacet, nbcol)
+    
+    persp(x, y, z, col = colors[facetcol], border = "grey50", ...)
+    invisible(NULL)
+}
+
+
 ezmesh <- function(f, xlim = c(-pi,pi), ylim = c(-pi,pi), 
-                         n = 60, col = "lightgray", ...) {
+                   n = 60, ...) {
     fun <- match.fun(f)
     f <- function(x) fun(x)
     stopifnot(is.numeric(xlim), is.numeric(ylim),
               length(xlim) == 2, length(ylim) == 2,
               xlim[1] < xlim[2], ylim[1] < ylim[2])
-
-    xx <- linspace(xlim[1], xlim[2], n)
-    yy <- linspace(ylim[1], ylim[2], n)
-    F <- matrix(NA, n, n)
+    
+    x <- linspace(xlim[1], xlim[2], n)
+    y <- linspace(ylim[1], ylim[2], n)
+    z <- matrix(NA, n, n)
     for (i in 1:n) {
         for (j in 1:n) {
-            F[i, j] <- f(c(xx[i], yy[j]))
+            z[i, j] <- f(c(x[i], y[j]))
         }
     }
-    persp(xx, yy, F, col = col, ...)
+    persp(x, y, z, col = "yellow", border = "grey50", ...)
     invisible(NULL)
 }
 

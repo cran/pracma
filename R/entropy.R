@@ -20,10 +20,10 @@ approx_entropy <- function(ts, edim = 2, r = 0.2*sd(ts), elag = 1) {
             boolMat <- apply(tempMat > r, 2, max)
             phi[i]  <- sum(!boolMat)/(N-m+1)
         }
-        result[j] <- sum(phi)/(N-m+1)
+        result[j] <- sum(log(phi))/(N-m+1)
     }
 
-    apen <- log(result[1]/result[2])
+    apen <- result[1] - result[2]
     return(apen)
 }
 

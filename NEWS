@@ -3,9 +3,23 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.9.4 (planned)
+CHANGES IN VERSION 1.9.6 (planned)
 
     o bvp4c() solves the general boundary value problem for nonlinear ODEs.
+
+CHANGES IN VERSION 1.9.5 (2016-09-06)
+
+    o fprintf() mimicks MATLAB's function of the same name.
+	o Added ezsurf(), an easy surface plot following MATLAB.
+	o fplot() is almost an alias for ezplot(); please note that in future
+	  versions ez...() will be renamed to f...() according MATLAB 2016/17.
+
+CHANGES IN VERSION 1.9.4 (2016-07-27)
+
+    o rortho() renamed to randortho(), the underlying code was buggy
+      (not truely random) and has been replaced, thanks to Jan Tuitman.
+    o an error in the final step of calculating approx_energy() was
+      corrected, thanks to Daniel Krefl.
 
 CHANGES IN VERSION 1.9.3 (2016-05-28)
 

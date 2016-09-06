@@ -27,7 +27,7 @@ nearest_spd(A)
   Linear Algebra and its Applications. Vol. 103, pp.103-118.
 }
 \seealso{
-  \code{\link{rortho}}, \code{\link{procrustes}}
+  \code{\link{randortho}}, \code{\link{procrustes}}
 }
 \examples{
 A <- matrix(1:9, 3, 3)

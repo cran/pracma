@@ -1,18 +1,22 @@
-\name{ezcontour,ezmesh}
+\name{ezcontour,ezsurf,ezmesh}
 \alias{ezcontour}
+\alias{ezsurf}
 \alias{ezmesh}
 \title{
-  Contour and Mesh Plotter
+  Contour, Surface, and Mesh Plotter
 }
 \description{
-  Easy-to-use contour and 3-D mesh plotter.
+  Easy-to-use contour and 3-D surface resp mesh plotter.
 }
 \usage{
 ezcontour(f, xlim = c(-pi,pi), ylim = c(-pi,pi), 
-             n = 60, filled = FALSE, col = NULL)
+          n = 60, filled = FALSE, col = NULL)
+
+ezsurf(f, xlim = c(-pi, pi), ylim = c(-pi, pi),
+       n = 60, ...)
 
 ezmesh(f, xlim = c(-pi,pi), ylim = c(-pi,pi), 
-          n = 60, col = "lightgray", ...)
+       n = 60, ...)
 }
 \arguments{
   \item{f}{2-D function to be plotted, must accept \code{(x,y)} as a vector.}
@@ -28,9 +32,10 @@ ezmesh(f, xlim = c(-pi,pi), ylim = c(-pi,pi),
   If \code{filled=TRUE} is chosen, \code{col} should be a color scheme,
   the default is \code{heat.colors(12)}.
 
-  \code{ezmesh} generates a mesh/surface plot of the function \code{f} using 
-  \code{persp}. The most important additional parameters to be passed in
-  \code{...} are \code{} and \code{}.
+  \code{ezsurf} resp. \code{ezmesh} generates a surface/mesh plot of the 
+  function \code{f} using \code{persp}.
+  The most important additional parameters to be passed in \code{...} are 
+  \code{} and \code{}.
 
   The function \code{f} needs not be vectorized in any form.
 }

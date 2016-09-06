@@ -38,10 +38,6 @@ gaussLaguerre(n, a = 0)
   Gautschi (2004) --- and explicit Matlab realizations in Trefethen (2000).
   These procedures have also been implemented in Matlab by Geert Van Damme,
   see his entries at MatlabCentral since 2010.
-
-  For other Matlab implementations of many quadrature rules see the web site
-  \url{http://people.sc.fsu.edu/~jburkardt/m_src/m_src.html} by J. Burkardt,
-  Florida State University.
 }
 \seealso{
 \code{\link{gaussLegendre}}, \code{\link{gaussHermite}}

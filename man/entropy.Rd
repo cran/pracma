@@ -59,20 +59,20 @@ sample_entropy(ts, edim = 2, r = 0.2*sd(ts), tau = 1)
 }
 \examples{
 ts <- rep(61:65, 10)
-approx_entropy(ts, edim = 2)                      # -0.000936195
+approx_entropy(ts, edim = 2)                      # -0.0004610253
 sample_entropy(ts, edim = 2)                      #  0
 
 set.seed(8237)
-approx_entropy(rnorm(500), edim = 2)              # 1.48944  high, random
-approx_entropy(sin(seq(1,100,by=0.2)), edim = 2)  # 0.22831  low,  deterministic
+approx_entropy(rnorm(500), edim = 2)              # 1.351439  high, random
+approx_entropy(sin(seq(1,100,by=0.2)), edim = 2)  # 0.171806  low,  deterministic
 sample_entropy(sin(seq(1,100,by=0.2)), edim = 2)  # 0.2359326
 
 \dontrun{(Careful: This will take several minutes.)
 # generate simulated data
 N <- 1000; t <- 0.001*(1:N)
 sint   <- sin(2*pi*10*t);    sd1 <- sd(sint)    # sine curve
-chirpt <- sint + 0.1*whitet; sd2 <- sd(chirpt)  # chirp signal
-whitet <- rnorm(N);          sd3 <- sd(whitet)  # white noise
+whitet <- rnorm(N);          sd2 <- sd(whitet)  # white noise
+chirpt <- sint + 0.1*whitet; sd3 <- sd(chirpt)  # chirp signal
 
 # calculate approximate entropy
 rnum <- 30; result <- zeros(3, rnum)
