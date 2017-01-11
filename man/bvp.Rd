@@ -41,7 +41,7 @@ bvp(f, g, h, x, y, n = 50)
   for large values of \code{n}.
 }
 \seealso{
-  \code{\link{newmark}}
+  \code{\link{shooting}}
 }
 \examples{
 ##  Solve y'' = 2*x/(1+x^2)*y' - 2/(1+x^2) * y + 1

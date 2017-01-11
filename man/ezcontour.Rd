@@ -34,8 +34,6 @@ ezmesh(f, xlim = c(-pi,pi), ylim = c(-pi,pi),
 
   \code{ezsurf} resp. \code{ezmesh} generates a surface/mesh plot of the 
   function \code{f} using \code{persp}.
-  The most important additional parameters to be passed in \code{...} are 
-  \code{} and \code{}.
 
   The function \code{f} needs not be vectorized in any form.
 }

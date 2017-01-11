@@ -12,7 +12,7 @@
 \arguments{
   \item{x, y}{vectors with monotonically increasing elements, representing
               x- and y-coordinates of the data values in \code{Z}.}
-  \item{Z}{numeric \code{length(x)}-by-\code{length(y)} matrix.}
+  \item{Z}{numeric \code{length(y)}-by-\code{length(x)} matrix.}
   \item{xp, yp}{x-, y-coordinates of points at which interpolated values
                 will be computed.}
   \item{method}{interpolation method, ``linear'' the most useful.}

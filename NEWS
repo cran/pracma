@@ -3,16 +3,37 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.9.6 (planned)
+CHANGES IN VERSION 1.9.9 (2017-01-10)
 
-    o bvp4c() solves the general boundary value problem for nonlinear ODEs.
+    o Slightly changed the description lines on request of CRAN.
+
+CHANGES IN VERSION 1.9.8 (2017-01-10)
+
+    o whittaker() finally implemented avoiding the sparse matrix package.
+    o nelder_mead() now applies adaptive parameters for the simplicial
+      search, depending on the dimension of the problem space.
+    o psinc(x,n), the so-called periodic sinc function.
+
+CHANGES IN VERSION 1.9.7 (2016-12-14)
+
+    o shooting() implements the shooting method for boundary value problems
+      of second order differential equations.
+    o interp2() corrected the help page with size(z) = length(y)*length(x).
+    o Corrected a small oversight on the help page of Gauss-Laguerre.
+
+CHANGES IN VERSION 1.9.6 (2016-09-11)
+
+    o haversine() Haversine formula for geographical distances on earth.
+    o trigonometric functions accepting degrees instead of inputs in radians:
+      sind   cosd   tand   cotd   secd   cscd
+      asind  acosd  atand  acotd  asecd  acscd  atan2d
 
 CHANGES IN VERSION 1.9.5 (2016-09-06)
 
     o fprintf() mimicks MATLAB's function of the same name.
-	o Added ezsurf(), an easy surface plot following MATLAB.
-	o fplot() is almost an alias for ezplot(); please note that in future
-	  versions ez...() will be renamed to f...() according MATLAB 2016/17.
+    o Added ezsurf(), an easy surface plot following MATLAB.
+    o fplot() is almost an alias for ezplot(); please note that in future
+      versions ez...() will be renamed to f...() according MATLAB 2016/17.
 
 CHANGES IN VERSION 1.9.4 (2016-07-27)
 
@@ -46,8 +67,7 @@ CHANGES IN VERSION 1.9.0 (2015-12-17)
     o quadprog() solves quadratic programming problems (QP) with linear
       equality and inequality constraints, based on package 'quadprog'.
     o lsqlincon() solves linear least-squares problems with linear equality 
-      *and* inequality constraints (as well as bound constraints), internally
-      applying solve.QP from the 'quadprog' package.
+      *and* inequality constraints (as well as bound constraints).
     o pracma now imports package 'quadprog'.
 
 CHANGES IN VERSION 1.8.9 (2015-12-05)
@@ -230,7 +250,7 @@ CHANGES IN VERSION 1.5.9 (2013-11-30)
 CHANGES IN VERSION 1.5.8 (2013-11-28)
 
     o interp1() with option method ``spline'' now computes Moler's spline
-      functions, for compatibility with Matlab (hint by Boudewijn Klijn).
+      functions, for compatibility with MATLAB (hint by Boudewijn Klijn).
 
 CHANGES IN VERSION 1.5.7 (2013-10-11)
 
@@ -248,15 +268,15 @@ CHANGES IN VERSION 1.5.5 (2013-09-11)
 
 CHANGES IN VERSION 1.5.4 (2013-08-31)
 
-    o rectint() rectangular intersection areas (Matlab style).
-    o cumtrapz() cumulative trapezoidal integration (Matlab style).
+    o rectint() rectangular intersection areas (MATLAB style).
+    o cumtrapz() cumulative trapezoidal integration (MATLAB style).
     o Some corrections to help pages and function names.
 
 CHANGES IN VERSION 1.5.3 (2013-08-25)
 
     o arclength() length of a parametrized curve in n-dimensional space,
       w/ improved convergence by applying Richardson's extrapolation method.
-    o legendre() associated Legendre functions (Matlab style).
+    o legendre() associated Legendre functions (MATLAB style).
 
 CHANGES IN VERSION 1.5.2 (2013-08-23)
 
@@ -288,7 +308,7 @@ CHANGES IN VERSION 1.4.8 (2013-06-17)
 
     o findzeros() now finds 'quadratic' roots, too.
     o pdist2() added as an alias for distmat(),
-      while pdist(X) now is distmat(X, X) (Matlab style).
+      while pdist(X) now is distmat(X, X) (MATLAB style).
 
 CHANGES IN VERSION 1.4.7 (2013-05-20)
 
@@ -297,20 +317,20 @@ CHANGES IN VERSION 1.4.7 (2013-05-20)
 
 CHANGES IN VERSION 1.4.6 (2013-03-31)
 
-    o psi() Psi polygamma function (Matlab style).
+    o psi() Psi polygamma function (MATLAB style).
     o rosenbrock() and rastrigin() functions removed.
 
 CHANGES IN VERSION 1.4.5 (2013-03-21)
 
     o quadcc() new, iterative Clenshaw-Curtis quadrature.
-    o squareform() formats distance matrix (Matlab style).
+    o squareform() formats distance matrix (MATLAB style).
 
 CHANGES IN VERSION 1.4.4 (2013-03-12)
 
     o integral2() implements the two-dimensional numerical integration
       approach `TwoD', i.e. Gauss-Kronrod (3, 7)-points on rectangles.
     o integral3() three-dimensional integration based on integral2().
-    o triplequad() 3-dim. integration based on dblquad() (Matlab style).
+    o triplequad() 3-dim. integration based on dblquad() (MATLAB style).
 
 CHANGES IN VERSION 1.4.3 (2013-03-10)
 
@@ -335,7 +355,7 @@ CHANGES IN VERSION 1.4.0 (2013-02-10)
 
 CHANGES IN VERSION 1.3.9 (2013-01-26)
 
-    o pdist() as an alias for distmat() (Matlab style).
+    o pdist() as an alias for distmat() (MATLAB style).
     o fftshift(), ifftshift() shifting Fourier frequencies.
     o Improved grad(), jacobian(), hessian(), and laplacian().
 
@@ -344,7 +364,7 @@ CHANGES IN VERSION 1.3.8 (2013-01-10)
     o Smaller corrections, e.g., removed deprecated 'is.real';
       no startup messages anymore.
     o geomean(), harmmean(), trimmean() geometric, harmonic, and
-      trimmed arithmetic mean (Matlab style).
+      trimmed arithmetic mean (MATLAB style).
     o agmean() algebraic-geometric mean.
 
 CHANGES IN VERSION 1.3.7 (2013-01-07)
@@ -359,21 +379,21 @@ CHANGES IN VERSION 1.3.6 (2013-01-06)
 
 CHANGES IN VERSION 1.3.5 (2013-01-05)
 
-    o cd(), pwd() directory functions (Matlab style).
+    o cd(), pwd() directory functions (MATLAB style).
     o rand(), randn() changed to accept size() as input.
     o whos(), what() corrected for empty lists resp. directories.
 
 CHANGES IN VERSION 1.3.4 (2012-12-19)
 
-    o what(), who(), whos(), ver() (Matlab style).
-    o semilogx(), semilogy(), loglog() logarithmic plots (Matlab style)
+    o what(), who(), whos(), ver() (MATLAB style).
+    o semilogx(), semilogy(), loglog() logarithmic plots (MATLAB style)
 
 CHANGES IN VERSION 1.3.3 (2012-12-12)
 
     o quadv() vectorized integration.
     o ezpolar() easy access to the polar() function.
-    o sortrows() sorting rows of matrices (Matlab style).
-    o null() alias for nullspace function (Matlab style).
+    o sortrows() sorting rows of matrices (MATLAB style).
+    o null() alias for nullspace function (MATLAB style).
     o eigjacobi() Jacobi's method for eigenvalues and eigenvectors.
 
 CHANGES IN VERSION 1.3.2 (2012-12-08)
@@ -385,9 +405,9 @@ CHANGES IN VERSION 1.3.2 (2012-12-08)
 
 CHANGES IN VERSION 1.3.1 (2012-12-06)
 
-    o Explicitely listing about 200 Matlab-emulating function( name)s.
+    o Explicitely listing about 200 MATLAB-emulating function( name)s.
     o Dismissed matlab(), using it now for infos only, not assigning any
-      Matlab function names to the environment (because of CRAN policies).
+      MATLAB function names to the environment (because of CRAN policies).
 
 CHANGES IN VERSION 1.3.0 (2012-12-05)
 
@@ -424,13 +444,13 @@ CHANGES IN VERSION 1.2.6 (2012-11-11)
 
 CHANGES IN VERSION 1.2.5 (2012-10-28)
 
-    o histc() Histogram-like counting (Matlab style).
+    o histc() Histogram-like counting (MATLAB style).
     o Added warning to complexstep() if imaginary part is zero.
 
 CHANGES IN VERSION 1.2.4 (2012-10-25)
 
-    o Added option 'pinv' to mldivide() to return same results as Matlab.
-    o str2num(), num2str() conversion functions (Matlab style).
+    o Added option 'pinv' to mldivide() to return same results as MATLAB.
+    o str2num(), num2str() conversion functions (MATLAB style).
     o Removed some 'author' entries on help pages.
 
 CHANGES IN VERSION 1.2.3 (2012-10-17)
@@ -442,7 +462,7 @@ CHANGES IN VERSION 1.2.3 (2012-10-17)
 
 CHANGES IN VERSION 1.2.2 (2012-10-10)
 
-    o bsxfun() apply binary function elementwise (Matlab style).
+    o bsxfun() apply binary function elementwise (MATLAB style).
     o added the analytic solution for the example in bvp().
 
 CHANGES IN VERSION 1.2.1 (2012-09-28)
@@ -454,7 +474,7 @@ CHANGES IN VERSION 1.2.1 (2012-09-28)
 
 CHANGES IN VERSION 1.2.0 (2012-09-27)
 
-    o matlab() can reinstall Matlab function names.
+    o matlab() can reinstall MATLAB function names.
 
 CHANGES IN VERSION 1.1.9 (2012-09-25)
 
@@ -480,7 +500,7 @@ CHANGES IN VERSION 1.1.6 (2012-07-20)
 
     o Removed '.Rapphistory' from the tests directory (again)
       [and use "--as-cran" for the checks].
-    o disp() display text or array (Matlab Style), i.e. cat() with newline.
+    o disp() display text or array (MATLAB Style), i.e. cat() with newline.
 
 CHANGES IN VERSION 1.1.5 (2012-07-18)
 
@@ -548,9 +568,9 @@ CHANGES IN VERSION 1.0.6 (2012-04-21)
 
 CHANGES IN VERSION 1.0.5 (2012-04-15)
 
-    o randsample() randomly sampling, alias for sample (Matlab style).
+    o randsample() randomly sampling, alias for sample (MATLAB style).
     o rands() generates uniform random points on an N-sphere.
-    o Added tic(), toc() measuring elapsed time (Matlab style).
+    o Added tic(), toc() measuring elapsed time (MATLAB style).
     o previousPrime() finds the next prime below a number.
 
 CHANGES IN VERSION 1.0.4 (2012-04-01)
@@ -565,14 +585,14 @@ CHANGES IN VERSION 1.0.3 (2012-03-21)
 
 CHANGES IN VERSION 1.0.2 (2012-03-17)
 
-    o accumarray() resembles the related Matlab function more closely.
+    o accumarray() resembles the related MATLAB function more closely.
     o invperm() returns the inverse of a permutation.
-    o randperm() changed to make it more Matlab-like.
+    o randperm() changed to make it more MATLAB-like.
 
 CHANGES IN VERSION 1.0.1 (2012-03-09)
 
     o plotyy() corrected right ordinate, prettying the labels.
-    o peaks() peaks function (Matlab style).
+    o peaks() peaks function (MATLAB style).
 
 CHANGES IN VERSION 1.0.0 (2012-03-01)
 
@@ -623,7 +643,7 @@ CHANGES IN VERSION 0.9.3 (2011-12-27)
 CHANGES IN VERSION 0.9.2 (2011-12-26)
 
     o approx_entropy() approximate entropy of a time series.
-    o circshift() circularly shifting arrays (Matlab Style).
+    o circshift() circularly shifting arrays (MATLAB Style).
 
 CHANGES IN VERSION 0.9.1 (2011-12-12)
 
@@ -640,18 +660,18 @@ CHANGES IN VERSION 0.8.9 (2011-12-08)
 
     o cutpoints() automatically finds cutting points based on gaps.
     o hausdorff_dist calculates the Hausdorff distance / Hausdorff dimension.
-    o nnz() number of non-zeros elements (Matlab style).
+    o nnz() number of non-zeros elements (MATLAB style).
 
 CHANGES IN VERSION 0.8.8 (2011-12-06)
 
-    o polar() for polar plots (Matlab style), see the example plots.
+    o polar() for polar plots (MATLAB style), see the example plots.
     o andrewsplot() plots Andrews curves in polar coordinates.
     o Vectorized: cart2sph(), sph2cart(), cart2pol(), pol2cart().
 
 CHANGES IN VERSION 0.8.7 (2011-11-30)
 
     o deg2rad(), rad2deg().
-    o figure() Matlab style and pltcross() plotting crosses.
+    o figure() MATLAB style and pltcross() plotting crosses.
 
 CHANGES IN VERSION 0.8.6 (2011-11-21)
 
@@ -676,7 +696,7 @@ CHANGES IN VERSION 0.8.4 (2011-11-14)
 CHANGES IN VERSION 0.8.3 (2011-11-11)
 
     o accumarray() grouping elements and applying a function to each group.
-    o uniq() Matlab-style 'unique' function, allsums() in the examples.
+    o uniq() MATLAB-style 'unique' function, allsums() in the examples.
     o small correction to fsolve(), mentioned on the 'check summary' page.
 
 CHANGES IN VERSION 0.8.2 (2011-11-04)
@@ -731,7 +751,7 @@ CHANGES IN VERSION 0.7-4 (2011-07-22)
 CHANGES IN VERSION 0.7-3 (2011-07-15)
 
     o erf() and erfc() error and complementary error functions
-      (Matlab style) as (almost) aliases for pnorm().
+      (MATLAB style) as (almost) aliases for pnorm().
     o erfz() complex error function.
 
 CHANGES IN VERSION 0.7-2 (2011-07-11)
@@ -760,7 +780,7 @@ CHANGES IN VERSION 0.6-7 (2011-07-04)
 
     o lagrangeInterp(), newtonInterp() Lagrange and Newton polynomial
       interpolation, neville() Neville's methods.
-    o tril(), triu() extracting triangular matrices (Matlab style).
+    o tril(), triu() extracting triangular matrices (MATLAB style).
 
 CHANGES IN VERSION 0.6-6 (2011-07-02)
 
@@ -996,13 +1016,13 @@ CHANGES IN VERSION 0.2-6
 
 CHANGES IN VERSION 0.2-5
 
-    o Matlab functions mode(), clear() and beep().
+    o MATLAB functions mode(), clear() and beep().
 
 CHANGES IN VERSION 0.2-4
 
     o primroot() finds the smallest primitive root modulo a given n;
       needed functions are modpower() and modorder().
-    o humps() and sinc(): Matlab test functions.
+    o humps() and sinc(): MATLAB test functions.
     o Root finding through bisection: bisect(), regulaFalsi().
     o outlierMAD(), findpeaks(), and piecewise().
     o polycnv() for polynomial multiplication.
@@ -1013,7 +1033,7 @@ CHANGES IN VERSION 0.2-3
 
     o strfind(), strfindi(), and findstr().
     o circlefit() fitting a circle to plane points.
-    o mldivide() and mrdivide(), emulating the Matlab backslash operator.
+    o mldivide() and mrdivide(), emulating the MATLAB backslash operator.
 
 CHANGES IN VERSION 0.2-2
 
@@ -1098,7 +1118,7 @@ CHANGES IN VERSION 0.1-3 (2011-02-20)
 CHANGES IN VERSION 0.1-2
 
     o Added functions from number theory: primes(), isprime() and factors().
-      The corresponding function for factors() in Matlab/Octave is called
+      The corresponding function for factors() in MATLAB/Octave is called
       factor(), but that name should not be shadowed in R!
     o Added the polyarea() and trapz() functions.
 
@@ -1112,11 +1132,11 @@ INITIAL VERSION 0.1-0
 
   INSTALLATION
 
-    o `matlab4r' will be a pure R package without using any source code.
+    o 'pracma' will be a pure R package without using any source code.
       Therefore, installation will be immediate on all platforms.
 
   INTENTION
 
     o This package provides R implementations of more advanced math
-      functions from Matlab and Octave (and the Euler Math Toolbox)
+      functions from MATLAB and Octave (and the Euler Math Toolbox)
       with a special view on optimization and time series routines.

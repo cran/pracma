@@ -27,8 +27,10 @@ nelder_mead(x0, f, lb = NULL, ub = NULL, tol = 1e-10,
   values at the vertices of the simplex. The process generates a sequence of
   simplices with ever reducing sizes.
 
-  `nelder_mead()'   can be used up to 20 dimensions (than `tol' and `maxfeval'
-  need to be increased).
+  `nelder_mead()' can be used up to 20 dimensions (then `tol' and `maxfeval'
+  need to be increased). Since version 1.9.8 'nelder_mead()' applies adaptive 
+  parameters for the simplicial search, depending on the problem dimension --
+  see Fuchang and Lixing (2012).
 
   With upper and/or lower bounds, `nelder_mead()' applies a transformation of
   bounded to unbounded regions before utilizing Nelder-Mead. Of course, if the
@@ -48,6 +50,14 @@ nelder_mead(x0, f, lb = NULL, ub = NULL, tol = 1e-10,
 
   O'Neill, R. (1971). Algorithm AS 47: Function Minimization Using a Simplex 
   Procedure. Applied Statistics, Volume 20(3), pp. 338-345.
+
+  J. C. Lagarias et al. (1998). Convergence properties of the Nelder-Mead
+  simplex method in low dimensions. SIAM Journal for Optimization, Vol. 9,
+  No. 1, pp 112-147.
+
+  Fuchang Gao and Lixing Han (2012). Implementing the Nelder-Mead simplex
+  algorithm with adaptive parameters. Computational Optimization and
+  Applications, Vol. 51, No. 1, pp. 259-277.
 }
 \note{
   Original FORTRAN77 version by R O'Neill; MATLAB version by John Burkardt

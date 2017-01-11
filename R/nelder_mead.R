@@ -50,10 +50,11 @@ nelder_mead <- function(x0, f, lb = NULL, ub = NULL, tol = 1e-10,
     ifault <- 0         # error indicator, 0, 1, 2
 
     # Constants for Nelder-Mead
-    ccoeff <- 0.5
-    ecoeff <- 2.0
+    rcoeff <- 1.0               # reflection   1.0
+    ecoeff <- 1.0 + 2.0/n       # expansion    2.0
+    ccoeff <- 0.75 - 1.0/(2*n)  # contraction  0.5
+    scoeff <- 1.0 - 1.0/n       # shrinking    0.5
     eps    <- 0.001
-    rcoeff <- 1.0
     
     jcount <- konvge
     dn <- n
@@ -138,7 +139,7 @@ nelder_mead <- function(x0, f, lb = NULL, ub = NULL, tol = 1e-10,
                     #  Contract the whole simplex.
                     if ( y[ihi] < y2star ) {
                         for (j in 1:nn) {
-                            p[, j] <- (p[, j] + p[, ilo]) / 2
+                            p[, j] <- scoeff * (p[, j] + p[, ilo])
                             xmin <- p[, j]
                             y[j] <- fn ( xmin )
                             icount <- icount + 1

@@ -17,3 +17,11 @@ sinc <- function(x) {
 
     sin(pi * x) / (pi * x)
 }
+
+psinc <- function(x, n) {
+    stopifnot(is.numeric(x), is.numeric(n))
+    if (floor(n) != ceiling(n) || n < 1)
+        stop("Argument 'n' must be a positive integer.")
+    
+    sin(x * n/2) / n * sin(x/2)
+}

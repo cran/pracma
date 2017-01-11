@@ -66,10 +66,11 @@ Practical Numerical Math Routines
   The following 220 functions are emulations of correspondingly named Matlab 
   functions and bear the same signature as their Matlab cousins if possible:
   
-  \code{accumarray, acot, acoth, acsc, acsch, and, angle, ans, arrayfun, asec, asech,}\cr
+  \code{accumarray, acosd, acot, acotd, acoth, acsc, acscd, acsch, and, angle, ans,}\cr
+  \code{    arrayfun, asec, asecd, asech, asind, atand, atan2d,}\cr
   \code{beep, bernoulli, blank, blkdiag, bsxfun,}\cr
   \code{cart2pol, cart2sph, cd, ceil, circshift, clear, compan, cond, conv,}\cr
-  \code{    cot, coth, cross, csc, csch, cumtrapz,}\cr
+  \code{    cosd, cot, cotd, coth, cross, csc, cscd, csch, cumtrapz,}\cr
   \code{dblquad, deblank, deconv, deg2rad, detrend, deval, disp, dot,}\cr
   \code{eig, eigint, ellipj, ellipke, eps, erf, erfc, erfcinv, erfcx, erfi, erfinv,}\cr
   \code{    errorbar, expint, expm, eye, ezcontour, ezmesh, ezplot, ezpolar, ezsurf,}\cr
@@ -91,10 +92,10 @@ Practical Numerical Math Routines
   \code{quad, quad2d, quadgk, quadl, quadprog, quadv, quiver,}\cr
   \code{rad2deg, randi, randn, randsample, rat, rats, regexp, regexpi,}\cr
   \code{    regexpreg, rem, repmat, roots, rosser, rot90, rref, runge,}\cr
-  \code{sec, sech, semilogx, semilogy, sinc, size, sortrows, sph2cart, sqrtm,}\cr
-  \code{    squareform, std, str2num, strcat, strcmp, strcmpi,}\cr
+  \code{sec, secd, sech, semilogx, semilogy, sinc, sind, size, sortrows, sph2cart,}\cr
+  \code{    sqrtm, squareform, std, str2num, strcat, strcmp, strcmpi,}\cr
   \code{    strfind, strfindi, strjust, subspace,}\cr
-  \code{tic, toc, trapz, tril, trimmean, triplequad, triu,}\cr
+  \code{tand, tic, toc, trapz, tril, trimmean, triplequad, triu,}\cr
   \code{vander, vectorfield, ver,}\cr
   \code{what, who, whos, wilkinson,}\cr
   \code{zeros, zeta}
