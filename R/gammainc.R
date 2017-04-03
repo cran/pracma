@@ -9,6 +9,7 @@ gammainc <- function(x, a) {
     if (length(a) > 1 || length(x) > 1)
         stop("Arguments must be of length 1; function is not vectorized.")
     if (x == 0 && a == 0) return(1)
+    if (x == 0) return(gamma(a))
     if (a < 0)
         stop("Argument 'a' must be real and nonnegative.")
 
@@ -50,3 +51,36 @@ gammainc <- function(x, a) {
     }
     return(c(lowinc = Re(gin), uppinc = Re(gim), reginc = Re(gip)))
 }
+
+
+incgam <- function(x, a) {
+    if (!is.numeric(a) || !is.numeric(x)) 
+        stop("All arguments must be real numbers.")
+    if (length(a) > 1 || length(x) > 1) 
+        stop("Arguments must be of length 1; function is not vectorized.")
+    
+    if (x > 0) {
+        if (a > 0) {
+            g_gamma <- gamma(a)
+            g_upper <- g_gamma * pgamma(x, a, 1, lower.tail = FALSE)
+            # g_regul <- pgamma(x, a, 1, lower = TRUE)
+            # g_lower <- g_gamma * g_regul
+        } else if (a == 0) {
+            g_upper <- pracma::expint_E1(x)
+        } else if (a < 0 && a >= -1) {
+            g_upper <- -1 * x^a*exp(-x)/a + incgam(x, a+1)/a
+        } else { # (a < 0)
+            stop("Not yet implemented: use recursion -- see help")
+        }
+        
+    } else if (x == 0) {
+        g_upper <- gamma(a)
+    } else { # (x < 0)
+        stop("Not implemented: Result for 'x<0' will be complex.")
+    }
+    
+    # g_lower <- gamma(a) - g_upper
+    # g_regul <- 1 - g_upper / gamma(a)
+    return(g_upper)
+}
+

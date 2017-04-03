@@ -1,24 +1,21 @@
-\name{nelder_mead}
-\alias{nelder_mead}
+\name{anms}
+\alias{anms}
 \title{
-  Nelder-Mead Minimization
+  Adaptive Nelder-Mead Minimization
 }
 \description{
   An implementation of the Nelder-Mead algorithm for derivative-free
   optimization / function minimization.
 }
 \usage{
-nelder_mead(x0, f, lb = NULL, ub = NULL, tol = 1e-10,
-            maxfeval = 20000, step = rep(1.0, length(x0)), ...)
+anms(fn, x0, ...,
+     tol = 1e-10, maxfeval = NULL)
 }
 \arguments{
+  \item{fn}{nonlinear function to be minimized.}
   \item{x0}{starting vector.}
-  \item{f}{nonlinear function to be minimized.}
-  \item{lb, ub}{lower and upper of a bounded region.}
   \item{tol}{relative tolerance, to be used as stopping rule.}
   \item{maxfeval}{maximum number of function calls.}
-  \item{step}{size and shape of initial simplex; relative magnitudes of
-              its elements should reflect the units of the variables.}
   \item{\ldots}{additional arguments to be passed to the function.}
 }
 \details{
@@ -27,12 +24,11 @@ nelder_mead(x0, f, lb = NULL, ub = NULL, tol = 1e-10,
   values at the vertices of the simplex. The process generates a sequence of
   simplices with ever reducing sizes.
 
-  `nelder_mead()' can be used up to 20 dimensions (then `tol' and `maxfeval'
-  need to be increased). Since version 1.9.8 'nelder_mead()' applies adaptive 
-  parameters for the simplicial search, depending on the problem dimension --
-  see Fuchang and Lixing (2012).
+  \code{anms} can be used up to 20 or 30 dimensions (then `tol' and `maxfeval'
+  need to be increased). It applies adaptive parameters for simplicial search, 
+  depending on the problem dimension -- see Fuchang and Lixing (2012).
 
-  With upper and/or lower bounds, `nelder_mead()' applies a transformation of
+  With upper and/or lower bounds, \code{anms} will apply a transformation of
   bounded to unbounded regions before utilizing Nelder-Mead. Of course, if the
   optimum is near to the boundary, results will not be as accurate as when the
   minimum is in the interior.
@@ -41,8 +37,7 @@ nelder_mead(x0, f, lb = NULL, ub = NULL, tol = 1e-10,
   List with following components:
     \item{xmin}{minimum solution found.}
     \item{fmin}{value of \code{f} at minimum.}
-    \item{nfeval}{number of iterations performed.}
-    \item{restarts}{number of restarts.}
+    \item{nfeval}{number of function calls performed.}
 }
 \references{
   Nelder, J., and R. Mead (1965). A simplex method for function minimization.
@@ -60,12 +55,12 @@ nelder_mead(x0, f, lb = NULL, ub = NULL, tol = 1e-10,
   Applications, Vol. 51, No. 1, pp. 259-277.
 }
 \note{
-  Original FORTRAN77 version by R O'Neill; MATLAB version by John Burkardt
-  under LGPL license. Re-implemented in R by Hans W. Borchers. For another
+  Copyright (c) 2012 by F. Gao and L. Han, implemented in Matlab with a
+  permissive license. Implemented in R by Hans W. Borchers. For another
   elaborate implementation of Nelder-Mead see the package `dfoptim'.
 }
 \seealso{
-  \code{\link{hooke_jeeves}}
+  \code{\link{optim}}
 }
 \examples{
 ##  Rosenbrock function
@@ -76,24 +71,12 @@ rosenbrock <- function(x) {
     sum(100*(x1-x2^2)^2 + (1-x2)^2)
 }
 
-nelder_mead(c(0,0,0,0), rosenbrock)
+anms(rosenbrock, c(0,0,0,0,0))
 # $xmin
-# [1] 1 1 1 1
+# [1] 1 1 1 1 1
 # $fmin
-# [1] 8.802801e-25
+# [1] 8.268732e-21
 # $nfeval
-# [1] 678
-# $restarts
-# [1] 0
-
-nelder_mead(c(0,0,0,0), rosenbrock, rep(-0.5, 4), rep(0.5, 4))
-# $xmin
-# [1] 0.50000000 0.26221321 0.07797600 0.00608026
-# $fmin
-# [1] 1.667875
-# $nfeval
-# [1] 1501
-# $restarts
-# [1] 3
+# [1] 1153
 }
 \keyword{ optimize }

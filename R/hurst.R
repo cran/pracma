@@ -77,7 +77,7 @@ hurstexp <- function(x, d = 50, display = TRUE) {
     for (i in (N0+1):N) {
         dw <- divisors(i, dmin)
         if (length(dw) > length(dv))
-            N1 <- i; dv <- dw
+            {N1 <- i; dv <- dw}
     }
     OptN <- N1; d <- dv
     x <- x[1:OptN]

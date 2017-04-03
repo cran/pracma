@@ -23,9 +23,8 @@ rem <- function(n, m) {
         stop("Argument 'm' must be an integer scalar.")
     if (m == 0) return(NaN)
     k <- mod(n, m)
-    if (sign(n) * sign(m) < 0) {
-        k <- k - m
-    }
+    l <- which(k != 0 & sign(n)*sign(m) < 0)
+    k[l] <- k[l] - m
     return(k)
 }
 
