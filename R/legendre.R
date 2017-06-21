@@ -9,7 +9,7 @@ legendre <- function(n, x) {
 	x <- c(x)
 	N <- length(x)
 
-	if (n == 0) return(rep(1, 10))
+	if (n == 0) return(rep(1, N))
 
     # generate the Legendre polynomials up to degree n
     Lp <- matrix(0, n+1, n+1)

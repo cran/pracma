@@ -25,7 +25,7 @@ fminsearch(f, x0, ..., minimize = TRUE, dfree = TRUE,
   a local minimizer of the function.
 
   With \code{minimize=FALSE} it seaches for a maximum. \code{dfree=TRUE}
-  applies Nelder.Mead, else Fletcher-Powell, calculating the derivatives
+  applies Nelder-Mead, else Fletcher-Powell, calculating the derivatives
   numerically.
   
   This is generally referred to as unconstrained nonlinear optimization.

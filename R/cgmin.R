@@ -1,10 +1,10 @@
 ##
-##  f l e t c h e r _ p o w e l l . R  Davidon-Fletcher-Powell Method
+##  c g m i n . R  Conjugate Gradient Minimization
 ##
 
 
-fletcher_powell <- function(x0, f, g = NULL,
-                      maxiter = 1000, tol = .Machine$double.eps^(2/3)) {
+cgmin <- function(x0, f, g = NULL,
+                  maxiter = 1000, tol = .Machine$double.eps^(2/3)) {
     eps <- .Machine$double.eps
     if (tol < eps) tol <- eps
     if (!is.numeric(maxiter) || length(maxiter) > 1 || maxiter < 1)

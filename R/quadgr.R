@@ -6,10 +6,16 @@
 quadgr <- function(f, a, b, tol = .Machine$double.eps^(1/2), ...) {
     stopifnot(is.numeric(a), length(a) == 1,
               is.numeric(b), length(b) == 1)
-
+    
     fun <- match.fun(f)
     f <- function(x) fun(x, ...)
-
+    
+    # Check for multivalues/vectorization
+    if (length(f(a)) != 1 || length(f(b)) != 1)
+        stop("Function 'f' may be multi-valued; please check.")
+    if (length(f(c(a, b))) != 2)
+        stop("Function 'f' needs to be vectorized (see 'Vectorize').")
+    
     # check order of limits
     if (a == b) return(list(value = 0, rel.err = 0))
     else if (a > b) {
@@ -17,17 +23,17 @@ quadgr <- function(f, a, b, tol = .Machine$double.eps^(1/2), ...) {
         rev_p <- TRUE
     } else
         rev_p <- FALSE
-
+    
     # Check infinite limits
     if (is.infinite(a) || is.infinite(b)) {
         if (is.finite(a) && is.infinite(b)) {
             f1 <- function(t) f(a + t/(1-t)) / (1-t)^2
             Q <- quadgr(f1, 0, 1, tol = tol)
-    
+            
         } else if (is.infinite(a) && is.finite(b)) {
             f2 <- function(t) f(b + t/(1+t)) / (1+t)^2
             Q <- quadgr(f2, -1, 0, tol = tol)
-    
+            
         } else if (is.infinite(a) && is.infinite(b)) {
             f1 <- function(t) f(t/(1-t)) / (1-t)^2
             f2 <- function(t) f(t/(1+t)) / (1+t)^2
@@ -39,7 +45,7 @@ quadgr <- function(f, a, b, tol = .Machine$double.eps^(1/2), ...) {
         if (rev_p) Q$value <- -Q$value
         return(Q)
     } # else ...
-
+    
     # 12-point Gauss-Legendre quadrature
     xq <- c(0.12523340851146894, 0.36783149899818018, 0.58731795428661748,
             0.76990267419430469, 0.9041172563704748,  0.98156063424671924)
@@ -48,23 +54,26 @@ quadgr <- function(f, a, b, tol = .Machine$double.eps^(1/2), ...) {
     xq <- matrix(c(xq, -xq), ncol = 1)
     wq <- c(wq,  wq)
     nq <- length(xq)
-
+    
     # Initiate vectors
     maxit <- 17                         # max number of iterations
     Q0 <- zeros(maxit,1)       	        # quadrature
     Q1 <- zeros(maxit,1)       	        # first Richardson extrapolation
     Q2 <- zeros(maxit,1)       	        # second Richardson extrapolation
-
+    
     # One interval
     hh <- (b - a)/2                     # half interval length
     x <- (a + b)/2 + hh*xq              # nodes
     Q0[1] = hh * wq %*% fun(x)          # quadrature
-
+    
     for (k in 3:maxit) {
         hh <- hh/2
         x <- cbind(x + a, x + b) / 2
-        Q0[k] <- hh * wq %*% apply(f(x), 1, sum)
-
+        # Q0[k] <- hh * wq %*% apply(f(x), 1, sum)
+        A <- numeric(12)
+        for (i in 1:12) A[i] <- sum(f(x[i, ]))
+        Q0[k] <- hh * wq %*% A
+        
         # Richardson extrapolation
         if (k >= 5) {
             Q1[k] <- .rich(Q0,k)
@@ -72,7 +81,7 @@ quadgr <- function(f, a, b, tol = .Machine$double.eps^(1/2), ...) {
         } else if (k >= 3) {
             Q1[k] <- .rich(Q0,k)
         }
-
+        
         # Estimate absolute error
         if (k >= 6) {
             Qv <- c(Q0[k], Q1[k], Q2[k])
@@ -84,7 +93,7 @@ quadgr <- function(f, a, b, tol = .Machine$double.eps^(1/2), ...) {
             Qv <- Q0[k]
             Qw <- Q0[k-1]
         }
-
+        
         err <- min(abs(Qv - Qw))
         j <- which.min(abs(Qv - Qw))
         Q <- Qv[j]
@@ -92,7 +101,7 @@ quadgr <- function(f, a, b, tol = .Machine$double.eps^(1/2), ...) {
         # Convergence
         if (err < tol || !is.finite(Q)) break
     }
-
+    
     if (rev_p) Q <- -Q
     return(list(value = Q, rel.err = err))
 }

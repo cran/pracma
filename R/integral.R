@@ -4,37 +4,64 @@
 
 
 integral <- function(fun, xmin, xmax,
-                method = c("Kronrod","Richardson","Clenshaw","Simpson","Romberg"),
-                vectorized = TRUE, arrayValued = FALSE,
+                method = c("Kronrod", "Clenshaw","Simpson"),
+                no_intervals = 8, random = FALSE,
                 reltol = 1e-8, abstol = 0, ...)
 {
     stopifnot(is.numeric(xmin), length(xmin) == 1,
               is.numeric(xmax), length(xmax) == 1)
+    no_intervals <- max(1, floor(no_intervals))
+
     fun <- match.fun(fun)
     f <- function(x) fun(x, ...)
-    # if (!vectorized(f))       # check with those routines called
-    #     f <- Vectorize(f)
+
+    if (length(f(xmin)) > 1 || length(f(xmax)) > 1) {
+        stop("Function 'fun' is array-valued! Use 'quadv'.\n")
+    }
+    
+    if (length(f(c(xmin, xmax))) != 2) {
+        cat("Warning: Function 'fun' is not vectorized!\n")
+        f = Vectorize(f)
+    }
 
     if (xmin == xmax) return(0)
     method <- match.arg(method)
-    tol <- reltol               # abstol not used
+    tol <- if (abstol > 0) min(reltol, abstol) else reltol
 
-    if (arrayValued) {
-        if (method != "Simpson")
-            warning("Only method 'Simpson' available for array-valued functions.")
-        Q <- quadv(f, xmin, xmax, tol = tol)$Q
-
-    } else if (is.infinite(xmin) || is.infinite(xmax)) {
+    if (is.infinite(xmin) || is.infinite(xmax)) {
+        cat("For infinite domains Gauss integration is applied!\n")
         Q <- quadinf(f, xmin, xmax, tol = tol)$Q
+        return(Q)
+    }
 
+    if (random) {
+        xs <- c(xmin,
+                (xmax - xmin)*sort(runif(no_intervals - 1)) + xmin,
+                xmax)
     } else {
-        Q <- switch(method,
-                "Kronrod"    = quadgk(f, xmin, xmax, tol = tol),
-                "Clenshaw"   = quadcc(f, xmin, xmax, tol = tol),
-                "Richardson" = quadgr(f, xmin, xmax, tol = tol)$value,
-                "Romberg"    = romberg(f, xmin, xmax, tol = tol)$value,
-                "Simpson"    = simpadpt(f, xmin, xmax, tol = tol)
-                )
+        xs <- linspace(xmin, xmax, no_intervals + 1)
+    }
+
+    # Q <- switch(method,
+    #         "Kronrod"    = quadgk(f, xmin, xmax, tol = tol),
+    #         "Clenshaw"   = quadcc(f, xmin, xmax, tol = tol),
+    #         "Simpson"    = simpadpt(f, xmin, xmax, tol = tol)
+    #         )
+    Q <- 0
+    if (method == "Kronrod") {
+        for (i in 1:no_intervals) {
+            Q = Q + quadgk(f, xs[i], xs[i+1], tol = tol)
+        }
+    } else if (method == "Clenshaw") {
+        for (i in 1:no_intervals) {
+            Q = Q + quadcc(f, xs[i], xs[i+1], tol = tol)
+        }
+    } else if (method == "Simpson") {
+        for (i in 1:no_intervals) {
+            Q = Q + simpadpt(f, xs[i], xs[i+1], tol = tol)
+        }
+    } else {
+        stop("Unknown method; not available as integration routine.")
     }
 
     return(Q)

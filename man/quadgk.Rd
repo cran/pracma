@@ -10,15 +10,19 @@
 quadgk(f, a, b, tol = .Machine$double.eps^0.5, ...)
 }
 \arguments{
-  \item{f}{integrand as function, may have singularities at the endpoints.}
+  \item{f}{integrand as function; needs to be vectorized,
+           but may have singularities at the endpoints.}
   \item{a, b}{endpoints of the integration interval.}
   \item{tol}{relative tolerence.}
-  \item{\ldots}{Additional parameters to be passed to the function \code{f}.}
+  \item{\ldots}{Additional parameters to be passed to the function f.}
 }
 \details{
   Adaptive version of the (7, 15)-point Gauss-Kronrod quadrature formula,
   where in each recursion the error is taken as the difference between these
   two estimated integrals.
+
+  The function \code{f} must be vectorized, though this will not be checked
+  and may lead to strange errors. If it is not, use \code{F = Vectorize(f)}.
 }
 \value{
   Value of the integration. The relative error should be of the same

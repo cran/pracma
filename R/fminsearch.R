@@ -15,7 +15,7 @@ fminsearch <- function(f, x0, ..., minimize = TRUE, dfree = TRUE,
     if (dfree) {
         opt <- anms(f, x0, tol = tol, maxfeval = 10*maxiter)
     } else {
-        opt <- fletcher_powell(x0, f, maxiter = maxiter, tol = tol)
+        opt <- cgmin(x0, f, maxiter = maxiter, tol = tol)
     }
 
     xopt <- opt$xmin; fopt <- opt$fmin

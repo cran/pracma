@@ -1,7 +1,7 @@
 97f6eedc10d90921a363632f2f85721d *COPYING
-743955cb717767a4b568701df4ad1b13 *DESCRIPTION
+a1b51d863ce6654a341cdcd4ef2dd4c8 *DESCRIPTION
 29a1117b7b961bc85c2580a440dce8d9 *NAMESPACE
-f0d0f6322e057db21659639dc07e0823 *NEWS
+0be0eb2a0e2878c772c56b6f45aa5607 *NEWS
 8e2ec5415edc8417dd8da8cb53d8d0b9 *R/abm3.R
 556a17b11b7876e19e56a799aa125485 *R/accumarray.R
 3a2bb5e25f1e3c1bbd2bfc930776a25d *R/agmean.R
@@ -12,9 +12,11 @@ c4751d2108981466d37c2bc65dc7aec0 *R/andrews.R
 52b916762d9c51bc7479906eab7f83ac *R/angle.R
 5e61444ea28eef824eae9a64c47d89e2 *R/anms.R
 a7c73bd0537e8f7d7898878c599703d8 *R/arclength.R
+ce0133e9b0d6f4ba86009297e870970c *R/arnoldi.R
 51738592c790f0df96cc39018dfbad2e *R/barycentric.R
 ca6fbf27ca08f18b2a41032af12b1cbb *R/beep.R
 970902bcf45662793ec8aaa2d1b2dc33 *R/bernoulli.R
+68404e7af004ddd0fcf705a5d762858a *R/bernstein.R
 17e814f3f597080072991f1d20051dcb *R/bisect.R
 1aa758af79d57e55006c0b28abc6ef8b *R/bits.R
 dc8f057f63bf3734aa7fb097f3f6200f *R/blkdiag.R
@@ -23,6 +25,7 @@ dc8f057f63bf3734aa7fb097f3f6200f *R/blkdiag.R
 f89a4f2c93d9d4f1816df786eb3a5742 *R/bsxfun.R
 cf30354a8e529526a39c63faaf48c106 *R/bvp.R
 e8513dc322aee02d4d9f902747405d22 *R/cart2sph.R
+a040eb7e9da1d990e87ac8543289c716 *R/cgmin.R
 aea7658470693c1dfeb2b48e5c4ba090 *R/charpoly.R
 a54f4ba4671587dafe6fedcc2dc910d6 *R/chebyshev.R
 0cc51db64fadc735bb4d4ba7d5c51c9b *R/circlefit.R
@@ -73,10 +76,9 @@ de147e19f68da165be9624d11f62179c *R/fft.R
 026fba53794a295f62ce26fcf12d3f45 *R/findintervals.R
 3d0954c786667cddbb39bcceee9d6291 *R/findpeaks.R
 c5d7590f1b2a1b683ab39ef041e35369 *R/findzeros.R
-0cd881a78a8e35e7c0258e3c6489e1f4 *R/fletcher_powell.R
 d99ccd15d4f16139ee0dfa612f763064 *R/flipdim.R
 30a87c9a3ada95cb756ee2b071285c4b *R/fminbnd.R
-66e192eb2c3850076832a872e17c3eb9 *R/fminsearch.R
+50c27a7a38861adab66c2ce1e16ed600 *R/fminsearch.R
 508b6a97c85342713d5b2a4b1a0ce256 *R/fnorm.R
 1ecf8f2687247b9eb35da04a1c0f4d36 *R/fornberg.R
 f84873285a20a26b925f259c9de39918 *R/fprintf.R
@@ -108,7 +110,7 @@ f80a9325d8e2fb5d7fc4cc19563e0721 *R/histc.R
 ab29151d9f62ff8791b5b32b91ea41f2 *R/hyperbolic.R
 6b12e3b0d673f494dfceb1169413454a *R/hypot.R
 5d8f535d7964cc3589325ce0d8b0b3ca *R/inpolygon.R
-24de67edfd673ca9a4e5314a3255492c *R/integral.R
+119665d57e9becfcd31a84d2d7a09fa8 *R/integral.R
 231429444401d4a35435d67deb09d396 *R/integral2.R
 42a43c75931f9603fe17af029b50365e *R/interp1.R
 a7eec4a294d924da5700ad81f86bb44f *R/interp2.R
@@ -123,7 +125,7 @@ dc89fabdab452c471b07d4c4235a2190 *R/itersolve.R
 e91f6e34299aade15da9a0750359225f *R/laguerre.R
 d63ae3213447515b0f780c27ec95c035 *R/lambertW.R
 40e850bebe7609cb66ac9a21036c2d3e *R/lebesgue.R
-ab6e7f8446b9e832f8166c0598b3e5f6 *R/legendre.R
+99b4c72a237265bb089138d34beb2b16 *R/legendre.R
 bdfd4166c6e97a94ee8ab3f924220414 *R/linprog.R
 f5ba573c81263a3fa84cb1027a5a40cb *R/linspace.R
 226d83f126fe8a93823cbe245deae998 *R/lsqlin.R
@@ -178,7 +180,7 @@ d113868b72b490eb387eed78bee668b7 *R/poly2str.R
 2e8d039be82f14ed71fa06b563a0b82d *R/polylog.R
 59647fdfb896828caa82721140b9f837 *R/polymul.R
 17a3ae522102910833d52b39e1e49e34 *R/polypow.R
-9e20cc96b5e722b44b77020cdf525147 *R/polyval.R
+33188dc53934a505c5d646c2eecf3bbb *R/polyval.R
 45f056895dd93597bd18a2773dffa787 *R/pow2.R
 38500814e798c7a12d5e9776ccd13722 *R/pp.R
 a2534b63036c8b6306b2e9b65204fe00 *R/ppfit.R
@@ -191,7 +193,7 @@ bc41a8bd21c03cb26cbd5cc4e06d9b33 *R/qr.R
 f536d23fe8a50dfee816923a819b286c *R/quad2d.R
 b89add8a0127b680043cd00de82e7185 *R/quadcc.R
 689027b252753799396d5c3b4b8ffbd7 *R/quadgk.R
-24aba26411c536da2b8028e66e45e887 *R/quadgr.R
+f47837590022c2a4991596472c5f0185 *R/quadgr.R
 134ed0714bfad0269e8d7c518f6bcebb *R/quadinf.R
 25513ce418ecdb2684bc3a34a735fd56 *R/quadl.R
 d8f208aa2a6f4c49403111738dcd860f *R/quadprog.R
@@ -247,9 +249,9 @@ af5250aca37ab527dfc90b677dce63a8 *R/vectorfield.R
 f52be7d201dbc9a815c229b58dab11dd *R/wilkinson.R
 e09f92a7ba7e72fbfbc3e2dec887b3fc *R/zeta.R
 f9ccb58211bc1dfbd6910db8dc4d3250 *R/zzz.R
-48362efc95201deaccdd416eecfd3155 *data/brown72.rda
-b3792a829b1a878a5841315a528c73eb *data/nile.rda
-ada7e8e9ac178d340246200df05b1070 *data/titanium.rda
+b55c0ead887bf4729d8e8918a3b6e290 *data/brown72.rda
+d02f6d82a58682fe31e736977af5d5ca *data/nile.rda
+397c2deb87ada515f2c3c51ce5436737 *data/titanium.rda
 b0665e750dc8a153600fa13f2863447a *demo/00Index
 dadc96a0ba340629e215cdd44344dcb3 *demo/pracma.R
 ca30ca6722fad23dde2a739ec7b57e4f *man/abm3.Rd
@@ -262,10 +264,12 @@ b7cd06192a6d3bcf1ba1b1c49f01efd9 *man/andrews.Rd
 18210f37cc8db522e20ba4d9d1c7351c *man/angle.Rd
 1bd51db83663d6036203074407fad92c *man/anms.Rd
 ee7ca1b93d9694de161eb24395e6d486 *man/arclength.Rd
+ed3fba93b4c3ec239d35e3dd55e7ca52 *man/arnoldi.Rd
 7e284a426f5c259c3f41f17289f50360 *man/barylag.Rd
 b0123a086103cd7333f2be74c5e2311d *man/barylag2d.Rd
 a461d36d634becb0561e856b1d758569 *man/beep.Rd
 1a49d9c8f477f3d21c65f33bcd6e0bfd *man/bernoulli.Rd
+cedf2546d1cd3b676c2cc18e40a65678 *man/bernstein.Rd
 6311822169b830506498f759cbdc8c23 *man/bisect.Rd
 2f2c1969da40d754f616e58055f92693 *man/bits.Rd
 a3f44a1b3f4e3904e3d780b6839f67bf *man/blanks.Rd
@@ -278,6 +282,7 @@ fa1d9614b2eaa79dc5421b47148e14e1 *man/broyden.Rd
 03291f138fd823189b63fe5f7786c161 *man/cart2sph.Rd
 c3c7b8b2b92976c387544d8f1574904e *man/cd.Rd
 7088879cbc952d05a1ff4270da186eac *man/ceil.Rd
+78e3bf59d3169629070fbd99bda2f9ab *man/cgmin.Rd
 615c359cad3f7cf5c7d483c406bb0b78 *man/charpoly.Rd
 fb7c8b0ba0f14ad3972f6920dcddbc37 *man/chebApprox.Rd
 969ff258335476895124c3d05cb5c5c7 *man/chebCoeff.Rd
@@ -333,10 +338,9 @@ a08d6512817f466fa46b4dba2301f4ea *man/find.Rd
 787810a289ca07366d97554722bf1023 *man/findmins.Rd
 ca05625e095519e04aa0f2214e632b2d *man/findpeaks.Rd
 04e5c86a442ec65ef3604ffd030395e7 *man/findzeros.Rd
-d29420b1499bab0e3238053782f13af7 *man/fletcher_powell.Rd
 b6ed9b3d935eb2410b319077e579b8cf *man/flipdim.Rd
 304294f36ab7bf25a6b0007b3e24e510 *man/fminbnd.Rd
-529bea8ffc4c50912a76f8d1962c3d59 *man/fminsearch.Rd
+9bcc94f547a97dc15243707cdd93d915 *man/fminsearch.Rd
 6a7c4a699841ecb4e74c63210dc54feb *man/fnorm.Rd
 431b5105e9ccb1c07d506d0f9a4a3f8b *man/fornberg.Rd
 4ca99f89824f99eae3055d12468289da *man/fprintf.Rd
@@ -379,7 +383,7 @@ e64e6f1e7f3a6b57a47df9b4a8ad2d0e *man/householder.Rd
 1d24e85b2071312e9d574b3f5bf635c6 *man/hypot.Rd
 70ca3ee00d7abb441ab7f5cb5977b5a5 *man/ifft.Rd
 9023020a15e8e46fe7a94c2d8ad9aeee *man/inpolygon.Rd
-407c8f5fe053f7b54ac02d768c8cb43b *man/integral.Rd
+3d4095680508d576bac631b7dd022d4f *man/integral.Rd
 2ca5975a1c6ada4af67fab81644466cb *man/integral2.Rd
 9b160222568bf545344f93a08bc20f87 *man/interp1.Rd
 9d14ff4dc33243a3f3e0b76cbae022ac *man/interp2.Rd
@@ -460,7 +464,7 @@ f8d28b28323935223d3b6b3a7731271b *man/polylog.Rd
 f263142e1520396fcd0b41e25fbe80ce *man/polymul.Rd
 146c34e5c2b1482ec0f78fcacfdb152e *man/polypow.Rd
 3852c3992c33f0e803416ccb88e1d1ad *man/polytrans.Rd
-2780d17be2a745c629805adc9f50d213 *man/polyval.Rd
+8be02d42d92b221c10cb99f628a6909a *man/polyval.Rd
 14a8f0043c10b08c81e5fe167023ed47 *man/pow2.Rd
 be23c2ec43a7556246b793e40696a6fb *man/pp.Rd
 905080fd4c87b75f74bb36b19882a8f5 *man/ppfit.Rd
@@ -473,7 +477,7 @@ bab2db718ead94d4cb3f8230dc970b28 *man/qpspecial.Rd
 b70a8fc880037255fed3ef8b57ffedd2 *man/quad.Rd
 b4df439895084ee9c32f4bfee1c07fcd *man/quad2d.Rd
 f75804cdcb802ff1fa8f859ab1dd7b61 *man/quadcc.Rd
-f78e6988a5313cb7edab8699fe4a0970 *man/quadgk.Rd
+d250071dca3cb115a3c4fa04974f7dbe *man/quadgk.Rd
 c5c1a0403a8b99a1afb6ede2860b7d12 *man/quadgr.Rd
 c6a032f353349a0b604c66d0fbe0eb40 *man/quadinf.Rd
 26f86eaf809847d34dc03e516ac33f57 *man/quadl.Rd
@@ -522,7 +526,7 @@ d0d2a2ff3f595781704ee40e3c1cf9fd *man/sqrtm.Rd
 3a6f02136d4f12d82864740a78348d35 *man/squareform.Rd
 51acab37df156822fef6a5d8f09e494d *man/std.Rd
 29c30bc0100a966afc683cbdee85aa2b *man/std_err.Rd
-bb690a941a730c77d3ba34a975d5ff6d *man/steep_descent.Rd
+40f661ca0f0085e0396154854a415f5c *man/steep_descent.Rd
 4863d20a9f2f5b87fc99ff145d71869e *man/str2num.Rd
 3f9c488f420b7236131466008ec152d0 *man/strcat.Rd
 2637efd0d40950038596265e56ac48fb *man/strcmp.Rd

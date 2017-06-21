@@ -1,10 +1,11 @@
-\name{fletcher-powell}
-\alias{fletcher_powell}
+\name{cgmin}
+\alias{cgmin}
 \title{
-  Davidon-Fletcher-Powell Method
+  Conjugate Gradient Minimization
 }
 \description{
-  Davidon-Fletcher-Powell method for function minimization.
+  Conjugate Gradient (CG) minimization through the Davidon-Fletcher-Powell 
+  approach for function minimization.
 
   The Davidon-Fletcher-Powell (DFP) and the Broyden-Fletcher-Goldfarb-Shanno
   (BFGS) methods are the first quasi-Newton minimization methods developed.
@@ -12,8 +13,8 @@
   is more robust.
 }
 \usage{
-fletcher_powell(x0, f, g = NULL,
-                maxiter = 1000, tol = .Machine$double.eps^(2/3))
+cgmin(x0, f, g = NULL,
+      maxiter = 1000, tol = .Machine$double.eps^(2/3))
 }
 \arguments{
   \item{x0}{start value.}
@@ -59,7 +60,7 @@ rosenbrock <- function(x) {
     x2 <- x[1:(n-1)]
     sum(100*(x1-x2^2)^2 + (1-x2)^2)
 }
-fletcher_powell(c(0, 0), rosenbrock)
+cgmin(c(0, 0), rosenbrock)
 # $xmin
 # [1] 1 1
 # $fmin

@@ -3,32 +3,52 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.0.7 (2017-06-17)
+
+    o bernstein() generates the Bernstein polynomial B_,_().
+	o legendre(n,_) corrected for n=0, thanks to Peter W. Marcy.
+    o fletcher_powell() renamed to cgmin(), constraint gradient method;
+      as such it will be used in fminsearch() with method name 'CG'.
+
+CHANGES IN VERSION 2.0.6 (2017-06-06)
+
+    o polyvalm() evaluates a polynomial in the matrix sense.
+    o arnoldi() Arnoldi iteration (incl. Hessenberg matrix).
+
+CHANGES IN VERSION 2.0.5 (2017-04-30)
+
+    o integral() redesigned, less methods, several starting intervals
+      with regular or random intermediate nodes (similar to MATLAB).
+    o quadgr() corrected as functions vectorized with Vectorize() did
+      not behave as expected with apply(); still needs vectorization.
+    o Help page of quadgk() did not mention the need for vectorization.
+
 CHANGES IN VERSION 2.0.4 (2017-04-01)
 
     o hessenberg() computes the Hessenberg form of a matrix through
-	  Householder transformations (this is named hess() in MATLAB).
+      Householder transformations (this is named hess() in MATLAB).
 
 CHANGES IN VERSION 2.0.3 (2017-03-23)
 
     o Corrected functions with conditions in control statements with
-	  conditions of length greater than one: rem().
+      conditions of length greater than one: rem().
 
 CHANGES IN VERSION 2.0.2 (2017-02-23)
 
     o isposdef() test for positive definiteness of a (real) matrix.
     o hooke_jeeves() removed; similar implementations are available
-	  in packages 'dfoptim::hjk[b]' and 'adagio::hookejeeves'.
+      in packages 'dfoptim::hjk[b]' and 'adagio::hookejeeves'.
 
 CHANGES IN VERSION 2.0.1 (2017-02-06)
 
     o nelder_mead() replaced by an adaptive Nelder-Mead implementation,
-	  anms(), following F. Gao and L. Han.
-	o fminsearch() now calls this new version of Nelder-Mead.
+      anms(), following F. Gao and L. Han.
+    o fminsearch() now calls this new version of Nelder-Mead.
 
 CHANGES IN VERSION 2.0.0 (2017-01-26)
 
     o incgam(x,a) computes the incomplete upper gamma function using
-	    the R function pgamma for higher precision than gammainc().
+      the R function pgamma for higher precision than gammainc().
     o Corrected a small oversight in hurstexp(), thnx George Ostrouchov.
 
 CHANGES IN VERSION 1.9.9 (2017-01-10)

@@ -38,7 +38,7 @@ steep_descent(x0, f, g = NULL, info = FALSE,
   Using Matlab'' by L. V.Fausett.
 }
 \seealso{
-  \code{\link{fletcher_powell}}
+  \code{\link{cgmin}}
 }
 \examples{
 ##  Rosenbrock function: The flat valley of the Rosenbruck function makes
