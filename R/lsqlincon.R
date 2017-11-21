@@ -8,6 +8,11 @@ lsqlincon <- function(C, d,                     # min ||C x - d||_2
                       Aeq = NULL, beq = NULL,   # Aeq x == beq
                       lb = NULL,  ub = NULL)    # lb <= x <= ub
 {
+    if (!requireNamespace("quadprog", quietly = TRUE)) {
+        stop("quadprog needed for this function to work. Please install it.",
+              call. = FALSE)
+    }
+
     stopifnot(is.numeric(C), is.numeric(d))
     if (is.null(A) && !is.null(b) || !is.null(A) && is.null(b))
         stop("If any, both 'A' and 'b' must be NULL.")

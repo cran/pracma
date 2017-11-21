@@ -3,7 +3,7 @@ findpeaks <- function(x,nups = 1, ndowns = nups, zero = "0", peakpat = NULL,
                       minpeakheight = -Inf, minpeakdistance = 1,
                       threshold = 0, npeaks = 0, sortstr = FALSE)
 {
-    stopifnot(is.vector(x, mode="numeric"))
+    stopifnot(is.vector(x, mode="numeric") || length(is.na(x)) == 0)
     if (! zero %in% c('0', '+', '-'))
         stop("Argument 'zero' can only be '0', '+', or '-'.")
 

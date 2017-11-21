@@ -6,7 +6,7 @@
 fplot <- function(f, interval, ...) {
     stopifnot(is.numeric(interval), length(interval) == 2)
     a <- interval[1]; b <- interval[2]
-    ezplot(f, a, b, main = "")
+    ezplot(f, a, b, main = "", ...)
 }
 
 ezplot <- function(f, a, b, n = 101, col = "blue", add = FALSE,

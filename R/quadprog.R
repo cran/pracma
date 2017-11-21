@@ -3,12 +3,16 @@
 ##
 
 
-# require(quadprog)
 quadprog <- function(
     C, d,                     # min! 1/2 x'Cx + d'x
     A = NULL,   b = NULL,     # A x <= b
     Aeq = NULL, beq = NULL,   # Aeq x == beq
-    lb = NULL,  ub = NULL) {  # lb <= x <= ub
+    lb = NULL,  ub = NULL)    # lb <= x <= ub
+{
+    if (!requireNamespace("quadprog", quietly = TRUE)) {
+        stop("quadprog needed for this function to work. Please install it.",
+              call. = FALSE)
+    }
 
     stopifnot(is.numeric(C), is.matrix(C), is.numeric(d), is.vector(d))
     if (is.null(A) && !is.null(b) || !is.null(A) && is.null(b))

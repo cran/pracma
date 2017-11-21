@@ -6,7 +6,7 @@
 exportPattern("^[[:alpha:]]+")
 
 ## Imports
-importFrom("quadprog", "solve.QP")
+#  importFrom("quadprog", "solve.QP")
 
 # import("datasets")
 import("graphics")

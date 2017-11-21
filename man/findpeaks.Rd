@@ -12,7 +12,7 @@ findpeaks(x, nups = 1, ndowns = nups, zero = "0", peakpat = NULL,
           threshold = 0, npeaks = 0, sortstr = FALSE)
 }
 \arguments{
-  \item{x}{numerical vector taken as a time series}
+  \item{x}{numerical vector taken as a time series (no NAs allowed)}
   \item{nups}{minimum number of increasing steps before a peak is reached}
   \item{ndowns}{minimum number of decreasing steps after the peak}
   \item{zero}{can be `+', `-', or `0'; how to interprete succeeding steps
