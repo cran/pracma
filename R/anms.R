@@ -1,6 +1,6 @@
 anms <- function(fn, x0, ...,
                  tol = 1e-10, maxfeval = NULL) {
-    stopifnot(is.numeric(x0))
+    stopifnot(is.numeric(x0) && length(x0) > 1)
     d <- length(x0); d1 <- d + 1
     fun <- match.fun(fn)
     fn <- function(x) fun(x, ...)

@@ -1,3 +1,17 @@
+# pracma 2.1.4 (2018-01-29)
+
+* shubert() implements one-dimensional Shubert-Piyavskii method.
+* fminsearch() and anms() stop for one-dimensional minimization.
+
+# pracma 2.1.3 (2018-01-23)
+
+* bsxfun() now uses sweep() for matrices in search of higher speed.
+* direct1d() removed because slow and not effective.
+
+# pracma 2.1.2 (2018-01-21)
+
+* poisson2disk() approximate Poisson disk distribution
+* Corrected small bug in findpeaks(), reported by Mike Badescu.
 
 # pracma 2.1.1 (2017-11-21)
 
@@ -16,7 +30,6 @@
 
 # pracma 2.0.8 (2017-09-20)
 
-* Package byte-compiled on loading (Requires R version >= 3.4.0).
 * findpeaks() function not checking for NAs (reported by Wesley Burr).
 * fplot() extra parameters were not handed over to plotting routine.
 

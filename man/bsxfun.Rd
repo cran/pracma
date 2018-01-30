@@ -18,8 +18,10 @@
   \item{...}{list of arrays of the same size.}
 }
 \details{
-  \code{bsxfun} applies element-by-element a binary function to two vectors
-  or matrices of the same size.
+  \code{bsxfun} applies element-by-element a binary function to two vectors,
+  matrices, or arrays of the same size. For matrices, \code{sweep} is used for
+  reasons of speed, otherwise \code{mapply}. (For arrays of more than two
+  dimensions this may become very slow.)
 
   \code{arrayfun} applies \code{func} to each element of the arrays and
   returns an array of the same size.

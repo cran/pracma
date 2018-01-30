@@ -69,7 +69,7 @@ findpeaks <- function(x,nups = 1, ndowns = nups, zero = "0", peakpat = NULL,
             }
         }
         # select the good peaks
-        X <- X[!badpeaks, ]
+        X <- X[!badpeaks, , drop = FALSE]
     }
 
     # Return only the first 'npeaks' peaks

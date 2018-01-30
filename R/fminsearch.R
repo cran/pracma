@@ -7,6 +7,8 @@ fminsearch <- function(f, x0, ..., minimize = TRUE, dfree = TRUE,
                        maxiter = 1000, tol = .Machine$double.eps^(2/3)) {
     if (!is.numeric(x0))
         stop("Argument 'x0' must be a numeric vector.")
+	else if (length(x0) == 1)
+		stop("Don't use 'fminsearch' for one-dimensional minimization.")
 
     scl <- if(minimize) 1 else -1
     fun <- match.fun(f)

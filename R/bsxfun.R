@@ -12,6 +12,10 @@ bsxfun <- function(func, x, y) {
     if ( is.vector(x) && is.vector(y) ) {
         z <- mapply(func, x, y)
 
+    } else if (is.matrix(x) && is.matrix(y) && all(dx == dy)) {
+        z <- sweep(x, y, MARGIN = c(1, 2), FUN = func)
+        # dim(z) <- dx
+        
     } else if (is.array(x)  && is.array(y) && all(dx == dy)) {
         z <- mapply(func, x, y)
         dim(z) <- dx
@@ -28,7 +32,7 @@ arrayfun <- function(func, ...) {
 
     dots <- list(...)
     if (length(dots) < 1)
-        stop("Empty list of arrays: Rsult cannot be computed.")
+        stop("Empty list of arrays: Result cannot be computed.")
     
     d <- dim(dots[[1]])        # no test on array sizes to be fast
     r <- mapply(func, ...)     # no try ... catch, number of variables

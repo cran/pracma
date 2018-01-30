@@ -3,11 +3,26 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.1.4 (2018-01-29)
+
+    o shubert() implements one-dimensional Shubert-Piyavskii method.
+    o fminsearch() and anms() stop for one-dimensional minimization.
+
+CHANGES IN VERSION 2.1.3 (2018-01-23)
+
+    o bsxfun() now uses sweep() for matrices in search of higher speed.
+    o direct1d() removed because slow and not effective.
+
+CHANGES IN VERSION 2.1.2 (2018-01-21)
+
+    o poisson2disk() approximate Poisson disk distribution
+    o Corrected small bug in findpeaks(), reported by Mike Badescu.
+
 CHANGES IN VERSION 2.1.1 (2017-11-21)
 
     o Added a field "Authors@R" in the DESCRIPTION, deleted others.
     o Added README.md and NEWS.md (for a future Github repository).
-    o Needed a new version for resubmitting (because of 'survivalsvm')
+    o Needed a new version for resubmitting (because of 'survivalsvm').
 
 CHANGES IN VERSION 2.1.0 (2017-11-20)
 
