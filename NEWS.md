@@ -1,3 +1,7 @@
+# pracma 2.1.5 (2018-08-25)
+
+* Si(), Ci() sine and cosine integral functions added.
+
 # pracma 2.1.4 (2018-01-29)
 
 * shubert() implements one-dimensional Shubert-Piyavskii method.

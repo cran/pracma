@@ -1,8 +1,8 @@
 97f6eedc10d90921a363632f2f85721d *COPYING
-85950cba6ccf231206d593a0f902c97a *DESCRIPTION
+b61b4d6941ba731dd0b4d6fdd0b4a734 *DESCRIPTION
 68fb2770bd8f013a993e220c6e3955f4 *NAMESPACE
-899c8c47bb7b142193b0d958cbe12d54 *NEWS
-6be9f6be271bd9f96ff79d9e2131a566 *NEWS.md
+af9667f588976dae45e11a0d43915027 *NEWS
+7876cd13b858e665a552340f6f08ed83 *NEWS.md
 8e2ec5415edc8417dd8da8cb53d8d0b9 *R/abm3.R
 556a17b11b7876e19e56a799aa125485 *R/accumarray.R
 3a2bb5e25f1e3c1bbd2bfc930776a25d *R/agmean.R
@@ -252,9 +252,9 @@ f52be7d201dbc9a815c229b58dab11dd *R/wilkinson.R
 e09f92a7ba7e72fbfbc3e2dec887b3fc *R/zeta.R
 f9ccb58211bc1dfbd6910db8dc4d3250 *R/zzz.R
 eb2c339a66babe28378b5f99a870e59a *README.md
-2c86c92222b76a79091db8f7c182fcc8 *data/brown72.rda
-db8513028599c8f408563827df952e37 *data/nile.rda
-f58eda60d458b320f198142e3062e9bd *data/titanium.rda
+dccba2625aa0d8b8d9793996a8679bf4 *data/brown72.rda
+5823b3c2cd1923da6b8661c2fe914aa0 *data/nile.rda
+492fecb69f683fdcd4622e57f21818c5 *data/titanium.rda
 b0665e750dc8a153600fa13f2863447a *demo/00Index
 dadc96a0ba340629e215cdd44344dcb3 *demo/pracma.R
 ca30ca6722fad23dde2a739ec7b57e4f *man/abm3.Rd
@@ -289,7 +289,7 @@ c3c7b8b2b92976c387544d8f1574904e *man/cd.Rd
 615c359cad3f7cf5c7d483c406bb0b78 *man/charpoly.Rd
 fb7c8b0ba0f14ad3972f6920dcddbc37 *man/chebApprox.Rd
 969ff258335476895124c3d05cb5c5c7 *man/chebCoeff.Rd
-2a89e94f46bf4cbf7df0c1d2f16b7667 *man/chebPoly.Rd
+a75c2341b144aea7c7761e824470c935 *man/chebPoly.Rd
 2dcd625eb136b4ce83fe8d55c7de71a8 *man/circlefit.Rd
 034f19cf456f73eb77c981292b35debf *man/clear.Rd
 6d3b865dec69d4c41c262ed336239911 *man/clenshaw_curtis.Rd
@@ -324,7 +324,7 @@ bf73a3aa553d60119ce7bbd4474fd96f *man/eps.Rd
 b61079df802afdcac37929f819633a2e *man/errorbar.Rd
 03f2591af56d9e857b8d4bfcd7425118 *man/eta.Rd
 eea42e38f0e90ae5159f264f216a2851 *man/euler_heun.Rd
-85bb08b1f66f1ea948215c7d7cc19c31 *man/expint.Rd
+006c71504c128f9ca45a62eaec9645cd *man/expint.Rd
 48962345836bd56b6bef67d0df41cbf8 *man/expm.Rd
 065d1cdb596a241836839b97f949b01d *man/eye.Rd
 59d3bfc78764aded2f9221201a4f008e *man/ezcontour.Rd
@@ -457,7 +457,7 @@ ac0eb3a8827ff362eda88fe83a5777c0 *man/plotyy.Rd
 801f147b139f54615f2abd40660deaef *man/polar.Rd
 8f05b956562622297bfccb098afa7c1c *man/poly.Rd
 cf72258739e2ab7aa44afb2a852d3e1c *man/poly2str.Rd
-35e28fe5d2eb071697fd61b77290028b *man/polyApprox.Rd
+67de1155f8cfe0873bf3647d423cddfa *man/polyApprox.Rd
 63b5c56b36ff8dfd0fa7449f29a1bf54 *man/polyadd.Rd
 4a79487021e35831041862499510f060 *man/polyarea.Rd
 668fc1227731ac66ab9de26b3a2df230 *man/polyder.Rd
@@ -540,7 +540,7 @@ bcc9e5e78301a401fe408f5544f8c196 *man/strrep.Rd
 4f658bbde9fbb2c4b14741ed7fa8039c *man/strtrim.Rd
 bee36c3c6e77a430dd2fc9dc110216cc *man/subspace.Rd
 a932f78643285a736e358930f086ed39 *man/sumalt.Rd
-a5f503e5d9456191ea28d008a8a4b357 *man/taylor.Rd
+e4b14d3799ee7c34e0d1ea2637c31cef *man/taylor.Rd
 795e0b560ef6ae6bc37f95ddd91f6e19 *man/tictoc.Rd
 e2f3cbba480da2dcd6657444a88a237c *man/titanium.Rd
 57e64ce59a9824b113268ab0aaf5e658 *man/toeplitz.Rd

@@ -12,7 +12,7 @@ taylor(f, x0, n = 4, ...)
 \arguments{
   \item{f}{differentiable function.}
   \item{x0}{point where the series expansion will take place.}
-  \item{n}{Taylor series order to be used; should be \code{n <= 4}.}
+  \item{n}{Taylor series order to be used; should be \code{n <= 8}.}
   \item{...}{more variables to be passed to function \code{f}.}
 }
 \details{

@@ -29,8 +29,7 @@ chebPoly(n, x = NULL)
 }
 \references{
   Carothers, N. L. (1998). A Short Course on Approximation Theory.
-  Bowling Green State University,
-  URL: \url{http://personal.bgsu.edu/~carother/Approx.html}.
+  Bowling Green State University.
 }
 \note{
   See the ``Chebfun Project'' <http://www.maths.ox.ac.uk/chebfun/> by

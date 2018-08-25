@@ -27,8 +27,7 @@ polyApprox(f, a, b, n, ...)
 }
 \references{
   Carothers, N. L. (1998). A Short Course on Approximation Theory.
-  Bowling Green State University,
-  URL: \url{http://personal.bgsu.edu/~carother/Approx.html}.
+  Bowling Green State University.
 }
 \note{
   The Chebyshev approximation is optimal in the sense of the \eqn{L^1} norm,

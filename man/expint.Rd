@@ -67,4 +67,4 @@ primesPi <- function(n) length(primes(n))       # true number of primes <= n
 N <- 1e6
 (estimPi(N) - primesPi(N)) / estimPi(N)         # deviation is 0.16 percent!}
 }
-\keyword{ math }
+\keyword{ specfun }
