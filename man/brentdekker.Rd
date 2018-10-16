@@ -8,15 +8,16 @@
   Find root of continuous function of one variable.
 }
 \usage{
-brentDekker(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.75)
-brent(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.75)
+brentDekker(fun, a, b, maxiter = 500, tol = 1e-12, ...)
+brent(fun, a, b, maxiter = 500, tol = 1e-12, ...)
 }
 \arguments{
-  \item{f}{function whose root is to be found.}
+  \item{fun}{function whose root is to be found.}
   \item{a, b}{left and right end points of an interval;
               function values need to be of different sign at the endpoints.}
   \item{maxiter}{maximum number of iterations.}
   \item{tol}{relative tolerance.}
+  \item{...}{additional arguments to be passed to the function.}
 }
 \details{
   \code{brentDekker} implements a version of the Brent-Dekker algorithm,
@@ -44,6 +45,6 @@ brent(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.75)
 # Legendre polynomial of degree 5
 lp5 <- c(63, 0, -70, 0, 15, 0)/8
 f <- function(x) polyval(lp5, x)
-brent(f, 0.6, 1)                # 0.9061798459 correct to 10 places
+brent(f, 0.6, 1)                # 0.9061798459 correct to 12 places
 }
 \keyword{ math }

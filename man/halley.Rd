@@ -8,14 +8,14 @@
   Finding roots of univariate functions using the Halley method.
 }
 \usage{
-halley(fun, x0,
-        maxiter = 100, tol = .Machine$double.eps^0.5)
+halley(fun, x0, maxiter = 500, tol = 1e-08, ...)
 }
 \arguments{
   \item{fun}{function whose root is to be found.}
   \item{x0}{starting value for the iteration.}
   \item{maxiter}{maximum number of iterations.}
   \item{tol}{absolute tolerance; default \code{eps^(1/2)}}
+  \item{...}{additional arguments to be passed to the function.}
 }
 \details{
   Well known root finding algorithms for real, univariate, continuous

@@ -3,9 +3,21 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 2.1.5 (2018-08-25)
+CHANGES IN VERSION 2.1.8 (2018-10-16)
+
+    o Corrected a bug in hessenberg() thanks to Ben Ubah.
+
+CHANGES IN VERSION 2.1.7 (2018-09-24)
+
+    o Removed the deprecated 'rortho' function, use randortho() instead.
+
+CHANGES IN VERSION 2.1.6 (2018-08-30)
 
     o Si(), Ci() sine and cosine integral functions added.
+    o Added dot notation for brent(), bisect(), newton(), halley() and
+      ridders() -- on request of John Nash for the histRalg project.
+
+CHANGES IN VERSION 2.1.5 (2018-08-25)
 
 CHANGES IN VERSION 2.1.4 (2018-01-29)
 

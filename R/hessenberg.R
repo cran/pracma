@@ -17,7 +17,7 @@ hessenberg <- function(A) {
         sgn <- sign(v[1])
         if (sgn == 0) sgn <- 1
         v[1] <- v[1] + sgn * Norm(v)
-        v <- v / Norm(v)
+        if (Norm(v) != 0) v <- v / Norm(v)
 
         H[(k+1):n,k:n] <- H[(k+1):n, k:n] -
                           2 * v %*% (t(v) %*% H[(k+1):n,k:n])

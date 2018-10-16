@@ -3,31 +3,12 @@
 ##
 
 
-# bisect <- function(f, a, b, maxiter=100, tol=.Machine$double.eps^0.5)
-# # Bisection search for zero of a univariate function in a bounded interval
-# {
-#     if (f(a)*f(b) > 0) stop("f(a) and f(b) must have different signs.")
-#     x1 <- min(a, b); x2 <- max(a,b)
-#     xm <- (x1+x2)/2.0
-#     n <- 0
-#     while (abs(x1-x2)/2.0 > tol) {
-#         n <- n+1
-#         if (abs(f(xm)) <= tol) break
-#         if (f(x1)*f(xm) < 0) {
-#             x2 <- xm
-#         } else {
-#             x1 <- xm
-#         }
-#         xm <- (x1+x2)/2.0  # xm <- x1 - f(x1) * (x2-x1) / (f(x2)-f(x1))
-#         if (n >= maxiter) break
-#     }
-#     return(list(root=xm, f.root=f(xm), iter=n, estim.prec=abs(x1-x2)/2.0))
-# }
-
-
-bisect <- function(f, a, b, maxiter = 100, tol = NA)
-# Bisection search, trimmed for exactness, not no. of iterations
+bisect <- function(fun, a, b, maxiter = 500, tol = NA, ...)
+# Bisection search, trimmed for exactness, not number of iterations
 {
+    fun <- match.fun(fun)
+    f <- function(x) fun(x, ...)
+
     if (!is.na(tol)) warning("Deprecated: Argument 'tol' not used anymore.")
 	if (f(a)*f(b) > 0) stop("f(a) and f(b) must have different signs.")
 	x1 <- min(a, b); x2 <- max(a,b)
@@ -49,9 +30,39 @@ bisect <- function(f, a, b, maxiter = 100, tol = NA)
 	return(list(root=xm, f.root=f(xm), iter=n, estim.prec=abs(x1-x2)))
 }
 
-regulaFalsi <- function(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
+
+secant <- function(fun, a, b, maxiter = 500, tol = 1e-08, ...)
+# Secant search for zero of a univariate function
+{
+    fun <- match.fun(fun)
+    f <- function(x) fun(x, ...)
+    
+    x1 <- a; x2 <- b
+    f1 <- f(x1); if (abs(f1) <= tol) return(x1)
+    f2 <- f(x2); if (abs(f2) <= tol) return(x1)
+    n <- 0
+    while (n <= maxiter && abs(x2 - x1) > tol) {
+        n <- n+1
+        slope <- (f2 - f1)/(x2 - x1)
+        if (slope == 0) return(root=NA, f.root=NA, iter=n, estim.prec=NA)
+        x3 <- x2 - f2/slope
+        f3 <- f(x3); if (abs(f3) <= tol) break
+        x1 <- x2; f1 <- f2
+        x2 <- x3; f2 <- f3
+    }
+    if (n > maxiter) {
+        warning("Maximum number of iterations 'maxiter' was reached.")
+    }
+    return(list(root=x3, f.root=f3, iter=n, estim.prec=2*abs(x3-x2)))
+}
+
+
+regulaFalsi <- function(fun, a, b, maxiter = 500, tol = 1e-08, ...)
 #Regula Falsi search for zero of a univariate function in a bounded interval
 {
+    fun <- match.fun(fun)
+    f <- function(x) fun(x, ...)
+
 	x1 <- a;      x2 <- b
 	f1 <- f(x1);  f2 <- f(x2)
 	if (f1*f2 > 0) stop("f(a) and f(b) must have different signs.")
@@ -78,29 +89,23 @@ regulaFalsi <- function(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
 }
 
 
-secant <- function(fun, a, b, ...,
-                   maxiter = 100, tol = .Machine$double.eps^0.5)
-# Secant search for zero of a univariate function
-{
-    fun <- match.fun(fun)
-    f <- function(x) fun(x, ...)
-
-	x1 <- a; x2 <- b
-	f1 <- f(x1); if (abs(f1) <= tol) return(x1)
-	f2 <- f(x2); if (abs(f2) <= tol) return(x1)
-	n <- 0
-	while (n <= maxiter && abs(x2 - x1) > tol) {
-		n <- n+1
-		slope <- (f2 - f1)/(x2 - x1)
-		if (slope == 0) return(root=NA, f.root=NA, iter=n, estim.prec=NA)
-		x3 <- x2 - f2/slope
-		f3 <- f(x3); if (abs(f3) <= tol) break
-		x1 <- x2; f1 <- f2
-		x2 <- x3; f2 <- f3
-	}
-	if (n > maxiter) {
-		warning("Maximum number of iterations 'maxiter' was reached.")
-	}
-	return(list(root=x3, f.root=f3, iter=n, estim.prec=2*abs(x3-x2)))
-}
-
+# bisect <- function(f, a, b, maxiter=100, tol=.Machine$double.eps^0.5)
+# # Bisection search for zero of a univariate function in a bounded interval
+# {
+#     if (f(a)*f(b) > 0) stop("f(a) and f(b) must have different signs.")
+#     x1 <- min(a, b); x2 <- max(a,b)
+#     xm <- (x1+x2)/2.0
+#     n <- 0
+#     while (abs(x1-x2)/2.0 > tol) {
+#         n <- n+1
+#         if (abs(f(xm)) <= tol) break
+#         if (f(x1)*f(xm) < 0) {
+#             x2 <- xm
+#         } else {
+#             x1 <- xm
+#         }
+#         xm <- (x1+x2)/2.0  # xm <- x1 - f(x1) * (x2-x1) / (f(x2)-f(x1))
+#         if (n >= maxiter) break
+#     }
+#     return(list(root=xm, f.root=f(xm), iter=n, estim.prec=abs(x1-x2)/2.0))
+# }

@@ -25,8 +25,8 @@ randortho <- function(n, type = c("orthonormal", "unitary")) {
     q %*% diag(ph) %*% q
 }
 
-rortho <- function(n) {
-    warning("Function 'rortho' is deprecated; use 'randortho' instead.",
-            call. = FALSE, immediate. = TRUE)
-    randortho(n, type = "orthonormal")
-}
+# rortho <- function(n) {
+#     warning("Function 'rortho' is deprecated; use 'randortho' instead.",
+#             call. = FALSE, immediate. = TRUE)
+#     randortho(n, type = "orthonormal")
+# }

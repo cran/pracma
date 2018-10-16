@@ -3,11 +3,13 @@
 ##
 
 
-brentDekker <- function(f, a, b,
-                  maxiter = 100, tol = .Machine$double.eps^0.75)
+brentDekker <- function(fun, a, b, maxiter = 500, tol = 1e-12, ...)
 # Brent and Dekker's root finding method,
 # based on bisection, secant method and quadratic interpolation
 {
+    fun <- match.fun(fun)
+    f <- function(x) fun(x, ...)
+
     stopifnot(is.numeric(a), is.numeric(b),
               length(a) == 1, length(b) == 1)
     if (!is.function(f) || is.null(f))

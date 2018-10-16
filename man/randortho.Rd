@@ -1,6 +1,5 @@
 \name{randortho}
 \alias{randortho}
-\alias{rortho}
 \title{
   Generate Random Orthonormal or Unitary Matrix
 }
@@ -12,8 +11,6 @@
 }
 \usage{
 randortho(n, type = c("orthonormal", "unitary"))
-
-rortho(n)
 }
 \arguments{
   \item{n}{positive integer.}
@@ -35,9 +32,7 @@ rortho(n)
   of size \code{n}.
 }
 \note{
-  \code{rortho()} was buggy and is deprecated and will be removed in one of
-  the next versions. The version present here is simply an alias for
-  \code{randortho()} with \code{type="orthonormal"}.
+  \code{rortho} was deprecated and eventually removed in version 2.1.7.
 }
 \references{
 G. W. Stewart (1980). ``The Efficient Generation of Random Orthogonal Matrices

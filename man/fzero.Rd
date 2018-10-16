@@ -1,16 +1,16 @@
 \name{fzero}
 \alias{fzero}
 \title{
-  Root Finding
+  Root Finding Algorithm
 }
 \description{
   Find root of continuous function of one variable.
 }
 \usage{
-fzero(f, x, ..., maxiter = 100, tol = .Machine$double.eps^(1/2))
+fzero(fun, x, maxiter = 500, tol = 1e-12, ...)
 }
 \arguments{
-  \item{f}{function whose root is sought.}
+  \item{fun}{function whose root is sought.}
   \item{x}{a point near the root or an interval giving end points.}
   \item{maxiter}{maximum number of iterations.}
   \item{tol}{relative tolerance.}

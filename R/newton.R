@@ -3,9 +3,10 @@
 ##
 
 
-newtonRaphson <- function(fun, x0, dfun = NULL, ...,
-	               maxiter = 100, tol = .Machine$double.eps^0.5) {
+newtonRaphson <- function(fun, x0, dfun = NULL, 
+	               maxiter = 500, tol = 1e-08, ...) {
 	# Newton method for finding function zeros
+    stopifnot(is.function(fun))
 	if  (is.null(dfun)) {
 		dfun <- function(x, ...) { h <- tol^(2/3)
 			(fun(x+h, ...) - fun(x-h, ...)) / (2*h)
@@ -35,29 +36,32 @@ newtonRaphson <- function(fun, x0, dfun = NULL, ...,
 }
 
 
+# alias
 newton <- newtonRaphson
 
 
-halley <- function(fun, x0,
-                   maxiter = 100, tol = .Machine$double.eps^0.5) {
-    f0 <- fun(x0)
+halley <- function(fun, x0, maxiter = 500, tol = 1e-08, ...) {
+    fun <- match.fun(fun)
+    f <- function(x) fun(x, ...)
+
+    f0 <- f(x0)
     if (abs(f0) < tol^(3/2))
         return(list(root = x0, f.root = f0, maxiter = 0, estim.prec = 0))
 
-    f1 <- fderiv(fun, x0, 1)
-    f2 <- fderiv(fun, x0, 2)
+    f1 <- fderiv(f, x0, 1)
+    f2 <- fderiv(f, x0, 2)
     x1 <- x0 - 2*f0*f1 / (2*f1^2 - f0*f2)
 
     niter = 1
     while (abs(x1 - x0) > tol && niter < maxiter) {
         x0 <- x1
-        f0 <- fun(x0)
-        f1 <- fderiv(fun, x0, 1)
-        f2 <- fderiv(fun, x0, 2)
+        f0 <- f(x0)
+        f1 <- fderiv(f, x0, 1)
+        f2 <- fderiv(f, x0, 2)
         x1 <- x0 - 2*f0*f1 / (2*f1^2 - f0*f2)
         niter <- niter + 1
     }
-    return(list(root = x1, f.root = fun(x1),
+    return(list(root = x1, f.root = f(x1),
                 iter = niter, estim.prec = abs(x1 - x0)))
 }
 

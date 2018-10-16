@@ -1,22 +1,26 @@
 \name{bisect}
 \alias{bisect}
+\alias{secant}
 \alias{regulaFalsi}
 \title{
-Rootfinding Through Bisection
+Rootfinding Through Bisection or Secant Rule
 }
 \description{
 Finding roots of univariate functions in bounded intervals.
 }
 \usage{
-bisect(f, a, b, maxiter = 100, tol = NA)
+bisect(fun, a, b, maxiter = 500, tol = NA, ...)
 
-regulaFalsi(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
+secant(fun, a, b, maxiter = 500, tol = 1e-08, ...)
+
+regulaFalsi(fun, a, b, maxiter = 500, tol = 1e-08, ...)
 }
 \arguments{
-  \item{f}{Function or its name as a string.}
+  \item{fun}{Function or its name as a string.}
   \item{a, b}{interval end points.}
   \item{maxiter}{maximum number of iterations; default 100.}
   \item{tol}{absolute tolerance; default \code{eps^(1/2)}}
+  \item{...}{additional arguments passed to the function.}
 }
 \details{
   ``Bisection'' is a well known root finding algorithms for real, univariate, 
@@ -28,8 +32,9 @@ regulaFalsi(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
   not speed. Special care is taken when 0.0 is a root of the function.
   Argument 'tol' is deprecated and not used anymore.
 
-  ``Regula falsi'' combines bisection and secant methods.
-  The so-called `Illinois' improvement is used.
+  The ``Secant rule'' uses a succession of roots of secant lines to better 
+  approximate a root of a function. ``Regula falsi'' combines bisection and 
+  secant methods. The so-called `Illinois' improvement is used here.
 }
 \value{
   Return a list with components \code{root}, \code{f.root}, 
@@ -56,6 +61,7 @@ bisect(sin, -1.0, 1.0)
 lp5 <- c(63, 0, -70, 0, 15, 0)/8
 f <- function(x) polyval(lp5, x)
 bisect(f, 0.6, 1)       # 0.9061798453      correct to 15 decimals
+secant(f, 0.6, 1)       # 0.5384693         different root
 regulaFalsi(f, 0.6, 1)  # 0.9061798459      correct to 10 decimals
 }
 \keyword{ math }

@@ -3,13 +3,13 @@
 ##
 
 
-fzero <- function(f, x, ..., maxiter = 100, tol = .Machine$double.eps^(1/2)) {
+fzero <- function(fun, x, maxiter = 500, tol = 1e-12, ...) {
     if (!is.numeric(x) || length(x) > 2)
         stop("Argument 'x' must be a scalar or a vector of length 2.")
 
-    err <- try(fun <- match.fun(f), silent = TRUE)
+    err <- try(fun <- match.fun(fun), silent = TRUE)
     if (class(err) == "try-error") {
-        stop("Argument function 'f' not known in parent environment.")
+        stop("Argument function 'fun' not known in parent environment.")
     } else {
         f <- function(x) fun(x, ...)
     }

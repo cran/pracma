@@ -1,7 +1,7 @@
 \name{ridders}
 \alias{ridders}
 \title{
-  Ridders' Method
+  Ridders' Root Finding Method
 }
 \description{
   Ridders' root finding method is a powerful variant of `regula falsi' (and
@@ -9,13 +9,14 @@
   with Brent-Dekker and similar approaches.
 }
 \usage{
-ridders(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
+ridders(fun, a, b, maxiter = 500, tol = 1e-12, ...)
 }
 \arguments{
-\item{f}{function whose root is to be found.}
+\item{fun}{function whose root is to be found.}
 \item{a, b}{left and right interval bounds.}
 \item{maxiter}{maximum number of iterations (function calls).}
 \item{tol}{tolerance, length of the last interval.}
+\item{...}{additional parameters passed on to the function.}
 }
 \details{
   Given a bracketing interval $[x_1, x_2]$, the method first calculates the
