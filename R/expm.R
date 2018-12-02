@@ -33,7 +33,7 @@ logm <- function(A) {
 
     E <- eigen(A)
     e <- E$values
-    if (any(Im(e) == 0 && Re(e) <= 0))
+    if (any(Im(e) == 0 & Re(e) <= 0))
         stop("A must not have any nonpositive real eigenvalues.")
 
 

@@ -7,6 +7,7 @@ exportPattern("^[[:alpha:]]+")
 
 ## Imports
 #  importFrom("quadprog", "solve.QP")
+#  importFrom("NlcOptim", "solnl")
 
 # import("datasets")
 import("graphics")

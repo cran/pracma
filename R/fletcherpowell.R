@@ -3,8 +3,8 @@
 ##
 
 
-cgmin <- function(x0, f, g = NULL,
-                  maxiter = 1000, tol = .Machine$double.eps^(2/3)) {
+fletcher_powell <- function(x0, f, g = NULL,
+                            maxiter = 1000, tol = .Machine$double.eps^(2/3)) {
     eps <- .Machine$double.eps
     if (tol < eps) tol <- eps
     if (!is.numeric(maxiter) || length(maxiter) > 1 || maxiter < 1)
@@ -73,4 +73,12 @@ cgmin <- function(x0, f, g = NULL,
         warning("Max. number of iterations reached -- may not converge.")
 
     return(list(xmin = x, fmin = f(x), niter = k))
+}
+
+
+# alias -- deprecated
+cgmin <- function(x0, f, g = NULL,
+                  maxiter = 1000, tol = .Machine$double.eps^(2/3)) {
+    warning("Function 'cgmin' deprecated: use 'fletcher_powell' instead.")
+    fletcher_powell(x0, f, g, maxiter = maxiter, tol = tol)
 }

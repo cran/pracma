@@ -3,9 +3,32 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.2.2 (2018-11-30)
+
+    o Corrected "length > 1 in coercion to logical" in expm().
+
+CHANGES IN VERSION 2.2.1 (2018-11-30)
+
+    o fminunc() unconstrained minimization of nonlinear objective
+      function, based on stripped-down 'Rvmmin' code by John Nash.
+    o fmincon() minimization of nonlinear objective function with
+      constraints; wraps suggested package NlcOptim with SQP method.
+
+CHANGES IN VERSION 2.2.0 (2018-11-27)
+
+    o Reintroduced 'nelder_mead()' and 'hooke_jeeves()'.
+    o fminsearch() now calls 'Nelder-Mead' or 'Hooke-Jeeves',
+      i.e., derivative-free methods only; 'dfree=F' gets deprecated.
+
+CHANGES IN VERSION 2.1.9 (2018-11-22)
+
+    o Renamed 'cgmin' to its original name 'fletcher_powell',
+      alias 'cgmin' is deprecated since this version.
+    o Removed alias 'normest2' that was anyway non-existing.
+
 CHANGES IN VERSION 2.1.8 (2018-10-16)
 
-    o Corrected a bug in hessenberg() thanks to Ben Ubah.
+    o Corrected a bug in hessenberg() reported by Ben Ubah.
 
 CHANGES IN VERSION 2.1.7 (2018-09-24)
 
@@ -58,8 +81,7 @@ CHANGES IN VERSION 2.0.7 (2017-06-17)
 
     o bernstein() generates the Bernstein polynomial B_,_().
     o legendre(n,_) corrected for n=0 (thanks to Peter W. Marcy).
-    o fletcher_powell() renamed to cgmin(), constraint gradient method;
-      as such it will be used in fminsearch() with method name 'CG'.
+    o cgmin() alias for fletcher_powell(), a constraint gradient method.
 
 CHANGES IN VERSION 2.0.6 (2017-06-06)
 

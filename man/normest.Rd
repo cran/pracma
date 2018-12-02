@@ -1,6 +1,5 @@
 \name{normest}
 \alias{normest}
-\alias{normest2}
 \title{
   Estimated Matrix Norm
 }

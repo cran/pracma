@@ -1,7 +1,8 @@
-\name{cgmin}
+\name{fletcher_powell}
+\alias{fletcher_powell}
 \alias{cgmin}
 \title{
-  Conjugate Gradient Minimization
+  Fletcher-Powell Conjugate Gradient Minimization
 }
 \description{
   Conjugate Gradient (CG) minimization through the Davidon-Fletcher-Powell 
@@ -13,8 +14,10 @@
   is more robust.
 }
 \usage{
-cgmin(x0, f, g = NULL,
-      maxiter = 1000, tol = .Machine$double.eps^(2/3))
+fletcher_powell(x0, f, g = NULL,
+                maxiter = 1000, tol = .Machine$double.eps^(2/3))
+
+cgmin(x0, f, g = NULL, maxiter = 1000, tol = .Machine$double.eps^(2/3))
 }
 \arguments{
   \item{x0}{start value.}
@@ -33,6 +36,8 @@ cgmin(x0, f, g = NULL,
   The basic idea is to generate a sequence of good approximations to the
   inverse Hessian matrix, in such a way that the approximations are again
   positive definite.
+
+  Please note: The \code{cgmin} alias is deprecated since version 2.1.9 !
 }
 \value{
   List with following components:
@@ -60,7 +65,7 @@ rosenbrock <- function(x) {
     x2 <- x[1:(n-1)]
     sum(100*(x1-x2^2)^2 + (1-x2)^2)
 }
-cgmin(c(0, 0), rosenbrock)
+fletcher_powell(c(0, 0), rosenbrock)
 # $xmin
 # [1] 1 1
 # $fmin
