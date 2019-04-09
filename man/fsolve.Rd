@@ -21,7 +21,8 @@ fsolve(f, x0, J = NULL,
 \details{
   \code{fsolve} tries to solve the components of function \code{f}
   simultaneously and uses the Gauss-Newton method with numerical gradient
-  and Jacobian. If \code{m = n}, it uses \code{broyden}.
+  and Jacobian. If \code{m = n}, it uses \code{broyden}. Not applicable
+  for univariate root finding.
 }
 \value{
   List with

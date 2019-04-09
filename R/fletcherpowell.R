@@ -77,8 +77,8 @@ fletcher_powell <- function(x0, f, g = NULL,
 
 
 # alias -- deprecated
-cgmin <- function(x0, f, g = NULL,
-                  maxiter = 1000, tol = .Machine$double.eps^(2/3)) {
-    warning("Function 'cgmin' deprecated: use 'fletcher_powell' instead.")
-    fletcher_powell(x0, f, g, maxiter = maxiter, tol = tol)
-}
+# cgmin <- function(x0, f, g = NULL,
+#                   maxiter = 1000, tol = .Machine$double.eps^(2/3)) {
+#     warning("Function 'cgmin' deprecated: use 'fletcher_powell' instead.")
+#     fletcher_powell(x0, f, g, maxiter = maxiter, tol = tol)
+# }

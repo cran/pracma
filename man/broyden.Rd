@@ -19,7 +19,8 @@ broyden(Ffun, x0, J0 = NULL, ...,
 }
 \details{
   F as a function must return a vector of length \code{n}, and accept an
-  \code{n}-dim. vector or column vector as input.
+  \code{n}-dim. vector or column vector as input. F must not be univariate,
+  that is \code{n} must be greater than 1.
 
   Broyden's method computes the Jacobian and its inverse only at the first
   iteration, and does a rank-one update thereafter, applying the so-called

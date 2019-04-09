@@ -113,3 +113,53 @@ qpspecial <- function(G, x, maxit = 100) {
     q <- sum(d * d)
     list(x = x, d = d, q = q, niter = k, info = info)
 }
+
+
+qpsolve <- function(d, A, b, meq = 0, tol = 1e-07){
+    sol <- dvec <- d
+    bvec <- b
+    imeq <- seq_len(meq)
+    
+    Nmat <- NULL
+    wvec <- NULL
+    active <- NULL
+    niter <- 0
+    repeat{
+        niter <- niter + 1
+        viol <-  crossprod(A, sol) - bvec
+        viol1 <- viol / pmax(1,abs(bvec))
+        iim <- viol1[imeq] >= tol
+        if( any(iim) ){
+            iim <- which(iim)
+            viol[iim] <- -viol[iim]
+            bvec[iim] <- -bvec[iim]
+            A[,iim] <- -A[,iim]
+        }
+        ii <- which.min(viol1)[1]
+        if( viol1[ii] > -tol) break
+        if(ii %in% active) stop("Error in projection")
+        wvec <- c(wvec, 0)
+        active <- c(active, ii)
+        npvec <- A[,ii]
+        if( !is.null(Nmat) ){
+            rvec <- solve(qr(Nmat, LAPACK=TRUE), npvec)
+            dvec <- npvec - c(Nmat %*% rvec)
+        }else{
+            dvec <- npvec
+            rvec <- NULL
+        }
+        jj <- rvec > 0
+        jj[1] <- FALSE
+        tmp <- wvec[jj]/rvec[jj]
+        t1 <- suppressWarnings(min(tmp))
+        t2 <- -viol[ii]/crossprod(npvec, dvec)
+        t <- min(c(t1, t2))
+        if( !is.finite(t) || t < 0 || t1 <= t2 ) stop("Error in projection")
+        sol <- sol + t * dvec
+        wvec <- wvec - t * c(rvec, -1)
+        Nmat <- cbind(Nmat, npvec)
+    }
+    sol <- c(sol)
+    val <- 0.5 * sum(sol * sol) - sum(d * sol)
+    return(list(sol = sol, val = val, niter = niter))
+}

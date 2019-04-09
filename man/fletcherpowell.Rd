@@ -1,6 +1,5 @@
 \name{fletcher_powell}
 \alias{fletcher_powell}
-\alias{cgmin}
 \title{
   Fletcher-Powell Conjugate Gradient Minimization
 }
@@ -16,8 +15,6 @@
 \usage{
 fletcher_powell(x0, f, g = NULL,
                 maxiter = 1000, tol = .Machine$double.eps^(2/3))
-
-cgmin(x0, f, g = NULL, maxiter = 1000, tol = .Machine$double.eps^(2/3))
 }
 \arguments{
   \item{x0}{start value.}
@@ -36,8 +33,6 @@ cgmin(x0, f, g = NULL, maxiter = 1000, tol = .Machine$double.eps^(2/3))
   The basic idea is to generate a sequence of good approximations to the
   inverse Hessian matrix, in such a way that the approximations are again
   positive definite.
-
-  Please note: The \code{cgmin} alias is deprecated since version 2.1.9 !
 }
 \value{
   List with following components:

@@ -1,5 +1,6 @@
-\name{qpspecial}
+\name{qpspecial, qpsolve}
 \alias{qpspecial}
+\alias{qpsolve}
 \title{
   Special Quadratic Programming Solver
 }
@@ -8,15 +9,21 @@
 }
 \usage{
 qpspecial(G, x, maxit = 100)
+
+qpsolve(d, A, b, meq = 0, tol = 1e-07)
 }
 \arguments{
   \item{G}{\code{m x n}-matrix.}
   \item{x}{column vector of length \code{n}, the initial (feasible) iterate; 
            if not present (or requirements on x0 not met), x0 will be found.}
   \item{maxit}{maximum number of iterates allowed; default 100.}
+  \item{d}{Linear term of the quadratic form.}
+  \item{A, b}{Linear equality and inequality constraints.}
+  \item{meq}{First meq rows are used as equality constraints.}
+  \item{tol}{Tolerance used for stopping the iteration.}
 }
 \details{
-  Solves the QP problem
+  \code{qpspecial} solves the special QP problem:
 
   \code{min     q(x)  = || G*x ||_2^2 = x'*(G'*G)*x}\cr
   \code{s.t.  sum(x)  = 1}\cr
@@ -24,6 +31,13 @@ qpspecial(G, x, maxit = 100)
 
   The problem corresponds to finding the smallest vector (2-norm) in the 
   convex hull of the columns of \code{G}.
+  
+  \code{qpsolve} solves the more general QP problem:
+
+  \code{min  q(x) = 0.5 t(x)*x - d x}\cr
+  \code{s.t. A x >= b}
+
+  with \code{A x = b} for the first \code{meq} rows.
 }
 \value{
   Returns a list with the following components:
@@ -60,20 +74,27 @@ qpspecial(G)
 # [2,] 5.221698e-09
 # [3,] 8.648168e-01
 # [4,] 1.351831e-01
-# 
 # $d
 #           [,1]
 # [1,] 0.4940377
 # [2,] 0.3972964
 # [3,] 0.4886660
-# 
 # $q
 # [1] 0.6407121
-# 
 # $niter
 # [1] 6
-# 
 # $info
 # [1] 0
-}
 
+# Example from quadprog::solve.QP
+d <- c(0,5,0)
+A <- matrix(c(-4,-3,0,2,1,0,0,-2,1),3,3)
+b <- c(-8,2,0)
+qpsolve(d, A, b)
+## $sol
+## [1] 0.4761905 1.0476190 2.0952381
+## $val
+## [1] -2.380952
+## $niter
+## [1] 3
+}

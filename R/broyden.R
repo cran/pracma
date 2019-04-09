@@ -7,6 +7,8 @@ broyden <- function(Ffun, x0, J0 = NULL, ...,
     y0 <- F(x0)
     if (length(x0) != length(y0))
         stop("Function 'F' must be 'square', i.e. from R^n to R^n .")
+    if (length(x0) == 1)
+        stop("Function 'F' must not be a univariate function.")
 
     # Compute once the Jacobian and its inverse
     if (is.null(J0)) {

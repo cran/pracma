@@ -15,6 +15,8 @@ fsolve <- function(f, x0, J = NULL,
 
     n <- length(x0)
     m <- length(f(x0))
+    if (n == 1)
+        stop("Function 'fsolve' not applicable for univariate root finding.")
 
     if (!is.null(J)) {
         Jun <- match.fun(J)
