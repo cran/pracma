@@ -121,7 +121,7 @@ Maintainer: Hans W Borchers  <hwborchers@googlemail.com>
 \references{
   Abramowitz, M., and I. A. Stegun (1972). Handbook of Mathematical Functions
   (with Formulas, Graphs, and Mathematical Tables). Dover, New York.
-  \url{http://www.nr.com/aands/}.
+  \url{https://www.cs.bham.ac.uk/~aps/research/projects/as/}.
 
   Arndt, J. (2010). Matters Computational: Ideas, Algorithms, Source Code.
   Springer-Verlag, Berlin Heidelberg Dordrecht.

@@ -39,15 +39,13 @@ logm(A)
   Moler, C., and Ch. Van Loan (2003). Nineteen Dubious Ways to Compute
   the Exponential of a Matrix, Twenty-Five Years Later.
   SIAM Review, Vol. 1, No. 1, pp. 1--46.
-  [Available at CiteSeer, \url{citeseer.ist.psu.edu}]
 
   N. J. Higham (2008). Matrix Functions: Theory and Computation. SIAM
   Society for Industrial and Applied Mathematics.
 }
 \author{
   Idea and Matlab code for a cubic root by Nick Trefethen in his 
-  ``10 digits 1 page'' project, for realization see file `cuberootA.m'
-  at \url{http://people.maths.ox.ac.uk/trefethen/tda.html}.
+  ``10 digits 1 page'' project.
 }
 \note{
   This approach could be used for other analytic functions, but a point to

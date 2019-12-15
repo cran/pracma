@@ -13,7 +13,7 @@ interp1 <- function (x, y, xi = x,
         stop("Points 'xi' outside of range of argument 'x'.")
 
     e <- try(method <- match.arg(method), silent = TRUE)
-    if (class(e) == "try-error") {
+    if(inherits(e, "try-error")) {
         warning("Unknown method: will use 'linear' interpolation.")
         method <- "linear"
     }

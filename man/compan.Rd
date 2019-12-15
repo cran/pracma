@@ -2,7 +2,7 @@
 \alias{compan}
 \title{Companion Matrix}
 \description{
-  Computes the companion matrix of a vector.
+  Computes the companion matrix of a real or complex vector.
 }
 \usage{
   compan(p)

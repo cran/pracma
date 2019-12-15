@@ -21,7 +21,7 @@ nearest_spd <- function(A) {
     while (not_pd) {
         k <- k + 1
         try_R <- try(chol(Ahat), silent = TRUE)
-        if (class(try_R) == "try-error") {
+        if(inherits(try_R, "try-error")) {
             mineig <- min(eigen(Ahat, symmetric = TRUE, only.values = TRUE)$values)
             Ahat = Ahat + (-mineig*k^2 + eps(mineig)) * diag(1, n)
         } else

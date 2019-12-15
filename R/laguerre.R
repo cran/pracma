@@ -22,6 +22,8 @@ laguerre <- function(p, x0, nmax = 25, tol = .Machine$double.eps^(1/2)) {
         b <- a2 - polyval(p2, x0) / y0
 
         x <- x0 - n/(a + a/abs(a) * sqrt((n-1)*(n*b - a2)))
+        if (is.na(x))
+            stop("Start value 'x0' results in an indefinite direction.")
         y <- polyval(p, x)
         if (abs(y) < tol) break
         x0 <- x

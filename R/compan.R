@@ -4,8 +4,9 @@
 
 compan <- function(p) {
 	if (length(p) == 0) return(c())
-	if ( !is.vector(p, mode="numeric"))
-		stop("Argument p must be a vector of real numbers.")
+	if ( !is.vector(p, mode="numeric") &&
+	    (!is.vector(p, mode="complex")) )
+		stop("Argument p must be a vector of real or complex numbers.")
 	while(p[1] == 0 && length(p) >= 2) {
 		p <- p[2:length(p)]
 	}

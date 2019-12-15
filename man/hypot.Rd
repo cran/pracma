@@ -19,11 +19,13 @@ Returns a vector or matrix of the same size.
 }
 \note{
 Returns \code{c()} if \code{x} or \code{y} is empty and the other one has
-length 1.
-In all other cases, \code{x} and \code{y} have to be of the same size.
+length 1. If one input is scalar, the other a vector, the scalar will be
+extended to a vector of appropriate length. In all other cases, \code{x}
+and \code{y} have to be of the same size.
 }
 \examples{
 hypot(3,4)
+hypot(1, c(3, 4, 5))
 hypot(c(0, 0), c(3, 4))
 }
 \keyword{ array }

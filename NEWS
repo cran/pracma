@@ -3,6 +3,32 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.2.9 (2019-12-15)
+
+    o Changed URL reference of Abramowitz and Stegun (link missing).
+    o Fixed warning with the 'try' construct in several functions
+      using 'if(inherits(e, "try-error"))' (help from Bert Gunter).
+    o Link to R Base HTML help page gave a warning (for Windows).
+
+CHANGES IN VERSION 2.2.8 (2019-07-09)
+
+    o erfi() returns real values when the input values are all real.
+    o hypot() allows for scalar plus numeric vector as inputs.
+
+CHANGES IN VERSION 2.2.7 (2019-05-21)
+
+    o Polynomial division with polydiv(); for two plynomials
+      polygcf() finds the greatest common factor; and rootmult()
+      returns the multiplicity of a polynomial root (or 0).
+    o polyroots() refines the result of roots() in case of roots
+      with multiplicities (where roots() is quite inaccurate).
+
+CHANGES IN VERSION 2.2.6 (2019-05-02)
+
+    o All polynomial functions now accept complex coefficients, 
+      esp. roots() finds roots for complex polynomials.
+    o Fixed a bug in laguerre() for zeros of complex polynomials.
+
 CHANGES IN VERSION 2.2.5 (2019-04-08)
 
     o fsolve() and broyden() are no longer applicable to univariate 

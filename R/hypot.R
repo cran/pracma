@@ -9,6 +9,11 @@ hypot <- function(x, y) {
             return(c())
     if (!is.numeric(x) && !is.complex(x) || !is.numeric(y) && !is.complex(y))
             stop("Arguments 'x' and 'y' must be numeric or complex.")
+    if (length(x) == 1 && length(y) > 1) {
+        x <- rep(x, length(y)); dim(x) <- dim(y)
+    } else if (length(x) > 1 && length(y) == 1) {
+        y <- rep(y, length(x)); dim(y) <- dim(x)
+    }
     if ((is.vector(x) && is.vector(y) && length(x) != length(y)) ||
         (is.matrix(x) && is.matrix(y) && dim(x) != dim(y)) ||
         (is.vector(x) && is.matrix(y)) || is.matrix(x) && is.vector(y))

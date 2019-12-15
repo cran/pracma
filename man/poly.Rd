@@ -9,7 +9,7 @@
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{vector or square matrix}
+  \item{x}{vector or square matrix, real or complex}
 }
 \details{
   Computes the characteristic polynomial of an (n x n)-Matrix.

@@ -7,7 +7,7 @@ isposdef <- function(A, psd = FALSE, tol = 1e-10) {
         a <- FALSE
     } else {
         e <- try(chol(A, pivot = psd), silent = TRUE)
-        if (class(e) == "try-error") {
+        if(inherits(e, "try-error")) {
             a <- FALSE
         } else {
             a <- TRUE

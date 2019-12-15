@@ -58,7 +58,7 @@ mexpfit(x, y, p0, w = NULL, const = TRUE, options = list())
   Science and Mathematical Modelling.
 
   Nielsen, H. B. (2000). Separable Nonlinear Least Squares. IMM, DTU,
-  Report IMM-REP-2000-01. \url{www.imm.dtu.dk/~hbn/publ/TR0001.ps}
+  Report IMM-REP-2000-01.
 }
 \seealso{
   \code{\link{lsqsep}}, \code{\link{lsqnonlin}}

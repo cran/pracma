@@ -1,5 +1,32 @@
 # pracma NEWS
 
+
+## pracma 2.2.9 (2019-12-15)
+
+* Changed URL reference of Abramowitz and Stegun (link missing).
+* Fixed warning with the 'try' construct in several functions
+  using 'if(inherits(e, "try-error"))' (help from Bert Gunter).
+* Link to R Base HTML help page gave a warning (for Windows).
+
+## pracma 2.2.8 (2019-07-09)
+
+* erfi() returns real values when the input values are all real.
+* hypot() now allows for scalar plus numeric vector as inputs.
+
+## pracma 2.2.7 (2019-05-21)
+
+* Polynomial division with polydiv(); for two plynomials
+  polygcf() finds the greatest common factor; and rootmult()
+  returns the multiplicity of a polynomial root (or 0).
+* polyroots() refines the result of roots() in case of roots
+  with multiplicities (where roots() is quite inaccurate).
+
+## pracma 2.2.6 (2019-05-02)
+
+* All polynomial functions now accept complex coefficients, 
+  esp. roots() finds roots for complex polynomials.
+* Fixed a bug in laguerre() for zeros of complex polynomials.
+
 ## pracma 2.2.5 (2019-04-08)
 
 * fsolve() and broyden() are no longer applicable to univariate 

@@ -8,7 +8,7 @@ fzero <- function(fun, x, maxiter = 500, tol = 1e-12, ...) {
         stop("Argument 'x' must be a scalar or a vector of length 2.")
 
     err <- try(fun <- match.fun(fun), silent = TRUE)
-    if (class(err) == "try-error") {
+    if(inherits(err, "try-error")) {
         stop("Argument function 'fun' not known in parent environment.")
     } else {
         f <- function(x) fun(x, ...)

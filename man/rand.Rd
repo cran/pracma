@@ -67,7 +67,7 @@ randp(n = 1, r = 1)
   Algorithms; Chapt. 3: Random Numbers. Addison-Wesley, Reading.
 }
 \seealso{
-  \code{\link[base]{set.seed}}
+  \code{\link{set.seed}}
 }
 \examples{
 rand(3)

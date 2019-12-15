@@ -74,7 +74,16 @@ erfz    <- function(z)
 
 # Imaginary error function
 erfi <- function(z) {
-	-1i * erfz(1i * z)
+    if (length(z) == 0) return(c())
+    else if (length(z) == 1) {
+        if (is.na(z))           return(NA)
+        else if (z == 0)        return(0.0)
+        else if (is.numeric(z)) return(Re(-1i * erfz(1i * z)))
+        else if (is.complex(z)) return(-1i * erfz(1i * z))
+        else stop("Argument 'z' must be a numeric or complex scalar or vector.")
+    } else {
+        return(sapply(z, erfi))
+    }
 }
 
 
