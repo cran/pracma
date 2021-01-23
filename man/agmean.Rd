@@ -31,7 +31,7 @@ agmean(a, b)
   where \eqn{m = (a-b)/(a+b)}
 }
 \references{
-  \url{http://mathworld.wolfram.com/Arithmetic-GeometricMean.html}
+  \url{https://mathworld.wolfram.com/Arithmetic-GeometricMean.html}
 }
 \seealso{
   Arithmetic, geometric, and harmonic mean.

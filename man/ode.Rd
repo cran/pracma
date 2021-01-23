@@ -67,9 +67,7 @@ ode78(f, t0, tfinal, y0, ..., atol = 1e-6, hmax = 0.0)
   SIAM Journal on Scientific Computing, Vol. 18, pp. 1-22.
 
   Moler, C. (2004). Numerical Computing with Matlab. Revised Reprint, SIAM.
-  \url{http://www.mathworks.com/moler/chapters.html}.
-
-  \url{https://sites.google.com/site/comperem/home/ode_solvers}
+  \url{https://www.mathworks.com/moler/chapters.html}.
 }
 \note{
   Copyright (c) 2004 C. Moler for the Matlab textbook version \code{ode23tx}.

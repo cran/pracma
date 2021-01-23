@@ -28,13 +28,13 @@ halley(fun, x0, maxiter = 500, tol = 1e-08, ...)
   done, and the estimated precision \code{estim.prec}
 }
 \references{
-  \url{http://mathworld.wolfram.com/HalleysMethod.html}
+  \url{https://mathworld.wolfram.com/HalleysMethod.html}
 }
 \seealso{
 \code{\link{newtonRaphson}}
 }
 \examples{
-halley(sin, 3.0)        # 3.14159265358979 in the 3 iterations
+halley(sin, 3.0)        # 3.14159265358979 in 3 iterations
 halley(function(x) x*exp(x) - 1, 1.0)
                         # 0.567143290409784 Gauss' omega constant
 

@@ -39,7 +39,8 @@ quadinf(f, xa, xb, tol = 1e-12, ...)
   ``bivariate vector numerical integration with infinite range''.
 }
 \references{
-  http://crd-legacy.lbl.gov/~dhbailey/dhbpapers/dhb-tanh-sinh.pdf
+  D. H. Bayley. Tanh-Sinh High-precision Quadrature. 2006.\cr
+  URL: https://www.davidhbailey.com//dhbpapers/dhb-tanh-sinh.pdf
 }
 \seealso{
   \code{\link{integrate}}, \code{\link{quadgk}}

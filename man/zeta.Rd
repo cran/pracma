@@ -16,7 +16,7 @@ zeta(z)
   Computes the zeta function for complex arguments using a series expansion
   for Dirichlet's eta function.
 
-  Accuracy is about 13 significant digits for \code{abs(z)<100},
+  Accuracy is about 7 significant digits for \code{abs(z)<50},
   drops off with higher absolute values.
 }
 \value{

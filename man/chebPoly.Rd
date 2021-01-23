@@ -32,7 +32,7 @@ chebPoly(n, x = NULL)
   Bowling Green State University.
 }
 \note{
-  See the ``Chebfun Project'' <http://www.maths.ox.ac.uk/chebfun/> by
+  See the ``Chebfun Project'' <https://www.chebfun.org/> by
   Nick Trefethen.
 }
 \seealso{

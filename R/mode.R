@@ -4,8 +4,8 @@
 
 
 Mode <- function(x) {
-    if (is.matrix(x))
-        x <- c(x)
+    if (all(is.na(x))) return(NA)
+    if (is.matrix(x))  x <- c(x)
 
     if (is.numeric(x)) {
         x   <- sort(x)

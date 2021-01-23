@@ -3,6 +3,25 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.3.3 (2021-01-22)
+
+    o Forgot to correct URL addresses in the Readme.md file.
+
+CHANGES IN VERSION 2.3.2 (2021-01-16)
+
+    o Removed and corrected URL addresses from 'http' to 'https'.
+
+CHANGES IN VERSION 2.3.1 (2021-01-13)
+
+    o 'ellipke' help page: compute the circumference of an ellipse.
+    o 'Mode()' now handling all types of NAs (thx. Michael Henry).
+
+CHANGES IN VERSION 2.3.0 (2020-04-09)
+
+    o circlefit(): option 'fast' is deprecated and will not be used.
+    o gammainc(0, a) returns 0, thanks to Mark Chappell for reporting.
+    o ndims() now returns 1 for vectors and 0 for empty objects.
+
 CHANGES IN VERSION 2.2.9 (2019-12-15)
 
     o Changed URL reference of Abramowitz and Stegun (link missing).

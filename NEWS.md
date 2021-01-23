@@ -1,6 +1,25 @@
 # pracma NEWS
 
 
+## pracma 2.3.3 (2021-01-22)
+
+* Forgot to correct URL addresses in the Readme.md file.
+
+## pracma 2.3.2 (2021-01-16)
+
+* Removed and corrected URL addresses from 'http' to 'https'.
+
+## pracma 2.3.1 (2021-01-13)
+
+* 'ellipke' help page: compute circumference of an ellipse.
+* 'Mode()' now handling all types of NAs (thx. Michael Henry).
+
+## pracma 2.3.0 (2020-04-09)
+
+* circlefit(): option 'fast' is deprecated and will not be used.
+* gammainc(0, a) returns 0, thanks to Mark Chappell for reporting.
+* ndims() now returns 1 for vectors and 0 for empty objects.
+
 ## pracma 2.2.9 (2019-12-15)
 
 * Changed URL reference of Abramowitz and Stegun (link missing).

@@ -13,21 +13,26 @@ ndims(x)
 \details{
   Returns the number of dimensions as \code{length(x)}.
 
-  A vector is seen as a matrix with one row,
-  i.e. for a vector the number of dimensions is 2.
+  For an empty object its dimension is 0, for vectors it is 1
+  (deviating from MATLAB), for matrices it is 2, and for arrays
+  it is the number of dimensions, as usual.
+  Lists are considered to be (one-dimensional) vectors.
 }
 \value{
-  the number of dimensions in the vector or array \code{x}.
+  the number of dimensions in a vector, matrix, or array \code{x}.
 }
 \seealso{
   \code{\link{size}}
 }
 \note{
-  The result will differ from Matlab when \code{x} is a character vector.
+  The result will differ from Matlab when \code{x} is a vector.
 }
 \examples{
-ndims(1:8)
-ndims(array(1:8, c(2,2,2)))
+ndims(c())                      # 0
+ndims(as.numeric(1:8))          # 1
+ndims(list(a=1, b=2, c=3))      # 1
+ndims(matrix(1:12, 3, 4))       # 2
+ndims(array(1:8, c(2,2,2)))     # 3
 }
 \keyword{array}
 

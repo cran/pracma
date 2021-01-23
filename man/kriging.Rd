@@ -30,7 +30,6 @@ kriging(u, v, u0, type = c("ordinary", "simple"))
   Press, W. H., A. A. Teukolsky, W. T. Vetterling, and B. P. Flannery (2007).
   Numerical recipes: The Art of Scientific Computing (3rd Ed.). Cambridge
   University Press, New York, Sect. 3.7.4, pp. 144-147.
-  \url{http://apps.nrbook.com/empanel/index.html?pg=144#}
 }
 \seealso{
   \code{\link{akimaInterp}}, \code{\link{barylag2d}}, package \code{kriging}

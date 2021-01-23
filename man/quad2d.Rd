@@ -36,9 +36,7 @@ quad2d(f, xa, xb, ya, yb, n = 32, ...)
 }
 \note{
   The extension of Gaussian quadrature to two dimensions is obvious, but
-  see also the example `integral2d.m' at Nick Trefethens ``10 digits 1 page'',
-  \url{http://people.maths.ox.ac.uk/trefethen/ten_digit_algs.htm} and Matlab
-  code at \url{http://people.maths.ox.ac.uk/trefethen/tda.html}.
+  see also the example `integral2d.m' at Nick Trefethens ``10 digits 1 page''.
 }
 \seealso{
 \code{\link{quad}}, \code{cubature::adaptIntegrate}

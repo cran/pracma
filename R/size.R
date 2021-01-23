@@ -31,10 +31,19 @@ nnz <- function(x) {
 }
 
 ndims <- function(x) {
-	sz <- size(x)
-	if (!is.null(sz)) length(sz)
-	else              return(NULL)
+    if (length(x) == 0) nd <- 0
+    else if (is.vector(x)) nd <- 1
+    else if (is.array(x)) nd <- length(dim(x))
+    else nd <- NA
+    
+    return(nd)
 }
+
+# ndims <- function(x) {
+#   sz <- size(x)
+#   if (!is.null(sz)) length(sz)
+#   else              return(NULL)
+# }
 
 isempty <- function(x) {
 	length(x) == 0

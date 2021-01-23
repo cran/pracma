@@ -120,18 +120,18 @@ Maintainer: Hans W Borchers  <hwborchers@googlemail.com>
 }
 \references{
   Abramowitz, M., and I. A. Stegun (1972). Handbook of Mathematical Functions
-  (with Formulas, Graphs, and Mathematical Tables). Dover, New York.
-  \url{https://www.cs.bham.ac.uk/~aps/research/projects/as/}.
+  (with Formulas, Graphs, and Mathematical Tables). Dover, New York.  
+  URL: https://www.math.ubc.ca/~cbm/aands/notes.htm
 
   Arndt, J. (2010). Matters Computational: Ideas, Algorithms, Source Code.
   Springer-Verlag, Berlin Heidelberg Dordrecht.
-  FXT: a library of algorithms: \url{http://www.jjj.de/fxt/}.
+  FXT: a library of algorithms: \url{https://www.jjj.de/fxt/}.
 
   Cormen, Th. H., Ch. E. Leiserson, and R. L. Rivest (2009). Introduction
   to Algorithms. Third Edition, The MIT Press, Cambridge, MA.
 
   Encyclopedia of Mathematics (2012). Editor-in-Chief: Ulf Rehmann.
-  \url{http://www.encyclopediaofmath.org/}.
+  \url{https://encyclopediaofmath.org/wiki/Main_Page}.
 
   Gautschi, W. (1997). Numerical Analysis: An Introduction.
   Birkhaeuser, Boston.
@@ -139,46 +139,37 @@ Maintainer: Hans W Borchers  <hwborchers@googlemail.com>
   Gentle, J. E. (2009). Computational Statistics.
   Springer Science+Business Media LCC, New York.
 
-  Hazewinkel, M., Editor (2002). Encyclopaedia of Mathematics.
-  Springer-Verlag, Berlin Heidelberg New York.
-  \url{http://eom.springer.de/}.
-
   MathWorld.com (2011).
-  Matlab Central: \url{http://www.mathworks.com/matlabcentral/}.
-  Mathtools.net: \url{http://www.mathtools.net/}.
+  Matlab Central: \url{https://www.mathworks.com/matlabcentral/}.
 
   NIST: National Institute of Standards and Technology.
   Olver, F. W. J., et al. (2010). NIST Handbook of Mathematical Functions.
   Cambridge University Press. 
   Internet: NIST Digital Library of Mathematical Functions, 
-  \url{http://dlmf.nist.gov/};
-  Dictionary of Algorithms and Data Structures,
-  \url{http://www.nist.gov/};
-  Guide to Available Mathematical Software, \url{http://gams.nist.gov/}
+  \url{https://dlmf.nist.gov/};
+  Guide to Available Mathematical Software, \url{https://gams.nist.gov/}.
 
   Press, W. H., S. A. Teukolsky, W. T Vetterling, and B. P. Flannery (2007).
   Numerical Recipes: The Art of Numerical Computing. Third Edition, incl.
   Numerical Recipes Software, Cambridge University Press, New York.
-  \url{http://www.nrbook.com/a/bookcpdf.php} [chapters], or
-  \url{http://apps.nrbook.com/c/index.html} [pages].
+  URL: numerical.recipes/book/book.html.
 
   Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.
   Second Edition, Springer-Verlag, Berlin Heidelberg.
 
   Skiena, St. S. (2008). The Algorithm Design Manual. Second Edition,
   Springer-Verlag, London. The Stony Brook Algorithm Repository:
-  \url{http://www.cs.sunysb.edu/~algorith/}.
+  \url{https://algorist.com/algorist.html}.
 
   Stoer, J., and R. Bulirsch (2002). Introduction to Numerical Analysis.
   Third Edition, Springer-Verlag, New York.
 
   Strang, G. (2007). Computational Science and Engineering.
   Wellesley-Cambridge Press.
-  Matlab Codes: \url{http://www-math.mit.edu/cse/}
 
   Weisstein, E. W. (2003). CRC Concise Encyclopedia of Mathematics.
   Second Edition, Chapman & Hall/CRC Press.
-  Wolfram MathWorld: \url{http://mathworld.wolfram.com/}.  
+  Wolfram MathWorld: \url{https://mathworld.wolfram.com/}.  
 
   Zhang, S., and J. Jin (1996). Computation of Special Functions.
   John Wiley & Sons.

@@ -15,12 +15,9 @@ data(brown72)
   The format is: one column.
 }
 \details{
-  ``Estimating the Hurst exponent for a data set provides a measure of whether
+  Estimating the Hurst exponent for a data set provides a measure of whether
   the data is a pure random walk or has underlying trends. Brownian walks can
-  be generated from a defined Hurst exponent.''
-}
-\source{
-  http://www.bearcave.com/misl/misl_tech/wavelets/hurst/
+  be generated from a defined Hurst exponent.
 }
 \examples{
 \dontrun{

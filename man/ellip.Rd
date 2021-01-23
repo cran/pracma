@@ -59,6 +59,14 @@ legend( 0.01, 4.5,
         col = c("darkblue", "darkgreen"), lty = 1)
 grid()}
 
+## ellipse circumference with axes a, b
+ellipse_cf <- function(a, b) {
+    return(4*a*ellipke(1 - (b^2/a^2))$e)
+}
+print(ellipse_cf(1.0, 0.8), digits = 10)
+# [1] 5.672333578
+
+## Jacobi elliptic integrals
 u <- c(0, 1, 2, 3, 4, 5)
 m <- seq(0.0, 1.0, by = 0.2)
 je <- ellipj(u, m)

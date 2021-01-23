@@ -32,8 +32,7 @@ L1linreg(A, b, p = 1, tol = 1e-07, maxiter = 200)
 }
 \references{
   Dasgupta, M., and S.K. Mishra (2004). Least absolute deviation estimation 
-  of linear econometric models: A literature review. MPRA Paper No. 1781.\cr
-  URL:http://mpra.ub.uni-muenchen.de/1781/1/MPRA_paper_1781.pdf
+  of linear econometric models: A literature review. MPRA Paper No. 1781.
 }
 \note{
   In this case of \code{p=1}, the problem would be better approached by use

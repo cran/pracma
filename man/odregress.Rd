@@ -28,12 +28,11 @@ odregress(x, y)
 }
 \references{
   Golub, G.H., and C.F. Van Loan (1980). An analysis of the total least 
-  squares problem. Numerical Analysis, Vol. 17, pp. 883-893.\cr
-  http://www.cs.cornell.edu/cv/ResearchPDF/Analysis.total.least.squares.prob.pdf
+  squares problem.\cr
+  Numerical Analysis, Vol. 17, pp. 883-893.
 
   See ODRPACK or ODRPACK95 (TOMS Algorithm 676).\cr
-  URL: http://docs.scipy.org/doc/external/odr_ams.pdf\cr
-  URL: http://semi.vt.edu/presentations/SEMI-March05_Watson.pdf
+  URL: https://docs.scipy.org/doc/external/odr_ams.pdf
 }
 \note{
   The ``geometric mean" regression not implemented because questionable.

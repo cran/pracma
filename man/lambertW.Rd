@@ -35,7 +35,6 @@ lambertWn(x)
   Corless, R. M., G. H.Gonnet, D. E. G Hare, D. J. Jeffrey, and D. E. Knuth
   (1996). On the Lambert W Function. Advances in Computational Mathematics,
   Vol. 5, pp. 329-359.
-  \url{http://www.apmaths.uwo.ca/~djeffrey/Offprints/W-adv-cm.pdf}.
 }
 \note{
   See the examples how values for the second branch or the complex

@@ -36,7 +36,7 @@ rref(A)
 }
 \references{
   Weisstein, Eric W. ``Echelon Form." From MathWorld -- A Wolfram Web Resource.\cr
-  http://mathworld.wolfram.com/EchelonForm.html
+  \url{https://mathworld.wolfram.com/EchelonForm.html}
 }
 \seealso{
   \code{\link{qr.solve}}

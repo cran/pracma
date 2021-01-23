@@ -24,10 +24,10 @@ chebCoeff(fun, a, b, n)
 \references{
   Weisstein, Eric W. ``Chebyshev Polynomial of the First Kind."
   From MathWorld --- A Wolfram Web Resource.
-  \url{http://mathworld.wolfram.com/ChebyshevPolynomialoftheFirstKind.html}
+  \url{https://mathworld.wolfram.com/ChebyshevPolynomialoftheFirstKind.html}
 }
 \note{
-  See the ``Chebfun Project'' <http://www.maths.ox.ac.uk/chebfun/> by
+  See the ``Chebfun Project'' <https://www.chebfun.org/> by
   Nick Trefethen.
 }
 \seealso{
