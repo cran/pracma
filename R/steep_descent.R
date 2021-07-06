@@ -40,7 +40,7 @@ steep_descent <- function (x0, f, g = NULL, info = FALSE,
             if (a3 < tol/2) {
                 if (info)
                     cat("Method of steepest descent converged to:", x, "\n")
-                x[x < eps] <- 0
+                x[abs(x) < eps] <- 0
                 return(list(xmin = x, fmin = f(x), niter = k))
             }
         }
