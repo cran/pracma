@@ -39,5 +39,5 @@ subspace <- function(A, B) {
         B <- B - A[, k] %*% t(A[, k]) %*% B
     }
 
-    asin(min(1, svd(B)$d))
+    asin(min(1, max(svd(B)$d)))
 }
