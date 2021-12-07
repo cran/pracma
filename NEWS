@@ -3,6 +3,23 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.3.6 (2021-12-06)
+
+    o Corrected randortho() with return value 'q %*% diag(ph) # %*% q',
+      as researched and reported by Daniel Kessler; thanks a lot.
+    o Function deeve() requires the x-coordinates to be sorted.
+    o Removed the Nile data (without warning).
+
+CHANGES IN VERSION 2.3.5 (2021-07-10)
+
+    o Corrected a bug in subspace() - thanks to David Fleischer.
+    o Corrected a small but annoying bug in steep_descent().
+    o Allows for complex matrices in pinv() (and mldivide()).
+
+CHANGES IN VERSION 2.3.4 (2021-03-18)
+
+    o Small correction in movavg(): default type now is 's'.
+
 CHANGES IN VERSION 2.3.3 (2021-01-22)
 
     o Forgot to correct URL addresses in the Readme.md file.

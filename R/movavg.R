@@ -10,8 +10,9 @@ movavg <- function(x, n, type=c("s", "t", "w", "m", "e", "r")) {
     nx <- length(x)
     if (n >= nx)
         stop("Window length 'n' must be greater then length of time series.")
-
     y <- numeric(nx)
+
+    type <- match.arg(type)
     if (type == "s") {         # simple
         for (k in 1:(n-1))  y[k] <- mean(x[1:k])
         for (k in n:nx)     y[k] <- mean(x[(k-n+1):k])

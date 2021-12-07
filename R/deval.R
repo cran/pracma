@@ -44,6 +44,8 @@ deeve <- function(x, y, yv = 0, idx = NULL){
     stopifnot(is.vector(x, mode = "numeric"), is.numeric(y),
               is.numeric(yv), length(yv) == 1)
     if (is.vector(y)) y <- as.matrix(y)
+    if (is.unsorted(x))
+        stop("Argument vector 'x' must be sorted.")
     if (length(x) != nrow(y))
         stop("Length of 'x' must be equal to the number of rows in 'y'.")
     if (is.null(idx)) idx <- ncol(y)

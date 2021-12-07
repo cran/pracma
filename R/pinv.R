@@ -4,7 +4,7 @@
 
 
 pinv <- function (A, tol = .Machine$double.eps^(2/3)) {
-    stopifnot(is.numeric(A), length(dim(A)) == 2, is.matrix(A))
+    stopifnot(is.numeric(A) || is.complex(A), is.matrix(A))
 
     s <- svd(A)
     # D <- diag(s$d); Dinv <- diag(1/s$d)

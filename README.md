@@ -102,7 +102,7 @@ The following Matlab function names have been capitalized in `pracma' to
 avoid shadowing functions from R base or one of its recommended packages
 (on request of Bill Venables and because of Brian Ripley's CRAN policies):
 
-    Diag, factos, finds, Fix, Imag, Lcm, Mode, Norm, nullspace (<- null),
+    Diag, factors, finds, Fix, Imag, Lcm, Mode, Norm, nullspace (<- null),
     Poly, Rank, Real, Reshape, strRep, strTrim, Toeplitz, Trace, uniq (<- unique).
 
 To use `ans` instead of `ans()` -- as is common practice in Matlab -- 

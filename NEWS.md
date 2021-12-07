@@ -1,6 +1,23 @@
 # pracma NEWS
 
 
+## pracma 2.3.6 (2021-12-03)
+
+* Corrected randortho() with return value 'q %*% diag(ph) # %*% q',
+  as researched and reported by Daniel Kessler; thanks a lot.
+* Function deeve() requires the x-coordinates to be sorted.
+* Removed the Nile data (without warning).
+
+## pracma 2.3.5 (2021-07-10)
+
+* Corrected a bug in subspace() - thanks to David Fleischer.
+* Corrected a small but annoying bug in steep_descent().
+* Allows for complex matrices in pinv() (and mldivide()).
+
+## pracma 2.3.4 (2021-03-18)
+
+* Small correction in 'movavg()': default type now is 's'.
+
 ## pracma 2.3.3 (2021-01-22)
 
 * Forgot to correct URL addresses in the Readme.md file.

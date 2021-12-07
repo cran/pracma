@@ -12,7 +12,7 @@ movavg(x, n, type=c("s", "t", "w", "m", "e", "r"))
 \arguments{
   \item{x}{time series as numeric vector.}
   \item{n}{backward window length.}
-  \item{type}{one of ``s", ``t", ``w", ``m", ``e", or ``r".}
+  \item{type}{one of 's', 't', 'w', 'm', 'e', or 'r'; default is 's'.}
 }
 \details{
   Types of available moving averages are:

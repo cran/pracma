@@ -22,11 +22,5 @@ randortho <- function(n, type = c("orthonormal", "unitary")) {
     
     d <- diag(r)
     ph <- d/abs(d)
-    q %*% diag(ph) %*% q
+    q %*% diag(ph)
 }
-
-# rortho <- function(n) {
-#     warning("Function 'rortho' is deprecated; use 'randortho' instead.",
-#             call. = FALSE, immediate. = TRUE)
-#     randortho(n, type = "orthonormal")
-# }

@@ -10,7 +10,7 @@
 pinv(A, tol=.Machine$double.eps^(2/3))
 }
 \arguments{
-  \item{A}{matrix}
+  \item{A}{real or complex matrix}
   \item{tol}{tolerance used for assuming an eigenvalue is zero.}
 }
 \details{
