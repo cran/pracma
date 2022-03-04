@@ -63,6 +63,34 @@ lu <- function(A, scheme = c("kji", "jki", "ijk")) {
 }
 
 
+lu_crout <- function(A) {
+    stopifnot(is.numeric(A), is.matrix(A))
+    n <- nrow(A)
+    if (ncol(A) != n || n <= 1)
+        stop("Argument 'A' must be a square, positive definite matrix.")
+
+    L <- matrix(0, n, n); U <- matrix(0, n, n)
+    for (i in 1:n) {
+        L[i, 1] <- A[i, 1]
+        U[i, i] <- 1
+    }
+    for (j in 2:n) {
+        U[1, j] <- A[1, j] / L[1, 1]
+    }
+    for (i in 2:n) {
+        for (j in 2:i) {
+            L[i, j] <- A[i, j] - sum(L[i, 1:(j-1)] * U[1:(j-1), j])
+        }
+        if (i < n) {
+            for (j in ((i+1):n)) {
+                U[i, j] = (A[i, j]-sum(L[i, 1:(i-1)]*U[1:(i-1), j]))/L[i, i]
+            }
+        }
+    }
+    return(list(L = L, U = U))
+}
+
+
 lufact <- function(A) {
     stopifnot(is.numeric(A), is.matrix(A))
     m <- nrow(A); n <- ncol(A)

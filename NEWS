@@ -3,6 +3,16 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.3.8 (2022-02-19)
+
+    o 'length_1 eror' for logical operators on integral() help page.
+    o Bug in pinv() for complex input, reported by Stephane Laurent.
+
+CHANGES IN VERSION 2.3.7 (2022-01-17)
+
+    o Added lu_crout(), Crout's algorithm for LU matrix decomposition.
+    o Corrected a small bug in randi(), thanks to Luke Cherveny.
+
 CHANGES IN VERSION 2.3.6 (2021-12-06)
 
     o Corrected randortho() with return value 'q %*% diag(ph) # %*% q',

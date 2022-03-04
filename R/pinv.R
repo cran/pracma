@@ -11,6 +11,7 @@ pinv <- function (A, tol = .Machine$double.eps^(2/3)) {
     # U <- s$u; V <- s$v
     # A = U D V'
     # X = V Dinv U'
+    if (is.complex(A)) s$u <- Conj(s$u)
 
     p <- ( s$d > max(tol * s$d[1], 0) )
     if (all(p)) {

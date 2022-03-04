@@ -47,7 +47,7 @@ randi <- function(imax, n = 1, m = n) {
     m <- floor(m)
 
     if (n <= 0 || m <= 0) matrix(NA, 0, 0)
-    else matrix(sample(1:imax, n*m, replace=TRUE), nrow=n, ncol=m)
+    else matrix(sample(imin:imax, n*m, replace=TRUE), nrow=n, ncol=m)
 }
 
 

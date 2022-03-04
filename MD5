@@ -1,8 +1,8 @@
 197c7dc792e10a543b3c0fde30384a90 *COPYING
-ade78988ebd72c469082e57dea8a8139 *DESCRIPTION
+109dce94fddefae0e3fcd23c1571096b *DESCRIPTION
 b47004d9a8e4f1d874186f4b543a3c8e *NAMESPACE
-e8fb3e68f4c4f8f711fa43b3b591f460 *NEWS
-9b74f455341dfcb08d66486d666f68d1 *NEWS.md
+f9b4c18ee54504019db8e17521133a4a *NEWS
+9c822dad933514ba0987094de8185fc2 *NEWS.md
 8e2ec5415edc8417dd8da8cb53d8d0b9 *R/abm3.R
 556a17b11b7876e19e56a799aa125485 *R/accumarray.R
 3a2bb5e25f1e3c1bbd2bfc930776a25d *R/agmean.R
@@ -136,7 +136,7 @@ f5ba573c81263a3fa84cb1027a5a40cb *R/linspace.R
 159c358786de1eb7f3c598031e628616 *R/lsqlincon.R
 5aca5f3b8e5a0bd5b99a0672d32a8e4a *R/lsqnonlin.R
 d822cd6389752fa30a5f40493ac683c4 *R/lsqnonneg.R
-b2511db2adbd247fda9c1af969923299 *R/lu.R
+5765eeaadedf1b15a507733e24d60b55 *R/lu.R
 f384616a04f11141cfb8e3774e6e1472 *R/magic.R
 46c1e40a49abb8807aa7a3adccb466b2 *R/matlab.R
 c6ea360afbbfa25f7e99570f8ad6a814 *R/mean.R
@@ -171,7 +171,7 @@ e163938a5699839aa2b2cd4726f15f51 *R/pade.R
 35751b38092e0b03a19307a02048cbf8 *R/pchip.R
 db6982dd5d245d6ccef2272849cb35ba *R/perms.R
 9146e792b5a27ee9d36be1707d4cd8c0 *R/piecewise.R
-f76b9b9ad70ac777140af0144c352fd5 *R/pinv.R
+fc4eab505da38d7afd5c1bcedd23c3f0 *R/pinv.R
 a5ad6f5fca02f735f55d0e89d1d3485c *R/plotyy.R
 0181be03387431112a3114da4a8c2ac6 *R/poisson2disk.R
 ce4320e4ce3c7d8e2033f3b78ef18157 *R/polar.R
@@ -198,7 +198,7 @@ f47837590022c2a4991596472c5f0185 *R/quadgr.R
 25513ce418ecdb2684bc3a34a735fd56 *R/quadl.R
 026f73f44e266baf42977a639099734e *R/quadprog.R
 990a7f5faf9d905d31071f8ebf756d8d *R/quadv.R
-d1ebd06a85cc0a05e314fb0abbacbcac *R/rand.R
+d9c8edf6180d436e01479e47da710ac0 *R/rand.R
 49fb204f0a132ce754d65e2949679fbe *R/randortho.R
 5a6e727d03d721f4cddf28521420eb25 *R/rank.R
 af8b088bfa6ac6dcdafa6185ed3efbfd *R/rat.R
@@ -387,7 +387,7 @@ e64e6f1e7f3a6b57a47df9b4a8ad2d0e *man/householder.Rd
 132f4aa1cbfbddff65f887ee7a9cc0e0 *man/hypot.Rd
 70ca3ee00d7abb441ab7f5cb5977b5a5 *man/ifft.Rd
 9023020a15e8e46fe7a94c2d8ad9aeee *man/inpolygon.Rd
-3d4095680508d576bac631b7dd022d4f *man/integral.Rd
+326c6c1e6189cf316fb4662ceef33a1d *man/integral.Rd
 2ca5975a1c6ada4af67fab81644466cb *man/integral2.Rd
 9b160222568bf545344f93a08bc20f87 *man/interp1.Rd
 9d14ff4dc33243a3f3e0b76cbae022ac *man/interp2.Rd
@@ -414,7 +414,7 @@ e0e94623450a96018b917a295bea02ed *man/legendre.Rd
 2b77bf88cb9c27525115c591b8e680e5 *man/lsqlin.Rd
 497e23dede0ce0ad6eab1b769ca6f28e *man/lsqlincon.Rd
 6e035a297e18b54f94867011cd8f961f *man/lsqnonlin.Rd
-80780f0daafd70391bc748f09049da34 *man/lu.Rd
+ddd2c609185aa2021e996555bd8fdf03 *man/lu.Rd
 d10b9378eac9601500e92fb2eac442a1 *man/magic.Rd
 7f3fafecb68f314e1ed2f3da8bfa70f9 *man/matlab.Rd
 04d39f78c3a8dc9a838829d93219f8ba *man/mean.Rd

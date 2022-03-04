@@ -1,6 +1,16 @@
 # pracma NEWS
 
 
+## pracma 2.3.8 (2022-02-19)
+
+* 'length_1 eror' for logical operators on integral() help page.
+* Bug in pinv() for complex input, reported by Stephane Laurent.
+
+## pracma 2.3.7 (2022-01-17)
+
+* Added lu_crout(), Crout's algorithm for LU matrix decomposition.
+* Corrected a small bug in randi(), thanks to Luke Cherveny.
+
 ## pracma 2.3.6 (2021-12-03)
 
 * Corrected randortho() with return value 'q %*% diag(ph) # %*% q',

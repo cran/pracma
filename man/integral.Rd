@@ -100,13 +100,12 @@ cat(m, Q, abs(Q-val), "\n")
 
 ## Example with small function support
 fun <- function(x)
-          if (x<=0 || x>=pi) 0 else sin(x)
-Fun <- Vectorize(fun)
-integral(fun, -100, 100, no_intervals = 1)  # 0
-integral(Fun, -100, 100, no_intervals = 1)  # 0
-integral(fun, -100, 100, random=FALSE)      # 2.00000000371071
-integral(fun, -100, 100, random=TRUE)       # 2.00000000340142
-integral(Fun, -1000, 1000, random=FALSE)    # 2.00000000655435
-integral(Fun, -1000, 1000, random=TRUE)     # 2.00000001157690 (sometimes 0 !)
+            ifelse (x <= 0 | x >= pi, 0, sin(x))
+integral(fun, -100, 100, no_intervals = 1)      # 0
+integral(fun, -100, 100, no_intervals = 10)     # 1.99999999723
+integral(fun, -100, 100, random=FALSE)          # 2
+integral(fun, -100, 100, random=TRUE)           # 2 (sometimes 0 !)
+integral(fun, -1000, 10000, random=FALSE)       # 0
+integral(fun, -1000, 10000, random=TRUE)        # 0 (sometimes 2 !)
 }
 \keyword{ math }
