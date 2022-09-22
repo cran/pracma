@@ -35,6 +35,48 @@ hessian <- function(f, x0, h = .Machine$double.eps^(1/4), ...) {
 }
 
 
+hessvec <- function (f, x, v, csd = FALSE, ...) {
+    if (!is.numeric(x) || !is.numeric(v)) 
+        stop("Arguments 'x' and 'v' must be a numeric.")
+    fun <- match.fun(f)
+    f <- function(x) fun(x, ...)
+    if (length(x) < 2 || length(f(x)) != 1) 
+        stop("Function 'f' must be univariate of 2 or more variables.")
+    if (length(v) != length(x))
+        stop("Vectors 'x' and 'v' must be of equal length.")
+    
+    h <- .Machine$double.eps^(1/4)
+    r <- h / sqrt(sum(v*v))
+    if (csd) {
+        hv <- (grad_csd(f, x+r*v) - grad_csd(f, x-r*v))/(2*r)
+    } else {
+        hv <- (grad(f, x+r*v) - grad(f, x-r*v))/(2*r)
+    }
+    return(hv)
+}
+
+
+hessdiag <- function(f, x, ...) {
+    if (!is.numeric(x)) 
+        stop("Arguments 'x' and 'v' must be a numeric.")
+    fun <- match.fun(f)
+    f <- function(x) fun(x, ...)
+    if (length(x) < 2 || length(f(x)) != 1) 
+        stop("Function 'f' must be univariate of 2 or more variables.")
+    
+    n <- length(x)
+    h <- .Machine$double.eps^(1/4)
+    hh <- rep(0, n)
+    HD <- numeric(n)
+    for (i in 1:n) {
+        hh[i] <- h
+        HD[i] <- (f(x + hh) - 2*f(x) + f(x - hh)) / h^2
+        hh[i] <- 0
+    }
+    return(HD)
+}
+
+
 laplacian <- function(f, x0, h = .Machine$double.eps^(1/4), ...) {
     if (!is.numeric(x0))
         stop("Argument 'x0' must be a numeric vector.")

@@ -3,14 +3,11 @@
 ##
 
 
-circlefit <- function(xp, yp, fast = TRUE) {
+circlefit <- function(xp, yp) {
     if (!is.vector(xp, mode="numeric") || !is.vector(yp, mode="numeric"))
         stop("Arguments 'xp' and 'yp' must be numeric vectors.")
     if (length(xp) != length(yp))
         stop("Vectors 'xp' and 'yp' must be of the same length.")
-    if (!fast)
-        warning("Option 'fast' is deprecated and will not be used!",
-                call. = FALSE, immediate. = TRUE)
 
     n  <- length(xp)
     p <- qr.solve(cbind(xp, yp, 1), matrix(xp^2 + yp^2, ncol = 1))

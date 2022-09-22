@@ -27,6 +27,9 @@ logit(x, a = 1, b = 0)
   The \code{logit} function is the inverse of the sigmoid function and is
   (therefore) omly defined between 0 and 1. Its definition is
   \deqn{y = b + 1/a log(x/(1-x))}
+
+  The parameters must be scalars; if they are vectors, only the first
+  component will be taken.
 }
 \value{
   Numeric/complex scalar or vector.
@@ -44,4 +47,9 @@ grid()}
 # The slope in 0 (in x = b) is a/4
 # sigmf with slope 1 and range [-1, 1].
 sigmf <- function(x) 2 * sigmoid(x, a = 2) - 1
+
+# logit is the inverse of the sigmoid function
+x <- c(-0.75, -0.25, 0.25, 0.75)
+y <- sigmoid(x)
+logit(y)        #=> -0.75 -0.25  0.25  0.75
 }

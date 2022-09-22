@@ -78,5 +78,21 @@ anms(rosenbrock, c(0,0,0,0,0))
 # [1] 8.268732e-21
 # $nfeval
 # [1] 1153
+
+# To add constraints to the optimization problem, use a slightly 
+# modified objective function. Equality constraints not possible.
+# Warning: Avoid a starting value too near to the boundary !
+
+\dontrun{
+# Example: 0.0 <= x <= 0.5
+fun <- function(x) {
+    if (any(x < 0) || any(x > 0.5)) 100
+    else rosenbrock(x)
+}
+x0 <- rep(0.1, 5)
+
+anms(fun, x0)
+## $xmin
+## [1] 0.500000000 0.263051265 0.079972922 0.016228138 0.000267922}
 }
 \keyword{ optimize }

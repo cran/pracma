@@ -20,7 +20,7 @@ mkpp <- function(x, P) {
 
 ppval <- function(pp, xx) {
     stopifnot(is.numeric(xx), any(!is.na(xx)))
-    if (!class(pp) == "pp")
+    if (!inherits(pp, "pp"))
         stop("Argument 'pp' must be piecewise polynomial structure.")
     
     lx <- length(xx); yy <- rep(NA, lx)

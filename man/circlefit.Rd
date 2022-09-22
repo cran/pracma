@@ -6,11 +6,10 @@
   Fitting a circle from points in the plane
 }
 \usage{
-circlefit(xp, yp, fast = TRUE)
+circlefit(xp, yp)
 }
 \arguments{
   \item{xp, yp}{Vectors representing the x and y coordinates of plane points}
-  \item{fast}{deprecated; will not be used.}
 }
 \details{
   This routine finds an `algebraic' solution based on a linear fit.

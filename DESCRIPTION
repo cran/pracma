@@ -1,7 +1,7 @@
 Package: pracma
 Type: Package
-Version: 2.3.8
-Date: 2022-02-19
+Version: 2.4.2
+Date: 2022-09-21
 Title: Practical Numerical Math Functions
 Authors@R: person("Hans W.", "Borchers", 
                   email="hwborchers@googlemail.com", 
@@ -21,8 +21,8 @@ Author: Hans W. Borchers [aut, cre]
 Maintainer: Hans W. Borchers <hwborchers@googlemail.com>
 Repository: CRAN
 Repository/R-Forge/Project: optimist
-Repository/R-Forge/Revision: 525
-Repository/R-Forge/DateTimeStamp: 2022-02-19 13:28:50
-Date/Publication: 2022-03-04 10:40:02 UTC
+Repository/R-Forge/Revision: 532
+Repository/R-Forge/DateTimeStamp: 2022-09-22 12:27:41
+Date/Publication: 2022-09-22 14:50:02 UTC
 NeedsCompilation: no
-Packaged: 2022-02-19 13:52:08 UTC; rforge
+Packaged: 2022-09-22 12:32:08 UTC; rforge

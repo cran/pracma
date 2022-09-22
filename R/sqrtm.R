@@ -43,7 +43,7 @@ rootm <- function(A, p, kmax = 20, tol = .Machine$double.eps^(1/2)) {
 	p0 <- p
 
     # err <- try(solve(A), silent = TRUE)
-    # if (class(err == "try-error")) ... else ...
+    # if (inherits(err, "try-error")) ... else ...
 
 	if (p %% 2 == 1) {
 		A <- A %*% A

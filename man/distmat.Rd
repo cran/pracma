@@ -59,5 +59,10 @@ distmat(A, B)  #=> 0 1 1 sqrt(2)
 X <- matrix(rep(0.5, 5), nrow=1, ncol=5)
 Y <- matrix(runif(50), nrow=10, ncol=5)
 distmat(X, Y)
+
+# A more vectorized form of distmat:
+distmat2 <- function(x, y) {
+    sqrt(outer(rowSums(x^2), rowSums(y^2), '+') - tcrossprod(x, 2 * y))
+}
 }
 \keyword{ array }

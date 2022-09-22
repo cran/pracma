@@ -3,9 +3,30 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.4.2 (2022-09-21)
+
+    o Corrected a bug in logit() - 'length_1 error' again.
+    o Replaced 'class() =' with 'inherits(...)' in function ppval().
+
+CHANGES IN VERSION 2.4.1 (2022-08-03)
+
+    o Added an example of using inequality constraints with anms().
+    o Added more vectorized 'distmat2' to the help page of 'distmat'.
+
+CHANGES IN VERSION 2.4.0 (2022-04-01)
+
+    o hessvec() approximates the multiplication of Hessian and vector
+      (thanks to Ravi Varadhan for pointing out Pearlmutter's method).
+    o hessdiag() computes the diagonal of Hessian (finite differences).
+
+CHANGES IN VERSION 2.3.9 (2022-03-22)
+
+    o Spherical coordinates better explained in help files.
+    o Deprecated option 'fast' was removed from circlefit().
+
 CHANGES IN VERSION 2.3.8 (2022-02-19)
 
-    o 'length_1 eror' for logical operators on integral() help page.
+    o 'length_1 error' for logical operators on integral() help page.
     o Bug in pinv() for complex input, reported by Stephane Laurent.
 
 CHANGES IN VERSION 2.3.7 (2022-01-17)

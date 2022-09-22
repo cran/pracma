@@ -1,5 +1,25 @@
 # pracma NEWS
 
+## pracma 2.4.2 (2022-09-21)
+
+* Corrected a bug in logit() - 'length_1 error' again.
+* Replaced 'class() =' with 'inherits(...)' in function ppval().
+
+## pracma 2.4.1 (2022-08-03)
+
+* Added an example of using inequality constraints with anms().
+* Added more vectorized 'distmat2' to the help page of 'distmat'.
+
+## pracma 2.4.0 (2022-04-01)
+
+* hessvec() approximates the multiplication of Hessian and vector
+  (thanks to Ravi Varadhan for pointing out Pearlmutter's method).
+* hessdiag() computes the diagonal of Hessian (finite differences).
+
+## pracma 2.3.9 (2022-03-22)
+
+* Spherical coordinates better explained in help files.
+* Deprecated option 'fast' was removed from circlefit().
 
 ## pracma 2.3.8 (2022-02-19)
 

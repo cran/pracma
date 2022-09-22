@@ -30,7 +30,7 @@ hessian(f, x0, h = .Machine$double.eps^(1/4), ...)
   Second edition, Prentice Hall.
 }
 \seealso{
-  \code{\link{laplacian}}
+  \code{\link{hessdiag}}, \code{\link{hessvec}}, \code{\link{laplacian}}
 }
 \examples{
 f <- function(x) cos(x[1] + x[2])

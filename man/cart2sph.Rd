@@ -23,6 +23,20 @@ pol2cart(prz)
              as vector or matrix.}
 }
 \details{
+  The spherical coordinate system used here consists of
+
+  - \code{theta}, azimuth angle relative to the positive x-axis
+  
+  - \code{phi},   elevation angle measured from the reference plane
+  
+  - \code{r},     radial distance. i.e., distance to the origin
+
+The polar angle, measured with respect from the polar axis, is then 
+calculated as \code{pi/2 - phi}.
+Note that this convention differs slightly from spherical coordinates 
+\code{(r, theta, phi)} as often used in mathematics, where \code{phi} 
+is the polar angle.
+
   \code{cart2sph} returns spherical coordinates as (theta, phi, r), and
   \code{sph2cart} expects them in this sequence.
 
@@ -59,7 +73,7 @@ pol2cart(c(pi/2, 1))            # 6.123234e-17 1.000000e+00
 pol2cart(c(pi/4, 1, 1))         # 0.7071068 0.7071068 1.0000000
 
 ##  Transform spherical to cylindrical coordinates and vice versa
-sph2cyl <- function(th.ph.r) cart2pol(sph2cart(th.ph.r))
-cyl2sph <- function(phi.r.z) cart2sph(pol2cart(phi.r.z))
+#   sph2cyl <- function(th.ph.r) cart2pol(sph2cart(th.ph.r))
+#   cyl2sph <- function(phi.r.z) cart2sph(pol2cart(phi.r.z))
 }
 \keyword{ math }
