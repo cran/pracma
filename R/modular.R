@@ -56,10 +56,14 @@ idivide <- function(n, m, rounding = c("fix", "floor", "ceil", "round")) {
 
 gcd <- function(a, b, extended = FALSE) {
     stopifnot(is.numeric(a), is.numeric(b))
+    if(any(floor(a) != ceiling(a)) || any(floor(b) != ceiling(b)))
+        stop("All input arguments must be integer.")
     if (length(a) == 1) {
         a <- rep(a, times=length(b))
     } else if (length(b) == 1) {
         b <- rep(b, times=length(a))
+    } else if (length(a) != length(b)) {
+        stop("Length of 'a' and 'b' must be equal (or one length is 1).")
     }
     n <- length(a)
 
@@ -88,10 +92,14 @@ gcd <- function(a, b, extended = FALSE) {
 
 Lcm <- function(a, b) {
     stopifnot(is.numeric(a), is.numeric(b))
+    if(any(floor(a) != ceiling(a)) || any(floor(b) != ceiling(b)))
+        stop("All input arguments must be integer.")
     if (length(a) == 1) {
         a <- rep(a, times=length(b))
     } else if (length(b) == 1) {
         b <- rep(b, times=length(a))
+    } else if (length(a) != length(b)) {
+        stop("Length of 'a' and 'b' must be equal (or one length is 1).")
     }
 
     g <- gcd(a, b, extended = FALSE)

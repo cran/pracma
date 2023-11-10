@@ -222,6 +222,6 @@ nelder_mead <- function(fn, x0, ..., adapt = TRUE,
         numres <- numres + 1
     }                                   # end outer while loop
 
-    return(list(xmin = xmin, fmin = ynewlo, count = icount, convergence = 0,
+    return(list(xmin = xmin, fmin = ynewlo, count = icount,
                 info = list(solver = "Nelder-Mead", restarts = numres)))
 } # end of function

@@ -44,9 +44,8 @@ nelder_mead(fn, x0, ..., adapt = TRUE,
   List with following components:
     \item{xmin}{minimum solution found.}
     \item{fmin}{value of \code{f} at minimum.}
-    \item{fcount}{number of iterations performed.}
-    \item{restarts}{number of restarts.}
-    \item{errmess}{error message}
+    \item{count}{number of iterations performed.}
+    \item{info}{list with solver name and no. of restarts.}
 }
 \references{
   Nelder, J., and R. Mead (1965). A simplex method for function minimization.

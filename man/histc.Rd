@@ -35,7 +35,7 @@
   and \code{0} if \code{x[i]} lies outside the grid.
 }
 \seealso{
-  \code{\link{hist}}, code{\link{histss}}, \code{\link{findInterval}}
+  \code{\link{hist}}, \code{\link{histss}}, \code{\link{findInterval}}
 }
 \examples{
 x <- seq(0.0, 1.0, by = 0.05)

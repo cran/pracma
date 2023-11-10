@@ -26,7 +26,7 @@ arnoldi(A, q, m)
 Returns a list with two elements:
 
 \code{Q} A matrix of orthonormal columns that generate the Krylov
-space {A, A q, A^2 q, ...}.
+space \code{(A, A q, A^2 q, ...)}.
 
 \code{H} A Hessenberg matrix such that \code{A = Q * H * t(Q)}.
 }

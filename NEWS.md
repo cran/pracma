@@ -1,5 +1,16 @@
 # pracma NEWS
 
+## pracma 2.4.4 (2023-11-08)
+
+* gcd(), Lcm() now require integers as input (G. Rücker reported).
+* Corrections (missing brackets) in several Rd files.
+
+## pracma 2.4.3 (2023-08-15)
+
+* Corrected a bug in the help file of nelder_mead().
+* Added stereographic projection and its inverse as functions
+  stereographic() and stereographic_inv().
+
 ## pracma 2.4.2 (2022-09-21)
 
 * Corrected a bug in logit() - 'length_1 error' again.

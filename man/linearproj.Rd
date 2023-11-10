@@ -44,8 +44,9 @@
   \deqn{p = (I - A' (A A')^{-1}) x0 + A' (A A')^{-1} b}
 
   Technically, if \code{a} is one solution of \code{C x = b}, then the 
-  projection onto C can be derived from the projection onto S = {C x = 0}
-  with \code{proj_C(x) = a + proj_S(x - a)}, see the examples.
+  projection onto C can be derived from the projection onto
+  \code{S = {C x = 0}} with \code{proj_C(x) = a + proj_S(x - a)},
+  see the examples.
 
   In case the user requests the coordinates of the projected point to be 
   positive, an iteration procedure is started where negative coordinates 

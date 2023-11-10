@@ -18,7 +18,7 @@ findpeaks(x, nups = 1, ndowns = nups, zero = "0", peakpat = NULL,
   \item{zero}{can be `+', `-', or `0'; how to interprete succeeding steps
               of the same value: increasing, decreasing, or special}
   \item{peakpat}{define a peak as a regular pattern, such as the default
-        pattern ``[+]{1,}[-]{1,}''; if a pattern is provided, the parameters
+        pattern \code{[+]{1,}[-]{1,}}; if a pattern is provided, parameters
         \code{nups} and \code{ndowns} are not taken into account}
   \item{minpeakheight}{the minimum (absolute) height a peak has to have
         to be recognized as such}
