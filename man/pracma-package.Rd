@@ -140,7 +140,7 @@ Maintainer: Hans W Borchers  <hwborchers@googlemail.com>
   Springer Science+Business Media LCC, New York.
 
   MathWorld.com (2011).
-  Matlab Central: \url{https://www.mathworks.com/matlabcentral/}.
+  Matlab Central at www.mathworks.com/matlabcentral/.
 
   NIST: National Institute of Standards and Technology.
   Olver, F. W. J., et al. (2010). NIST Handbook of Mathematical Functions.

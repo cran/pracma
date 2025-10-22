@@ -31,7 +31,7 @@ simpadpt(f, a, b, tol = 1e-6, ...)
   Second Edition, Springer-Verlag, Berlin Heidelberg.
 }
 \seealso{
-  \code{\link{quad}}, \code{\link{simpson2d}}
+  \code{\link{simpson}}, \code{\link{simpson2d}}
 }
 \examples{
 myf <- function(x, n) 1/(x+n)  # 0.0953101798043249 , log((n+1)/n) for n=10

@@ -29,7 +29,7 @@ simpson2d(f, xa, xb, ya, yb, nx = 128, ny = 128, ...)
   under BSD License on MatlabCentral.
 }
 \seealso{
-  \code{\link{dblquad}}, \code{\link{quad2d}}
+  \code{\link{simpson}}, \code{\link{simpadpt}}
 }
 \examples{
 f1 <- function(x, y) x^2 + y^2

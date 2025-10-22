@@ -1,8 +1,8 @@
 197c7dc792e10a543b3c0fde30384a90 *COPYING
-8259063cdb13470b6f7ed4e88fed89a4 *DESCRIPTION
+66af45fdab18edcb0e4d00a480ef5bca *DESCRIPTION
 b47004d9a8e4f1d874186f4b543a3c8e *NAMESPACE
-e0a1ec997d6264bb0fdf7cba412739ca *NEWS
-dd30ea6e58d57c3f7d849d89b978ea71 *NEWS.md
+c8c26c4602463acbec28fbf56b972582 *NEWS
+3715815e2ef6630bcf960b90b2aadf3d *NEWS.md
 8e2ec5415edc8417dd8da8cb53d8d0b9 *R/abm3.R
 556a17b11b7876e19e56a799aa125485 *R/accumarray.R
 3a2bb5e25f1e3c1bbd2bfc930776a25d *R/agmean.R
@@ -44,7 +44,7 @@ dc69bc00ce9fafd6c2593485dd6ce2d4 *R/conv.R
 47eef58ff7ffb1e4cba0ee4285d5d849 *R/cubicspline.R
 b5e8704f4f496c921e2219452cfebe71 *R/curvefit.R
 1f83ad89b99b4d624d8c6c1b9b6b543b *R/cutpoints.R
-e21d2afcecbd3f6fcff5bc91052b438e *R/dblquad.R
+62eb3dc63ecc7c395e1cf05852bbc70a *R/dblquad.R
 1767d57d7c1c52c13d7e59e6d45a5872 *R/deconv.R
 b02befdcbab0cef6dfa09fcbd8eaa4c5 *R/deg2rad.R
 228709802a4173e6b8e4cad292087ebd *R/detrend.R
@@ -58,7 +58,7 @@ dac06ffb40ddde5ce0f22a0b0da93f3c *R/einsteinF.R
 b995c9b70e1fd8b7396985cfc9ef7087 *R/ellip.R
 c8884bc09067c7c5ada83cbe59225abf *R/entropy.R
 188a79aaaeb654af3fa1197230fccdd2 *R/eps.R
-fccb85c1ae1432db21a306c8b35f290c *R/erf.R
+9c56b1060722e3364fb13e1dc7ecd5f2 *R/erf.R
 a3f834724211fa0bdfe49ece1a44037c *R/errorbar.R
 5329eb792cb2ba8b102f552f27f616fc *R/euler_heun.R
 f9280c4a9e244cddc14d669517a77e68 *R/expint.R
@@ -80,7 +80,7 @@ d99ccd15d4f16139ee0dfa612f763064 *R/flipdim.R
 30a87c9a3ada95cb756ee2b071285c4b *R/fminbnd.R
 8d524888fd19d633ba8dc72f11ba3ae3 *R/fmincon.R
 72a8d96727ab59c5e60d7c1e6b2fb87b *R/fminsearch.R
-8c5d5f24e71b107fe6b9b6565b1b4e83 *R/fminunc.R
+3762291576d2c7386f6b334855202a26 *R/fminunc.R
 508b6a97c85342713d5b2a4b1a0ce256 *R/fnorm.R
 1ecf8f2687247b9eb35da04a1c0f4d36 *R/fornberg.R
 f84873285a20a26b925f259c9de39918 *R/fprintf.R
@@ -142,7 +142,7 @@ f384616a04f11141cfb8e3774e6e1472 *R/magic.R
 c6ea360afbbfa25f7e99570f8ad6a814 *R/mean.R
 6cfc4756848dc1b6dd6b71bb61e5ece7 *R/meshgrid.R
 f8cf47ad7fa3e693452945167e43ff60 *R/mexpfit.R
-88dfe302153c5ab5d4a7d7bae6214c90 *R/midpoint.R
+dd3f73b8955888980def4c6c57e829a5 *R/midpoint.R
 7a71a240ed11fb6d9ae81a85848039ef *R/mldivide.R
 a78cfa1bce7436b0f7d2cfe637eb99b4 *R/mode.R
 bf391cd9e02bc454fcc5142a75260381 *R/modular.R
@@ -224,6 +224,7 @@ b2ce19ba7cfd11352f00936c30fb4097 *R/shubert.R
 0c91299621602670d7bda2829e797f8c *R/sici.R
 dd05fd1f8eefe8763895ee0941de76a8 *R/sigmoid.R
 954dfc0a0e58bb682f60a268224a4870 *R/simpadpt.R
+af3300c9664eeea69a80e27f8f8b8784 *R/simpson.R
 84fcb71d922ff9a609b10e8df9f0b512 *R/sind.R
 7f4533a13cdd59aea4afaac918780b0a *R/size.R
 6410b9551b51870dee41d8abf3e88bd6 *R/softline.R
@@ -252,7 +253,7 @@ af5250aca37ab527dfc90b677dce63a8 *R/vectorfield.R
 f52be7d201dbc9a815c229b58dab11dd *R/wilkinson.R
 e09f92a7ba7e72fbfbc3e2dec887b3fc *R/zeta.R
 f9ccb58211bc1dfbd6910db8dc4d3250 *R/zzz.R
-63cb6de8d50ee50a87e8a1b97eb8a2bc *README.md
+f782edb4f8ed557419925f90823758bb *README.md
 3add91a9c6c6569551f79f3aa8f666f0 *data/brown72.rda
 4001bc8e5357b1f0c2684f7ffc173ab8 *data/titanium.rda
 b0665e750dc8a153600fa13f2863447a *demo/00Index
@@ -422,7 +423,7 @@ d10b9378eac9601500e92fb2eac442a1 *man/magic.Rd
 04d39f78c3a8dc9a838829d93219f8ba *man/mean.Rd
 f1afe7c965b684dc31ca8bf58b9b8995 *man/meshgrid.Rd
 2732be74bcccc812964dbb0ce1b8bedc *man/mexpfit.Rd
-a4ac71b36cf7d07ea93c55a01e1231e8 *man/midpoint.Rd
+09fe56d6cd7e3d218ba1f0bf8f44ac7a *man/midpoint.Rd
 46867b51da6a3556e44c0e7e2a8fdcc1 *man/mldivide.Rd
 f363b0a289a8ff045ec4009168189c40 *man/mod.Rd
 84a3a564b8dd09029b772e44ebc5c7c0 *man/mode.Rd
@@ -447,7 +448,7 @@ a8f5c277cf359ab48729435c26dac33e *man/nextpow2.Rd
 73b27ae17691ff660af81cb365c7b3e0 *man/nullspace.Rd
 95e1565cf2c8ffea58953766c72ec6b1 *man/numderiv.Rd
 bfe28186612b58ccb6e8297b6b9059f3 *man/numel.Rd
-1edcec0801c090b021fa835858470afe *man/ode.Rd
+af7a2cac775c6e38883cff2c8ab86a86 *man/ode.Rd
 f489fac55ef8a0ff70bf6c3e14fbd18d *man/odregress.Rd
 707249d0a5f0558d225e1c561d53aab2 *man/orth.Rd
 55df8637ff57d3d19031cc72a3e76fc8 *man/pade.Rd
@@ -476,7 +477,7 @@ f8d28b28323935223d3b6b3a7731271b *man/polylog.Rd
 14a8f0043c10b08c81e5fe167023ed47 *man/pow2.Rd
 be23c2ec43a7556246b793e40696a6fb *man/pp.Rd
 905080fd4c87b75f74bb36b19882a8f5 *man/ppfit.Rd
-47732dd8aec1601be86bd5350c3a912d *man/pracma-package.Rd
+6fdeeb2d57b3299fa0226f27d8d75842 *man/pracma-package.Rd
 a9be341b14772cff514afed39fb9553a *man/primes.Rd
 9cc5fe95186aa22e6261858ef06d7007 *man/procrustes.Rd
 e0421c3ad0f8d836e74a3329ddf6d85d *man/psi.Rd
@@ -524,8 +525,9 @@ df9a1b1d905f7a132b75a12a03d28cf7 *man/segm_intersect.Rd
 32806e662579d953591e9677ea323ee5 *man/shubert.Rd
 5916efcdba4a38e80b513f0a0d79142f *man/sici.Rd
 31f371213e716ef162701f8076aa69e2 *man/sigmoid.Rd
-584273f2c399c94510d48b02837e73f5 *man/simpadpt.Rd
-8cfed5790c786680e83489f911319389 *man/simpson2d.Rd
+4cc79774ac69cf3c6b648f9d1d28b3cc *man/simpadpt.Rd
+5700eb68d8a8b1c156db37444396cb21 *man/simpson.Rd
+44e50b83bf77dc9bfd3acb551aedd9a4 *man/simpson2d.Rd
 11d88fa5749b3edc2d3811058aa52834 *man/sind.Rd
 a5664efda77e4f1b629560b78ff0f490 *man/size.Rd
 6979719d7b3dd68943be2e73816875c0 *man/softline.Rd

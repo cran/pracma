@@ -1,7 +1,7 @@
 Package: pracma
 Type: Package
-Version: 2.4.4
-Date: 2023-11-08
+Version: 2.4.6
+Date: 2025-10-20
 Title: Practical Numerical Math Functions
 Authors@R: person("Hans W.", "Borchers", 
                   email="hwborchers@googlemail.com", 
@@ -18,8 +18,8 @@ License: GPL (>= 3)
 ByteCompile: true
 LazyData: yes
 NeedsCompilation: no
-Packaged: 2023-11-08 14:09:36 UTC; hwb
+Packaged: 2025-10-21 15:28:06 UTC; hwb
 Author: Hans W. Borchers [aut, cre]
 Maintainer: Hans W. Borchers <hwborchers@googlemail.com>
 Repository: CRAN
-Date/Publication: 2023-11-10 00:10:02 UTC
+Date/Publication: 2025-10-22 15:00:02 UTC

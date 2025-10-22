@@ -9,19 +9,19 @@
   very accurately.
 }
 \usage{
-bulirsch_stoer(f, t, y0, ..., tol = 1e-07)
+bulirsch_stoer(f, t, y0, tol = 1e-08, ...)
 
-midpoint(f, t0, tfinal, y0, tol = 1e-07, kmax = 25)
+midpoint(f, t0, tfinal, y0, tol = 1e-08, kmax = 101, ...)
 }
 \arguments{
   \item{f}{function describing the differential equation \eqn{y' = f(t, y)}.}
   \item{t}{vector of \code{x}-values where the values of the ODE function
            will be computed; needs to be increasingly sorted.}
-  \item{y0}{starting values as column vector.}
+  \item{y0}{starting values as (row or column) vector.}
   \item{...}{additional parameters to be passed to the function.}
-  \item{tol}{relative tolerance in the Ricardson extrapolation.}
+  \item{tol}{relative tolerance (in the Ricardson extrapolation).}
   \item{t0, tfinal}{start and end point of the interval.}
-  \item{kmax}{maximal number of steps in the Richardson extrapolation.}
+  \item{kmax}{number of grid pounts.}
 }
 \details{
   The Bulirsch-Stoer algorithm is a well-known method to obtain high-accuracy
@@ -72,7 +72,7 @@ S$y[nrow(S$y), 1]                           # -7.1e-04
 
 ## Example: y' = -200 x y^2                 # y(x) = 1 / (1 + 100 x^2)
 f2 <- function(t, y) -200 * t * y^2
-y0 < 1
+y0 <- 1
 tic(); S <- ode23(f2, 0, 1, y0); toc()            # 0.002 sec
 tic(); yy <- bulirsch_stoer(f2, S$t, y0); toc()   # 0.013 sec}
 }

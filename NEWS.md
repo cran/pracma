@@ -1,5 +1,16 @@
 # pracma NEWS
 
+
+## pracma 2.4.6 (2025-10-20)
+
+* Corrected erfz() with erfz(0) = 0.
+* simpson() DeepSeek code for the 1/3 Simpson rule.
+
+## pracma 2.4.5 (2024-05-23)
+
+* Changed midpoint() to run without Richardson approximation.
+* In fmincon(), added '...' variables for the numerical gradient.
+
 ## pracma 2.4.4 (2023-11-08)
 
 * gcd(), Lcm() now require integers as input (G. Rücker reported).
@@ -113,10 +124,10 @@
 
 ## pracma 2.2.4 (2018-12-12)
 
-* qpsolve() minimizes quadratic forms such as 0.5*t(x)*x-d*x
+* qpsolve() minimizes quadratic forms such as 0.5 t(x) x - d x
   with linear quality and inequality constraints.
 * fmincon() now has an 'augmented Lagrangian' option with a
-  'variable metric' approach as inner solver.
+  'variable metric' approach as inner solver. 
 
 ## pracma 2.2.3 (2018-12-10)
 
@@ -257,7 +268,7 @@
 
 * shooting() implements the shooting method for boundary value problems
   of second order differential equations.
-* interp2() corrected the help page with size(z) = length(y)*length(x).
+* interp2() corrected the help page with size(z) = length(y) length(x).
 * Corrected a small oversight on the help page of Gauss-Laguerre.
 
 ## pracma 1.9.6 (2016-09-11)
@@ -368,7 +379,7 @@
 ## pracma 1.7.8 (2014-11-10)
 
 * bulirsch_stoer() Bulirsch-Stoer method for solving
-  *rdinary differential equations with high accuracy.
+  ordinary differential equations with high accuracy.
 * midpoint() implements the midpoint rule for solving ODEs
   combined with Richardson extrapolation for high accuracy.
 
@@ -1338,7 +1349,7 @@
   numeric values: linspace() and logspace().
 * Added basic complex functions real(), imag(), conj(), and angle()
   which are essentially only aliases of the R functions Re(), Im(),
-  *r Conj().
+  or Conj().
   angle() returns the angle of a complex number in radians. The R
   function Mod() is here only available as abs().
 

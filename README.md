@@ -143,7 +143,7 @@ but unfortunately not any of the higher math routines.
 
   MathWorld.com (2011).
   Wolfram MathWorld: <https://mathworld.wolfram.com/>.
-  Matlab Central: <https://www.mathworks.com/matlabcentral/>.
+  Matlab Central: www.mathworks.com/matlabcentral/.
 
   NIST: National Institute of Standards and Technology.
   Olver, F. W. J., et al. (2010). NIST Handbook of Mathematical Functions.

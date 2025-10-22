@@ -6,14 +6,19 @@
 #     on a 'variable metric' approach by John Nash (see package Rvmmin).
 
 
-#' Minimization of unconstrained multivariable functions
+# Minimization of unconstrained multivariable functions
 fminunc <- function(x0, fn, gr = NULL, ...,
                     tol = 1e-08, maxiter = 0, maxfeval = 0) {
     if (!is.numeric(x0) || length(x0) <= 1)
         stop("Argument 'x0' must be a vector of length greater than 1.")
     fun <- match.fun(fn)
     fn  <- function(x) fun(x, ...)
-    if (is.null(gr)) gr <- function(x) pracma::grad(fn, x)
+    if (is.null(gr)) {
+        gr <- function(x) pracma::grad(fn, x)
+    } else {
+        grfun <- match.fun(gr)
+        gr <- function(x) grfun(x, ...)
+    }
 
     sol <- .varmetric(x0, fn, gr, tol = tol,
                       maxiter = maxiter, maxfeval = maxfeval)
@@ -129,7 +134,7 @@ fminunc <- function(x0, fn, gr = NULL, ...,
                 if (conv < 0) { # conv == -1 is used to indicate it is not set
                     conv <- 0
                 }
-                msg <- "Rvmminu converged"
+                msg <- "fminunc converged"
             } else {
                 ilast <- ig
             }

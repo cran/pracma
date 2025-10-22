@@ -41,9 +41,9 @@ erfz    <- function(z)
     c0 <- exp(-z * z)
     z1 <- ifelse (Re(z) < 0, -z, z) 
 
-	i <- a0 <= 5.8
-	work.i <- i
-	cer <- rep(NA, length = length(z))
+    cer <- rep(NA, length = length(z))
+	i <- a0 > 0 & a0 <= 5.8
+    work.i <- i
     if ( sum(work.i) > 0) {
         cs <- z1
         cr <- cs
@@ -55,7 +55,7 @@ erfz    <- function(z)
         }
         cer[i] <- 2 * c0[i] * cs[i]/sqrt(pi)
     }
-	work.i <- !i
+	work.i <- a0 > 5.8
     if( sum(work.i) > 0) {
         cl <- 1/z1
         cr <- cl

@@ -3,6 +3,16 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.4.6 (2025-10-20)
+
+    o Corrected erfz() with erfz(0) = 0.
+    o simpson() DeepSeek code for the 1/3 Simpson rule.
+
+CHANGES IN VERSION 2.4.5 (2024-05-23)
+
+    o Changed midpoint() to run without Richardson approximation.
+    o In fmincon(), added '...' variables for the numerical gradient.
+
 CHANGES IN VERSION 2.4.4 (2023-11-08)
 
     o gcd(), Lcm() now require integers as input (G. Rücker reported).
@@ -162,8 +172,6 @@ CHANGES IN VERSION 2.1.6 (2018-08-30)
     o Si(), Ci() sine and cosine integral functions added.
     o Added dot notation for brent(), bisect(), newton(), halley() and
       ridders() -- on request of John Nash for the histRalg project.
-
-CHANGES IN VERSION 2.1.5 (2018-08-25)
 
 CHANGES IN VERSION 2.1.4 (2018-01-29)
 
